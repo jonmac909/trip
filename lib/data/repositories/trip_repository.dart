@@ -25,7 +25,7 @@ class TripRepository {
           .eq('user_id', userId)
           .order('created_at', ascending: false);
 
-      return (response as List).map((json) => Trip.fromJson(json)).toList();
+      return (response as List).map((json) => Trip.fromJson(json as Map<String, dynamic>)).toList();
     } on PostgrestException catch (e) {
       throw DatabaseException('Failed to fetch trips: ${e.message}');
     }

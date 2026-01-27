@@ -1,0 +1,771 @@
+{
+  "type": "frame",
+  "id": "X0NAF",
+  "x": 3260,
+  "y": 2000,
+  "name": "Trips 5c. Trip Dashboard - Europe",
+  "clip": true,
+  "width": 390,
+  "height": 844,
+  "fill": "#FFFFFF",
+  "cornerRadius": 40,
+  "layout": "vertical",
+  "children": [
+    {
+      "type": "frame",
+      "id": "wLTj0",
+      "name": "heroImg",
+      "metadata": {
+        "type": "unsplash",
+        "username": "bastien_nvs",
+        "link": "https://unsplash.com/@bastien_nvs",
+        "author": "Bastien Nvs"
+      },
+      "clip": true,
+      "width": "fill_container",
+      "height": 200,
+      "fill": {
+        "type": "image",
+        "enabled": true,
+        "url": "https://images.unsplash.com/photo-1637851059946-afbdcc0d94d4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4NDM0ODN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3NjkyMTE2NTZ8&ixlib=rb-4.1.0&q=80&w=1080",
+        "mode": "fill"
+      },
+      "layout": "none",
+      "children": [
+        {
+          "type": "frame",
+          "id": "1Dps1",
+          "x": 20,
+          "y": 20,
+          "name": "backBtn",
+          "width": 36,
+          "height": 36,
+          "fill": "#00000033",
+          "cornerRadius": 18,
+          "layout": "none",
+          "children": [
+            {
+              "type": "icon_font",
+              "id": "wKlNI",
+              "x": 8,
+              "y": 8,
+              "name": "backIcon",
+              "width": 20,
+              "height": 20,
+              "iconFontName": "arrow-left",
+              "iconFontFamily": "lucide",
+              "fill": "#FFFFFF"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "klVYL",
+      "name": "content",
+      "width": "fill_container",
+      "height": "fill_container",
+      "layout": "vertical",
+      "gap": 20,
+      "padding": 20,
+      "children": [
+        {
+          "type": "frame",
+          "id": "hUMdd",
+          "name": "header",
+          "width": "fill_container",
+          "layout": "vertical",
+          "gap": 6,
+          "children": [
+            {
+              "type": "text",
+              "id": "Vp0gO",
+              "name": "tripTitle",
+              "fill": "#1F2937",
+              "content": "Europe Trip 2025",
+              "fontFamily": "DM Sans",
+              "fontSize": 24,
+              "fontWeight": "700"
+            },
+            {
+              "type": "frame",
+              "id": "UlWow",
+              "name": "addDatesRow",
+              "fill": "#F3F4F6",
+              "cornerRadius": 20,
+              "gap": 6,
+              "padding": [
+                6,
+                12
+              ],
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "bAMCV",
+                  "name": "addDatesText2",
+                  "fill": "#6B7280",
+                  "content": "Jun 15 - 24, 2025",
+                  "fontFamily": "DM Sans",
+                  "fontSize": 14,
+                  "fontWeight": "500"
+                },
+                {
+                  "type": "icon_font",
+                  "id": "2C7Y3",
+                  "name": "addDatesIcon2",
+                  "width": 14,
+                  "height": 14,
+                  "iconFontName": "calendar",
+                  "iconFontFamily": "lucide",
+                  "fill": "#6B7280"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "jFzp9",
+          "name": "quickStats",
+          "width": "fill_container",
+          "gap": 12,
+          "children": [
+            {
+              "type": "frame",
+              "id": "0sKB7",
+              "name": "stat1",
+              "width": "fill_container",
+              "fill": "#F9FAFB",
+              "cornerRadius": 12,
+              "layout": "vertical",
+              "gap": 4,
+              "padding": 12,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "nGnPf",
+                  "name": "stat1Value",
+                  "fill": "#1F2937",
+                  "content": "2",
+                  "fontFamily": "DM Sans",
+                  "fontSize": 20,
+                  "fontWeight": "700"
+                },
+                {
+                  "type": "text",
+                  "id": "iYGUM",
+                  "name": "stat1Label",
+                  "fill": "#6B7280",
+                  "content": "Cities",
+                  "fontFamily": "DM Sans",
+                  "fontSize": 12,
+                  "fontWeight": "normal"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "glv4N",
+              "name": "stat2",
+              "width": "fill_container",
+              "fill": "#F9FAFB",
+              "cornerRadius": 12,
+              "layout": "vertical",
+              "gap": 4,
+              "padding": 12,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "u4ncc",
+                  "name": "stat2Value",
+                  "fill": "#1F2937",
+                  "content": "2",
+                  "fontFamily": "DM Sans",
+                  "fontSize": 20,
+                  "fontWeight": "700"
+                },
+                {
+                  "type": "text",
+                  "id": "hDfXB",
+                  "name": "stat2Label",
+                  "fill": "#6B7280",
+                  "content": "Countries",
+                  "fontFamily": "DM Sans",
+                  "fontSize": 12,
+                  "fontWeight": "normal"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "ol5mu",
+              "name": "stat3",
+              "width": "fill_container",
+              "fill": "#F9FAFB",
+              "cornerRadius": 12,
+              "layout": "vertical",
+              "gap": 4,
+              "padding": 12,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "RdF5y",
+                  "name": "stat3Value",
+                  "fill": "#1F2937",
+                  "content": "9",
+                  "fontFamily": "DM Sans",
+                  "fontSize": 20,
+                  "fontWeight": "700"
+                },
+                {
+                  "type": "text",
+                  "id": "uSMvV",
+                  "name": "stat3Label",
+                  "fill": "#6B7280",
+                  "content": "Days",
+                  "fontFamily": "DM Sans",
+                  "fontSize": 12,
+                  "fontWeight": "normal"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "psIgw",
+          "name": "checklistCard",
+          "width": "fill_container",
+          "fill": "#FFFFFF",
+          "cornerRadius": 12,
+          "stroke": {
+            "thickness": 1,
+            "fill": "#E5E7EB"
+          },
+          "layout": "vertical",
+          "gap": 10,
+          "padding": 12,
+          "children": [
+            {
+              "type": "frame",
+              "id": "jUcQV",
+              "name": "cardHeader",
+              "width": "fill_container",
+              "justifyContent": "space_between",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "ijz2U",
+                  "name": "headerLeft",
+                  "gap": 8,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "icon_font",
+                      "id": "Bokbh",
+                      "name": "icon5c",
+                      "width": 18,
+                      "height": 18,
+                      "iconFontName": "list-checks",
+                      "iconFontFamily": "lucide",
+                      "fill": "#1A1A1A"
+                    },
+                    {
+                      "type": "text",
+                      "id": "d7siz",
+                      "name": "title5c",
+                      "fill": "#1A1A1A",
+                      "content": "Trip Checklist",
+                      "fontFamily": "DM Sans",
+                      "fontSize": 15,
+                      "fontWeight": "600"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "H0Zf5",
+                  "name": "progressBadge",
+                  "fill": "#F0F0F0",
+                  "cornerRadius": 10,
+                  "padding": [
+                    4,
+                    8
+                  ],
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "LlyD3",
+                      "name": "badgeText5c",
+                      "fill": "#1A1A1A",
+                      "content": "2/12 done",
+                      "fontFamily": "DM Sans",
+                      "fontSize": 12,
+                      "fontWeight": "500"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "LOyIW",
+          "name": "blocksSection",
+          "width": "fill_container",
+          "layout": "vertical",
+          "gap": 12,
+          "children": [
+            {
+              "type": "frame",
+              "id": "Aws0B",
+              "name": "blocksSectionHeader",
+              "width": "fill_container",
+              "justifyContent": "space_between",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "5yQGD",
+                  "name": "blocksTitle",
+                  "fill": "#1F2937",
+                  "content": "Your Itineraries",
+                  "fontFamily": "DM Sans",
+                  "fontSize": 18,
+                  "fontWeight": "600"
+                },
+                {
+                  "type": "icon_font",
+                  "id": "uZ3i0",
+                  "name": "editIcon2",
+                  "width": 20,
+                  "height": 20,
+                  "iconFontName": "pencil",
+                  "iconFontFamily": "lucide",
+                  "fill": "#6B7280"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "nhelg",
+              "name": "blocksList",
+              "width": "fill_container",
+              "layout": "vertical",
+              "gap": 10,
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "mQ2Gh",
+                  "name": "block1",
+                  "width": "fill_container",
+                  "fill": "#FFFFFF",
+                  "cornerRadius": 12,
+                  "stroke": {
+                    "thickness": 1,
+                    "fill": "#E5E7EB"
+                  },
+                  "gap": 12,
+                  "padding": 12,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "icon_font",
+                      "id": "lT4h9",
+                      "name": "dragA1",
+                      "width": 16,
+                      "height": 16,
+                      "iconFontName": "grip-vertical",
+                      "iconFontFamily": "lucide",
+                      "fill": "#D1D5DB"
+                    },
+                    {
+                      "type": "frame",
+                      "id": "efrsx",
+                      "name": "block1Img",
+                      "metadata": {
+                        "type": "unsplash",
+                        "username": "rafaelmaggion",
+                        "link": "https://unsplash.com/@rafaelmaggion",
+                        "author": "Rafael Maggion"
+                      },
+                      "clip": true,
+                      "width": 56,
+                      "height": 56,
+                      "fill": {
+                        "type": "image",
+                        "enabled": true,
+                        "url": "https://images.unsplash.com/photo-1692656125463-edadd68cd6b6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4NDM0ODN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3NjkyMTE2MzV8&ixlib=rb-4.1.0&q=80&w=1080",
+                        "mode": "fill"
+                      },
+                      "cornerRadius": 8
+                    },
+                    {
+                      "type": "frame",
+                      "id": "mJ3bm",
+                      "name": "block1Info",
+                      "width": "fill_container",
+                      "layout": "vertical",
+                      "gap": 4,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "rTmls",
+                          "name": "block1Title",
+                          "fill": "#1F2937",
+                          "content": "Paris \u00b7 5 Days",
+                          "fontFamily": "DM Sans",
+                          "fontSize": 15,
+                          "fontWeight": "600"
+                        },
+                        {
+                          "type": "text",
+                          "id": "IRjLx",
+                          "name": "block1Meta",
+                          "fill": "#6B7280",
+                          "fontFamily": "DM Sans",
+                          "fontSize": 12,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "8X4y9",
+                      "name": "block1Badge",
+                      "fill": "#F3F4F6",
+                      "cornerRadius": 6,
+                      "padding": [
+                        4,
+                        8
+                      ],
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "J6Loc",
+                          "name": "block1Status",
+                          "fill": "#6B7280",
+                          "content": "Planning",
+                          "fontFamily": "DM Sans",
+                          "fontSize": 11,
+                          "fontWeight": "600"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "ADKIp",
+                  "name": "connector1",
+                  "width": "fill_container",
+                  "gap": 8,
+                  "padding": [
+                    0,
+                    0,
+                    0,
+                    26
+                  ],
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "rectangle",
+                      "id": "WWZqI",
+                      "name": "connLine",
+                      "fill": "#E5E7EB",
+                      "width": 2,
+                      "height": 20
+                    },
+                    {
+                      "type": "text",
+                      "id": "ImwPq",
+                      "name": "connText",
+                      "fill": "#6B7280",
+                      "content": "\u2708\ufe0f 2 hr flight",
+                      "fontFamily": "DM Sans",
+                      "fontSize": 12,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "210nP",
+                  "name": "block2",
+                  "width": "fill_container",
+                  "fill": "#FFFFFF",
+                  "cornerRadius": 12,
+                  "stroke": {
+                    "thickness": 1,
+                    "fill": "#E5E7EB"
+                  },
+                  "gap": 12,
+                  "padding": 12,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "icon_font",
+                      "id": "XTNQh",
+                      "name": "dragA2",
+                      "width": 16,
+                      "height": 16,
+                      "iconFontName": "grip-vertical",
+                      "iconFontFamily": "lucide",
+                      "fill": "#D1D5DB"
+                    },
+                    {
+                      "type": "frame",
+                      "id": "1lRuw",
+                      "name": "block2Img",
+                      "metadata": {
+                        "type": "unsplash",
+                        "username": "romebaby",
+                        "link": "https://unsplash.com/@romebaby",
+                        "author": "David Edkins"
+                      },
+                      "clip": true,
+                      "width": 56,
+                      "height": 56,
+                      "fill": {
+                        "type": "image",
+                        "enabled": true,
+                        "url": "https://images.unsplash.com/photo-1566983688369-1e1f002b6976?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4NDM0ODN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3NjkyMTE2MzV8&ixlib=rb-4.1.0&q=80&w=1080",
+                        "mode": "fill"
+                      },
+                      "cornerRadius": 8
+                    },
+                    {
+                      "type": "frame",
+                      "id": "d3t1A",
+                      "name": "block2Info",
+                      "width": "fill_container",
+                      "layout": "vertical",
+                      "gap": 4,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "dZV2r",
+                          "name": "block2Title",
+                          "fill": "#1F2937",
+                          "content": "Rome \u00b7 4 Days",
+                          "fontFamily": "DM Sans",
+                          "fontSize": 15,
+                          "fontWeight": "600"
+                        },
+                        {
+                          "type": "text",
+                          "id": "Et2WL",
+                          "name": "block2Meta",
+                          "fill": "#6B7280",
+                          "fontFamily": "DM Sans",
+                          "fontSize": 12,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "icon_font",
+                      "id": "FAT1l",
+                      "name": "block2Arrow",
+                      "width": 18,
+                      "height": 18,
+                      "iconFontName": "chevron-right",
+                      "iconFontFamily": "lucide",
+                      "fill": "#9CA3AF"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "KSbBt",
+                  "name": "addBlockBtn",
+                  "width": "fill_container",
+                  "fill": "#F9FAFB",
+                  "cornerRadius": 12,
+                  "stroke": {
+                    "thickness": 1,
+                    "fill": "#E5E7EB"
+                  },
+                  "gap": 8,
+                  "padding": 12,
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "icon_font",
+                      "id": "87k90",
+                      "name": "addIcon",
+                      "width": 18,
+                      "height": 18,
+                      "iconFontName": "plus",
+                      "iconFontFamily": "lucide",
+                      "fill": "#6B7280"
+                    },
+                    {
+                      "type": "text",
+                      "id": "Mpw6W",
+                      "name": "addText",
+                      "fill": "#6B7280",
+                      "content": "Add another itinerary",
+                      "fontFamily": "DM Sans",
+                      "fontSize": 14,
+                      "fontWeight": "500"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "EwB32",
+      "name": "bottomNav",
+      "width": "fill_container",
+      "fill": "#FFFFFF",
+      "stroke": {
+        "thickness": {
+          "top": 1
+        },
+        "fill": "#E5E7EB"
+      },
+      "padding": [
+        12,
+        40,
+        28,
+        40
+      ],
+      "justifyContent": "space_between",
+      "children": [
+        {
+          "type": "frame",
+          "id": "2ZNs3",
+          "name": "nav1",
+          "layout": "vertical",
+          "gap": 4,
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "icon_font",
+              "id": "4D04g",
+              "name": "nav1Icon",
+              "width": 24,
+              "height": 24,
+              "iconFontName": "map",
+              "iconFontFamily": "lucide",
+              "fill": "#1F2937"
+            },
+            {
+              "type": "text",
+              "id": "GefMn",
+              "name": "nav1Text",
+              "fill": "#1F2937",
+              "content": "Trips",
+              "fontFamily": "DM Sans",
+              "fontSize": 10,
+              "fontWeight": "600"
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "HoqwS",
+          "name": "nav2",
+          "layout": "vertical",
+          "gap": 4,
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "icon_font",
+              "id": "vD5gG",
+              "name": "nav2Icon",
+              "width": 24,
+              "height": 24,
+              "iconFontName": "compass",
+              "iconFontFamily": "lucide",
+              "fill": "#9CA3AF"
+            },
+            {
+              "type": "text",
+              "id": "JRYIN",
+              "name": "nav2Text",
+              "fill": "#9CA3AF",
+              "content": "Explore",
+              "fontFamily": "DM Sans",
+              "fontSize": 10,
+              "fontWeight": "normal"
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "Ay1dT",
+          "name": "nav3",
+          "layout": "vertical",
+          "gap": 4,
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "icon_font",
+              "id": "0H8zU",
+              "name": "nav3Icon",
+              "width": 24,
+              "height": 24,
+              "iconFontName": "bookmark",
+              "iconFontFamily": "lucide",
+              "fill": "#9CA3AF"
+            },
+            {
+              "type": "text",
+              "id": "bpVAx",
+              "name": "nav3Text",
+              "fill": "#9CA3AF",
+              "content": "Saved",
+              "fontFamily": "DM Sans",
+              "fontSize": 10,
+              "fontWeight": "normal"
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "4Ku1n",
+          "name": "nav4",
+          "layout": "vertical",
+          "gap": 4,
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "icon_font",
+              "id": "q7oOI",
+              "name": "nav4Icon",
+              "width": 24,
+              "height": 24,
+              "iconFontName": "user",
+              "iconFontFamily": "lucide",
+              "fill": "#9CA3AF"
+            },
+            {
+              "type": "text",
+              "id": "CHgvG",
+              "name": "nav4Text",
+              "fill": "#9CA3AF",
+              "content": "Profile",
+              "fontFamily": "DM Sans",
+              "fontSize": 10,
+              "fontWeight": "normal"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,625 @@
+{
+  "type": "frame",
+  "id": "aYlBy",
+  "x": 4580,
+  "y": 2000,
+  "name": "Trips 5b. Itinerary Blocks - Scrolled",
+  "clip": true,
+  "width": 390,
+  "height": 844,
+  "fill": "#FFFFFF",
+  "cornerRadius": 40,
+  "layout": "vertical",
+  "children": [
+    {
+      "type": "frame",
+      "id": "qTw3Q",
+      "name": "itineraryContent",
+      "width": "fill_container",
+      "height": "fill_container",
+      "layout": "vertical",
+      "padding": [
+        60,
+        0,
+        0,
+        0
+      ],
+      "justifyContent": "space_between",
+      "children": [
+        {
+          "type": "frame",
+          "id": "hd0aA",
+          "name": "itineraryHeader",
+          "width": "fill_container",
+          "gap": 12,
+          "padding": [
+            0,
+            24
+          ],
+          "justifyContent": "space_between",
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "frame",
+              "id": "v2lrt",
+              "name": "headerLeft",
+              "gap": 12,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "i1GGV",
+                  "name": "itinBackBtn",
+                  "width": 24,
+                  "height": 24,
+                  "fill": "#FFFFFF",
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "icon_font",
+                      "id": "x47yE",
+                      "name": "itinBackIcon",
+                      "width": 20,
+                      "height": 20,
+                      "iconFontName": "arrow-left",
+                      "iconFontFamily": "lucide",
+                      "fill": "#1A1A1A"
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "id": "bNXmB",
+                  "name": "itinTitle",
+                  "fill": "#1A1A1A",
+                  "content": "Your Itinerary",
+                  "fontFamily": "DM Sans",
+                  "fontSize": 20,
+                  "fontWeight": "700"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "EGyZf",
+              "name": "totalDaysBadge",
+              "fill": "#F0F0F0",
+              "cornerRadius": 16,
+              "gap": 6,
+              "padding": [
+                6,
+                12
+              ],
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "x444d",
+                  "name": "totalDaysText",
+                  "fill": "#1A1A1A",
+                  "content": "19 days",
+                  "fontFamily": "DM Sans",
+                  "fontSize": 12,
+                  "fontWeight": "600"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "KaWSu",
+          "name": "cityBlocksSection",
+          "clip": true,
+          "width": "fill_container",
+          "height": "fill_container",
+          "layout": "vertical",
+          "gap": 10,
+          "padding": [
+            16,
+            24,
+            24,
+            24
+          ],
+          "children": [
+            {
+              "type": "text",
+              "id": "oKdOq",
+              "name": "itinSubtitle",
+              "fill": "#6B7280",
+              "content": "Drag to reorder cities and countries",
+              "fontFamily": "DM Sans",
+              "fontSize": 14,
+              "fontWeight": "normal"
+            },
+            {
+              "type": "frame",
+              "id": "TYuo6",
+              "name": "cityBlock3",
+              "width": "fill_container",
+              "fill": "#F9FAFB",
+              "cornerRadius": 14,
+              "stroke": {
+                "align": "inside",
+                "thickness": 1,
+                "fill": "#2A2A2E"
+              },
+              "gap": 14,
+              "padding": 14,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "icon_font",
+                  "id": "nHPl8",
+                  "name": "dragHandle3",
+                  "width": 18,
+                  "height": 18,
+                  "iconFontName": "grip-vertical",
+                  "iconFontFamily": "lucide",
+                  "fill": "#6B7280"
+                },
+                {
+                  "type": "frame",
+                  "id": "hIIc1",
+                  "name": "cityBlock3Content",
+                  "width": "fill_container",
+                  "layout": "vertical",
+                  "gap": 4,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "hogID",
+                      "name": "cityBlock3Name",
+                      "fill": "#1A1A1A",
+                      "content": "Osaka",
+                      "fontFamily": "DM Sans",
+                      "fontSize": 15,
+                      "fontWeight": "600"
+                    },
+                    {
+                      "type": "frame",
+                      "id": "TGt5H",
+                      "name": "daysRow3",
+                      "gap": 4,
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "ZS6et",
+                          "name": "cityBlock3Days",
+                          "fill": "#6B7280",
+                          "content": "3 days",
+                          "fontFamily": "DM Sans",
+                          "fontSize": 12,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "icon_font",
+                          "id": "wZETs",
+                          "name": "editDays3",
+                          "width": 12,
+                          "height": 12,
+                          "iconFontName": "pencil",
+                          "iconFontFamily": "lucide",
+                          "fill": "#9CA3AF"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "icon_font",
+                  "id": "7sqMm",
+                  "name": "cityBlock3Arrow",
+                  "width": 18,
+                  "height": 18,
+                  "iconFontName": "x",
+                  "iconFontFamily": "lucide",
+                  "fill": "#9CA3AF"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "a7P6L",
+              "name": "flightConnector",
+              "width": "fill_container",
+              "gap": 6,
+              "padding": [
+                4,
+                0,
+                4,
+                40
+              ],
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "6MuOR",
+                  "name": "flightLine",
+                  "width": 1,
+                  "height": 20,
+                  "fill": "#E5E7EB"
+                },
+                {
+                  "type": "frame",
+                  "id": "6KUpE",
+                  "name": "flightInfo",
+                  "gap": 6,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "icon_font",
+                      "id": "bWkg8",
+                      "name": "flightIcon",
+                      "width": 14,
+                      "height": 14,
+                      "iconFontName": "plane",
+                      "iconFontFamily": "lucide",
+                      "fill": "#9CA3AF"
+                    },
+                    {
+                      "type": "text",
+                      "id": "eiBSD",
+                      "name": "flightText",
+                      "fill": "#6B7280",
+                      "content": "2h 30m flight to Vietnam",
+                      "fontFamily": "DM Sans",
+                      "fontSize": 11,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "BBazt",
+              "name": "vietnamHeader",
+              "width": "fill_container",
+              "gap": 8,
+              "padding": [
+                4,
+                0,
+                0,
+                0
+              ],
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "icon_font",
+                  "id": "4LTmD",
+                  "name": "vietnamDragHandle",
+                  "width": 18,
+                  "height": 18,
+                  "iconFontName": "grip-vertical",
+                  "iconFontFamily": "lucide",
+                  "fill": "#6B7280"
+                },
+                {
+                  "type": "text",
+                  "id": "qlPM5",
+                  "name": "vietnamTitle",
+                  "fill": "#1A1A1A",
+                  "content": "\ud83c\uddfb\ud83c\uddf3 Vietnam",
+                  "fontFamily": "DM Sans",
+                  "fontSize": 16,
+                  "fontWeight": "600"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "qMnFe",
+              "name": "cityBlockHanoi",
+              "width": "fill_container",
+              "fill": "#F9FAFB",
+              "cornerRadius": 14,
+              "stroke": {
+                "align": "inside",
+                "thickness": 1,
+                "fill": "#2A2A2E"
+              },
+              "gap": 14,
+              "padding": 14,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "icon_font",
+                  "id": "S4fi1",
+                  "name": "hanoiDrag",
+                  "width": 18,
+                  "height": 18,
+                  "iconFontName": "grip-vertical",
+                  "iconFontFamily": "lucide",
+                  "fill": "#6B7280"
+                },
+                {
+                  "type": "frame",
+                  "id": "wvWvV",
+                  "name": "hanoiContent",
+                  "width": "fill_container",
+                  "layout": "vertical",
+                  "gap": 4,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "vuqH5",
+                      "name": "hanoiName",
+                      "fill": "#1A1A1A",
+                      "content": "Hanoi",
+                      "fontFamily": "DM Sans",
+                      "fontSize": 15,
+                      "fontWeight": "600"
+                    },
+                    {
+                      "type": "frame",
+                      "id": "9UWzs",
+                      "name": "daysRow4",
+                      "gap": 4,
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "6RmXd",
+                          "name": "hanoiDays",
+                          "fill": "#6B7280",
+                          "content": "4 days",
+                          "fontFamily": "DM Sans",
+                          "fontSize": 12,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "icon_font",
+                          "id": "VScZq",
+                          "name": "editDays4",
+                          "width": 12,
+                          "height": 12,
+                          "iconFontName": "pencil",
+                          "iconFontFamily": "lucide",
+                          "fill": "#9CA3AF"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "icon_font",
+                  "id": "DNcpt",
+                  "name": "hanoiArrow",
+                  "width": 18,
+                  "height": 18,
+                  "iconFontName": "x",
+                  "iconFontFamily": "lucide",
+                  "fill": "#9CA3AF"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "b3IOe",
+              "name": "connector3",
+              "width": "fill_container",
+              "gap": 6,
+              "padding": [
+                0,
+                0,
+                0,
+                40
+              ],
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "wvhIh",
+                  "name": "connLine3",
+                  "width": 1,
+                  "height": 20,
+                  "fill": "#E5E7EB"
+                },
+                {
+                  "type": "frame",
+                  "id": "yAksT",
+                  "name": "connInfo3",
+                  "gap": 6,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "icon_font",
+                      "id": "tJlVo",
+                      "name": "connIcon3",
+                      "width": 14,
+                      "height": 14,
+                      "iconFontName": "plane",
+                      "iconFontFamily": "lucide",
+                      "fill": "#9CA3AF"
+                    },
+                    {
+                      "type": "text",
+                      "id": "MwfO1",
+                      "name": "connText3",
+                      "fill": "#6B7280",
+                      "content": "1h 20m flight",
+                      "fontFamily": "DM Sans",
+                      "fontSize": 11,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "x3B1I",
+              "name": "cityBlockHCMC",
+              "width": "fill_container",
+              "fill": "#F9FAFB",
+              "cornerRadius": 14,
+              "stroke": {
+                "align": "inside",
+                "thickness": 1,
+                "fill": "#2A2A2E"
+              },
+              "gap": 14,
+              "padding": 14,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "icon_font",
+                  "id": "S0WR8",
+                  "name": "hcmcDrag",
+                  "width": 18,
+                  "height": 18,
+                  "iconFontName": "grip-vertical",
+                  "iconFontFamily": "lucide",
+                  "fill": "#6B7280"
+                },
+                {
+                  "type": "frame",
+                  "id": "WMEIY",
+                  "name": "hcmcContent",
+                  "width": "fill_container",
+                  "layout": "vertical",
+                  "gap": 4,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "ddDqn",
+                      "name": "hcmcName",
+                      "fill": "#1A1A1A",
+                      "content": "Ho Chi Minh City",
+                      "fontFamily": "DM Sans",
+                      "fontSize": 15,
+                      "fontWeight": "600"
+                    },
+                    {
+                      "type": "frame",
+                      "id": "Wj891",
+                      "name": "daysRow5",
+                      "gap": 4,
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "HrFTN",
+                          "name": "hcmcDays",
+                          "fill": "#6B7280",
+                          "content": "3 days",
+                          "fontFamily": "DM Sans",
+                          "fontSize": 12,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "icon_font",
+                          "id": "kqiIu",
+                          "name": "editDays5",
+                          "width": 12,
+                          "height": 12,
+                          "iconFontName": "pencil",
+                          "iconFontFamily": "lucide",
+                          "fill": "#9CA3AF"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "icon_font",
+                  "id": "LyeBr",
+                  "name": "hcmcArrow",
+                  "width": 18,
+                  "height": 18,
+                  "iconFontName": "x",
+                  "iconFontFamily": "lucide",
+                  "fill": "#9CA3AF"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "0PipF",
+              "name": "addCityBtn",
+              "width": "fill_container",
+              "fill": "transparent",
+              "cornerRadius": 14,
+              "stroke": {
+                "thickness": 1,
+                "fill": "#E5E7EB"
+              },
+              "gap": 8,
+              "padding": 14,
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "icon_font",
+                  "id": "hfPYs",
+                  "name": "addCityIcon2",
+                  "width": 18,
+                  "height": 18,
+                  "iconFontName": "plus",
+                  "iconFontFamily": "lucide",
+                  "fill": "#9CA3AF"
+                },
+                {
+                  "type": "text",
+                  "id": "98Vzu",
+                  "name": "addCityText2",
+                  "fill": "#6B7280",
+                  "content": "Add city",
+                  "fontFamily": "DM Sans",
+                  "fontSize": 14,
+                  "fontWeight": "500"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "rVqQm",
+          "name": "itinBottomSection",
+          "width": "fill_container",
+          "gap": 12,
+          "padding": [
+            0,
+            24,
+            40,
+            24
+          ],
+          "children": [
+            {
+              "type": "frame",
+              "id": "fSgNO",
+              "name": "saveItinBtn",
+              "width": "fill_container",
+              "height": 52,
+              "fill": "#1A1A1A",
+              "cornerRadius": 16,
+              "stroke": {
+                "thickness": 2,
+                "fill": "#1A1A1A"
+              },
+              "gap": 8,
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "3LOhG",
+                  "name": "saveBtnText",
+                  "fill": "#FFFFFF",
+                  "content": "Create My Trip",
+                  "fontFamily": "DM Sans",
+                  "fontSize": 16,
+                  "fontWeight": "600"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -4,7 +4,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:trippified/core/constants/app_colors.dart';
 import 'package:trippified/core/constants/app_spacing.dart';
 
-/// Trippified theme configuration
+/// Trippified theme configuration - DM Sans typography
 abstract final class AppTheme {
   static ThemeData get light => ThemeData(
     useMaterial3: true,
@@ -19,12 +19,14 @@ abstract final class AppTheme {
     cardTheme: _cardTheme,
     chipTheme: _chipTheme,
     bottomNavigationBarTheme: _bottomNavigationBarTheme,
+    floatingActionButtonTheme: _floatingActionButtonTheme,
     dividerTheme: _dividerTheme,
     scaffoldBackgroundColor: AppColors.background,
   );
 
   static ColorScheme get _lightColorScheme => const ColorScheme.light(
     primary: AppColors.primary,
+    onPrimary: AppColors.textOnPrimary,
     primaryContainer: AppColors.primaryLight,
     onPrimaryContainer: AppColors.textPrimary,
     secondary: AppColors.secondary,
@@ -32,6 +34,8 @@ abstract final class AppTheme {
     secondaryContainer: AppColors.secondaryLight,
     onSecondaryContainer: AppColors.textPrimary,
     tertiary: AppColors.accent,
+    onTertiary: AppColors.textOnAccent,
+    surface: AppColors.surface,
     onSurface: AppColors.textPrimary,
     surfaceContainerHighest: AppColors.surfaceVariant,
     error: AppColors.error,
@@ -39,85 +43,97 @@ abstract final class AppTheme {
     outlineVariant: AppColors.borderLight,
   );
 
-  static TextTheme get _textTheme => GoogleFonts.interTextTheme().copyWith(
-    displayLarge: GoogleFonts.inter(
+  static TextTheme get _textTheme => GoogleFonts.dmSansTextTheme().copyWith(
+    displayLarge: GoogleFonts.dmSans(
       fontSize: 32,
-      fontWeight: FontWeight.bold,
+      fontWeight: FontWeight.w700,
       color: AppColors.textPrimary,
+      letterSpacing: -0.5,
     ),
-    displayMedium: GoogleFonts.inter(
+    displayMedium: GoogleFonts.dmSans(
       fontSize: 28,
-      fontWeight: FontWeight.bold,
+      fontWeight: FontWeight.w700,
       color: AppColors.textPrimary,
+      letterSpacing: -0.5,
     ),
-    displaySmall: GoogleFonts.inter(
+    displaySmall: GoogleFonts.dmSans(
       fontSize: 24,
-      fontWeight: FontWeight.bold,
+      fontWeight: FontWeight.w700,
       color: AppColors.textPrimary,
     ),
-    headlineMedium: GoogleFonts.inter(
+    headlineLarge: GoogleFonts.dmSans(
+      fontSize: 22,
+      fontWeight: FontWeight.w600,
+      color: AppColors.textPrimary,
+    ),
+    headlineMedium: GoogleFonts.dmSans(
       fontSize: 20,
       fontWeight: FontWeight.w600,
       color: AppColors.textPrimary,
     ),
-    headlineSmall: GoogleFonts.inter(
+    headlineSmall: GoogleFonts.dmSans(
       fontSize: 18,
       fontWeight: FontWeight.w600,
       color: AppColors.textPrimary,
     ),
-    titleLarge: GoogleFonts.inter(
+    titleLarge: GoogleFonts.dmSans(
       fontSize: 16,
       fontWeight: FontWeight.w600,
       color: AppColors.textPrimary,
     ),
-    titleMedium: GoogleFonts.inter(
+    titleMedium: GoogleFonts.dmSans(
       fontSize: 14,
       fontWeight: FontWeight.w600,
       color: AppColors.textPrimary,
     ),
-    titleSmall: GoogleFonts.inter(
+    titleSmall: GoogleFonts.dmSans(
       fontSize: 12,
       fontWeight: FontWeight.w600,
       color: AppColors.textPrimary,
     ),
-    bodyLarge: GoogleFonts.inter(
+    bodyLarge: GoogleFonts.dmSans(
       fontSize: 16,
-      fontWeight: FontWeight.normal,
+      fontWeight: FontWeight.w400,
       color: AppColors.textPrimary,
     ),
-    bodyMedium: GoogleFonts.inter(
+    bodyMedium: GoogleFonts.dmSans(
       fontSize: 14,
-      fontWeight: FontWeight.normal,
+      fontWeight: FontWeight.w400,
       color: AppColors.textPrimary,
     ),
-    bodySmall: GoogleFonts.inter(
+    bodySmall: GoogleFonts.dmSans(
       fontSize: 12,
-      fontWeight: FontWeight.normal,
+      fontWeight: FontWeight.w400,
       color: AppColors.textSecondary,
     ),
-    labelLarge: GoogleFonts.inter(
+    labelLarge: GoogleFonts.dmSans(
       fontSize: 14,
       fontWeight: FontWeight.w500,
       color: AppColors.textPrimary,
     ),
-    labelMedium: GoogleFonts.inter(
+    labelMedium: GoogleFonts.dmSans(
       fontSize: 12,
       fontWeight: FontWeight.w500,
       color: AppColors.textSecondary,
     ),
-    labelSmall: GoogleFonts.inter(
+    labelSmall: GoogleFonts.dmSans(
       fontSize: 10,
       fontWeight: FontWeight.w500,
       color: AppColors.textTertiary,
     ),
   );
 
-  static AppBarTheme get _appBarTheme => const AppBarTheme(
-    backgroundColor: AppColors.surface,
+  static AppBarTheme get _appBarTheme => AppBarTheme(
+    backgroundColor: AppColors.background,
     foregroundColor: AppColors.textPrimary,
     elevation: 0,
-    centerTitle: true,
-    scrolledUnderElevation: 1,
+    centerTitle: false,
+    scrolledUnderElevation: 0,
+    titleTextStyle: GoogleFonts.dmSans(
+      fontSize: 18,
+      fontWeight: FontWeight.w600,
+      color: AppColors.textPrimary,
+    ),
   );
 
   static ElevatedButtonThemeData get _elevatedButtonTheme =>
@@ -133,7 +149,7 @@ abstract final class AppTheme {
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(AppSpacing.radiusLg),
           ),
-          textStyle: GoogleFonts.inter(
+          textStyle: GoogleFonts.dmSans(
             fontSize: 16,
             fontWeight: FontWeight.w600,
           ),
@@ -148,11 +164,11 @@ abstract final class AppTheme {
             horizontal: AppSpacing.lg,
             vertical: AppSpacing.md,
           ),
-          side: const BorderSide(color: AppColors.primary),
+          side: const BorderSide(color: AppColors.border),
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(AppSpacing.radiusLg),
           ),
-          textStyle: GoogleFonts.inter(
+          textStyle: GoogleFonts.dmSans(
             fontSize: 16,
             fontWeight: FontWeight.w600,
           ),
@@ -166,34 +182,22 @@ abstract final class AppTheme {
         horizontal: AppSpacing.md,
         vertical: AppSpacing.sm,
       ),
-      textStyle: GoogleFonts.inter(fontSize: 14, fontWeight: FontWeight.w600),
+      textStyle: GoogleFonts.dmSans(fontSize: 14, fontWeight: FontWeight.w600),
     ),
   );
 
   static InputDecorationTheme get _inputDecorationTheme => InputDecorationTheme(
-    filled: true,
-    fillColor: AppColors.surfaceVariant,
-    border: OutlineInputBorder(
-      borderRadius: BorderRadius.circular(AppSpacing.radiusLg),
-      borderSide: BorderSide.none,
-    ),
-    enabledBorder: OutlineInputBorder(
-      borderRadius: BorderRadius.circular(AppSpacing.radiusLg),
-      borderSide: BorderSide.none,
-    ),
-    focusedBorder: OutlineInputBorder(
-      borderRadius: BorderRadius.circular(AppSpacing.radiusLg),
-      borderSide: const BorderSide(color: AppColors.primary, width: 2),
-    ),
-    errorBorder: OutlineInputBorder(
-      borderRadius: BorderRadius.circular(AppSpacing.radiusLg),
-      borderSide: const BorderSide(color: AppColors.error),
-    ),
-    contentPadding: const EdgeInsets.symmetric(
-      horizontal: AppSpacing.md,
-      vertical: AppSpacing.md,
-    ),
-    hintStyle: GoogleFonts.inter(fontSize: 14, color: AppColors.textTertiary),
+    filled: false,
+    fillColor: Colors.transparent,
+    border: InputBorder.none,
+    enabledBorder: InputBorder.none,
+    focusedBorder: InputBorder.none,
+    errorBorder: InputBorder.none,
+    disabledBorder: InputBorder.none,
+    focusedErrorBorder: InputBorder.none,
+    contentPadding: EdgeInsets.zero,
+    isDense: true,
+    hintStyle: GoogleFonts.dmSans(fontSize: 14, color: AppColors.textTertiary),
   );
 
   static CardThemeData get _cardTheme => CardThemeData(
@@ -201,16 +205,16 @@ abstract final class AppTheme {
     elevation: 0,
     shape: RoundedRectangleBorder(
       borderRadius: BorderRadius.circular(AppSpacing.radiusLg),
-      side: const BorderSide(color: AppColors.borderLight),
+      side: const BorderSide(color: AppColors.border),
     ),
     margin: EdgeInsets.zero,
   );
 
   static ChipThemeData get _chipTheme => ChipThemeData(
-    backgroundColor: AppColors.surfaceVariant,
-    selectedColor: AppColors.primaryLight,
+    backgroundColor: AppColors.surface,
+    selectedColor: AppColors.accent,
     disabledColor: AppColors.surfaceVariant,
-    labelStyle: GoogleFonts.inter(
+    labelStyle: GoogleFonts.dmSans(
       fontSize: 14,
       fontWeight: FontWeight.w500,
       color: AppColors.textPrimary,
@@ -221,20 +225,38 @@ abstract final class AppTheme {
     ),
     shape: RoundedRectangleBorder(
       borderRadius: BorderRadius.circular(AppSpacing.radiusFull),
+      side: const BorderSide(color: AppColors.border),
     ),
   );
 
   static BottomNavigationBarThemeData get _bottomNavigationBarTheme =>
-      const BottomNavigationBarThemeData(
-        backgroundColor: AppColors.surface,
+      BottomNavigationBarThemeData(
+        backgroundColor: AppColors.background,
         selectedItemColor: AppColors.primary,
         unselectedItemColor: AppColors.textTertiary,
         type: BottomNavigationBarType.fixed,
-        elevation: 8,
+        elevation: 0,
+        selectedLabelStyle: GoogleFonts.dmSans(
+          fontSize: 12,
+          fontWeight: FontWeight.w500,
+        ),
+        unselectedLabelStyle: GoogleFonts.dmSans(
+          fontSize: 12,
+          fontWeight: FontWeight.w400,
+        ),
+      );
+
+  static FloatingActionButtonThemeData get _floatingActionButtonTheme =>
+      const FloatingActionButtonThemeData(
+        backgroundColor: AppColors.accent,
+        foregroundColor: AppColors.textOnAccent,
+        elevation: 0,
+        highlightElevation: 0,
+        shape: CircleBorder(),
       );
 
   static DividerThemeData get _dividerTheme => const DividerThemeData(
-    color: AppColors.borderLight,
+    color: AppColors.border,
     thickness: 1,
     space: 1,
   );

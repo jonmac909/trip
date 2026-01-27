@@ -1,0 +1,664 @@
+{
+  "type": "frame",
+  "id": "SFfBe",
+  "x": 3260,
+  "y": 4000,
+  "name": "Explore 1c. Home - Itineraries (Scrolled)",
+  "clip": true,
+  "width": 390,
+  "height": 844,
+  "fill": "#FFFFFF",
+  "cornerRadius": 40,
+  "layout": "vertical",
+  "children": [
+    {
+      "type": "frame",
+      "id": "XJMyG",
+      "name": "exploreContent",
+      "width": "fill_container",
+      "height": "fill_container",
+      "layout": "vertical",
+      "justifyContent": "space_between",
+      "children": [
+        {
+          "type": "frame",
+          "id": "UIrn1",
+          "name": "exploreMain",
+          "width": "fill_container",
+          "layout": "vertical",
+          "gap": 24,
+          "padding": [
+            56,
+            20,
+            24,
+            20
+          ],
+          "children": [
+            {
+              "type": "frame",
+              "id": "BBoDk",
+              "name": "exploreSearch",
+              "width": "fill_container",
+              "height": 48,
+              "fill": "#F9FAFB",
+              "cornerRadius": 16,
+              "stroke": {
+                "thickness": 1,
+                "fill": "#E5E7EB"
+              },
+              "gap": 12,
+              "padding": [
+                0,
+                16
+              ],
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "icon_font",
+                  "id": "Iv9oM",
+                  "name": "searchIcon",
+                  "width": 20,
+                  "height": 20,
+                  "iconFontName": "search",
+                  "iconFontFamily": "lucide",
+                  "fill": "#9CA3AF"
+                },
+                {
+                  "type": "text",
+                  "id": "5EDEJ",
+                  "name": "searchText",
+                  "fill": "#9CA3AF",
+                  "content": "Search destinations...",
+                  "fontFamily": "DM Sans",
+                  "fontSize": 15,
+                  "fontWeight": "normal"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "3huJQ",
+              "name": "mainTabs",
+              "width": "fill_container",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "h9tat",
+                  "name": "tabDestinations",
+                  "width": "fill_container",
+                  "height": 44,
+                  "stroke": {
+                    "thickness": {
+                      "bottom": 1
+                    },
+                    "fill": "#E5E7EB"
+                  },
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "EeBX9",
+                      "name": "tabDestText",
+                      "fill": "#9CA3AF",
+                      "content": "Destinations",
+                      "fontFamily": "DM Sans",
+                      "fontSize": 15,
+                      "fontWeight": "500"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "vBGKP",
+                  "name": "tabItineraries",
+                  "width": "fill_container",
+                  "height": 44,
+                  "stroke": {
+                    "thickness": {
+                      "bottom": 2
+                    },
+                    "fill": "#1A1A1A"
+                  },
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "y3Tkz",
+                      "name": "tabItinText",
+                      "fill": "#1A1A1A",
+                      "content": "Itineraries",
+                      "fontFamily": "DM Sans",
+                      "fontSize": 15,
+                      "fontWeight": "600"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "ReudH",
+              "name": "beachSection",
+              "width": "fill_container",
+              "layout": "vertical",
+              "gap": 12,
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "gJbfZ",
+                  "name": "sectionHeader",
+                  "width": "fill_container",
+                  "justifyContent": "space_between",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "k4387",
+                      "name": "beachTitle",
+                      "fill": "#1A1A1A",
+                      "content": "Beach Getaways",
+                      "fontFamily": "DM Sans",
+                      "fontSize": 16,
+                      "fontWeight": "600"
+                    },
+                    {
+                      "type": "text",
+                      "id": "Pd53B",
+                      "name": "beachSeeAll",
+                      "fill": "#6B7280",
+                      "content": "See all",
+                      "fontFamily": "DM Sans",
+                      "fontSize": 14,
+                      "fontWeight": "500"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "wnTHg",
+                  "name": "cardRow",
+                  "gap": 12,
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "kRCUz",
+                      "name": "itinCard1",
+                      "metadata": {
+                        "type": "unsplash",
+                        "username": "seefromthesky",
+                        "link": "https://unsplash.com/@seefromthesky",
+                        "author": "Ishan @seefromthesky"
+                      },
+                      "clip": true,
+                      "width": 160,
+                      "height": 200,
+                      "fill": {
+                        "type": "image",
+                        "enabled": true,
+                        "url": "https://images.unsplash.com/photo-1491119981318-36a42d3f41e3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4NDM0ODN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3NjkxOTY2OTB8&ixlib=rb-4.1.0&q=80&w=1080",
+                        "mode": "fill"
+                      },
+                      "cornerRadius": 16,
+                      "layout": "vertical",
+                      "padding": 14,
+                      "justifyContent": "end",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "Ri7Nv",
+                          "name": "bCard1Title",
+                          "fill": "#FFFFFF",
+                          "content": "Maldives Escape",
+                          "fontFamily": "DM Sans",
+                          "fontSize": 15,
+                          "fontWeight": "600"
+                        },
+                        {
+                          "type": "text",
+                          "id": "bVcqz",
+                          "name": "bCard1Sub",
+                          "fill": "#FFFFFFcc",
+                          "content": "Maldives \u00b7 5 days",
+                          "fontFamily": "DM Sans",
+                          "fontSize": 12,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "dodDw",
+                      "name": "itinCard2",
+                      "metadata": {
+                        "type": "unsplash",
+                        "username": "stas_r",
+                        "link": "https://unsplash.com/@stas_r",
+                        "author": "Stanislav Rozhkov"
+                      },
+                      "clip": true,
+                      "width": 160,
+                      "height": 200,
+                      "fill": {
+                        "type": "image",
+                        "enabled": true,
+                        "url": "https://images.unsplash.com/photo-1651146220131-bc3c526af513?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4NDM0ODN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3NjkxOTY2OTF8&ixlib=rb-4.1.0&q=80&w=1080",
+                        "mode": "fill"
+                      },
+                      "cornerRadius": 16,
+                      "layout": "vertical",
+                      "padding": 14,
+                      "justifyContent": "end",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "Dqzo3",
+                          "name": "bCard2Title",
+                          "fill": "#FFFFFF",
+                          "content": "Phuket Paradise",
+                          "fontFamily": "DM Sans",
+                          "fontSize": 15,
+                          "fontWeight": "600"
+                        },
+                        {
+                          "type": "text",
+                          "id": "O2PHn",
+                          "name": "bCard2Sub",
+                          "fill": "#FFFFFFcc",
+                          "content": "Thailand \u00b7 7 days",
+                          "fontFamily": "DM Sans",
+                          "fontSize": 12,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "AumlS",
+                      "name": "itinCard3",
+                      "metadata": {
+                        "type": "unsplash",
+                        "username": "akshay_madivanan",
+                        "link": "https://unsplash.com/@akshay_madivanan",
+                        "author": "Akshay Madivanan"
+                      },
+                      "clip": true,
+                      "width": 160,
+                      "height": 200,
+                      "fill": {
+                        "type": "image",
+                        "enabled": true,
+                        "url": "https://images.unsplash.com/photo-1767733871937-092153f2fbd0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4NDM0ODN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3NjkxOTY2OTJ8&ixlib=rb-4.1.0&q=80&w=1080",
+                        "mode": "fill"
+                      },
+                      "cornerRadius": 16,
+                      "layout": "vertical",
+                      "padding": 14,
+                      "justifyContent": "end",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "A4wkB",
+                          "name": "bCard3Title",
+                          "fill": "#FFFFFF",
+                          "content": "Caribbean Cruise",
+                          "fontFamily": "DM Sans",
+                          "fontSize": 15,
+                          "fontWeight": "600"
+                        },
+                        {
+                          "type": "text",
+                          "id": "FCFxx",
+                          "name": "bCard3Sub",
+                          "fill": "#FFFFFFcc",
+                          "content": "Multi-country \u00b7 10 days",
+                          "fontFamily": "DM Sans",
+                          "fontSize": 12,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "2IKbA",
+              "name": "seasonalSection",
+              "width": "fill_container",
+              "layout": "vertical",
+              "gap": 12,
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "A9vw9",
+                  "name": "sectionHeader",
+                  "width": "fill_container",
+                  "justifyContent": "space_between",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "ftJHf",
+                      "name": "seasonalTitle",
+                      "fill": "#1A1A1A",
+                      "content": "Seasonal Escapes",
+                      "fontFamily": "DM Sans",
+                      "fontSize": 16,
+                      "fontWeight": "600"
+                    },
+                    {
+                      "type": "text",
+                      "id": "wl3UI",
+                      "name": "seasonalSeeAll",
+                      "fill": "#6B7280",
+                      "content": "See all",
+                      "fontFamily": "DM Sans",
+                      "fontSize": 14,
+                      "fontWeight": "500"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "TMRkr",
+                  "name": "cardRow",
+                  "gap": 12,
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "GRxqv",
+                      "name": "itinCard1",
+                      "metadata": {
+                        "type": "unsplash",
+                        "username": "tsuyoshikozu",
+                        "link": "https://unsplash.com/@tsuyoshikozu",
+                        "author": "Tsuyoshi Kozu"
+                      },
+                      "clip": true,
+                      "width": 160,
+                      "height": 200,
+                      "fill": {
+                        "type": "image",
+                        "enabled": true,
+                        "url": "https://images.unsplash.com/photo-1752644693674-183e1e40d9d8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4NDM0ODN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3NjkxOTY2OTl8&ixlib=rb-4.1.0&q=80&w=1080",
+                        "mode": "fill"
+                      },
+                      "cornerRadius": 16,
+                      "layout": "vertical",
+                      "padding": 14,
+                      "justifyContent": "end",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "8mVkH",
+                          "name": "sCard1Title",
+                          "fill": "#FFFFFF",
+                          "content": "Cherry Blossom",
+                          "fontFamily": "DM Sans",
+                          "fontSize": 15,
+                          "fontWeight": "600"
+                        },
+                        {
+                          "type": "text",
+                          "id": "zUeIr",
+                          "name": "sCard1Sub",
+                          "fill": "#FFFFFFcc",
+                          "content": "Japan \u00b7 10 days",
+                          "fontFamily": "DM Sans",
+                          "fontSize": 12,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "WYU5O",
+                      "name": "itinCard2",
+                      "metadata": {
+                        "type": "unsplash",
+                        "username": "r3dmax",
+                        "link": "https://unsplash.com/@r3dmax",
+                        "author": "Jonatan Pie"
+                      },
+                      "clip": true,
+                      "width": 160,
+                      "height": 200,
+                      "fill": {
+                        "type": "image",
+                        "enabled": true,
+                        "url": "https://images.unsplash.com/photo-1571751857110-4d580a33fa1a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4NDM0ODN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3NjkxOTY3MDF8&ixlib=rb-4.1.0&q=80&w=1080",
+                        "mode": "fill"
+                      },
+                      "cornerRadius": 16,
+                      "layout": "vertical",
+                      "padding": 14,
+                      "justifyContent": "end",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "ep2aM",
+                          "name": "sCard2Title",
+                          "fill": "#FFFFFF",
+                          "content": "Northern Lights",
+                          "fontFamily": "DM Sans",
+                          "fontSize": 15,
+                          "fontWeight": "600"
+                        },
+                        {
+                          "type": "text",
+                          "id": "LAyYP",
+                          "name": "sCard2Sub",
+                          "fill": "#FFFFFFcc",
+                          "content": "Iceland \u00b7 7 days",
+                          "fontFamily": "DM Sans",
+                          "fontSize": 12,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "PFXld",
+                      "name": "itinCard3",
+                      "metadata": {
+                        "type": "unsplash",
+                        "username": "vernezze",
+                        "link": "https://unsplash.com/@vernezze",
+                        "author": "Peter Vernezze"
+                      },
+                      "clip": true,
+                      "width": 160,
+                      "height": 200,
+                      "fill": {
+                        "type": "image",
+                        "enabled": true,
+                        "url": "https://images.unsplash.com/photo-1729981059843-e0bfeabd9497?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4NDM0ODN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3NjkxOTY3MDJ8&ixlib=rb-4.1.0&q=80&w=1080",
+                        "mode": "fill"
+                      },
+                      "cornerRadius": 16,
+                      "layout": "vertical",
+                      "padding": 14,
+                      "justifyContent": "end",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "dPVMU",
+                          "name": "sCard3Title",
+                          "fill": "#FFFFFF",
+                          "content": "Fall Foliage",
+                          "fontFamily": "DM Sans",
+                          "fontSize": 15,
+                          "fontWeight": "600"
+                        },
+                        {
+                          "type": "text",
+                          "id": "j9tyZ",
+                          "name": "sCard3Sub",
+                          "fill": "#FFFFFFcc",
+                          "content": "USA \u00b7 5 days",
+                          "fontFamily": "DM Sans",
+                          "fontSize": 12,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "WozyI",
+          "name": "exploreBottomNav",
+          "width": "fill_container",
+          "height": 90,
+          "fill": "#FFFFFF",
+          "stroke": {
+            "thickness": {
+              "top": 1
+            },
+            "fill": "#E5E7EB"
+          },
+          "padding": [
+            12,
+            24,
+            30,
+            24
+          ],
+          "justifyContent": "space_around",
+          "children": [
+            {
+              "type": "frame",
+              "id": "lYKEO",
+              "name": "navItem1",
+              "width": 60,
+              "layout": "vertical",
+              "gap": 4,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "icon_font",
+                  "id": "LcSzp",
+                  "name": "navIcon1",
+                  "width": 24,
+                  "height": 24,
+                  "iconFontName": "map",
+                  "iconFontFamily": "lucide",
+                  "fill": "#9CA3AF"
+                },
+                {
+                  "type": "text",
+                  "id": "Y5QkV",
+                  "name": "navLabel1",
+                  "fill": "#6B7280",
+                  "content": "Trips",
+                  "fontFamily": "DM Sans",
+                  "fontSize": 10,
+                  "fontWeight": "500"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "z8es0",
+              "name": "navItem2",
+              "width": 60,
+              "layout": "vertical",
+              "gap": 4,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "icon_font",
+                  "id": "ZBMvS",
+                  "name": "navIcon2",
+                  "width": 24,
+                  "height": 24,
+                  "iconFontName": "compass",
+                  "iconFontFamily": "lucide",
+                  "fill": "#1A1A1A"
+                },
+                {
+                  "type": "text",
+                  "id": "OTMap",
+                  "name": "navLabel2",
+                  "fill": "#1A1A1A",
+                  "content": "Explore",
+                  "fontFamily": "DM Sans",
+                  "fontSize": 10,
+                  "fontWeight": "600"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "BrWib",
+              "name": "navItem3",
+              "width": 60,
+              "layout": "vertical",
+              "gap": 4,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "icon_font",
+                  "id": "ytZ6W",
+                  "name": "navIcon3",
+                  "width": 24,
+                  "height": 24,
+                  "iconFontName": "bookmark",
+                  "iconFontFamily": "lucide",
+                  "fill": "#9CA3AF"
+                },
+                {
+                  "type": "text",
+                  "id": "zhWA2",
+                  "name": "navLabel3",
+                  "fill": "#6B7280",
+                  "content": "Saved",
+                  "fontFamily": "DM Sans",
+                  "fontSize": 10,
+                  "fontWeight": "500"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "H7caa",
+              "name": "navItem4",
+              "width": 60,
+              "layout": "vertical",
+              "gap": 4,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "icon_font",
+                  "id": "ryOQE",
+                  "name": "navIcon4",
+                  "width": 24,
+                  "height": 24,
+                  "iconFontName": "user",
+                  "iconFontFamily": "lucide",
+                  "fill": "#9CA3AF"
+                },
+                {
+                  "type": "text",
+                  "id": "YyAha",
+                  "name": "navLabel4",
+                  "fill": "#6B7280",
+                  "content": "Profile",
+                  "fontFamily": "DM Sans",
+                  "fontSize": 10,
+                  "fontWeight": "500"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

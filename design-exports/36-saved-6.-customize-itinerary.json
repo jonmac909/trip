@@ -1,0 +1,750 @@
+{
+  "type": "frame",
+  "id": "KNANz",
+  "x": 5020,
+  "y": 6238,
+  "name": "Saved 6. Customize Itinerary",
+  "clip": true,
+  "width": 390,
+  "height": 844,
+  "fill": "#FFFFFF",
+  "cornerRadius": 40,
+  "layout": "vertical",
+  "children": [
+    {
+      "type": "frame",
+      "id": "MyOq7",
+      "name": "content",
+      "width": "fill_container",
+      "height": "fill_container",
+      "layout": "vertical",
+      "children": [
+        {
+          "type": "frame",
+          "id": "L4m8N",
+          "name": "header",
+          "width": "fill_container",
+          "gap": 12,
+          "padding": [
+            56,
+            24,
+            16,
+            24
+          ],
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "frame",
+              "id": "THspm",
+              "name": "backBtn",
+              "width": 40,
+              "height": 40,
+              "fill": "#F3F4F6",
+              "cornerRadius": 20,
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "icon_font",
+                  "id": "IXINt",
+                  "name": "backIcon",
+                  "width": 20,
+                  "height": 20,
+                  "iconFontName": "arrow-left",
+                  "iconFontFamily": "lucide",
+                  "fill": "#1A1A1A"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "MzK9A",
+              "name": "headerText",
+              "width": "fill_container",
+              "layout": "vertical",
+              "gap": 2,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "XLtEu",
+                  "name": "headerTitle",
+                  "fill": "#1A1A1A",
+                  "content": "Customize Itinerary",
+                  "fontFamily": "DM Sans",
+                  "fontSize": 18,
+                  "fontWeight": "600"
+                },
+                {
+                  "type": "text",
+                  "id": "0N0Zm",
+                  "name": "headerSub",
+                  "fill": "#6B7280",
+                  "content": "5 places selected from Tokyo, Japan",
+                  "fontFamily": "DM Sans",
+                  "fontSize": 13,
+                  "fontWeight": "normal"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "SKP1N",
+          "name": "main",
+          "width": "fill_container",
+          "height": "fill_container",
+          "layout": "vertical",
+          "gap": 24,
+          "padding": 24,
+          "children": [
+            {
+              "type": "frame",
+              "id": "jPaOd",
+              "name": "nameSection",
+              "width": "fill_container",
+              "layout": "vertical",
+              "gap": 8,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "jYU4O",
+                  "name": "nameLabel",
+                  "fill": "#1A1A1A",
+                  "content": "Itinerary Name",
+                  "fontFamily": "DM Sans",
+                  "fontSize": 14,
+                  "fontWeight": "600"
+                },
+                {
+                  "type": "frame",
+                  "id": "y6nCA",
+                  "name": "nameInput",
+                  "width": "fill_container",
+                  "height": 48,
+                  "fill": "#F9FAFB",
+                  "cornerRadius": 12,
+                  "stroke": {
+                    "thickness": 1,
+                    "fill": "#E5E7EB"
+                  },
+                  "padding": [
+                    0,
+                    16
+                  ],
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "Mex1H",
+                      "name": "nameText",
+                      "fill": "#1A1A1A",
+                      "content": "Tokyo Weekend",
+                      "fontFamily": "DM Sans",
+                      "fontSize": 15,
+                      "fontWeight": "500"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "4NM3M",
+              "name": "placesSection",
+              "width": "fill_container",
+              "layout": "vertical",
+              "gap": 24,
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "XZDK7",
+                  "name": "durationSection",
+                  "width": "fill_container",
+                  "layout": "vertical",
+                  "gap": 8,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "ftP9W",
+                      "name": "durationLabel",
+                      "fill": "#1A1A1A",
+                      "content": "Duration",
+                      "fontFamily": "DM Sans",
+                      "fontSize": 14,
+                      "fontWeight": "600"
+                    },
+                    {
+                      "type": "frame",
+                      "id": "U3JO6",
+                      "name": "suggestionRow",
+                      "width": "fill_container",
+                      "fill": "#F0FDF4",
+                      "cornerRadius": 10,
+                      "gap": 8,
+                      "padding": [
+                        10,
+                        12
+                      ],
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "icon_font",
+                          "id": "WqWER",
+                          "name": "suggestionIcon",
+                          "width": 16,
+                          "height": 16,
+                          "iconFontName": "lightbulb",
+                          "iconFontFamily": "lucide",
+                          "fill": "#65A30D"
+                        },
+                        {
+                          "type": "text",
+                          "id": "vYXRv",
+                          "name": "suggestionText",
+                          "fill": "#65A30D",
+                          "content": "Based on 5 places, we suggest 2 days",
+                          "fontFamily": "DM Sans",
+                          "fontSize": 13,
+                          "fontWeight": "500"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "tJDJz",
+                      "name": "durationRow",
+                      "width": "fill_container",
+                      "layout": "vertical",
+                      "gap": 12,
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "mFssF",
+                          "name": "sliderRow",
+                          "width": "fill_container",
+                          "gap": 12,
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "vu1gy",
+                              "name": "minLabel",
+                              "fill": "#6B7280",
+                              "content": "1",
+                              "fontFamily": "DM Sans",
+                              "fontSize": 14,
+                              "fontWeight": "500"
+                            },
+                            {
+                              "type": "frame",
+                              "id": "lXBIO",
+                              "name": "sliderTrack",
+                              "width": "fill_container",
+                              "height": 6,
+                              "fill": "#E5E7EB",
+                              "cornerRadius": 3,
+                              "layout": "none",
+                              "children": [
+                                {
+                                  "type": "frame",
+                                  "id": "6gGfs",
+                                  "x": 0,
+                                  "y": 0,
+                                  "name": "sliderFill",
+                                  "width": 40,
+                                  "height": 6,
+                                  "fill": "#BFFF00",
+                                  "cornerRadius": 3
+                                },
+                                {
+                                  "type": "frame",
+                                  "id": "o66Nc",
+                                  "x": 28,
+                                  "y": -9,
+                                  "name": "sliderThumb",
+                                  "width": 24,
+                                  "height": 24,
+                                  "fill": "#BFFF00",
+                                  "cornerRadius": 12,
+                                  "stroke": {
+                                    "thickness": 3,
+                                    "fill": "#FFFFFF"
+                                  }
+                                }
+                              ]
+                            },
+                            {
+                              "type": "text",
+                              "id": "Gczj4",
+                              "name": "maxLabel",
+                              "fill": "#6B7280",
+                              "content": "14",
+                              "fontFamily": "DM Sans",
+                              "fontSize": 14,
+                              "fontWeight": "500"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
+                          "id": "dtbEE",
+                          "name": "valueRow",
+                          "width": "fill_container",
+                          "justifyContent": "center",
+                          "children": [
+                            {
+                              "type": "frame",
+                              "id": "HhjZe",
+                              "name": "valueDisplay",
+                              "fill": "#F9FAFB",
+                              "cornerRadius": 20,
+                              "gap": 4,
+                              "padding": [
+                                8,
+                                16
+                              ],
+                              "alignItems": "center",
+                              "children": [
+                                {
+                                  "type": "text",
+                                  "id": "FKpIe",
+                                  "name": "valueText",
+                                  "fill": "#1A1A1A",
+                                  "content": "2 days",
+                                  "fontFamily": "DM Sans",
+                                  "fontSize": 16,
+                                  "fontWeight": "600"
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "WBQvS",
+                  "name": "placesSection",
+                  "width": "fill_container",
+                  "layout": "vertical",
+                  "gap": 8,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "J7F41",
+                      "name": "placesLabel",
+                      "fill": "#1A1A1A",
+                      "content": "Selected Places",
+                      "fontFamily": "DM Sans",
+                      "fontSize": 14,
+                      "fontWeight": "600"
+                    },
+                    {
+                      "type": "frame",
+                      "id": "r4222",
+                      "name": "placesList",
+                      "width": "fill_container",
+                      "layout": "vertical",
+                      "gap": 8,
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "eJW6U",
+                          "name": "place1",
+                          "width": "fill_container",
+                          "fill": "#F9FAFB",
+                          "cornerRadius": 12,
+                          "gap": 12,
+                          "padding": 12,
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "frame",
+                              "id": "B8jsT",
+                              "name": "num1",
+                              "width": 24,
+                              "height": 24,
+                              "fill": "#F3F4F6",
+                              "cornerRadius": 12,
+                              "justifyContent": "center",
+                              "alignItems": "center",
+                              "children": [
+                                {
+                                  "type": "text",
+                                  "id": "qmMVd",
+                                  "name": "num1Text",
+                                  "fill": "#1A1A1A",
+                                  "content": "1",
+                                  "fontFamily": "DM Sans",
+                                  "fontSize": 12,
+                                  "fontWeight": "700"
+                                }
+                              ]
+                            },
+                            {
+                              "type": "frame",
+                              "id": "F0aH9",
+                              "name": "info1",
+                              "width": "fill_container",
+                              "layout": "vertical",
+                              "gap": 2,
+                              "children": [
+                                {
+                                  "type": "text",
+                                  "id": "fOEpz",
+                                  "name": "name1",
+                                  "fill": "#1A1A1A",
+                                  "content": "Ichiran Ramen",
+                                  "fontFamily": "DM Sans",
+                                  "fontSize": 14,
+                                  "fontWeight": "600"
+                                },
+                                {
+                                  "type": "text",
+                                  "id": "aij1j",
+                                  "name": "type1",
+                                  "fill": "#6B7280",
+                                  "content": "Restaurant \u00b7 Shibuya",
+                                  "fontFamily": "DM Sans",
+                                  "fontSize": 12,
+                                  "fontWeight": "normal"
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
+                          "id": "gKZaa",
+                          "name": "place2",
+                          "width": "fill_container",
+                          "fill": "#F9FAFB",
+                          "cornerRadius": 12,
+                          "gap": 12,
+                          "padding": 12,
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "frame",
+                              "id": "ENxGW",
+                              "name": "num2",
+                              "width": 24,
+                              "height": 24,
+                              "fill": "#F3F4F6",
+                              "cornerRadius": 12,
+                              "justifyContent": "center",
+                              "alignItems": "center",
+                              "children": [
+                                {
+                                  "type": "text",
+                                  "id": "nOOim",
+                                  "name": "num2Text",
+                                  "fill": "#1A1A1A",
+                                  "content": "2",
+                                  "fontFamily": "DM Sans",
+                                  "fontSize": 12,
+                                  "fontWeight": "700"
+                                }
+                              ]
+                            },
+                            {
+                              "type": "frame",
+                              "id": "6zbf9",
+                              "name": "info2",
+                              "width": "fill_container",
+                              "layout": "vertical",
+                              "gap": 2,
+                              "children": [
+                                {
+                                  "type": "text",
+                                  "id": "pR27K",
+                                  "name": "name2",
+                                  "fill": "#1A1A1A",
+                                  "content": "Senso-ji Temple",
+                                  "fontFamily": "DM Sans",
+                                  "fontSize": 14,
+                                  "fontWeight": "600"
+                                },
+                                {
+                                  "type": "text",
+                                  "id": "CHJvu",
+                                  "name": "type2",
+                                  "fill": "#6B7280",
+                                  "content": "Attraction \u00b7 Asakusa",
+                                  "fontFamily": "DM Sans",
+                                  "fontSize": 12,
+                                  "fontWeight": "normal"
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
+                          "id": "6AC0F",
+                          "name": "place3",
+                          "width": "fill_container",
+                          "fill": "#F9FAFB",
+                          "cornerRadius": 12,
+                          "gap": 12,
+                          "padding": 12,
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "frame",
+                              "id": "DUyho",
+                              "name": "num3",
+                              "width": 24,
+                              "height": 24,
+                              "fill": "#F3F4F6",
+                              "cornerRadius": 12,
+                              "justifyContent": "center",
+                              "alignItems": "center",
+                              "children": [
+                                {
+                                  "type": "text",
+                                  "id": "Rq9Ve",
+                                  "name": "num3Text",
+                                  "fill": "#1A1A1A",
+                                  "content": "3",
+                                  "fontFamily": "DM Sans",
+                                  "fontSize": 12,
+                                  "fontWeight": "700"
+                                }
+                              ]
+                            },
+                            {
+                              "type": "frame",
+                              "id": "g5k3e",
+                              "name": "info3",
+                              "width": "fill_container",
+                              "layout": "vertical",
+                              "gap": 2,
+                              "children": [
+                                {
+                                  "type": "text",
+                                  "id": "nXw37",
+                                  "name": "name3",
+                                  "fill": "#1A1A1A",
+                                  "content": "Shibuya Crossing",
+                                  "fontFamily": "DM Sans",
+                                  "fontSize": 14,
+                                  "fontWeight": "600"
+                                },
+                                {
+                                  "type": "text",
+                                  "id": "ztuGr",
+                                  "name": "type3",
+                                  "fill": "#6B7280",
+                                  "content": "Attraction \u00b7 Shibuya",
+                                  "fontFamily": "DM Sans",
+                                  "fontSize": 12,
+                                  "fontWeight": "normal"
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
+                          "id": "RZbCf",
+                          "name": "place4",
+                          "width": "fill_container",
+                          "fill": "#F9FAFB",
+                          "cornerRadius": 12,
+                          "gap": 12,
+                          "padding": 12,
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "frame",
+                              "id": "c0II4",
+                              "name": "num4",
+                              "width": 24,
+                              "height": 24,
+                              "fill": "#F3F4F6",
+                              "cornerRadius": 12,
+                              "justifyContent": "center",
+                              "alignItems": "center",
+                              "children": [
+                                {
+                                  "type": "text",
+                                  "id": "AVAkj",
+                                  "name": "num4Text",
+                                  "fill": "#1A1A1A",
+                                  "content": "4",
+                                  "fontFamily": "DM Sans",
+                                  "fontSize": 12,
+                                  "fontWeight": "700"
+                                }
+                              ]
+                            },
+                            {
+                              "type": "frame",
+                              "id": "C7xr2",
+                              "name": "info4",
+                              "width": "fill_container",
+                              "layout": "vertical",
+                              "gap": 2,
+                              "children": [
+                                {
+                                  "type": "text",
+                                  "id": "d3S68",
+                                  "name": "name4",
+                                  "fill": "#1A1A1A",
+                                  "content": "Tsukiji Outer Market",
+                                  "fontFamily": "DM Sans",
+                                  "fontSize": 14,
+                                  "fontWeight": "600"
+                                },
+                                {
+                                  "type": "text",
+                                  "id": "DCK6f",
+                                  "name": "type4",
+                                  "fill": "#6B7280",
+                                  "content": "Food Market \u00b7 Tsukiji",
+                                  "fontFamily": "DM Sans",
+                                  "fontSize": 12,
+                                  "fontWeight": "normal"
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
+                          "id": "ZpH83",
+                          "name": "place5",
+                          "width": "fill_container",
+                          "fill": "#F9FAFB",
+                          "cornerRadius": 12,
+                          "gap": 12,
+                          "padding": 12,
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "frame",
+                              "id": "qceic",
+                              "name": "num5",
+                              "width": 24,
+                              "height": 24,
+                              "fill": "#F3F4F6",
+                              "cornerRadius": 12,
+                              "justifyContent": "center",
+                              "alignItems": "center",
+                              "children": [
+                                {
+                                  "type": "text",
+                                  "id": "NogBP",
+                                  "name": "num5Text",
+                                  "fill": "#1A1A1A",
+                                  "content": "5",
+                                  "fontFamily": "DM Sans",
+                                  "fontSize": 12,
+                                  "fontWeight": "700"
+                                }
+                              ]
+                            },
+                            {
+                              "type": "frame",
+                              "id": "2Qufk",
+                              "name": "info5",
+                              "width": "fill_container",
+                              "layout": "vertical",
+                              "gap": 2,
+                              "children": [
+                                {
+                                  "type": "text",
+                                  "id": "XXNkG",
+                                  "name": "name5",
+                                  "fill": "#1A1A1A",
+                                  "content": "Meiji Shrine",
+                                  "fontFamily": "DM Sans",
+                                  "fontSize": 14,
+                                  "fontWeight": "600"
+                                },
+                                {
+                                  "type": "text",
+                                  "id": "tOwoI",
+                                  "name": "type5",
+                                  "fill": "#6B7280",
+                                  "content": "Shrine \u00b7 Harajuku",
+                                  "fontFamily": "DM Sans",
+                                  "fontSize": 12,
+                                  "fontWeight": "normal"
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "UwTQc",
+          "name": "footer",
+          "width": "fill_container",
+          "fill": "#FFFFFF",
+          "stroke": {
+            "thickness": {
+              "top": 1
+            },
+            "fill": "#E5E7EB"
+          },
+          "layout": "vertical",
+          "padding": [
+            16,
+            24,
+            40,
+            24
+          ],
+          "children": [
+            {
+              "type": "frame",
+              "id": "3Cp2A",
+              "name": "nextBtn",
+              "width": "fill_container",
+              "height": 52,
+              "fill": "#BFFF00",
+              "cornerRadius": 16,
+              "gap": 8,
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "lHFVj",
+                  "name": "nextText",
+                  "fill": "#1A1A1A",
+                  "content": "Continue",
+                  "fontFamily": "DM Sans",
+                  "fontSize": 15,
+                  "fontWeight": "600"
+                },
+                {
+                  "type": "icon_font",
+                  "id": "1XERn",
+                  "name": "nextIcon",
+                  "width": 20,
+                  "height": 20,
+                  "iconFontName": "arrow-right",
+                  "iconFontFamily": "lucide",
+                  "fill": "#1A1A1A"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

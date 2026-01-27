@@ -34,25 +34,53 @@ class _ItineraryBuilderScreenState extends State<ItineraryBuilderScreen>
   late TabController _tabController;
   late List<_DayItinerary> _days;
   int _selectedDayIndex = 0;
+  late DateTime _startDate;
+  late DateTime _endDate;
 
   @override
   void initState() {
     super.initState();
+    _startDate = widget.startDate;
+    _endDate = widget.endDate;
     _initializeDays();
     _tabController = TabController(length: 2, vsync: this);
   }
 
   void _initializeDays() {
-    final totalDays = widget.endDate.difference(widget.startDate).inDays + 1;
+    final totalDays = _endDate.difference(_startDate).inDays + 1;
     _days = List.generate(totalDays, (index) {
       return _DayItinerary(
         dayNumber: index + 1,
-        date: widget.startDate.add(Duration(days: index)),
+        date: _startDate.add(Duration(days: index)),
         activities: widget.routeIndex != null && widget.routeIndex != -1
             ? _getDemoActivities(index)
             : [],
       );
     });
+  }
+
+  Future<void> _pickDateRange() async {
+    final now = DateTime.now();
+    final earliest = _startDate.isBefore(DateTime(now.year, 1, 1))
+        ? DateTime(_startDate.year, 1, 1)
+        : DateTime(now.year, 1, 1);
+
+    final picked = await showDateRangePicker(
+      context: context,
+      firstDate: earliest,
+      lastDate: now.add(const Duration(days: 730)),
+      initialDateRange: DateTimeRange(
+        start: _startDate,
+        end: _endDate,
+      ),
+    );
+    if (picked != null) {
+      setState(() {
+        _startDate = picked.start;
+        _endDate = picked.end;
+        _initializeDays();
+      });
+    }
   }
 
   List<_ScheduledActivity> _getDemoActivities(int dayIndex) {
@@ -185,10 +213,11 @@ class _ItineraryBuilderScreenState extends State<ItineraryBuilderScreen>
           _OverviewTab(
             destination: widget.destination,
             country: widget.country,
-            startDate: widget.startDate,
-            endDate: widget.endDate,
+            startDate: _startDate,
+            endDate: _endDate,
             travelers: widget.travelers,
             days: _days,
+            onPickDates: _pickDateRange,
           ),
           _ItineraryTab(
             days: _days,
@@ -299,6 +328,7 @@ class _OverviewTab extends StatelessWidget {
     required this.endDate,
     required this.travelers,
     required this.days,
+    required this.onPickDates,
   });
 
   final String destination;
@@ -307,6 +337,7 @@ class _OverviewTab extends StatelessWidget {
   final DateTime endDate;
   final int travelers;
   final List<_DayItinerary> days;
+  final VoidCallback onPickDates;
 
   @override
   Widget build(BuildContext context) {
@@ -392,11 +423,14 @@ class _OverviewTab extends StatelessWidget {
         ),
         const SizedBox(height: AppSpacing.xl),
 
-        // Date range
-        _InfoRow(
-          icon: Icons.date_range,
-          title: 'Dates',
-          value: _formatDateRange(),
+        // Date range (tappable)
+        GestureDetector(
+          onTap: onPickDates,
+          child: _InfoRow(
+            icon: Icons.date_range,
+            title: 'Dates',
+            value: _formatDateRange(),
+          ),
         ),
         const Divider(height: AppSpacing.xl),
 

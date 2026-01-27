@@ -1,0 +1,479 @@
+{
+  "type": "frame",
+  "id": "IF7R0",
+  "x": 1500,
+  "y": 2000,
+  "name": "Trips 1. Home - Empty",
+  "clip": true,
+  "width": 390,
+  "height": 844,
+  "fill": "#FFFFFF",
+  "cornerRadius": 40,
+  "layout": "none",
+  "children": [
+    {
+      "type": "frame",
+      "id": "RQQDZ",
+      "x": 0,
+      "y": 0,
+      "name": "homeContent",
+      "width": 390,
+      "height": 844,
+      "layout": "vertical",
+      "justifyContent": "space_between",
+      "children": [
+        {
+          "type": "frame",
+          "id": "hAIh3",
+          "name": "homeMain",
+          "width": 390,
+          "layout": "vertical",
+          "gap": 24,
+          "padding": [
+            60,
+            24,
+            24,
+            24
+          ],
+          "children": [
+            {
+              "type": "frame",
+              "id": "40NRs",
+              "name": "homeHeader",
+              "width": "fill_container",
+              "justifyContent": "space_between",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "Lo6tt",
+                  "name": "homeHeaderLeft",
+                  "layout": "vertical",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "X5oBF",
+                      "name": "homeGreeting",
+                      "fill": "#1F2937",
+                      "content": "My Trips",
+                      "fontFamily": "DM Sans",
+                      "fontSize": 24,
+                      "fontWeight": "700"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "GLBwJ",
+              "name": "tabs",
+              "width": "fill_container",
+              "stroke": {
+                "thickness": {
+                  "bottom": 1
+                },
+                "fill": "#E5E7EB"
+              },
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "PFwYO",
+                  "name": "upcomingTab",
+                  "width": "fill_container",
+                  "height": 44,
+                  "stroke": {
+                    "thickness": {
+                      "bottom": 2
+                    },
+                    "fill": "#1A1A1A"
+                  },
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "DncK4",
+                      "name": "tabEmptyAText",
+                      "fill": "#1A1A1A",
+                      "content": "Upcoming",
+                      "fontFamily": "DM Sans",
+                      "fontSize": 15,
+                      "fontWeight": "600"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "QTqXp",
+                  "name": "draftsTab",
+                  "width": "fill_container",
+                  "height": 44,
+                  "stroke": {
+                    "thickness": {
+                      "bottom": 1
+                    },
+                    "fill": "#E5E7EB"
+                  },
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "YsLZ2",
+                      "name": "tabEmptyCText",
+                      "fill": "#9CA3AF",
+                      "content": "Drafts",
+                      "fontFamily": "DM Sans",
+                      "fontSize": 15,
+                      "fontWeight": "500"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "gVF6p",
+                  "name": "pastTab",
+                  "width": "fill_container",
+                  "height": 44,
+                  "stroke": {
+                    "thickness": {
+                      "bottom": 1
+                    },
+                    "fill": "#E5E7EB"
+                  },
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "ELX83",
+                      "name": "tabEmptyBText",
+                      "fill": "#9CA3AF",
+                      "content": "Past",
+                      "fontFamily": "DM Sans",
+                      "fontSize": 15,
+                      "fontWeight": "500"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "4rwJG",
+                  "name": "wishlistTab",
+                  "width": "fill_container",
+                  "height": 44,
+                  "stroke": {
+                    "thickness": {
+                      "bottom": 1
+                    },
+                    "fill": "#E5E7EB"
+                  },
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "gq5LH",
+                      "name": "wishText3",
+                      "fill": "#9CA3AF",
+                      "content": "Wishlist",
+                      "fontFamily": "DM Sans",
+                      "fontSize": 14,
+                      "fontWeight": "500"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "l8LCL",
+              "name": "tripsSection",
+              "width": "fill_container",
+              "height": 400,
+              "layout": "vertical",
+              "gap": 16,
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "t3adE",
+                  "name": "emptyIcon",
+                  "width": 80,
+                  "height": 80,
+                  "fill": "#F9FAFB",
+                  "cornerRadius": 40,
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "icon_font",
+                      "id": "JDgTi",
+                      "name": "emptyIconInner",
+                      "width": 32,
+                      "height": 32,
+                      "iconFontName": "luggage",
+                      "iconFontFamily": "lucide",
+                      "fill": "#9CA3AF"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "iSzDT",
+                  "name": "emptyTextContainer",
+                  "layout": "vertical",
+                  "gap": 8,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "Q9WUJ",
+                      "name": "emptyTitle",
+                      "fill": "#1A1A1A",
+                      "content": "No trips yet",
+                      "fontFamily": "DM Sans",
+                      "fontSize": 18,
+                      "fontWeight": "600"
+                    },
+                    {
+                      "type": "text",
+                      "id": "xHxCf",
+                      "name": "emptyDesc",
+                      "fill": "#6B7280",
+                      "content": "Start planning your next adventure",
+                      "textAlign": "center",
+                      "fontFamily": "DM Sans",
+                      "fontSize": 14,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "vVuvt",
+                  "name": "emptyActionBtn",
+                  "height": 48,
+                  "fill": "#BFFF00",
+                  "cornerRadius": 24,
+                  "gap": 8,
+                  "padding": [
+                    0,
+                    20
+                  ],
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "icon_font",
+                      "id": "38SOw",
+                      "name": "emptyBtnIcon",
+                      "width": 20,
+                      "height": 20,
+                      "iconFontName": "plus",
+                      "iconFontFamily": "lucide",
+                      "fill": "#1A1A1A"
+                    },
+                    {
+                      "type": "text",
+                      "id": "NghBo",
+                      "name": "emptyBtnText",
+                      "fill": "#1A1A1A",
+                      "content": "Plan a Trip",
+                      "fontFamily": "DM Sans",
+                      "fontSize": 15,
+                      "fontWeight": "600"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "A320Z",
+          "name": "bottomNav",
+          "width": 390,
+          "height": 90,
+          "fill": {
+            "type": "gradient",
+            "gradientType": "linear",
+            "enabled": true,
+            "rotation": 0,
+            "size": {
+              "height": 1
+            },
+            "colors": [
+              {
+                "color": "#FFFFFF00",
+                "position": 0
+              },
+              {
+                "color": "#FFFFFF",
+                "position": 0.3
+              }
+            ]
+          },
+          "padding": [
+            12,
+            24,
+            30,
+            24
+          ],
+          "justifyContent": "space_around",
+          "children": [
+            {
+              "type": "frame",
+              "id": "4gldE",
+              "name": "navItem1",
+              "width": 60,
+              "layout": "vertical",
+              "gap": 4,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "icon_font",
+                  "id": "lx2jQ",
+                  "name": "navIcon1",
+                  "width": 24,
+                  "height": 24,
+                  "iconFontName": "map",
+                  "iconFontFamily": "lucide",
+                  "fill": "#1A1A1A"
+                },
+                {
+                  "type": "text",
+                  "id": "njN6P",
+                  "name": "navLabel1",
+                  "fill": "#1A1A1A",
+                  "content": "Trips",
+                  "fontFamily": "DM Sans",
+                  "fontSize": 10,
+                  "fontWeight": "600"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "ohJrN",
+              "name": "navItem2",
+              "width": 60,
+              "layout": "vertical",
+              "gap": 4,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "icon_font",
+                  "id": "Z5ee3",
+                  "name": "navIcon2",
+                  "width": 24,
+                  "height": 24,
+                  "iconFontName": "compass",
+                  "iconFontFamily": "lucide",
+                  "fill": "#9CA3AF"
+                },
+                {
+                  "type": "text",
+                  "id": "LR08S",
+                  "name": "navLabel2",
+                  "fill": "#6B7280",
+                  "content": "Explore",
+                  "fontFamily": "DM Sans",
+                  "fontSize": 10,
+                  "fontWeight": "500"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "ocpKF",
+              "name": "navItem3",
+              "width": 60,
+              "layout": "vertical",
+              "gap": 4,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "icon_font",
+                  "id": "IgEMb",
+                  "name": "navIcon3",
+                  "width": 24,
+                  "height": 24,
+                  "iconFontName": "bookmark",
+                  "iconFontFamily": "lucide",
+                  "fill": "#9CA3AF"
+                },
+                {
+                  "type": "text",
+                  "id": "83PNn",
+                  "name": "navLabel3",
+                  "fill": "#6B7280",
+                  "content": "Saved",
+                  "fontFamily": "DM Sans",
+                  "fontSize": 10,
+                  "fontWeight": "500"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "ouYrt",
+              "name": "navItem4",
+              "width": 60,
+              "layout": "vertical",
+              "gap": 4,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "icon_font",
+                  "id": "gUa19",
+                  "name": "navIcon4",
+                  "width": 24,
+                  "height": 24,
+                  "iconFontName": "user",
+                  "iconFontFamily": "lucide",
+                  "fill": "#9CA3AF"
+                },
+                {
+                  "type": "text",
+                  "id": "gJJNm",
+                  "name": "navLabel4",
+                  "fill": "#6B7280",
+                  "content": "Profile",
+                  "fontFamily": "DM Sans",
+                  "fontSize": 10,
+                  "fontWeight": "500"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "wt0gm",
+      "x": 310,
+      "y": 710,
+      "name": "addBtn",
+      "fill": "#BFFF00",
+      "cornerRadius": 20,
+      "padding": 8,
+      "children": [
+        {
+          "type": "icon_font",
+          "id": "81xiN",
+          "name": "addIcon",
+          "width": 20,
+          "height": 20,
+          "iconFontName": "plus",
+          "iconFontFamily": "lucide",
+          "fill": "#1F2937"
+        }
+      ]
+    }
+  ]
+}

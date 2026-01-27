@@ -1,0 +1,785 @@
+{
+  "type": "frame",
+  "id": "7XXBb",
+  "x": 1940,
+  "y": 2000,
+  "name": "Trips 1. Home",
+  "clip": true,
+  "width": 390,
+  "height": 844,
+  "fill": "#FFFFFF",
+  "cornerRadius": 40,
+  "layout": "none",
+  "children": [
+    {
+      "type": "frame",
+      "id": "dpGON",
+      "x": 0,
+      "y": 0,
+      "name": "homeContent",
+      "width": 390,
+      "height": 844,
+      "layout": "vertical",
+      "justifyContent": "space_between",
+      "children": [
+        {
+          "type": "frame",
+          "id": "0t6pL",
+          "name": "homeMain",
+          "width": 390,
+          "layout": "vertical",
+          "gap": 24,
+          "padding": [
+            60,
+            24,
+            24,
+            24
+          ],
+          "children": [
+            {
+              "type": "frame",
+              "id": "t4XId",
+              "name": "homeHeader",
+              "width": "fill_container",
+              "justifyContent": "space_between",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "1jSpi",
+                  "name": "homeHeaderLeft",
+                  "layout": "vertical",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "sP1V0",
+                      "name": "homeGreeting",
+                      "fill": "#1F2937",
+                      "content": "My Trips",
+                      "fontFamily": "DM Sans",
+                      "fontSize": 24,
+                      "fontWeight": "700"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "wFiYd",
+              "name": "tabs",
+              "width": "fill_container",
+              "stroke": {
+                "thickness": {
+                  "bottom": 1
+                },
+                "fill": "#E5E7EB"
+              },
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "4CJgt",
+                  "name": "upcomingTab",
+                  "width": "fill_container",
+                  "height": 44,
+                  "stroke": {
+                    "thickness": {
+                      "bottom": 2
+                    },
+                    "fill": "#1A1A1A"
+                  },
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "0n1x5",
+                      "name": "tabHomeAText",
+                      "fill": "#1A1A1A",
+                      "content": "Upcoming",
+                      "fontFamily": "DM Sans",
+                      "fontSize": 15,
+                      "fontWeight": "600"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "gwIhf",
+                  "name": "draftsTab",
+                  "width": "fill_container",
+                  "height": 44,
+                  "stroke": {
+                    "thickness": {
+                      "bottom": 1
+                    },
+                    "fill": "#E5E7EB"
+                  },
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "2PE5G",
+                      "name": "tabHomeCText",
+                      "fill": "#9CA3AF",
+                      "content": "Drafts",
+                      "fontFamily": "DM Sans",
+                      "fontSize": 15,
+                      "fontWeight": "500"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "yCGyb",
+                  "name": "pastTab",
+                  "width": "fill_container",
+                  "height": 44,
+                  "stroke": {
+                    "thickness": {
+                      "bottom": 1
+                    },
+                    "fill": "#E5E7EB"
+                  },
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "s7fqZ",
+                      "name": "tabHomeBText",
+                      "fill": "#9CA3AF",
+                      "content": "Past",
+                      "fontFamily": "DM Sans",
+                      "fontSize": 15,
+                      "fontWeight": "500"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "aLnVN",
+                  "name": "wishlistTab",
+                  "width": "fill_container",
+                  "height": 44,
+                  "stroke": {
+                    "thickness": {
+                      "bottom": 1
+                    },
+                    "fill": "#E5E7EB"
+                  },
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "KY72l",
+                      "name": "wishText2",
+                      "fill": "#9CA3AF",
+                      "content": "Wishlist",
+                      "fontFamily": "DM Sans",
+                      "fontSize": 14,
+                      "fontWeight": "500"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "FxZqN",
+              "name": "tripsSection",
+              "width": "fill_container",
+              "layout": "vertical",
+              "gap": 16,
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "jb69J",
+                  "name": "tripCard1",
+                  "width": "fill_container",
+                  "height": 120,
+                  "fill": "#FFFFFF",
+                  "cornerRadius": [
+                    24,
+                    0,
+                    0,
+                    24
+                  ],
+                  "stroke": {
+                    "thickness": 1,
+                    "fill": "#E5E7EB"
+                  },
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "8ALgp",
+                      "name": "tripImg1",
+                      "metadata": {
+                        "type": "unsplash",
+                        "username": "rodlong",
+                        "link": "https://unsplash.com/@rodlong",
+                        "author": "Rod Long"
+                      },
+                      "width": 120,
+                      "height": "fill_container",
+                      "fill": {
+                        "type": "image",
+                        "enabled": true,
+                        "url": "https://images.unsplash.com/photo-1743515169286-7be1203c641a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4NDM0ODN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3NjkxMTM5MzZ8&ixlib=rb-4.1.0&q=80&w=1080",
+                        "mode": "fill"
+                      },
+                      "cornerRadius": [
+                        16,
+                        0,
+                        0,
+                        16
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "vc4pB",
+                      "name": "tripContent1",
+                      "width": "fill_container",
+                      "height": "fill_container",
+                      "layout": "vertical",
+                      "gap": 8,
+                      "padding": 14,
+                      "justifyContent": "center",
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "1Af9k",
+                          "name": "tripCard1Header",
+                          "width": "fill_container",
+                          "gap": 8,
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "frame",
+                              "id": "niB7I",
+                              "name": "tripCard1Info",
+                              "width": "fill_container",
+                              "layout": "vertical",
+                              "gap": 4,
+                              "children": [
+                                {
+                                  "type": "frame",
+                                  "id": "nG19d",
+                                  "name": "titleRow1",
+                                  "gap": 6,
+                                  "alignItems": "center",
+                                  "children": [
+                                    {
+                                      "type": "text",
+                                      "id": "iesyC",
+                                      "name": "tripCard1Title",
+                                      "fill": "#1A1A1A",
+                                      "content": "Japan Adventure",
+                                      "fontFamily": "DM Sans",
+                                      "fontSize": 14,
+                                      "fontWeight": "600"
+                                    },
+                                    {
+                                      "type": "icon_font",
+                                      "id": "hv2Ms",
+                                      "name": "editIcon1",
+                                      "width": 12,
+                                      "height": 12,
+                                      "iconFontName": "pencil",
+                                      "iconFontFamily": "lucide",
+                                      "fill": "#9CA3AF"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "text",
+                                  "id": "IgOZW",
+                                  "name": "tripCard1Dates",
+                                  "fill": "#6B7280",
+                                  "content": "Mar 15 - Mar 28",
+                                  "fontFamily": "DM Sans",
+                                  "fontSize": 12,
+                                  "fontWeight": "normal"
+                                },
+                                {
+                                  "type": "frame",
+                                  "id": "tKaF0",
+                                  "name": "tripCard1Badge",
+                                  "height": 24,
+                                  "fill": "#BFFF00",
+                                  "cornerRadius": 12,
+                                  "padding": [
+                                    0,
+                                    10
+                                  ],
+                                  "alignItems": "center",
+                                  "children": [
+                                    {
+                                      "type": "text",
+                                      "id": "b13qP",
+                                      "name": "tripCard1BadgeText",
+                                      "fill": "#1A1A1A",
+                                      "content": "In 52 days",
+                                      "fontFamily": "DM Sans",
+                                      "fontSize": 11,
+                                      "fontWeight": "600"
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
+                          "id": "EagBv",
+                          "name": "tripCard1Footer",
+                          "width": "fill_container",
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "frame",
+                              "id": "0ocW3",
+                              "name": "tripCard1Cities",
+                              "gap": 6,
+                              "alignItems": "center",
+                              "children": [
+                                {
+                                  "type": "text",
+                                  "id": "Y6AwL",
+                                  "name": "tripCard1City1",
+                                  "fill": "#1A1A1A",
+                                  "content": "Tokyo",
+                                  "fontFamily": "DM Sans",
+                                  "fontSize": 12,
+                                  "fontWeight": "500"
+                                },
+                                {
+                                  "type": "text",
+                                  "id": "4kX41",
+                                  "name": "tripCard1Dot",
+                                  "fill": "#9CA3AF",
+                                  "content": "\u2192",
+                                  "fontFamily": "DM Sans",
+                                  "fontSize": 12,
+                                  "fontWeight": "normal"
+                                },
+                                {
+                                  "type": "text",
+                                  "id": "IQObl",
+                                  "name": "tripCard1City2",
+                                  "fill": "#1A1A1A",
+                                  "content": "Kyoto",
+                                  "fontFamily": "DM Sans",
+                                  "fontSize": 12,
+                                  "fontWeight": "500"
+                                },
+                                {
+                                  "type": "text",
+                                  "id": "N7g9Q",
+                                  "name": "tripCard1Dot2",
+                                  "fill": "#9CA3AF",
+                                  "content": "\u2192",
+                                  "fontFamily": "DM Sans",
+                                  "fontSize": 12,
+                                  "fontWeight": "normal"
+                                },
+                                {
+                                  "type": "text",
+                                  "id": "5clmX",
+                                  "name": "tripCard1City3",
+                                  "fill": "#1A1A1A",
+                                  "content": "Osaka",
+                                  "fontFamily": "DM Sans",
+                                  "fontSize": 12,
+                                  "fontWeight": "500"
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "7xYx4",
+                  "name": "tripCard2",
+                  "width": "fill_container",
+                  "height": 120,
+                  "fill": "#FFFFFF",
+                  "cornerRadius": [
+                    24,
+                    0,
+                    0,
+                    24
+                  ],
+                  "stroke": {
+                    "thickness": 1,
+                    "fill": "#E5E7EB"
+                  },
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "F1SpK",
+                      "name": "tripImg2",
+                      "metadata": {
+                        "type": "unsplash",
+                        "username": "fuuj",
+                        "link": "https://unsplash.com/@fuuj",
+                        "author": "Fuu J"
+                      },
+                      "width": 120,
+                      "height": "fill_container",
+                      "fill": {
+                        "type": "image",
+                        "enabled": true,
+                        "url": "https://images.unsplash.com/photo-1756623586068-25f5e8fcfdfd?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4NDM0ODN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3NjkxMTM5Mzd8&ixlib=rb-4.1.0&q=80&w=1080",
+                        "mode": "fill"
+                      },
+                      "cornerRadius": [
+                        16,
+                        0,
+                        0,
+                        16
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "D5fFU",
+                      "name": "tripContent2",
+                      "width": "fill_container",
+                      "height": "fill_container",
+                      "layout": "vertical",
+                      "gap": 8,
+                      "padding": 14,
+                      "justifyContent": "center",
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "yiiOE",
+                          "name": "tripCard2Header",
+                          "width": "fill_container",
+                          "gap": 8,
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "frame",
+                              "id": "8Q6zx",
+                              "name": "tripCard2Info",
+                              "width": "fill_container",
+                              "layout": "vertical",
+                              "gap": 4,
+                              "children": [
+                                {
+                                  "type": "frame",
+                                  "id": "d6rLR",
+                                  "name": "titleRow2",
+                                  "gap": 6,
+                                  "alignItems": "center",
+                                  "children": [
+                                    {
+                                      "type": "text",
+                                      "id": "ffa96",
+                                      "name": "tripCard2Title",
+                                      "fill": "#1A1A1A",
+                                      "content": "Europe Trip",
+                                      "fontFamily": "DM Sans",
+                                      "fontSize": 14,
+                                      "fontWeight": "600"
+                                    },
+                                    {
+                                      "type": "icon_font",
+                                      "id": "8EKaU",
+                                      "name": "editIcon2",
+                                      "width": 12,
+                                      "height": 12,
+                                      "iconFontName": "pencil",
+                                      "iconFontFamily": "lucide",
+                                      "fill": "#9CA3AF"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "text",
+                                  "id": "97qGr",
+                                  "name": "tripCard2Dates",
+                                  "fill": "#6B7280",
+                                  "content": "Jun 1 - Jun 21",
+                                  "fontFamily": "DM Sans",
+                                  "fontSize": 12,
+                                  "fontWeight": "normal"
+                                },
+                                {
+                                  "type": "frame",
+                                  "id": "XbBmF",
+                                  "name": "tripCard2Badge",
+                                  "height": 24,
+                                  "fill": "#F3F4F6",
+                                  "cornerRadius": 12,
+                                  "padding": [
+                                    0,
+                                    10
+                                  ],
+                                  "alignItems": "center",
+                                  "children": [
+                                    {
+                                      "type": "text",
+                                      "id": "IMRzd",
+                                      "name": "tripCard2BadgeText",
+                                      "fill": "#6B7280",
+                                      "content": "In 98 days",
+                                      "fontFamily": "DM Sans",
+                                      "fontSize": 11,
+                                      "fontWeight": "500"
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
+                          "id": "px3LJ",
+                          "name": "tripCard2Footer",
+                          "width": "fill_container",
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "frame",
+                              "id": "BCBMm",
+                              "name": "tripCard2Cities",
+                              "gap": 6,
+                              "alignItems": "center",
+                              "children": [
+                                {
+                                  "type": "text",
+                                  "id": "ikvsJ",
+                                  "name": "tripCard2City1",
+                                  "fill": "#1A1A1A",
+                                  "content": "Paris",
+                                  "fontFamily": "DM Sans",
+                                  "fontSize": 12,
+                                  "fontWeight": "500"
+                                },
+                                {
+                                  "type": "text",
+                                  "id": "O8SqH",
+                                  "name": "tripCard2Dot",
+                                  "fill": "#9CA3AF",
+                                  "content": "\u2192",
+                                  "fontFamily": "DM Sans",
+                                  "fontSize": 12,
+                                  "fontWeight": "normal"
+                                },
+                                {
+                                  "type": "text",
+                                  "id": "Qkpzd",
+                                  "name": "tripCard2City2",
+                                  "fill": "#1A1A1A",
+                                  "content": "Rome",
+                                  "fontFamily": "DM Sans",
+                                  "fontSize": 12,
+                                  "fontWeight": "500"
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "Qcfgj",
+          "name": "bottomNav",
+          "width": 390,
+          "height": 90,
+          "fill": {
+            "type": "gradient",
+            "gradientType": "linear",
+            "enabled": true,
+            "rotation": 0,
+            "size": {
+              "height": 1
+            },
+            "colors": [
+              {
+                "color": "#FFFFFF00",
+                "position": 0
+              },
+              {
+                "color": "#FFFFFF",
+                "position": 0.3
+              }
+            ]
+          },
+          "padding": [
+            12,
+            24,
+            30,
+            24
+          ],
+          "justifyContent": "space_around",
+          "children": [
+            {
+              "type": "frame",
+              "id": "s1bz2",
+              "name": "navItem1",
+              "width": 60,
+              "layout": "vertical",
+              "gap": 4,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "icon_font",
+                  "id": "5kX4q",
+                  "name": "navIcon1",
+                  "width": 24,
+                  "height": 24,
+                  "iconFontName": "map",
+                  "iconFontFamily": "lucide",
+                  "fill": "#1A1A1A"
+                },
+                {
+                  "type": "text",
+                  "id": "gfIYF",
+                  "name": "navLabel1",
+                  "fill": "#1A1A1A",
+                  "content": "Trips",
+                  "fontFamily": "DM Sans",
+                  "fontSize": 10,
+                  "fontWeight": "600"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "lDS8q",
+              "name": "navItem2",
+              "width": 60,
+              "layout": "vertical",
+              "gap": 4,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "icon_font",
+                  "id": "BjmVH",
+                  "name": "navIcon2",
+                  "width": 24,
+                  "height": 24,
+                  "iconFontName": "compass",
+                  "iconFontFamily": "lucide",
+                  "fill": "#9CA3AF"
+                },
+                {
+                  "type": "text",
+                  "id": "JYDdi",
+                  "name": "navLabel2",
+                  "fill": "#6B7280",
+                  "content": "Explore",
+                  "fontFamily": "DM Sans",
+                  "fontSize": 10,
+                  "fontWeight": "500"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "aZJQ0",
+              "name": "navItem3",
+              "width": 60,
+              "layout": "vertical",
+              "gap": 4,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "icon_font",
+                  "id": "LCQfg",
+                  "name": "navIcon3",
+                  "width": 24,
+                  "height": 24,
+                  "iconFontName": "bookmark",
+                  "iconFontFamily": "lucide",
+                  "fill": "#9CA3AF"
+                },
+                {
+                  "type": "text",
+                  "id": "QkyzB",
+                  "name": "navLabel3",
+                  "fill": "#6B7280",
+                  "content": "Saved",
+                  "fontFamily": "DM Sans",
+                  "fontSize": 10,
+                  "fontWeight": "500"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "8GOGT",
+              "name": "navItem4",
+              "width": 60,
+              "layout": "vertical",
+              "gap": 4,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "icon_font",
+                  "id": "t3mtI",
+                  "name": "navIcon4",
+                  "width": 24,
+                  "height": 24,
+                  "iconFontName": "user",
+                  "iconFontFamily": "lucide",
+                  "fill": "#9CA3AF"
+                },
+                {
+                  "type": "text",
+                  "id": "IUbS1",
+                  "name": "navLabel4",
+                  "fill": "#6B7280",
+                  "content": "Profile",
+                  "fontFamily": "DM Sans",
+                  "fontSize": 10,
+                  "fontWeight": "500"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "EMOQa",
+      "x": 310,
+      "y": 710,
+      "name": "addBtn",
+      "fill": "#BFFF00",
+      "cornerRadius": 20,
+      "padding": 8,
+      "children": [
+        {
+          "type": "icon_font",
+          "id": "I418s",
+          "name": "addIcon",
+          "width": 20,
+          "height": 20,
+          "iconFontName": "plus",
+          "iconFontFamily": "lucide",
+          "fill": "#1F2937"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,541 @@
+{
+  "type": "frame",
+  "id": "TzDWQ",
+  "x": 2380,
+  "y": 7238,
+  "name": "Profile 1. Home",
+  "clip": true,
+  "width": 390,
+  "height": 844,
+  "fill": "#FFFFFF",
+  "cornerRadius": 40,
+  "layout": "vertical",
+  "children": [
+    {
+      "type": "frame",
+      "id": "Wcslq",
+      "name": "statusBar",
+      "width": "fill_container",
+      "height": 47,
+      "fill": "#FFFFFF"
+    },
+    {
+      "type": "frame",
+      "id": "xzZCl",
+      "name": "profileHeader",
+      "width": "fill_container",
+      "layout": "vertical",
+      "gap": 16,
+      "padding": [
+        24,
+        20
+      ],
+      "alignItems": "center",
+      "children": [
+        {
+          "type": "frame",
+          "id": "tHayF",
+          "name": "avatar",
+          "width": 80,
+          "height": 80,
+          "fill": "#F3F4F6",
+          "cornerRadius": 40,
+          "justifyContent": "center",
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "icon_font",
+              "id": "4A87h",
+              "name": "avatarIcon",
+              "width": 36,
+              "height": 36,
+              "iconFontName": "user",
+              "iconFontFamily": "lucide",
+              "fill": "#9CA3AF"
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "HoMX2",
+          "name": "nameSection",
+          "layout": "vertical",
+          "gap": 4,
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "text",
+              "id": "Q6m8H",
+              "name": "userName",
+              "fill": "#1A1A1A",
+              "content": "Jacqueline Travels",
+              "fontFamily": "DM Sans",
+              "fontSize": 20,
+              "fontWeight": "700"
+            },
+            {
+              "type": "text",
+              "id": "mtixb",
+              "name": "userEmail",
+              "fill": "#6B7280",
+              "content": "jackie@example.com",
+              "fontFamily": "DM Sans",
+              "fontSize": 14,
+              "fontWeight": "normal"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "hnHAY",
+      "name": "menuSection",
+      "width": "fill_container",
+      "layout": "vertical",
+      "gap": 4,
+      "padding": [
+        0,
+        20
+      ],
+      "children": [
+        {
+          "type": "frame",
+          "id": "sZvaR",
+          "name": "ticketsRow",
+          "width": "fill_container",
+          "fill": "#F0FDF4",
+          "cornerRadius": 12,
+          "gap": 12,
+          "padding": [
+            16,
+            0
+          ],
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "frame",
+              "id": "aIuoe",
+              "name": "ticketsIcon",
+              "width": 40,
+              "height": 40,
+              "fill": "#DCFCE7",
+              "cornerRadius": 10,
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "icon_font",
+                  "id": "9cjH8",
+                  "name": "ticketsIconInner",
+                  "width": 20,
+                  "height": 20,
+                  "iconFontName": "ticket",
+                  "iconFontFamily": "lucide",
+                  "fill": "#16A34A"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "id": "8OumO",
+              "name": "ticketsText",
+              "fill": "#1A1A1A",
+              "content": "My Tickets",
+              "fontFamily": "DM Sans",
+              "fontSize": 15,
+              "fontWeight": "600"
+            },
+            {
+              "type": "frame",
+              "id": "JMLNr",
+              "name": "ticketsSpacer",
+              "width": "fill_container",
+              "height": 1
+            },
+            {
+              "type": "frame",
+              "id": "aoB23",
+              "name": "ticketsBadge",
+              "fill": "#16A34A",
+              "cornerRadius": 10,
+              "padding": [
+                4,
+                8
+              ],
+              "children": [
+                {
+                  "type": "text",
+                  "id": "xDRj1",
+                  "name": "ticketsBadgeText",
+                  "fill": "#FFFFFF",
+                  "content": "3",
+                  "fontFamily": "DM Sans",
+                  "fontSize": 12,
+                  "fontWeight": "600"
+                }
+              ]
+            },
+            {
+              "type": "icon_font",
+              "id": "GPYkJ",
+              "name": "ticketsChevron",
+              "width": 20,
+              "height": 20,
+              "iconFontName": "chevron-right",
+              "iconFontFamily": "lucide",
+              "fill": "#9CA3AF"
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "hnh9O",
+          "name": "settingsRow",
+          "width": "fill_container",
+          "gap": 12,
+          "padding": [
+            16,
+            0
+          ],
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "frame",
+              "id": "eL07h",
+              "name": "settingsIcon",
+              "width": 40,
+              "height": 40,
+              "fill": "#F3F4F6",
+              "cornerRadius": 10,
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "icon_font",
+                  "id": "IxPmy",
+                  "name": "settingsIconInner",
+                  "width": 20,
+                  "height": 20,
+                  "iconFontName": "settings",
+                  "iconFontFamily": "lucide",
+                  "fill": "#6B7280"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "id": "SgfSM",
+              "name": "settingsText",
+              "fill": "#1A1A1A",
+              "content": "Settings",
+              "fontFamily": "DM Sans",
+              "fontSize": 15,
+              "fontWeight": "normal"
+            },
+            {
+              "type": "frame",
+              "id": "Ano5F",
+              "name": "settingsSpacer",
+              "width": "fill_container",
+              "height": 1
+            },
+            {
+              "type": "icon_font",
+              "id": "5ES0B",
+              "name": "settingsChevron",
+              "width": 20,
+              "height": 20,
+              "iconFontName": "chevron-right",
+              "iconFontFamily": "lucide",
+              "fill": "#9CA3AF"
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "3AO0y",
+          "name": "notifRow",
+          "width": "fill_container",
+          "gap": 12,
+          "padding": [
+            16,
+            0
+          ],
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "frame",
+              "id": "zgysv",
+              "name": "notifIcon",
+              "width": 40,
+              "height": 40,
+              "fill": "#F3F4F6",
+              "cornerRadius": 10,
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "icon_font",
+                  "id": "MvFe2",
+                  "name": "notifIconInner",
+                  "width": 20,
+                  "height": 20,
+                  "iconFontName": "bell",
+                  "iconFontFamily": "lucide",
+                  "fill": "#6B7280"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "id": "xKL0V",
+              "name": "notifText",
+              "fill": "#1A1A1A",
+              "content": "Notifications",
+              "fontFamily": "DM Sans",
+              "fontSize": 15,
+              "fontWeight": "normal"
+            },
+            {
+              "type": "frame",
+              "id": "uOOoD",
+              "name": "notifSpacer",
+              "width": "fill_container",
+              "height": 1
+            },
+            {
+              "type": "icon_font",
+              "id": "74cSu",
+              "name": "notifChevron",
+              "width": 20,
+              "height": 20,
+              "iconFontName": "chevron-right",
+              "iconFontFamily": "lucide",
+              "fill": "#9CA3AF"
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "8gIGW",
+          "name": "helpRow",
+          "width": "fill_container",
+          "gap": 12,
+          "padding": [
+            16,
+            0
+          ],
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "frame",
+              "id": "iSVmO",
+              "name": "helpIcon",
+              "width": 40,
+              "height": 40,
+              "fill": "#F3F4F6",
+              "cornerRadius": 10,
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "icon_font",
+                  "id": "dCxao",
+                  "name": "helpIconInner",
+                  "width": 20,
+                  "height": 20,
+                  "iconFontName": "life-buoy",
+                  "iconFontFamily": "lucide",
+                  "fill": "#6B7280"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "id": "krM4w",
+              "name": "helpText",
+              "fill": "#1A1A1A",
+              "content": "Help & Support",
+              "fontFamily": "DM Sans",
+              "fontSize": 15,
+              "fontWeight": "normal"
+            },
+            {
+              "type": "frame",
+              "id": "LD7yV",
+              "name": "helpSpacer",
+              "width": "fill_container",
+              "height": 1
+            },
+            {
+              "type": "icon_font",
+              "id": "5RGtu",
+              "name": "helpChevron",
+              "width": 20,
+              "height": 20,
+              "iconFontName": "chevron-right",
+              "iconFontFamily": "lucide",
+              "fill": "#9CA3AF"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "C9jGa",
+      "name": "spacerBottom",
+      "width": "fill_container",
+      "height": "fill_container"
+    },
+    {
+      "type": "frame",
+      "id": "qzZNt",
+      "name": "bottomNav",
+      "width": "fill_container",
+      "height": 83,
+      "fill": "#FFFFFF",
+      "stroke": {
+        "thickness": {
+          "top": 1
+        },
+        "fill": "#E5E7EB"
+      },
+      "padding": [
+        12,
+        0,
+        34,
+        0
+      ],
+      "justifyContent": "space_around",
+      "alignItems": "center",
+      "children": [
+        {
+          "type": "frame",
+          "id": "zCF8c",
+          "name": "navTrips",
+          "width": 64,
+          "layout": "vertical",
+          "gap": 4,
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "icon_font",
+              "id": "IKS9b",
+              "name": "navTripsIcon",
+              "width": 24,
+              "height": 24,
+              "iconFontName": "map",
+              "iconFontFamily": "lucide",
+              "fill": "#9CA3AF"
+            },
+            {
+              "type": "text",
+              "id": "HXfgm",
+              "name": "navTripsLabel",
+              "fill": "#9CA3AF",
+              "content": "Trips",
+              "fontFamily": "DM Sans",
+              "fontSize": 10,
+              "fontWeight": "normal"
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "HAXpR",
+          "name": "navExplore",
+          "width": 64,
+          "layout": "vertical",
+          "gap": 4,
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "icon_font",
+              "id": "z45yf",
+              "name": "navExploreIcon",
+              "width": 24,
+              "height": 24,
+              "iconFontName": "compass",
+              "iconFontFamily": "lucide",
+              "fill": "#9CA3AF"
+            },
+            {
+              "type": "text",
+              "id": "wVGdD",
+              "name": "navExploreLabel",
+              "fill": "#9CA3AF",
+              "content": "Explore",
+              "fontFamily": "DM Sans",
+              "fontSize": 10,
+              "fontWeight": "normal"
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "qXxVn",
+          "name": "navSaved",
+          "width": 64,
+          "layout": "vertical",
+          "gap": 4,
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "icon_font",
+              "id": "jTNMT",
+              "name": "navSavedIcon",
+              "width": 24,
+              "height": 24,
+              "iconFontName": "bookmark",
+              "iconFontFamily": "lucide",
+              "fill": "#9CA3AF"
+            },
+            {
+              "type": "text",
+              "id": "pyuXM",
+              "name": "navSavedLabel",
+              "fill": "#9CA3AF",
+              "content": "Saved",
+              "fontFamily": "DM Sans",
+              "fontSize": 10,
+              "fontWeight": "normal"
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "wqANo",
+          "name": "navProfile",
+          "width": 64,
+          "layout": "vertical",
+          "gap": 4,
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "icon_font",
+              "id": "9oNsM",
+              "name": "navProfileIcon",
+              "width": 24,
+              "height": 24,
+              "iconFontName": "user",
+              "iconFontFamily": "lucide",
+              "fill": "#1A1A1A"
+            },
+            {
+              "type": "text",
+              "id": "jeAXE",
+              "name": "navProfileLabel",
+              "fill": "#1A1A1A",
+              "content": "Profile",
+              "fontFamily": "DM Sans",
+              "fontSize": 10,
+              "fontWeight": "600"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

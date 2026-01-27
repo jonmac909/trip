@@ -1,0 +1,517 @@
+{
+  "type": "frame",
+  "id": "6nldY",
+  "x": 7660,
+  "y": 1000,
+  "name": "Trips 9a. Place Detail Modal",
+  "width": 390,
+  "height": 844,
+  "fill": "#00000080",
+  "cornerRadius": 40,
+  "layout": "vertical",
+  "justifyContent": "end",
+  "children": [
+    {
+      "type": "frame",
+      "id": "zSCZG",
+      "name": "bottomSheet",
+      "clip": true,
+      "width": "fill_container",
+      "height": 760,
+      "fill": "#FFFFFF",
+      "cornerRadius": [
+        24,
+        24,
+        40,
+        40
+      ],
+      "layout": "vertical",
+      "children": [
+        {
+          "type": "frame",
+          "id": "OjHDj",
+          "name": "handleBar",
+          "width": "fill_container",
+          "height": 24,
+          "fill": "#FFFFFF",
+          "justifyContent": "center",
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "rectangle",
+              "cornerRadius": 2,
+              "id": "mazdf",
+              "name": "handle9a",
+              "fill": "#D1D5DB",
+              "width": 40,
+              "height": 4
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "Xy1sK",
+          "name": "heroImg",
+          "metadata": {
+            "type": "unsplash",
+            "username": "gronemo",
+            "link": "https://unsplash.com/@gronemo",
+            "author": "Rom\u00e9o A."
+          },
+          "width": "fill_container",
+          "height": 200,
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "https://images.unsplash.com/photo-1627890352182-844e8d0355f2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4NDM0ODN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3NjkxNDA1NTZ8&ixlib=rb-4.1.0&q=80&w=1080",
+            "mode": "fill"
+          },
+          "cornerRadius": [
+            24,
+            24,
+            0,
+            0
+          ],
+          "layout": "vertical",
+          "children": [
+            {
+              "type": "frame",
+              "id": "ycx6E",
+              "name": "headerOverlay",
+              "width": "fill_container",
+              "height": 56,
+              "padding": [
+                12,
+                16,
+                0,
+                16
+              ],
+              "justifyContent": "end",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "5JwfR",
+                  "name": "closeBtn",
+                  "width": 36,
+                  "height": 36,
+                  "fill": "#FFFFFF",
+                  "cornerRadius": 18,
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "icon_font",
+                      "id": "ymg7F",
+                      "name": "closeIcon2",
+                      "width": 20,
+                      "height": 20,
+                      "iconFontName": "x",
+                      "iconFontFamily": "lucide",
+                      "fill": "#1A1A1A"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "6IWX1",
+          "name": "content",
+          "width": "fill_container",
+          "height": "fill_container",
+          "layout": "vertical",
+          "gap": 16,
+          "padding": [
+            20,
+            20,
+            40,
+            20
+          ],
+          "children": [
+            {
+              "type": "frame",
+              "id": "05TLp",
+              "name": "titleRow",
+              "width": "fill_container",
+              "gap": 12,
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "wd7yc",
+                  "name": "titleInfo",
+                  "width": "fill_container",
+                  "layout": "vertical",
+                  "gap": 6,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "AsaHu",
+                      "name": "placeName",
+                      "fill": "#1A1A1A",
+                      "content": "teamLab Borderless",
+                      "fontFamily": "DM Sans",
+                      "fontSize": 22,
+                      "fontWeight": "700"
+                    },
+                    {
+                      "type": "text",
+                      "id": "Ih64l",
+                      "name": "placeLocation",
+                      "fill": "#6B7280",
+                      "content": "Odaiba, Tokyo",
+                      "fontFamily": "DM Sans",
+                      "fontSize": 14,
+                      "fontWeight": "normal"
+                    },
+                    {
+                      "type": "frame",
+                      "id": "BcsPl",
+                      "name": "ratingRow",
+                      "gap": 6,
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "icon_font",
+                          "id": "ud3cf",
+                          "name": "starIcon",
+                          "width": 14,
+                          "height": 14,
+                          "iconFontName": "star",
+                          "iconFontFamily": "lucide",
+                          "fill": "#FBBF24"
+                        },
+                        {
+                          "type": "text",
+                          "id": "4J0Df",
+                          "name": "ratingText",
+                          "fill": "#6B7280",
+                          "content": "4.8 \u00b7 12,453 reviews",
+                          "fontFamily": "DM Sans",
+                          "fontSize": 13,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "ZhkyY",
+                  "name": "saveBtn",
+                  "width": 40,
+                  "height": 40,
+                  "fill": "#F3F4F6",
+                  "cornerRadius": 20,
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "icon_font",
+                      "id": "wfWgD",
+                      "name": "saveIcon",
+                      "width": 20,
+                      "height": 20,
+                      "iconFontName": "bookmark",
+                      "iconFontFamily": "lucide",
+                      "fill": "#6B7280"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "25vMo",
+              "name": "hoursSection",
+              "width": "fill_container",
+              "fill": "#F9FAFB",
+              "cornerRadius": 12,
+              "layout": "vertical",
+              "gap": 8,
+              "padding": 16,
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "HXbuz",
+                  "name": "hoursHeader",
+                  "width": "fill_container",
+                  "gap": 8,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "icon_font",
+                      "id": "2ywqT",
+                      "name": "clockIcon",
+                      "width": 16,
+                      "height": 16,
+                      "iconFontName": "clock-3",
+                      "iconFontFamily": "lucide",
+                      "fill": "#6B7280"
+                    },
+                    {
+                      "type": "text",
+                      "id": "pwdoQ",
+                      "name": "hoursTitle",
+                      "fill": "#1A1A1A",
+                      "content": "Opening Hours",
+                      "fontFamily": "DM Sans",
+                      "fontSize": 14,
+                      "fontWeight": "600"
+                    },
+                    {
+                      "type": "frame",
+                      "id": "Tq0a6",
+                      "name": "hoursSpacer",
+                      "width": "fill_container",
+                      "height": 1
+                    },
+                    {
+                      "type": "frame",
+                      "id": "kqVLh",
+                      "name": "openBadge",
+                      "fill": "#DCFCE7",
+                      "cornerRadius": 4,
+                      "padding": [
+                        4,
+                        8
+                      ],
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "ETKqe",
+                          "name": "openText",
+                          "fill": "#1A1A1A",
+                          "content": "Open now",
+                          "fontFamily": "DM Sans",
+                          "fontSize": 11,
+                          "fontWeight": "600"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "id": "rx6c9",
+                  "name": "hoursDetail",
+                  "fill": "#6B7280",
+                  "content": "10:00 AM \u2013 7:00 PM (Last entry 6:00 PM)",
+                  "fontFamily": "DM Sans",
+                  "fontSize": 13,
+                  "fontWeight": "normal"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "zRwzw",
+              "name": "ticketSection",
+              "width": "fill_container",
+              "fill": "#F9FAFB",
+              "cornerRadius": 12,
+              "gap": 12,
+              "padding": 16,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "H3vVt",
+                  "name": "ticketIcon",
+                  "width": 44,
+                  "height": 44,
+                  "fill": "#00000000",
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "icon_font",
+                      "id": "R1DeW",
+                      "name": "ticketIconInner",
+                      "width": 22,
+                      "height": 22,
+                      "iconFontName": "ticket",
+                      "iconFontFamily": "lucide",
+                      "fill": "#2E7D32"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "ugrgk",
+                  "name": "ticketInfo",
+                  "width": "fill_container",
+                  "layout": "vertical",
+                  "gap": 2,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "r3d9D",
+                      "name": "ticketTitle",
+                      "fill": "#1A1A1A",
+                      "content": "Your Ticket",
+                      "fontFamily": "DM Sans",
+                      "fontSize": 14,
+                      "fontWeight": "600"
+                    },
+                    {
+                      "type": "text",
+                      "id": "pLVIW",
+                      "name": "ticketDetail",
+                      "fill": "#6B7280",
+                      "content": "Feb 11 \u00b7 10:00 AM \u00b7 2 tickets",
+                      "fontFamily": "DM Sans",
+                      "fontSize": 12,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "SFcsH",
+                  "name": "viewBtn",
+                  "fill": "#1A1A1A",
+                  "cornerRadius": 8,
+                  "padding": [
+                    10,
+                    16
+                  ],
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "HKSaH",
+                      "name": "viewBtnText",
+                      "fill": "#FFFFFF",
+                      "content": "View",
+                      "fontFamily": "DM Sans",
+                      "fontSize": 13,
+                      "fontWeight": "600"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "urUe1",
+              "name": "aboutSection",
+              "width": "fill_container",
+              "layout": "vertical",
+              "gap": 8,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "9AcwZ",
+                  "name": "aboutTitle",
+                  "fill": "#1A1A1A",
+                  "content": "About",
+                  "fontFamily": "DM Sans",
+                  "fontSize": 16,
+                  "fontWeight": "600"
+                },
+                {
+                  "type": "text",
+                  "id": "LOZBR",
+                  "name": "aboutText",
+                  "fill": "#6B7280",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "teamLab Borderless is a world of artworks without boundaries, a museum without a map created by art collective teamLab. Artworks move out of rooms, communicate with other works, and immerse visitors in an interactive digital art experience.",
+                  "lineHeight": 1.5,
+                  "fontFamily": "DM Sans",
+                  "fontSize": 14,
+                  "fontWeight": "normal"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "YZ7ZZ",
+              "name": "tipsSection",
+              "width": "fill_container",
+              "layout": "vertical",
+              "gap": 8,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "L3hgl",
+                  "name": "tipsTitle",
+                  "fill": "#1A1A1A",
+                  "content": "Tips",
+                  "fontFamily": "DM Sans",
+                  "fontSize": 16,
+                  "fontWeight": "600"
+                },
+                {
+                  "type": "frame",
+                  "id": "nrxQv",
+                  "name": "tip1",
+                  "width": "fill_container",
+                  "gap": 8,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "uOrhe",
+                      "name": "tip1Bullet",
+                      "fill": "#6B7280",
+                      "content": "\u2022",
+                      "fontFamily": "DM Sans",
+                      "fontSize": 14,
+                      "fontWeight": "normal"
+                    },
+                    {
+                      "type": "text",
+                      "id": "500yM",
+                      "name": "tip1Text",
+                      "fill": "#6B7280",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "Wear comfortable shoes - you'll be walking a lot",
+                      "lineHeight": 1.4,
+                      "fontFamily": "DM Sans",
+                      "fontSize": 14,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "MDcuP",
+                  "name": "tip2",
+                  "width": "fill_container",
+                  "gap": 8,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "lACNK",
+                      "name": "tip2Bullet",
+                      "fill": "#6B7280",
+                      "content": "\u2022",
+                      "fontFamily": "DM Sans",
+                      "fontSize": 14,
+                      "fontWeight": "normal"
+                    },
+                    {
+                      "type": "text",
+                      "id": "OXh9l",
+                      "name": "tip2Text",
+                      "fill": "#6B7280",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "Book tickets in advance - sells out quickly",
+                      "lineHeight": 1.4,
+                      "fontFamily": "DM Sans",
+                      "fontSize": 14,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

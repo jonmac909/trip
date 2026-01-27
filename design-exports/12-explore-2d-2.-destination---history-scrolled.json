@@ -1,0 +1,589 @@
+{
+  "type": "frame",
+  "id": "Evuq2",
+  "x": 7220,
+  "y": 4000,
+  "name": "Explore 2d-2. Destination - History Scrolled",
+  "clip": true,
+  "width": 390,
+  "height": 844,
+  "fill": "#FFFFFF",
+  "cornerRadius": 40,
+  "layout": "vertical",
+  "children": [
+    {
+      "type": "frame",
+      "id": "FUZyM",
+      "name": "destDetailContent",
+      "width": "fill_container",
+      "height": "fill_container",
+      "layout": "vertical",
+      "justifyContent": "space_between",
+      "children": [
+        {
+          "type": "frame",
+          "id": "L8Kq1",
+          "name": "destDetailMain",
+          "width": "fill_container",
+          "height": "fill_container",
+          "layout": "vertical",
+          "children": [
+            {
+              "type": "frame",
+              "id": "ID6oP",
+              "name": "destHero",
+              "metadata": {
+                "type": "unsplash",
+                "username": "hatalife",
+                "link": "https://unsplash.com/@hatalife",
+                "author": "Hata Life"
+              },
+              "width": "fill_container",
+              "height": 220,
+              "fill": {
+                "type": "image",
+                "enabled": true,
+                "url": "https://images.unsplash.com/photo-1768746845614-e757e075007b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4NDM0ODN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3NjkyNzM4MjZ8&ixlib=rb-4.1.0&q=80&w=1080",
+                "mode": "fill"
+              },
+              "layout": "vertical",
+              "padding": [
+                20,
+                24
+              ],
+              "justifyContent": "space_between",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "GeRXO",
+                  "name": "backBtn",
+                  "width": 36,
+                  "height": 36,
+                  "fill": "#00000033",
+                  "cornerRadius": 18,
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "icon_font",
+                      "id": "ogZ6q",
+                      "name": "backIcon",
+                      "width": 20,
+                      "height": 20,
+                      "iconFontName": "arrow-left",
+                      "iconFontFamily": "lucide",
+                      "fill": "#FFFFFF"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "m5PlQ",
+                  "name": "heroText",
+                  "layout": "vertical",
+                  "gap": 4,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "XwJys",
+                      "name": "heroTitle",
+                      "fill": "#FFFFFF",
+                      "content": "Thailand",
+                      "fontFamily": "DM Sans",
+                      "fontSize": 32,
+                      "fontWeight": "700"
+                    },
+                    {
+                      "type": "text",
+                      "id": "IVXCk",
+                      "name": "thai7",
+                      "fill": "#FFFFFFcc",
+                      "content": "\u0e02\u0e2d\u0e1a\u0e04\u0e38\u0e13\u0e04\u0e23\u0e31\u0e1a/\u0e04\u0e48\u0e30 \u00b7 \"khob khun krap/ka\"",
+                      "fontFamily": "DM Sans",
+                      "fontSize": 14,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "mpckw",
+              "name": "destBody",
+              "clip": true,
+              "width": "fill_container",
+              "height": "fill_container",
+              "layout": "vertical",
+              "padding": [
+                16,
+                0,
+                0,
+                0
+              ],
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "YifDv",
+                  "name": "tabBar",
+                  "width": "fill_container",
+                  "stroke": {
+                    "thickness": {
+                      "bottom": 1
+                    },
+                    "fill": "#E5E7EB"
+                  },
+                  "padding": [
+                    0,
+                    24
+                  ],
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "zzT1I",
+                      "name": "tabOverview",
+                      "stroke": {
+                        "thickness": 0,
+                        "fill": "#1A1A1A"
+                      },
+                      "padding": [
+                        12,
+                        16
+                      ],
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "mqMJj",
+                          "name": "tab1Text",
+                          "fill": "#6B7280",
+                          "content": "Overview",
+                          "fontFamily": "DM Sans",
+                          "fontSize": 14,
+                          "fontWeight": "500"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "IIEVU",
+                      "name": "tabCities",
+                      "padding": [
+                        12,
+                        16
+                      ],
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "UdxvD",
+                          "name": "tab2Text",
+                          "fill": "#6B7280",
+                          "content": "Cities",
+                          "fontFamily": "DM Sans",
+                          "fontSize": 14,
+                          "fontWeight": "500"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "Nzi2A",
+                      "name": "tabItineraries",
+                      "padding": [
+                        12,
+                        16
+                      ],
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "CLCxc",
+                          "name": "tab3Text",
+                          "fill": "#6B7280",
+                          "content": "Itineraries",
+                          "fontFamily": "DM Sans",
+                          "fontSize": 14,
+                          "fontWeight": "500"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "4Fy3S",
+                      "name": "tabHistory",
+                      "stroke": {
+                        "thickness": {
+                          "bottom": 2
+                        },
+                        "fill": "#1A1A1A"
+                      },
+                      "padding": [
+                        12,
+                        16
+                      ],
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "0vqwn",
+                          "name": "histTabText",
+                          "fill": "#1A1A1A",
+                          "content": "History",
+                          "fontFamily": "DM Sans",
+                          "fontSize": 14,
+                          "fontWeight": "600"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "4x2Uj",
+                  "name": "tabContent",
+                  "clip": true,
+                  "width": "fill_container",
+                  "height": "fill_container",
+                  "layout": "vertical",
+                  "gap": 20,
+                  "padding": [
+                    20,
+                    24
+                  ],
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "CK4GN",
+                      "name": "regionHistory",
+                      "width": "fill_container",
+                      "layout": "vertical",
+                      "gap": 12,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "JV6my",
+                          "name": "regionTitle1",
+                          "fill": "#1A1A1A",
+                          "content": "The Northern Kingdoms",
+                          "fontFamily": "DM Sans",
+                          "fontSize": 18,
+                          "fontWeight": "700"
+                        },
+                        {
+                          "type": "frame",
+                          "id": "XjmqS",
+                          "name": "regionImg1",
+                          "metadata": {
+                            "type": "unsplash",
+                            "username": "elslavina",
+                            "link": "https://unsplash.com/@elslavina",
+                            "author": "Els Lavina"
+                          },
+                          "width": "fill_container",
+                          "height": 140,
+                          "fill": {
+                            "type": "image",
+                            "enabled": true,
+                            "url": "https://images.unsplash.com/photo-1680612225554-783b2e149aed?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4NDM0ODN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3NjkxNDQwMDB8&ixlib=rb-4.1.0&q=80&w=1080",
+                            "mode": "fill"
+                          },
+                          "cornerRadius": 12
+                        },
+                        {
+                          "type": "text",
+                          "id": "WDmEW",
+                          "name": "regionDesc1",
+                          "fill": "#4B5563",
+                          "textGrowth": "fixed-width",
+                          "width": "fill_container",
+                          "content": "The cradle of Thai civilization. In 1238, the Sukhothai Kingdom emerged as the first truly independent Thai state. King Ramkhamhaeng created the Thai alphabet here, and the elegant temples of this era still dot the northern plains. The Lanna Kingdom in Chiang Mai developed its own distinct culture\u2014you'll see it in the ornate temples and traditional crafts that thrive today.",
+                          "lineHeight": 1.6,
+                          "fontFamily": "DM Sans",
+                          "fontSize": 14,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "frame",
+                          "id": "iN542",
+                          "name": "visitTip1",
+                          "width": "fill_container",
+                          "fill": "#F3F4F6",
+                          "cornerRadius": 10,
+                          "gap": 10,
+                          "padding": [
+                            12,
+                            14
+                          ],
+                          "children": [
+                            {
+                              "type": "icon_font",
+                              "id": "sTt0R",
+                              "name": "visitIcon1",
+                              "width": 18,
+                              "height": 18,
+                              "iconFontName": "lightbulb",
+                              "iconFontFamily": "lucide",
+                              "fill": "#EA580C"
+                            },
+                            {
+                              "type": "text",
+                              "id": "tNcIP",
+                              "name": "visitText1",
+                              "fill": "#9A3412",
+                              "textGrowth": "fixed-width",
+                              "width": "fill_container",
+                              "content": "Visit Sukhothai Historical Park at sunrise\u2014the ancient Buddha statues glow golden as mist rises from the lotus ponds.",
+                              "lineHeight": 1.5,
+                              "fontFamily": "DM Sans",
+                              "fontSize": 13,
+                              "fontWeight": "normal"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "vsYDB",
+                      "name": "regionHistory2",
+                      "width": "fill_container",
+                      "layout": "vertical",
+                      "gap": 12,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "qCVDb",
+                          "name": "regionTitle2",
+                          "fill": "#1A1A1A",
+                          "content": "The Golden Age of Ayutthaya",
+                          "fontFamily": "DM Sans",
+                          "fontSize": 18,
+                          "fontWeight": "700"
+                        },
+                        {
+                          "type": "frame",
+                          "id": "bCXwz",
+                          "name": "regionImg2",
+                          "metadata": {
+                            "type": "unsplash",
+                            "username": "vynguynnnn",
+                            "link": "https://unsplash.com/@vynguynnnn",
+                            "author": "Nguy\u1ec5n Vy"
+                          },
+                          "width": "fill_container",
+                          "height": 140,
+                          "fill": {
+                            "type": "image",
+                            "enabled": true,
+                            "url": "https://images.unsplash.com/photo-1695444649064-4c542ddf8a89?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4NDM0ODN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3NjkxNDQwMTF8&ixlib=rb-4.1.0&q=80&w=1080",
+                            "mode": "fill"
+                          },
+                          "cornerRadius": 12
+                        },
+                        {
+                          "type": "text",
+                          "id": "0jUtW",
+                          "name": "regionDesc2",
+                          "fill": "#4B5563",
+                          "textGrowth": "fixed-width",
+                          "width": "fill_container",
+                          "content": "For 417 years, Ayutthaya was one of the world's largest cities\u2014a cosmopolitan trading hub where Chinese, Japanese, Portuguese, and Persian merchants mingled. The kingdom's wealth built over 1,500 temples. When Burma sacked the city in 1767, they left behind haunting ruins that UNESCO now protects.",
+                          "lineHeight": 1.6,
+                          "fontFamily": "DM Sans",
+                          "fontSize": 14,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "frame",
+                          "id": "CVcXk",
+                          "name": "visitTip2",
+                          "width": "fill_container",
+                          "fill": "#F3F4F6",
+                          "cornerRadius": 10,
+                          "gap": 10,
+                          "padding": [
+                            12,
+                            14
+                          ],
+                          "children": [
+                            {
+                              "type": "icon_font",
+                              "id": "RO38B",
+                              "name": "visitIcon2",
+                              "width": 18,
+                              "height": 18,
+                              "iconFontName": "lightbulb",
+                              "iconFontFamily": "lucide",
+                              "fill": "#EA580C"
+                            },
+                            {
+                              "type": "text",
+                              "id": "yF4su",
+                              "name": "visitText2",
+                              "fill": "#9A3412",
+                              "textGrowth": "fixed-width",
+                              "width": "fill_container",
+                              "content": "The famous Buddha head entwined in tree roots at Wat Mahathat is best photographed in early morning light.",
+                              "lineHeight": 1.5,
+                              "fontFamily": "DM Sans",
+                              "fontSize": 13,
+                              "fontWeight": "normal"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "IwURf",
+          "name": "destDetailBottomNav",
+          "width": "fill_container",
+          "height": 90,
+          "fill": "#FFFFFF",
+          "stroke": {
+            "thickness": {
+              "top": 1
+            },
+            "fill": "#E5E7EB"
+          },
+          "padding": [
+            12,
+            24,
+            30,
+            24
+          ],
+          "justifyContent": "space_around",
+          "children": [
+            {
+              "type": "frame",
+              "id": "RS5m3",
+              "name": "navItem1",
+              "width": 60,
+              "layout": "vertical",
+              "gap": 4,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "icon_font",
+                  "id": "AMKsO",
+                  "name": "navIcon1",
+                  "width": 24,
+                  "height": 24,
+                  "iconFontName": "map",
+                  "iconFontFamily": "lucide",
+                  "fill": "#9CA3AF"
+                },
+                {
+                  "type": "text",
+                  "id": "e3rS2",
+                  "name": "navLabel1",
+                  "fill": "#6B7280",
+                  "content": "Trips",
+                  "fontFamily": "DM Sans",
+                  "fontSize": 10,
+                  "fontWeight": "500"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "5Lhy5",
+              "name": "navItem2",
+              "width": 60,
+              "layout": "vertical",
+              "gap": 4,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "icon_font",
+                  "id": "79DKU",
+                  "name": "navIcon2",
+                  "width": 24,
+                  "height": 24,
+                  "iconFontName": "compass",
+                  "iconFontFamily": "lucide",
+                  "fill": "#1A1A1A"
+                },
+                {
+                  "type": "text",
+                  "id": "d1Ys3",
+                  "name": "navLabel2",
+                  "fill": "#1A1A1A",
+                  "content": "Explore",
+                  "fontFamily": "DM Sans",
+                  "fontSize": 10,
+                  "fontWeight": "600"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "ySVeA",
+              "name": "navItem3",
+              "width": 60,
+              "layout": "vertical",
+              "gap": 4,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "icon_font",
+                  "id": "THEUv",
+                  "name": "navIcon3",
+                  "width": 24,
+                  "height": 24,
+                  "iconFontName": "bookmark",
+                  "iconFontFamily": "lucide",
+                  "fill": "#9CA3AF"
+                },
+                {
+                  "type": "text",
+                  "id": "ehidM",
+                  "name": "navLabel3",
+                  "fill": "#6B7280",
+                  "content": "Saved",
+                  "fontFamily": "DM Sans",
+                  "fontSize": 10,
+                  "fontWeight": "500"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "QpjKZ",
+              "name": "navItem4",
+              "width": 60,
+              "layout": "vertical",
+              "gap": 4,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "icon_font",
+                  "id": "jd09j",
+                  "name": "navIcon4",
+                  "width": 24,
+                  "height": 24,
+                  "iconFontName": "user",
+                  "iconFontFamily": "lucide",
+                  "fill": "#9CA3AF"
+                },
+                {
+                  "type": "text",
+                  "id": "2mXIu",
+                  "name": "navLabel4",
+                  "fill": "#6B7280",
+                  "content": "Profile",
+                  "fontFamily": "DM Sans",
+                  "fontSize": 10,
+                  "fontWeight": "500"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

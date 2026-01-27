@@ -29,6 +29,15 @@ Future<void> main() async {
   // Initialize Supabase (if configured)
   if (EnvConfig.isConfigured) {
     await SupabaseService.instance.initialize();
+
+    // Auto sign-in anonymously if no user session exists
+    if (!SupabaseService.instance.isAuthenticated) {
+      try {
+        await SupabaseService.instance.client.auth.signInAnonymously();
+      } catch (e) {
+        debugPrint('Anonymous sign-in failed: $e');
+      }
+    }
   } else {
     debugPrint('Warning: Supabase not configured. Running in demo mode.');
     debugPrint('Missing: ${EnvConfig.missingConfigurations.join(', ')}');

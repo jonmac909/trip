@@ -24,8 +24,8 @@ class ForbiddenException extends TrippifiedException {
 
 /// Thrown when a requested resource is not found
 class NotFoundException extends TrippifiedException {
-  NotFoundException(String resource)
-    : super('$resource not found', code: 'NOT_FOUND');
+  const NotFoundException([super.message = 'Resource not found'])
+      : super(code: 'NOT_FOUND');
 }
 
 /// Thrown when input validation fails
@@ -79,4 +79,22 @@ class PremiumRequiredException extends TrippifiedException {
   const PremiumRequiredException([
     super.message = 'This feature requires Trippified Pro',
   ]) : super(code: 'PREMIUM_REQUIRED');
+}
+
+/// Thrown when a database operation fails
+class DatabaseException extends TrippifiedException {
+  const DatabaseException([super.message = 'Database error'])
+      : super(code: 'DATABASE_ERROR');
+}
+
+/// Thrown when an external service call fails
+class ExternalServiceException extends TrippifiedException {
+  const ExternalServiceException([super.message = 'External service error'])
+      : super(code: 'EXTERNAL_SERVICE_ERROR');
+}
+
+/// Thrown when AI generation fails
+class AiGenerationException extends TrippifiedException {
+  const AiGenerationException([super.message = 'AI generation failed'])
+      : super(code: 'AI_GENERATION_ERROR');
 }

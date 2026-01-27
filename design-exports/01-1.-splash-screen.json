@@ -1,0 +1,242 @@
+{
+  "type": "frame",
+  "id": "EBVXQ",
+  "x": 620,
+  "y": 2000,
+  "name": "1. Splash Screen",
+  "clip": true,
+  "width": 390,
+  "height": 844,
+  "fill": "#0F1A1A",
+  "cornerRadius": 40,
+  "layout": "vertical",
+  "children": [
+    {
+      "type": "frame",
+      "id": "KjnNK",
+      "name": "statusBar",
+      "width": "fill_container",
+      "height": 44,
+      "padding": [
+        12,
+        24,
+        0,
+        24
+      ],
+      "justifyContent": "space_between",
+      "alignItems": "center",
+      "children": [
+        {
+          "type": "text",
+          "id": "II5hJ",
+          "name": "time",
+          "fill": "#FFFFFF",
+          "content": "9:41",
+          "fontFamily": "DM Sans",
+          "fontSize": 14,
+          "fontWeight": "600"
+        },
+        {
+          "type": "frame",
+          "id": "w0Fpa",
+          "name": "icons",
+          "gap": 4,
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "icon_font",
+              "id": "hYwUC",
+              "name": "signal",
+              "width": 16,
+              "height": 16,
+              "iconFontName": "signal",
+              "iconFontFamily": "lucide",
+              "fill": "#FFFFFF"
+            },
+            {
+              "type": "icon_font",
+              "id": "VSPfn",
+              "name": "battery",
+              "width": 20,
+              "height": 20,
+              "iconFontName": "battery-full",
+              "iconFontFamily": "lucide",
+              "fill": "#FFFFFF"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "OgcQm",
+      "name": "heroImage",
+      "metadata": {
+        "type": "unsplash",
+        "username": "ryosuke_nasu",
+        "link": "https://unsplash.com/@ryosuke_nasu",
+        "author": "Bradrey Nassel"
+      },
+      "width": "fill_container",
+      "height": 500,
+      "fill": {
+        "type": "image",
+        "enabled": true,
+        "url": "https://images.unsplash.com/photo-1687960507238-5f6565a08b2f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4NDM0ODN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3NjkxMTI2MDF8&ixlib=rb-4.1.0&q=80&w=1080",
+        "mode": "fill"
+      },
+      "cornerRadius": [
+        0,
+        0,
+        40,
+        40
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "LIJaX",
+      "name": "bottomSection",
+      "width": "fill_container",
+      "height": "fill_container",
+      "fill": {
+        "type": "gradient",
+        "gradientType": "linear",
+        "enabled": true,
+        "rotation": 180,
+        "size": {
+          "height": 1
+        },
+        "colors": [
+          {
+            "color": "#0A1A1A",
+            "position": 0
+          },
+          {
+            "color": "#1A2F2F",
+            "position": 1
+          }
+        ]
+      },
+      "layout": "vertical",
+      "gap": 16,
+      "padding": [
+        40,
+        32,
+        48,
+        32
+      ],
+      "children": [
+        {
+          "type": "text",
+          "id": "5vue8",
+          "name": "title",
+          "fill": "#FFFFFF",
+          "textGrowth": "fixed-width",
+          "width": "fill_container",
+          "content": "Unveil The\nTravel Wonders",
+          "textAlign": "center",
+          "fontFamily": "DM Sans",
+          "fontSize": 32,
+          "fontWeight": "700"
+        },
+        {
+          "type": "text",
+          "id": "nofXK",
+          "name": "subtitle",
+          "fill": "#FFFFFF80",
+          "content": "TRIPPIFIED",
+          "textAlign": "center",
+          "fontFamily": "DM Sans",
+          "fontSize": 14,
+          "fontWeight": "500",
+          "letterSpacing": 4
+        },
+        {
+          "type": "text",
+          "id": "X9yPo",
+          "name": "desc",
+          "fill": "#FFFFFF99",
+          "textGrowth": "fixed-width",
+          "width": "fill_container",
+          "content": "Take the first step into\nan unforgettable journey",
+          "lineHeight": 1.5,
+          "textAlign": "center",
+          "fontFamily": "DM Sans",
+          "fontSize": 14,
+          "fontWeight": "normal"
+        },
+        {
+          "type": "frame",
+          "id": "0cRcH",
+          "name": "spacer",
+          "width": "fill_container",
+          "height": "fill_container"
+        },
+        {
+          "type": "frame",
+          "id": "Pl0RI",
+          "name": "ctaButton",
+          "width": "fill_container",
+          "height": 56,
+          "fill": "#1A2F2F",
+          "cornerRadius": 28,
+          "stroke": {
+            "thickness": 1,
+            "fill": "#2A4040"
+          },
+          "padding": [
+            0,
+            6
+          ],
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "frame",
+              "id": "ISCAt",
+              "name": "iconCircle",
+              "width": 44,
+              "height": 44,
+              "fill": "#BFFF00",
+              "cornerRadius": 22,
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "icon_font",
+                  "id": "Yxj4G",
+                  "name": "iconNav",
+                  "width": 20,
+                  "height": 20,
+                  "iconFontName": "navigation",
+                  "iconFontFamily": "lucide",
+                  "fill": "#0A1A1A"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "id": "xYARm",
+              "name": "btnText",
+              "fill": "#FFFFFF",
+              "content": "Explore Now",
+              "textAlign": "center",
+              "fontFamily": "DM Sans",
+              "fontSize": 16,
+              "fontWeight": "600"
+            },
+            {
+              "type": "text",
+              "id": "pkbNR",
+              "name": "arrows",
+              "fill": "#FFFFFF60",
+              "content": "\u00bb",
+              "fontFamily": "DM Sans",
+              "fontSize": 20,
+              "fontWeight": "600"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

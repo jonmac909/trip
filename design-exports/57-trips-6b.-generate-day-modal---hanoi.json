@@ -1,0 +1,604 @@
+{
+  "type": "frame",
+  "id": "HorxA",
+  "x": 5900,
+  "y": 2000,
+  "name": "Trips 6b. Generate Day Modal - Hanoi",
+  "clip": true,
+  "width": 390,
+  "height": 844,
+  "fill": "#00000066",
+  "cornerRadius": 40,
+  "layout": "vertical",
+  "justifyContent": "end",
+  "children": [
+    {
+      "type": "frame",
+      "id": "c63n4",
+      "name": "bottomSheet",
+      "width": "fill_container",
+      "height": 760,
+      "fill": "#FFFFFF",
+      "cornerRadius": [
+        24,
+        24,
+        40,
+        40
+      ],
+      "layout": "vertical",
+      "children": [
+        {
+          "type": "frame",
+          "id": "DHIMn",
+          "name": "handleBar",
+          "width": "fill_container",
+          "height": 32,
+          "layout": "vertical",
+          "padding": [
+            12,
+            0
+          ],
+          "justifyContent": "center",
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "frame",
+              "id": "Tdpot",
+              "name": "handle",
+              "width": 40,
+              "height": 4,
+              "fill": "#E5E7EB",
+              "cornerRadius": 2
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "IVwo2",
+          "name": "header",
+          "width": "fill_container",
+          "padding": [
+            0,
+            24,
+            16,
+            24
+          ],
+          "justifyContent": "space_between",
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "frame",
+              "id": "laaEy",
+              "name": "headerLeft",
+              "layout": "vertical",
+              "gap": 4,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "jNWqs",
+                  "name": "title",
+                  "fill": "#1A1A1A",
+                  "content": "Generate Day 1",
+                  "fontFamily": "DM Sans",
+                  "fontSize": 20,
+                  "fontWeight": "700"
+                },
+                {
+                  "type": "text",
+                  "id": "i32LR",
+                  "name": "subtitle",
+                  "fill": "#6B7280",
+                  "content": "Each day is built around one anchor",
+                  "fontFamily": "DM Sans",
+                  "fontSize": 14,
+                  "fontWeight": "normal"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "vc1ju",
+              "name": "closeBtn",
+              "width": 32,
+              "height": 32,
+              "fill": "#F3F4F6",
+              "cornerRadius": 100,
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "icon_font",
+                  "id": "6zIT0",
+                  "name": "closeIcon",
+                  "width": 18,
+                  "height": 18,
+                  "iconFontName": "x",
+                  "iconFontFamily": "lucide",
+                  "fill": "#6B7280"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "Wk3r9",
+          "name": "optionsContainer",
+          "width": "fill_container",
+          "layout": "vertical",
+          "gap": 12,
+          "padding": [
+            0,
+            24
+          ],
+          "children": [
+            {
+              "type": "frame",
+              "id": "Luef9",
+              "name": "option1",
+              "width": "fill_container",
+              "fill": "#F9FAFB",
+              "cornerRadius": 14,
+              "stroke": {
+                "thickness": 1,
+                "fill": "#E5E7EB"
+              },
+              "gap": 14,
+              "padding": 16,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "pBOCA",
+                  "name": "iconWrap",
+                  "width": 44,
+                  "height": 44,
+                  "fill": "#00000000",
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "icon_font",
+                      "id": "x2JGG",
+                      "name": "opt1IconInner",
+                      "width": 22,
+                      "height": 22,
+                      "iconFontName": "map-pin",
+                      "iconFontFamily": "lucide",
+                      "fill": "#2563EB"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "AKAmf",
+                  "name": "content",
+                  "width": "fill_container",
+                  "layout": "vertical",
+                  "gap": 2,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "rIXvs",
+                      "name": "opt1Title",
+                      "fill": "#1A1A1A",
+                      "content": "Old Quarter Walking Tour",
+                      "fontFamily": "DM Sans",
+                      "fontSize": 15,
+                      "fontWeight": "600"
+                    },
+                    {
+                      "type": "text",
+                      "id": "UDotZ",
+                      "name": "opt1Desc",
+                      "fill": "#6B7280",
+                      "content": "Hoan Kiem \u2192 36 Streets \u2192 hidden gems",
+                      "fontFamily": "DM Sans",
+                      "fontSize": 13,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "UrbLM",
+              "name": "option2",
+              "width": "fill_container",
+              "fill": "#FFFFFF",
+              "cornerRadius": 14,
+              "stroke": {
+                "thickness": 2,
+                "fill": "#1A1A1A"
+              },
+              "gap": 14,
+              "padding": 16,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "9E8pG",
+                  "name": "iconWrap",
+                  "width": 44,
+                  "height": 44,
+                  "fill": "#00000000",
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "icon_font",
+                      "id": "IbToN",
+                      "name": "opt2IconInner",
+                      "width": 22,
+                      "height": 22,
+                      "iconFontName": "utensils",
+                      "iconFontFamily": "lucide",
+                      "fill": "#EA580C"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "ic3Q3",
+                  "name": "content",
+                  "width": "fill_container",
+                  "layout": "vertical",
+                  "gap": 2,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "wrHPz",
+                      "name": "opt2Title",
+                      "fill": "#1A1A1A",
+                      "content": "Street Food Crawl",
+                      "fontFamily": "DM Sans",
+                      "fontSize": 15,
+                      "fontWeight": "600"
+                    },
+                    {
+                      "type": "text",
+                      "id": "dVmyW",
+                      "name": "opt2Desc",
+                      "fill": "#6B7280",
+                      "content": "Ph\u1edf, b\u00e1nh m\u00ec, egg coffee circuit",
+                      "fontFamily": "DM Sans",
+                      "fontSize": 13,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "qjccl",
+              "name": "option3",
+              "width": "fill_container",
+              "fill": "#F9FAFB",
+              "cornerRadius": 14,
+              "stroke": {
+                "thickness": 1,
+                "fill": "#E5E7EB"
+              },
+              "gap": 14,
+              "padding": 16,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "KiUx6",
+                  "name": "iconWrap",
+                  "width": 44,
+                  "height": 44,
+                  "fill": "#00000000",
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "icon_font",
+                      "id": "wv5QM",
+                      "name": "opt3IconInner",
+                      "width": 22,
+                      "height": 22,
+                      "iconFontName": "chef-hat",
+                      "iconFontFamily": "lucide",
+                      "fill": "#D97706"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "EekB8",
+                  "name": "content",
+                  "width": "fill_container",
+                  "layout": "vertical",
+                  "gap": 2,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "8YQTS",
+                      "name": "opt3Title",
+                      "fill": "#1A1A1A",
+                      "content": "Cooking Class Day",
+                      "fontFamily": "DM Sans",
+                      "fontSize": 15,
+                      "fontWeight": "600"
+                    },
+                    {
+                      "type": "text",
+                      "id": "tclrR",
+                      "name": "opt3Desc",
+                      "fill": "#6B7280",
+                      "content": "Market tour + Vietnamese cooking lesson",
+                      "fontFamily": "DM Sans",
+                      "fontSize": 13,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "KyiWE",
+              "name": "option4",
+              "width": "fill_container",
+              "fill": "#F9FAFB",
+              "cornerRadius": 14,
+              "stroke": {
+                "thickness": 1,
+                "fill": "#E5E7EB"
+              },
+              "gap": 14,
+              "padding": 16,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "OxxPY",
+                  "name": "iconWrap",
+                  "width": 44,
+                  "height": 44,
+                  "fill": "#00000000",
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "icon_font",
+                      "id": "CgF4P",
+                      "name": "opt4IconInner",
+                      "width": 22,
+                      "height": 22,
+                      "iconFontName": "church",
+                      "iconFontFamily": "lucide",
+                      "fill": "#DC2626"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "jsEIT",
+                  "name": "content",
+                  "width": "fill_container",
+                  "layout": "vertical",
+                  "gap": 2,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "rq0dW",
+                      "name": "opt4Title",
+                      "fill": "#1A1A1A",
+                      "content": "Temple & Pagoda Trail",
+                      "fontFamily": "DM Sans",
+                      "fontSize": 15,
+                      "fontWeight": "600"
+                    },
+                    {
+                      "type": "text",
+                      "id": "Lhvii",
+                      "name": "opt4Desc",
+                      "fill": "#6B7280",
+                      "content": "Temple of Literature \u2192 Tran Quoc Pagoda",
+                      "fontFamily": "DM Sans",
+                      "fontSize": 13,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "ptbjC",
+              "name": "option5",
+              "width": "fill_container",
+              "fill": "#F9FAFB",
+              "cornerRadius": 14,
+              "stroke": {
+                "thickness": 1,
+                "fill": "#E5E7EB"
+              },
+              "gap": 14,
+              "padding": 16,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "0DACY",
+                  "name": "iconWrap",
+                  "width": 44,
+                  "height": 44,
+                  "fill": "#00000000",
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "icon_font",
+                      "id": "1WMmG",
+                      "name": "opt5IconInner",
+                      "width": 22,
+                      "height": 22,
+                      "iconFontName": "music",
+                      "iconFontFamily": "lucide",
+                      "fill": "#7C3AED"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "8vlwU",
+                  "name": "content",
+                  "width": "fill_container",
+                  "layout": "vertical",
+                  "gap": 2,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "CXVbR",
+                      "name": "opt5Title",
+                      "fill": "#1A1A1A",
+                      "content": "Cultural Night Out",
+                      "fontFamily": "DM Sans",
+                      "fontSize": 15,
+                      "fontWeight": "600"
+                    },
+                    {
+                      "type": "text",
+                      "id": "yS7Nn",
+                      "name": "opt5Desc",
+                      "fill": "#6B7280",
+                      "content": "Water puppets + Bia Hoi + night market",
+                      "fontFamily": "DM Sans",
+                      "fontSize": 13,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "SQKf3",
+              "name": "option6",
+              "width": "fill_container",
+              "fill": "#F9FAFB",
+              "cornerRadius": 14,
+              "stroke": {
+                "thickness": 1,
+                "fill": "#E5E7EB"
+              },
+              "gap": 14,
+              "padding": 16,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "BgK9b",
+                  "name": "iconWrap",
+                  "width": 44,
+                  "height": 44,
+                  "fill": "#00000000",
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "icon_font",
+                      "id": "qx28O",
+                      "name": "opt6IconInner",
+                      "width": 22,
+                      "height": 22,
+                      "iconFontName": "sailboat",
+                      "iconFontFamily": "lucide",
+                      "fill": "#2563EB"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "fVy9U",
+                  "name": "content",
+                  "width": "fill_container",
+                  "layout": "vertical",
+                  "gap": 2,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "4QvD3",
+                      "name": "opt6Title",
+                      "fill": "#1A1A1A",
+                      "content": "Ha Long Bay Day Trip",
+                      "fontFamily": "DM Sans",
+                      "fontSize": 15,
+                      "fontWeight": "600"
+                    },
+                    {
+                      "type": "text",
+                      "id": "JQvhx",
+                      "name": "opt6Desc",
+                      "fill": "#6B7280",
+                      "content": "Cruise, caves, kayaking, seafood lunch",
+                      "fontFamily": "DM Sans",
+                      "fontSize": 13,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "VaZp8",
+          "name": "bottomSection",
+          "width": "fill_container",
+          "layout": "vertical",
+          "gap": 12,
+          "padding": [
+            24,
+            24,
+            40,
+            24
+          ],
+          "children": [
+            {
+              "type": "frame",
+              "id": "2dHpw",
+              "name": "generateBtn",
+              "width": "fill_container",
+              "height": 52,
+              "fill": "#1A1A1A",
+              "cornerRadius": 16,
+              "gap": 8,
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "icon_font",
+                  "id": "aMLOL",
+                  "name": "generateIcon",
+                  "width": 20,
+                  "height": 20,
+                  "iconFontName": "sparkles",
+                  "iconFontFamily": "lucide",
+                  "fill": "#FFFFFF"
+                },
+                {
+                  "type": "text",
+                  "id": "KT2xd",
+                  "name": "generateText",
+                  "fill": "#FFFFFF",
+                  "content": "Generate Day",
+                  "fontFamily": "DM Sans",
+                  "fontSize": 16,
+                  "fontWeight": "600"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

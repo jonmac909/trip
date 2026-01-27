@@ -56,3 +56,7 @@ app.*.map.json
 node_modules/
 package-lock.json
 build/
+dart_defines.json
+
+# Playwright MCP screenshots
+.playwright-mcp/

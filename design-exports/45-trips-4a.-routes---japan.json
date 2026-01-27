@@ -1,0 +1,912 @@
+{
+  "type": "frame",
+  "id": "rfkvI",
+  "x": 4140,
+  "y": 1000,
+  "name": "Trips 4a. Routes - Japan",
+  "clip": true,
+  "width": 390,
+  "height": 844,
+  "fill": "#FFFFFF",
+  "cornerRadius": 40,
+  "layout": "vertical",
+  "children": [
+    {
+      "type": "frame",
+      "id": "SJZnx",
+      "name": "routesContent",
+      "width": "fill_container",
+      "height": "fill_container",
+      "layout": "vertical",
+      "gap": 24,
+      "padding": [
+        60,
+        24,
+        40,
+        24
+      ],
+      "children": [
+        {
+          "type": "frame",
+          "id": "NJqLV",
+          "name": "routesHeader",
+          "width": "fill_container",
+          "gap": 12,
+          "justifyContent": "space_between",
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "frame",
+              "id": "8aCfo",
+              "name": "headerLeft",
+              "gap": 12,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "H6w0P",
+                  "name": "routesBackBtn",
+                  "width": 24,
+                  "height": 24,
+                  "fill": "#FFFFFF",
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "icon_font",
+                      "id": "IynVf",
+                      "name": "routesBackIcon",
+                      "width": 20,
+                      "height": 20,
+                      "iconFontName": "arrow-left",
+                      "iconFontFamily": "lucide",
+                      "fill": "#1A1A1A"
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "id": "ELUr6",
+                  "name": "routesTitle",
+                  "fill": "#1A1A1A",
+                  "content": "Routes",
+                  "fontFamily": "DM Sans",
+                  "fontSize": 20,
+                  "fontWeight": "700"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "jdiah",
+              "name": "countryBadge",
+              "fill": "#F0F0F0",
+              "cornerRadius": 16,
+              "gap": 6,
+              "padding": [
+                6,
+                12
+              ],
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "QqV4O",
+                  "name": "countryFlag1",
+                  "content": "\ud83c\uddef\ud83c\uddf5",
+                  "fontFamily": "Inter",
+                  "fontSize": 14,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "text",
+                  "id": "o9nPH",
+                  "name": "countryName1",
+                  "fill": "#1A1A1A",
+                  "content": "Japan",
+                  "fontFamily": "DM Sans",
+                  "fontSize": 12,
+                  "fontWeight": "600"
+                },
+                {
+                  "type": "text",
+                  "id": "V4Snj",
+                  "name": "countryCount1",
+                  "fill": "#6B7280",
+                  "content": "1/2",
+                  "fontFamily": "DM Sans",
+                  "fontSize": 12,
+                  "fontWeight": "500"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "kW7JS",
+          "name": "routesSubtitle",
+          "fill": "#6B7280",
+          "content": "Choose a pre-made route or create your own",
+          "fontFamily": "DM Sans",
+          "fontSize": 14,
+          "fontWeight": "normal"
+        },
+        {
+          "type": "frame",
+          "id": "UJjlH",
+          "name": "routesList",
+          "clip": true,
+          "width": "fill_container",
+          "height": "fill_container",
+          "layout": "vertical",
+          "gap": 16,
+          "children": [
+            {
+              "type": "frame",
+              "id": "AAtYk",
+              "name": "routeCard1",
+              "width": "fill_container",
+              "height": 110,
+              "fill": "#F9FAFB",
+              "cornerRadius": 16,
+              "stroke": {
+                "thickness": 1,
+                "fill": "#E5E7EB"
+              },
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "3OH0C",
+                  "name": "routeImg1",
+                  "metadata": {
+                    "type": "unsplash",
+                    "username": "batag_",
+                    "link": "https://unsplash.com/@batag_",
+                    "author": "Sarmat Batagov"
+                  },
+                  "width": 100,
+                  "height": "fill_container",
+                  "fill": {
+                    "type": "image",
+                    "enabled": true,
+                    "url": "https://images.unsplash.com/photo-1768541089409-7d3c0bc386eb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4NDM0ODN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3NjkxMTIyMzF8&ixlib=rb-4.1.0&q=80&w=1080",
+                    "mode": "fill"
+                  },
+                  "cornerRadius": [
+                    14,
+                    0,
+                    0,
+                    14
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "dePQs",
+                  "name": "routeContent1",
+                  "width": "fill_container",
+                  "layout": "vertical",
+                  "gap": 10,
+                  "padding": 14,
+                  "justifyContent": "center",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "BYmq8",
+                      "name": "routeCard1Header",
+                      "width": "fill_container",
+                      "justifyContent": "space_between",
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "96KC0",
+                          "name": "routeCard1Info",
+                          "layout": "vertical",
+                          "gap": 4,
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "Cvbjr",
+                              "name": "routeCard1Title",
+                              "fill": "#1A1A1A",
+                              "content": "Classic Japan",
+                              "fontFamily": "DM Sans",
+                              "fontSize": 16,
+                              "fontWeight": "600"
+                            },
+                            {
+                              "type": "text",
+                              "id": "nv9vy",
+                              "name": "routeCard1Duration",
+                              "fill": "#6B7280",
+                              "content": "12 days \u2022 3 cities",
+                              "fontFamily": "DM Sans",
+                              "fontSize": 12,
+                              "fontWeight": "normal"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "3Hpuh",
+                      "name": "routeCard1Cities",
+                      "width": "fill_container",
+                      "gap": 6,
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "7exSQ",
+                          "name": "city1",
+                          "height": 28,
+                          "fill": "#E5E7EB",
+                          "cornerRadius": 14,
+                          "padding": [
+                            0,
+                            10
+                          ],
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "fpOef",
+                              "name": "city1Text",
+                              "fill": "#1A1A1A",
+                              "content": "Tokyo",
+                              "fontFamily": "DM Sans",
+                              "fontSize": 12,
+                              "fontWeight": "normal"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "icon_font",
+                          "id": "X1fgy",
+                          "name": "cityArrow1",
+                          "width": 14,
+                          "height": 14,
+                          "iconFontName": "arrow-right",
+                          "iconFontFamily": "lucide",
+                          "fill": "#9CA3AF"
+                        },
+                        {
+                          "type": "frame",
+                          "id": "F7zPH",
+                          "name": "city2",
+                          "height": 28,
+                          "fill": "#E5E7EB",
+                          "cornerRadius": 14,
+                          "padding": [
+                            0,
+                            10
+                          ],
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "rOQyW",
+                              "name": "city2Text",
+                              "fill": "#1A1A1A",
+                              "content": "Kyoto",
+                              "fontFamily": "DM Sans",
+                              "fontSize": 12,
+                              "fontWeight": "normal"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "icon_font",
+                          "id": "ivcPR",
+                          "name": "cityArrow2",
+                          "width": 14,
+                          "height": 14,
+                          "iconFontName": "arrow-right",
+                          "iconFontFamily": "lucide",
+                          "fill": "#9CA3AF"
+                        },
+                        {
+                          "type": "frame",
+                          "id": "9Oh2Q",
+                          "name": "city3",
+                          "height": 28,
+                          "fill": "#E5E7EB",
+                          "cornerRadius": 14,
+                          "padding": [
+                            0,
+                            10
+                          ],
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "vOCCu",
+                              "name": "city3Text",
+                              "fill": "#1A1A1A",
+                              "content": "Osaka",
+                              "fontFamily": "DM Sans",
+                              "fontSize": 12,
+                              "fontWeight": "normal"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "AsNkz",
+              "name": "routeCard2",
+              "width": "fill_container",
+              "fill": "#F9FAFB",
+              "cornerRadius": 16,
+              "stroke": {
+                "thickness": 2,
+                "fill": "#1A1A1A"
+              },
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "H2m1g",
+                  "name": "routeImg2",
+                  "metadata": {
+                    "type": "unsplash",
+                    "username": "dariendesigns",
+                    "link": "https://unsplash.com/@dariendesigns",
+                    "author": "Darien Attridge"
+                  },
+                  "width": 100,
+                  "height": "fill_container",
+                  "fill": {
+                    "type": "image",
+                    "enabled": true,
+                    "url": "https://images.unsplash.com/photo-1759200408113-40c48a58d6b8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4NDM0ODN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3NjkxMTIyMzZ8&ixlib=rb-4.1.0&q=80&w=1080",
+                    "mode": "fill"
+                  },
+                  "cornerRadius": [
+                    14,
+                    0,
+                    0,
+                    14
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "4rTWR",
+                  "name": "routeContent2",
+                  "width": "fill_container",
+                  "layout": "vertical",
+                  "gap": 10,
+                  "padding": 14,
+                  "justifyContent": "center",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "Ha9Fk",
+                      "name": "routeCard2Header",
+                      "width": "fill_container",
+                      "justifyContent": "space_between",
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "yEyPL",
+                          "name": "routeCard2Info",
+                          "layout": "vertical",
+                          "gap": 4,
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "8a70U",
+                              "name": "routeCard2Title",
+                              "fill": "#1A1A1A",
+                              "content": "Tokyo Focus",
+                              "fontFamily": "DM Sans",
+                              "fontSize": 16,
+                              "fontWeight": "600"
+                            },
+                            {
+                              "type": "text",
+                              "id": "OssFT",
+                              "name": "routeCard2Duration",
+                              "fill": "#6B7280",
+                              "content": "7 days \u2022 1 city",
+                              "fontFamily": "DM Sans",
+                              "fontSize": 12,
+                              "fontWeight": "normal"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
+                          "id": "AluzG",
+                          "name": "routeCard2Badge",
+                          "width": 24,
+                          "height": 24,
+                          "fill": "#BFFF00",
+                          "cornerRadius": 12,
+                          "gap": 6,
+                          "justifyContent": "center",
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "icon_font",
+                              "id": "Zgd7q",
+                              "name": "starIcon1",
+                              "width": 14,
+                              "height": 14,
+                              "iconFontName": "star",
+                              "iconFontFamily": "lucide",
+                              "fill": "#1A1A1A"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "r2Lj2",
+                      "name": "routeCard2Cities",
+                      "width": "fill_container",
+                      "gap": 8,
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "3hIFS",
+                          "name": "city2_1",
+                          "height": 28,
+                          "fill": "#E5E7EB",
+                          "cornerRadius": 14,
+                          "padding": [
+                            0,
+                            12
+                          ],
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "jvje3",
+                              "name": "city2_1Text",
+                              "fill": "#1A1A1A",
+                              "content": "Tokyo",
+                              "fontFamily": "DM Sans",
+                              "fontSize": 12,
+                              "fontWeight": "normal"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "5RCFc",
+              "name": "route3",
+              "width": "fill_container",
+              "fill": "#F9FAFB",
+              "cornerRadius": 16,
+              "stroke": {
+                "thickness": 2,
+                "fill": "#1A1A1A"
+              },
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "fyDxI",
+                  "name": "routeImg2",
+                  "metadata": {
+                    "type": "unsplash",
+                    "username": "syadzasalsabyla",
+                    "link": "https://unsplash.com/@syadzasalsabyla",
+                    "author": "Syadza Salsabyla"
+                  },
+                  "width": 100,
+                  "height": "fill_container",
+                  "fill": {
+                    "type": "image",
+                    "enabled": true,
+                    "url": "https://images.unsplash.com/photo-1736944821880-0713b1073121?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4NDM0ODN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3NjkxMTQ3Mzd8&ixlib=rb-4.1.0&q=80&w=1080",
+                    "mode": "fill"
+                  },
+                  "cornerRadius": [
+                    14,
+                    0,
+                    0,
+                    14
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "8cbfT",
+                  "name": "routeContent2",
+                  "width": "fill_container",
+                  "layout": "vertical",
+                  "gap": 10,
+                  "padding": 14,
+                  "justifyContent": "center",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "e7TAO",
+                      "name": "routeCard2Header",
+                      "width": "fill_container",
+                      "justifyContent": "space_between",
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "5GXAS",
+                          "name": "routeCard2Info",
+                          "layout": "vertical",
+                          "gap": 4,
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "27n2Z",
+                              "name": "routeCard2Title",
+                              "fill": "#1A1A1A",
+                              "content": "Kyoto & Osaka",
+                              "fontFamily": "DM Sans",
+                              "fontSize": 16,
+                              "fontWeight": "600"
+                            },
+                            {
+                              "type": "text",
+                              "id": "i3YoY",
+                              "name": "routeCard2Duration",
+                              "fill": "#6B7280",
+                              "content": "7 days \u2022 2 cities",
+                              "fontFamily": "DM Sans",
+                              "fontSize": 12,
+                              "fontWeight": "normal"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
+                          "id": "AzAlB",
+                          "name": "routeCard2Badge",
+                          "width": 24,
+                          "height": 24,
+                          "fill": "#BFFF00",
+                          "cornerRadius": 12,
+                          "gap": 6,
+                          "justifyContent": "center",
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "icon_font",
+                              "id": "r7m8z",
+                              "name": "starIcon2",
+                              "width": 14,
+                              "height": 14,
+                              "iconFontName": "star",
+                              "iconFontFamily": "lucide",
+                              "fill": "#1A1A1A"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "aFJO9",
+                      "name": "routeCard2Cities",
+                      "width": "fill_container",
+                      "gap": 8,
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "l5IHN",
+                          "name": "city2_1",
+                          "height": 28,
+                          "fill": "#E5E7EB",
+                          "cornerRadius": 14,
+                          "padding": [
+                            0,
+                            12
+                          ],
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "zjGxY",
+                              "name": "city2_1Text",
+                              "fill": "#1A1A1A",
+                              "content": "Kyoto",
+                              "fontFamily": "DM Sans",
+                              "fontSize": 12,
+                              "fontWeight": "normal"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "icon_font",
+                          "id": "ECYwz",
+                          "name": "arrow3",
+                          "width": 14,
+                          "height": 14,
+                          "iconFontName": "arrow-right",
+                          "iconFontFamily": "lucide",
+                          "fill": "#9CA3AF"
+                        },
+                        {
+                          "type": "frame",
+                          "id": "wTA53",
+                          "name": "city2_2",
+                          "height": 28,
+                          "fill": "#E5E7EB",
+                          "cornerRadius": 14,
+                          "padding": [
+                            0,
+                            12
+                          ],
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "qVaL4",
+                              "name": "osakaText",
+                              "fill": "#1A1A1A",
+                              "content": "Osaka",
+                              "fontFamily": "DM Sans",
+                              "fontSize": 12,
+                              "fontWeight": "normal"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "FVyJK",
+              "name": "route4",
+              "width": "fill_container",
+              "height": 110,
+              "fill": "#F9FAFB",
+              "cornerRadius": 16,
+              "stroke": {
+                "thickness": 1,
+                "fill": "#E5E7EB"
+              },
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "6NLed",
+                  "name": "routeImg1",
+                  "metadata": {
+                    "type": "unsplash",
+                    "username": "placeshappen",
+                    "link": "https://unsplash.com/@placeshappen",
+                    "author": "Alex V"
+                  },
+                  "width": 100,
+                  "height": "fill_container",
+                  "fill": {
+                    "type": "image",
+                    "enabled": true,
+                    "url": "https://images.unsplash.com/photo-1678959059270-9fa1ae2f87bc?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4NDM0ODN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3NjkxMTQ3NDd8&ixlib=rb-4.1.0&q=80&w=1080",
+                    "mode": "fill"
+                  },
+                  "cornerRadius": [
+                    14,
+                    0,
+                    0,
+                    14
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "RjRXF",
+                  "name": "routeContent1",
+                  "width": "fill_container",
+                  "layout": "vertical",
+                  "gap": 10,
+                  "padding": 14,
+                  "justifyContent": "center",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "OSbkI",
+                      "name": "routeCard1Header",
+                      "width": "fill_container",
+                      "justifyContent": "space_between",
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "Fiw4W",
+                          "name": "routeCard1Info",
+                          "layout": "vertical",
+                          "gap": 4,
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "NG1vP",
+                              "name": "routeCard1Title",
+                              "fill": "#1A1A1A",
+                              "content": "Hidden Gems",
+                              "fontFamily": "DM Sans",
+                              "fontSize": 16,
+                              "fontWeight": "600"
+                            },
+                            {
+                              "type": "text",
+                              "id": "dPp8y",
+                              "name": "routeCard1Duration",
+                              "fill": "#6B7280",
+                              "content": "10 days \u2022 4 cities",
+                              "fontFamily": "DM Sans",
+                              "fontSize": 12,
+                              "fontWeight": "normal"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "Rh8mI",
+                      "name": "routeCard1Cities",
+                      "width": "fill_container",
+                      "gap": 6,
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "RCCoX",
+                          "name": "city1",
+                          "height": 28,
+                          "fill": "#E5E7EB",
+                          "cornerRadius": 14,
+                          "padding": [
+                            0,
+                            10
+                          ],
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "OfCjU",
+                              "name": "city1Text",
+                              "fill": "#1A1A1A",
+                              "content": "Kanazawa",
+                              "fontFamily": "DM Sans",
+                              "fontSize": 12,
+                              "fontWeight": "normal"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "icon_font",
+                          "id": "nIcML",
+                          "name": "cityArrow1",
+                          "width": 14,
+                          "height": 14,
+                          "iconFontName": "arrow-right",
+                          "iconFontFamily": "lucide",
+                          "fill": "#9CA3AF"
+                        },
+                        {
+                          "type": "frame",
+                          "id": "hxXp2",
+                          "name": "city2",
+                          "height": 28,
+                          "fill": "#E5E7EB",
+                          "cornerRadius": 14,
+                          "padding": [
+                            0,
+                            10
+                          ],
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "Lbq81",
+                              "name": "city2Text",
+                              "fill": "#1A1A1A",
+                              "content": "Takayama",
+                              "fontFamily": "DM Sans",
+                              "fontSize": 12,
+                              "fontWeight": "normal"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "gbXBA",
+              "name": "customOption",
+              "width": "fill_container",
+              "height": 56,
+              "fill": "transparent",
+              "cornerRadius": 16,
+              "stroke": {
+                "thickness": 1,
+                "fill": "#E5E7EB"
+              },
+              "gap": 8,
+              "padding": [
+                0,
+                16
+              ],
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "icon_font",
+                  "id": "Vd4by",
+                  "name": "customIcon",
+                  "width": 20,
+                  "height": 20,
+                  "iconFontName": "plus",
+                  "iconFontFamily": "lucide",
+                  "fill": "#1A1A1A"
+                },
+                {
+                  "type": "text",
+                  "id": "3JXKh",
+                  "name": "customText",
+                  "fill": "#1A1A1A",
+                  "content": "Create custom route",
+                  "fontFamily": "DM Sans",
+                  "fontSize": 15,
+                  "fontWeight": "500"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "dbHJP",
+          "name": "routesContinueBtn",
+          "width": "fill_container",
+          "height": 52,
+          "fill": "#1A1A1A",
+          "cornerRadius": 16,
+          "gap": 8,
+          "justifyContent": "center",
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "text",
+              "id": "Q8DPd",
+              "name": "routesContinueText",
+              "fill": "#FFFFFF",
+              "content": "Next: Vietnam",
+              "fontFamily": "DM Sans",
+              "fontSize": 16,
+              "fontWeight": "600"
+            },
+            {
+              "type": "icon_font",
+              "id": "BBCYN",
+              "name": "routesContinueIcon",
+              "width": 20,
+              "height": 20,
+              "iconFontName": "arrow-right",
+              "iconFontFamily": "lucide",
+              "fill": "#FFFFFF"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

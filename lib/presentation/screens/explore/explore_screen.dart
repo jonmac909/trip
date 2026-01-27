@@ -1,5 +1,8 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:lucide_icons/lucide_icons.dart';
 
 import 'package:trippified/core/constants/app_colors.dart';
 import 'package:trippified/core/constants/app_spacing.dart';
@@ -13,383 +16,67 @@ class ExploreScreen extends StatefulWidget {
   State<ExploreScreen> createState() => _ExploreScreenState();
 }
 
-class _ExploreScreenState extends State<ExploreScreen> {
-  final _searchController = TextEditingController();
-  String _selectedCategory = 'All';
+class _ExploreScreenState extends State<ExploreScreen>
+    with SingleTickerProviderStateMixin {
+  late TabController _tabController;
+  int _selectedTabIndex = 0;
 
-  static const _categories = [
-    'All',
-    'Asia',
-    'Europe',
-    'Americas',
-    'Africa',
-    'Oceania',
-  ];
+  @override
+  void initState() {
+    super.initState();
+    _tabController = TabController(length: 2, vsync: this);
+    _tabController.addListener(() {
+      if (!_tabController.indexIsChanging) {
+        setState(() {
+          _selectedTabIndex = _tabController.index;
+        });
+      }
+    });
+  }
 
   @override
   void dispose() {
-    _searchController.dispose();
+    _tabController.dispose();
     super.dispose();
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: AppColors.background,
       body: SafeArea(
-        child: CustomScrollView(
-          slivers: [
-            // Header with search
-            SliverToBoxAdapter(
-              child: Padding(
-                padding: const EdgeInsets.all(AppSpacing.screenPadding),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      'Explore',
-                      style: Theme.of(context).textTheme.headlineMedium
-                          ?.copyWith(fontWeight: FontWeight.bold),
-                    ),
-                    const SizedBox(height: AppSpacing.sm),
-                    Text(
-                      'Discover amazing destinations',
-                      style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                        color: AppColors.textSecondary,
-                      ),
-                    ),
-                    const SizedBox(height: AppSpacing.lg),
-                    // Search bar
-                    TextField(
-                      controller: _searchController,
-                      decoration: InputDecoration(
-                        hintText: 'Search destinations...',
-                        prefixIcon: const Icon(Icons.search),
-                        filled: true,
-                        fillColor: AppColors.surface,
-                        border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(
-                            AppSpacing.radiusLg,
-                          ),
-                          borderSide: const BorderSide(color: AppColors.border),
-                        ),
-                        enabledBorder: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(
-                            AppSpacing.radiusLg,
-                          ),
-                          borderSide: const BorderSide(color: AppColors.border),
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            ),
-
-            // Category chips
-            SliverToBoxAdapter(
-              child: SizedBox(
-                height: 48,
-                child: ListView.separated(
-                  scrollDirection: Axis.horizontal,
-                  padding: const EdgeInsets.symmetric(
-                    horizontal: AppSpacing.screenPadding,
-                  ),
-                  itemCount: _categories.length,
-                  separatorBuilder: (_, __) =>
-                      const SizedBox(width: AppSpacing.sm),
-                  itemBuilder: (context, index) {
-                    final category = _categories[index];
-                    final isSelected = category == _selectedCategory;
-                    return FilterChip(
-                      label: Text(category),
-                      selected: isSelected,
-                      onSelected: (_) {
-                        setState(() {
-                          _selectedCategory = category;
-                        });
-                      },
-                      selectedColor: AppColors.primaryLight.withValues(
-                        alpha: 0.3,
-                      ),
-                      checkmarkColor: AppColors.primary,
-                      labelStyle: TextStyle(
-                        color: isSelected
-                            ? AppColors.primary
-                            : AppColors.textSecondary,
-                        fontWeight: isSelected
-                            ? FontWeight.w600
-                            : FontWeight.normal,
-                      ),
-                    );
-                  },
-                ),
-              ),
-            ),
-
-            const SliverToBoxAdapter(child: SizedBox(height: AppSpacing.lg)),
-
-            // Featured destinations section
-            SliverToBoxAdapter(
-              child: Padding(
-                padding: const EdgeInsets.symmetric(
-                  horizontal: AppSpacing.screenPadding,
-                ),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text(
-                      'Featured Destinations',
-                      style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                        fontWeight: FontWeight.w600,
-                      ),
-                    ),
-                    TextButton(onPressed: () {}, child: const Text('See all')),
-                  ],
-                ),
-              ),
-            ),
-
-            // Featured destinations grid
-            SliverToBoxAdapter(
-              child: SizedBox(
-                height: 220,
-                child: ListView.builder(
-                  scrollDirection: Axis.horizontal,
-                  padding: const EdgeInsets.symmetric(
-                    horizontal: AppSpacing.screenPadding,
-                  ),
-                  itemCount: _featuredDestinations.length,
-                  itemBuilder: (context, index) {
-                    final destination = _featuredDestinations[index];
-                    return Padding(
-                      padding: const EdgeInsets.only(right: AppSpacing.md),
-                      child: _FeaturedDestinationCard(
-                        destination: destination,
-                        onTap: () => _onDestinationTap(destination),
-                      ),
-                    );
-                  },
-                ),
-              ),
-            ),
-
-            const SliverToBoxAdapter(child: SizedBox(height: AppSpacing.xl)),
-
-            // Popular itineraries section
-            SliverToBoxAdapter(
-              child: Padding(
-                padding: const EdgeInsets.symmetric(
-                  horizontal: AppSpacing.screenPadding,
-                ),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text(
-                      'Popular Itineraries',
-                      style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                        fontWeight: FontWeight.w600,
-                      ),
-                    ),
-                    TextButton(onPressed: () {}, child: const Text('See all')),
-                  ],
-                ),
-              ),
-            ),
-
-            // Popular itineraries list
-            SliverPadding(
-              padding: const EdgeInsets.symmetric(
-                horizontal: AppSpacing.screenPadding,
-              ),
-              sliver: SliverList(
-                delegate: SliverChildBuilderDelegate((context, index) {
-                  final itinerary = _popularItineraries[index];
-                  return Padding(
-                    padding: const EdgeInsets.only(bottom: AppSpacing.md),
-                    child: _ItineraryCard(
-                      itinerary: itinerary,
-                      onTap: () => _onItineraryTap(itinerary),
-                    ),
-                  );
-                }, childCount: _popularItineraries.length),
-              ),
-            ),
-
-            const SliverToBoxAdapter(child: SizedBox(height: AppSpacing.xl)),
-          ],
-        ),
-      ),
-    );
-  }
-
-  void _onDestinationTap(_FeaturedDestination destination) {
-    // Navigate to trip setup with pre-filled destination
-    context.push(
-      AppRoutes.tripSetup,
-      extra: {'destination': destination.city, 'country': destination.country},
-    );
-  }
-
-  void _onItineraryTap(_PopularItinerary itinerary) {
-    // Navigate to itinerary preview
-    ScaffoldMessenger.of(
-      context,
-    ).showSnackBar(SnackBar(content: Text('Opening ${itinerary.title}')));
-  }
-
-  static const _featuredDestinations = [
-    _FeaturedDestination(
-      city: 'Tokyo',
-      country: 'Japan',
-      emoji: '🇯🇵',
-      description: 'Ancient temples & modern marvels',
-      imageUrl: 'tokyo.jpg',
-    ),
-    _FeaturedDestination(
-      city: 'Paris',
-      country: 'France',
-      emoji: '🇫🇷',
-      description: 'Art, cuisine & romance',
-      imageUrl: 'paris.jpg',
-    ),
-    _FeaturedDestination(
-      city: 'Bangkok',
-      country: 'Thailand',
-      emoji: '🇹🇭',
-      description: 'Street food & golden temples',
-      imageUrl: 'bangkok.jpg',
-    ),
-    _FeaturedDestination(
-      city: 'Barcelona',
-      country: 'Spain',
-      emoji: '🇪🇸',
-      description: 'Gaudí & Mediterranean vibes',
-      imageUrl: 'barcelona.jpg',
-    ),
-    _FeaturedDestination(
-      city: 'Bali',
-      country: 'Indonesia',
-      emoji: '🇮🇩',
-      description: 'Beaches, temples & rice terraces',
-      imageUrl: 'bali.jpg',
-    ),
-  ];
-
-  static const _popularItineraries = [
-    _PopularItinerary(
-      title: '7 Days in Japan',
-      route: 'Tokyo → Kyoto → Osaka',
-      duration: '7 days',
-      category: 'Cultural',
-      saves: 2453,
-    ),
-    _PopularItinerary(
-      title: 'Thailand Explorer',
-      route: 'Bangkok → Chiang Mai → Islands',
-      duration: '10 days',
-      category: 'Adventure',
-      saves: 1876,
-    ),
-    _PopularItinerary(
-      title: 'Italian Classics',
-      route: 'Rome → Florence → Venice',
-      duration: '9 days',
-      category: 'Cultural',
-      saves: 1654,
-    ),
-    _PopularItinerary(
-      title: 'Ultimate Portugal',
-      route: 'Lisbon → Porto → Algarve',
-      duration: '8 days',
-      category: 'Food & Wine',
-      saves: 1243,
-    ),
-  ];
-}
-
-/// Featured destination data
-class _FeaturedDestination {
-  const _FeaturedDestination({
-    required this.city,
-    required this.country,
-    required this.emoji,
-    required this.description,
-    required this.imageUrl,
-  });
-
-  final String city;
-  final String country;
-  final String emoji;
-  final String description;
-  final String imageUrl;
-}
-
-/// Featured destination card
-class _FeaturedDestinationCard extends StatelessWidget {
-  const _FeaturedDestinationCard({
-    required this.destination,
-    required this.onTap,
-  });
-
-  final _FeaturedDestination destination;
-  final VoidCallback onTap;
-
-  @override
-  Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: onTap,
-      child: Container(
-        width: 160,
-        decoration: BoxDecoration(
-          color: AppColors.surface,
-          borderRadius: BorderRadius.circular(AppSpacing.radiusLg),
-          border: Border.all(color: AppColors.border),
-        ),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            // Image placeholder
-            Container(
-              height: 120,
-              decoration: BoxDecoration(
-                color: AppColors.primaryLight.withValues(alpha: 0.3),
-                borderRadius: const BorderRadius.vertical(
-                  top: Radius.circular(AppSpacing.radiusLg),
-                ),
+            // Main content with padding
+            Padding(
+              padding: const EdgeInsets.fromLTRB(
+                AppSpacing.lg,
+                AppSpacing.lg,
+                AppSpacing.lg,
+                0,
               ),
-              child: Center(
-                child: Text(
-                  destination.emoji,
-                  style: const TextStyle(fontSize: 48),
-                ),
+              child: Column(
+                children: [
+                  // Search bar
+                  _buildSearchBar(),
+                  const SizedBox(height: AppSpacing.lg),
+                  // Tab bar
+                  _buildTabBar(),
+                ],
               ),
             ),
-            Padding(
-              padding: const EdgeInsets.all(AppSpacing.sm),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
+            const SizedBox(height: AppSpacing.lg),
+            // Tab content
+            Expanded(
+              child: TabBarView(
+                controller: _tabController,
                 children: [
-                  Text(
-                    destination.city,
-                    style: Theme.of(context).textTheme.titleSmall?.copyWith(
-                      fontWeight: FontWeight.w600,
-                    ),
-                  ),
-                  const SizedBox(height: 2),
-                  Text(
-                    destination.country,
-                    style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                      color: AppColors.textSecondary,
-                    ),
-                  ),
-                  const SizedBox(height: 4),
-                  Text(
-                    destination.description,
-                    style: Theme.of(context).textTheme.labelSmall?.copyWith(
-                      color: AppColors.textTertiary,
-                    ),
-                    maxLines: 2,
-                    overflow: TextOverflow.ellipsis,
+                  _DestinationsTab(),
+                  _ItinerariesTab(
+                    onSeeAllHistory: () {
+                      context.push(AppRoutes.exploreHistory);
+                    },
                   ),
                 ],
               ),
@@ -399,139 +86,618 @@ class _FeaturedDestinationCard extends StatelessWidget {
       ),
     );
   }
-}
 
-/// Popular itinerary data
-class _PopularItinerary {
-  const _PopularItinerary({
-    required this.title,
-    required this.route,
-    required this.duration,
-    required this.category,
-    required this.saves,
-  });
-
-  final String title;
-  final String route;
-  final String duration;
-  final String category;
-  final int saves;
-}
-
-/// Itinerary card
-class _ItineraryCard extends StatelessWidget {
-  const _ItineraryCard({required this.itinerary, required this.onTap});
-
-  final _PopularItinerary itinerary;
-  final VoidCallback onTap;
-
-  @override
-  Widget build(BuildContext context) {
+  Widget _buildSearchBar() {
     return GestureDetector(
-      onTap: onTap,
+      onTap: () {
+        // Open search
+      },
       child: Container(
-        padding: const EdgeInsets.all(AppSpacing.md),
+        height: 48,
+        padding: const EdgeInsets.symmetric(horizontal: AppSpacing.md),
         decoration: BoxDecoration(
           color: AppColors.surface,
-          borderRadius: BorderRadius.circular(AppSpacing.radiusMd),
+          borderRadius: BorderRadius.circular(AppSpacing.radiusXl),
           border: Border.all(color: AppColors.border),
         ),
         child: Row(
           children: [
-            // Icon/Image placeholder
-            Container(
-              width: 64,
-              height: 64,
-              decoration: BoxDecoration(
-                color: AppColors.primaryLight.withValues(alpha: 0.3),
-                borderRadius: BorderRadius.circular(AppSpacing.radiusSm),
-              ),
-              child: const Icon(
-                Icons.map_outlined,
-                color: AppColors.primary,
-                size: 32,
+            const Icon(
+              LucideIcons.search,
+              size: 20,
+              color: AppColors.textTertiary,
+            ),
+            const SizedBox(width: AppSpacing.sm),
+            Text(
+              'Search destinations...',
+              style: GoogleFonts.dmSans(
+                fontSize: 15,
+                color: AppColors.textTertiary,
               ),
             ),
-            const SizedBox(width: AppSpacing.md),
-            Expanded(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Row(
-                    children: [
-                      Expanded(
-                        child: Text(
-                          itinerary.title,
-                          style: Theme.of(context).textTheme.titleSmall
-                              ?.copyWith(fontWeight: FontWeight.w600),
-                        ),
-                      ),
-                      Container(
-                        padding: const EdgeInsets.symmetric(
-                          horizontal: AppSpacing.sm,
-                          vertical: 2,
-                        ),
-                        decoration: BoxDecoration(
-                          color: AppColors.primaryLight.withValues(alpha: 0.2),
-                          borderRadius: BorderRadius.circular(
-                            AppSpacing.radiusSm,
-                          ),
-                        ),
-                        child: Text(
-                          itinerary.duration,
-                          style: Theme.of(context).textTheme.labelSmall
-                              ?.copyWith(color: AppColors.primary),
-                        ),
-                      ),
-                    ],
-                  ),
-                  const SizedBox(height: 4),
-                  Text(
-                    itinerary.route,
-                    style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                      color: AppColors.textSecondary,
-                    ),
-                  ),
-                  const SizedBox(height: 4),
-                  Row(
-                    children: [
-                      const Icon(
-                        Icons.bookmark_outline,
-                        size: 14,
-                        color: AppColors.textTertiary,
-                      ),
-                      const SizedBox(width: 4),
-                      Text(
-                        '${itinerary.saves}',
-                        style: Theme.of(context).textTheme.labelSmall?.copyWith(
-                          color: AppColors.textTertiary,
-                        ),
-                      ),
-                      const SizedBox(width: AppSpacing.md),
-                      Container(
-                        padding: const EdgeInsets.symmetric(
-                          horizontal: AppSpacing.xs,
-                          vertical: 2,
-                        ),
-                        decoration: BoxDecoration(
-                          color: AppColors.background,
-                          borderRadius: BorderRadius.circular(4),
-                        ),
-                        child: Text(
-                          itinerary.category,
-                          style: Theme.of(context).textTheme.labelSmall
-                              ?.copyWith(color: AppColors.textSecondary),
-                        ),
-                      ),
-                    ],
-                  ),
-                ],
-              ),
-            ),
-            const Icon(Icons.chevron_right, color: AppColors.textTertiary),
           ],
         ),
       ),
     );
   }
+
+  Widget _buildTabBar() {
+    return Row(
+      children: [
+        Expanded(
+          child: _TabItem(
+            label: 'Destinations',
+            isSelected: _selectedTabIndex == 0,
+            onTap: () {
+              _tabController.animateTo(0);
+            },
+          ),
+        ),
+        Expanded(
+          child: _TabItem(
+            label: 'Itineraries',
+            isSelected: _selectedTabIndex == 1,
+            onTap: () {
+              _tabController.animateTo(1);
+            },
+          ),
+        ),
+      ],
+    );
+  }
+}
+
+class _TabItem extends StatelessWidget {
+  const _TabItem({
+    required this.label,
+    required this.isSelected,
+    required this.onTap,
+  });
+
+  final String label;
+  final bool isSelected;
+  final VoidCallback onTap;
+
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: onTap,
+      child: Container(
+        height: 44,
+        decoration: BoxDecoration(
+          border: Border(
+            bottom: BorderSide(
+              color: isSelected ? AppColors.primary : AppColors.border,
+              width: isSelected ? 2 : 1,
+            ),
+          ),
+        ),
+        child: Center(
+          child: Text(
+            label,
+            style: GoogleFonts.dmSans(
+              fontSize: 15,
+              fontWeight: isSelected ? FontWeight.w600 : FontWeight.w500,
+              color: isSelected ? AppColors.textPrimary : AppColors.textTertiary,
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+// Destinations Tab
+class _DestinationsTab extends StatelessWidget {
+  final _asiaDestinations = const [
+    _DestinationData(
+      name: 'Thailand',
+      region: 'Southeast Asia',
+      imageUrl:
+          'https://images.unsplash.com/photo-1668781742496-ab54d0d6f4bb?w=400&q=80',
+    ),
+    _DestinationData(
+      name: 'Japan',
+      region: 'East Asia',
+      imageUrl:
+          'https://images.unsplash.com/photo-1713374563263-a7f8d0f86024?w=400&q=80',
+    ),
+    _DestinationData(
+      name: 'Vietnam',
+      region: 'Southeast Asia',
+      imageUrl:
+          'https://images.unsplash.com/photo-1692872031707-4214d2f62adc?w=400&q=80',
+    ),
+  ];
+
+  final _europeDestinations = const [
+    _DestinationData(
+      name: 'Italy',
+      region: 'Southern Europe',
+      imageUrl:
+          'https://images.unsplash.com/photo-1682823439973-d9e1ee24d3df?w=400&q=80',
+    ),
+    _DestinationData(
+      name: 'France',
+      region: 'Western Europe',
+      imageUrl:
+          'https://images.unsplash.com/photo-1512075828532-5cf99ad60544?w=400&q=80',
+    ),
+    _DestinationData(
+      name: 'Spain',
+      region: 'Southern Europe',
+      imageUrl:
+          'https://images.unsplash.com/photo-1681385748362-697bd35d363f?w=400&q=80',
+    ),
+  ];
+
+  @override
+  Widget build(BuildContext context) {
+    return SingleChildScrollView(
+      child: Column(
+        children: [
+          _DestinationSection(
+            title: 'Asia',
+            destinations: _asiaDestinations,
+            onSeeAll: () {},
+          ),
+          const SizedBox(height: AppSpacing.lg),
+          _DestinationSection(
+            title: 'Europe',
+            destinations: _europeDestinations,
+            onSeeAll: () {},
+          ),
+          const SizedBox(height: AppSpacing.lg),
+        ],
+      ),
+    );
+  }
+}
+
+class _DestinationSection extends StatelessWidget {
+  const _DestinationSection({
+    required this.title,
+    required this.destinations,
+    required this.onSeeAll,
+  });
+
+  final String title;
+  final List<_DestinationData> destinations;
+  final VoidCallback onSeeAll;
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        // Section header
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: AppSpacing.lg),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Text(
+                title,
+                style: GoogleFonts.dmSans(
+                  fontSize: 16,
+                  fontWeight: FontWeight.w600,
+                  color: AppColors.textPrimary,
+                ),
+              ),
+              GestureDetector(
+                onTap: onSeeAll,
+                child: Text(
+                  'See all',
+                  style: GoogleFonts.dmSans(
+                    fontSize: 14,
+                    fontWeight: FontWeight.w500,
+                    color: AppColors.textSecondary,
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ),
+        const SizedBox(height: AppSpacing.sm),
+        // Horizontal scroll of cards
+        SizedBox(
+          height: 200,
+          child: ListView.separated(
+            scrollDirection: Axis.horizontal,
+            padding: const EdgeInsets.symmetric(horizontal: AppSpacing.lg),
+            itemCount: destinations.length,
+            separatorBuilder: (context, index) =>
+                const SizedBox(width: AppSpacing.sm),
+            itemBuilder: (context, index) {
+              return _DestinationCard(destination: destinations[index]);
+            },
+          ),
+        ),
+      ],
+    );
+  }
+}
+
+class _DestinationCard extends StatelessWidget {
+  const _DestinationCard({required this.destination});
+
+  final _DestinationData destination;
+
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: () {
+        context.push(AppRoutes.tripSetup);
+      },
+      child: Container(
+        width: 160,
+        height: 200,
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(AppSpacing.radiusXl),
+        ),
+        child: ClipRRect(
+          borderRadius: BorderRadius.circular(AppSpacing.radiusXl),
+          child: Stack(
+            fit: StackFit.expand,
+            children: [
+              CachedNetworkImage(
+                imageUrl: destination.imageUrl,
+                fit: BoxFit.cover,
+                placeholder: (context, url) => const ColoredBox(
+                  color: AppColors.shimmerBase,
+                ),
+                errorWidget: (context, url, error) => Container(
+                  color: AppColors.shimmerBase,
+                  child: const Icon(
+                    LucideIcons.image,
+                    color: AppColors.textTertiary,
+                  ),
+                ),
+              ),
+              // Gradient overlay
+              Positioned.fill(
+                child: DecoratedBox(
+                  decoration: BoxDecoration(
+                    gradient: LinearGradient(
+                      begin: Alignment.topCenter,
+                      end: Alignment.bottomCenter,
+                      colors: [
+                        Colors.transparent,
+                        Colors.black.withValues(alpha: 0.6),
+                      ],
+                    ),
+                  ),
+                ),
+              ),
+              // Content
+              Positioned(
+                left: 14,
+                right: 14,
+                bottom: 14,
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Text(
+                      destination.name,
+                      style: GoogleFonts.dmSans(
+                        fontSize: 15,
+                        fontWeight: FontWeight.w600,
+                        color: Colors.white,
+                      ),
+                    ),
+                    Text(
+                      destination.region,
+                      style: GoogleFonts.dmSans(
+                        fontSize: 12,
+                        color: Colors.white.withValues(alpha: 0.8),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+// Itineraries Tab
+class _ItinerariesTab extends StatelessWidget {
+  const _ItinerariesTab({this.onSeeAllHistory});
+
+  final VoidCallback? onSeeAllHistory;
+
+  static const _popularItineraries = [
+    _ItineraryData(
+      title: 'Bali Adventure',
+      subtitle: 'Indonesia \u00b7 10 days',
+      imageUrl:
+          'https://images.unsplash.com/photo-1559628272-826045d47dbb?w=400&q=80',
+    ),
+    _ItineraryData(
+      title: 'Paris Weekend',
+      subtitle: 'France \u00b7 3 days',
+      imageUrl:
+          'https://images.unsplash.com/photo-1686087127927-6ec735ddcb1a?w=400&q=80',
+    ),
+    _ItineraryData(
+      title: 'Tokyo Explorer',
+      subtitle: 'Japan \u00b7 7 days',
+      imageUrl:
+          'https://images.unsplash.com/photo-1668392296971-dfa40ea9253e?w=400&q=80',
+    ),
+  ];
+
+  static const _historyItineraries = [
+    _ItineraryData(
+      title: 'Ancient Rome',
+      subtitle: 'Italy \u00b7 7 days',
+      imageUrl:
+          'https://images.unsplash.com/photo-1678714873473-fb21921be332?w=400&q=80',
+    ),
+    _ItineraryData(
+      title: 'Egyptian Wonders',
+      subtitle: 'Egypt \u00b7 10 days',
+      imageUrl:
+          'https://images.unsplash.com/photo-1636609586443-e0183b5b549b?w=400&q=80',
+    ),
+    _ItineraryData(
+      title: 'Greek Odyssey',
+      subtitle: 'Greece \u00b7 8 days',
+      imageUrl:
+          'https://images.unsplash.com/photo-1536198899635-446f211a8485?w=400&q=80',
+    ),
+  ];
+
+  static const _beachItineraries = [
+    _ItineraryData(
+      title: 'Maldives Escape',
+      subtitle: 'Maldives \u00b7 5 days',
+      imageUrl:
+          'https://images.unsplash.com/photo-1691849233457-837d8e2f9da3?w=400&q=80',
+    ),
+    _ItineraryData(
+      title: 'Phuket Paradise',
+      subtitle: 'Thailand \u00b7 7 days',
+      imageUrl:
+          'https://images.unsplash.com/photo-1737515908826-32c70f8f39cd?w=400&q=80',
+    ),
+    _ItineraryData(
+      title: 'Caribbean Cruise',
+      subtitle: 'Multi-country \u00b7 10 days',
+      imageUrl:
+          'https://images.unsplash.com/photo-1747336755438-e822d83e9383?w=400&q=80',
+    ),
+  ];
+
+  static const _seasonalItineraries = [
+    _ItineraryData(
+      title: 'Cherry Blossom',
+      subtitle: 'Japan \u00b7 10 days',
+      imageUrl:
+          'https://images.unsplash.com/photo-1669181173760-73f42d67bc9a?w=400&q=80',
+    ),
+    _ItineraryData(
+      title: 'Northern Lights',
+      subtitle: 'Iceland \u00b7 7 days',
+      imageUrl:
+          'https://images.unsplash.com/photo-1610483527491-b8fe09413a8b?w=400&q=80',
+    ),
+    _ItineraryData(
+      title: 'Fall Foliage',
+      subtitle: 'USA \u00b7 5 days',
+      imageUrl:
+          'https://images.unsplash.com/photo-1736066330739-13796f8c1316?w=400&q=80',
+    ),
+  ];
+
+  @override
+  Widget build(BuildContext context) {
+    return SingleChildScrollView(
+      child: Column(
+        children: [
+          _ItinerarySection(
+            title: 'Popular Itineraries',
+            itineraries: _popularItineraries,
+            onSeeAll: () {},
+          ),
+          const SizedBox(height: AppSpacing.lg),
+          _ItinerarySection(
+            title: 'History & Culture',
+            itineraries: _historyItineraries,
+            onSeeAll: onSeeAllHistory,
+          ),
+          const SizedBox(height: AppSpacing.lg),
+          _ItinerarySection(
+            title: 'Beach Getaways',
+            itineraries: _beachItineraries,
+            onSeeAll: () {},
+          ),
+          const SizedBox(height: AppSpacing.lg),
+          _ItinerarySection(
+            title: 'Seasonal Escapes',
+            itineraries: _seasonalItineraries,
+            onSeeAll: () {},
+          ),
+          const SizedBox(height: AppSpacing.lg),
+        ],
+      ),
+    );
+  }
+}
+
+class _ItinerarySection extends StatelessWidget {
+  const _ItinerarySection({
+    required this.title,
+    required this.itineraries,
+    this.onSeeAll,
+  });
+
+  final String title;
+  final List<_ItineraryData> itineraries;
+  final VoidCallback? onSeeAll;
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        // Section header
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: AppSpacing.lg),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Text(
+                title,
+                style: GoogleFonts.dmSans(
+                  fontSize: 16,
+                  fontWeight: FontWeight.w600,
+                  color: AppColors.textPrimary,
+                ),
+              ),
+              GestureDetector(
+                onTap: onSeeAll,
+                child: Text(
+                  'See all',
+                  style: GoogleFonts.dmSans(
+                    fontSize: 14,
+                    fontWeight: FontWeight.w500,
+                    color: AppColors.textSecondary,
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ),
+        const SizedBox(height: AppSpacing.sm),
+        // Horizontal scroll of cards
+        SizedBox(
+          height: 200,
+          child: ListView.separated(
+            scrollDirection: Axis.horizontal,
+            padding: const EdgeInsets.symmetric(horizontal: AppSpacing.lg),
+            itemCount: itineraries.length,
+            separatorBuilder: (context, index) =>
+                const SizedBox(width: AppSpacing.sm),
+            itemBuilder: (context, index) {
+              return _ItineraryCard(itinerary: itineraries[index]);
+            },
+          ),
+        ),
+      ],
+    );
+  }
+}
+
+class _ItineraryCard extends StatelessWidget {
+  const _ItineraryCard({required this.itinerary});
+
+  final _ItineraryData itinerary;
+
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: () {
+        // Navigate to itinerary detail
+      },
+      child: Container(
+        width: 160,
+        height: 200,
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(AppSpacing.radiusXl),
+        ),
+        child: ClipRRect(
+          borderRadius: BorderRadius.circular(AppSpacing.radiusXl),
+          child: Stack(
+            fit: StackFit.expand,
+            children: [
+              CachedNetworkImage(
+                imageUrl: itinerary.imageUrl,
+                fit: BoxFit.cover,
+                placeholder: (context, url) => const ColoredBox(
+                  color: AppColors.shimmerBase,
+                ),
+                errorWidget: (context, url, error) => Container(
+                  color: AppColors.shimmerBase,
+                  child: const Icon(
+                    LucideIcons.image,
+                    color: AppColors.textTertiary,
+                  ),
+                ),
+              ),
+              // Gradient overlay
+              Positioned.fill(
+                child: DecoratedBox(
+                  decoration: BoxDecoration(
+                    gradient: LinearGradient(
+                      begin: Alignment.topCenter,
+                      end: Alignment.bottomCenter,
+                      colors: [
+                        Colors.transparent,
+                        Colors.black.withValues(alpha: 0.6),
+                      ],
+                    ),
+                  ),
+                ),
+              ),
+              // Content
+              Positioned(
+                left: 14,
+                right: 14,
+                bottom: 14,
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Text(
+                      itinerary.title,
+                      style: GoogleFonts.dmSans(
+                        fontSize: 15,
+                        fontWeight: FontWeight.w600,
+                        color: Colors.white,
+                      ),
+                    ),
+                    Text(
+                      itinerary.subtitle,
+                      style: GoogleFonts.dmSans(
+                        fontSize: 12,
+                        color: Colors.white.withValues(alpha: 0.8),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+// Data classes
+class _DestinationData {
+  const _DestinationData({
+    required this.name,
+    required this.region,
+    required this.imageUrl,
+  });
+
+  final String name;
+  final String region;
+  final String imageUrl;
+}
+
+class _ItineraryData {
+  const _ItineraryData({
+    required this.title,
+    required this.subtitle,
+    required this.imageUrl,
+  });
+
+  final String title;
+  final String subtitle;
+  final String imageUrl;
 }

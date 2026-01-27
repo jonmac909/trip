@@ -1,0 +1,658 @@
+{
+  "type": "frame",
+  "id": "Qv6UP",
+  "x": 2380,
+  "y": 8256,
+  "name": "Feature 6. Itinerary Detail",
+  "clip": true,
+  "width": 390,
+  "height": 844,
+  "fill": "#FFFFFF",
+  "cornerRadius": 40,
+  "layout": "vertical",
+  "children": [
+    {
+      "type": "frame",
+      "id": "1exBx",
+      "name": "heroImg",
+      "metadata": {
+        "type": "unsplash",
+        "username": "mattmutluu",
+        "link": "https://unsplash.com/@mattmutluu",
+        "author": "Matt Mutlu"
+      },
+      "clip": true,
+      "width": "fill_container",
+      "height": 280,
+      "fill": {
+        "type": "image",
+        "enabled": true,
+        "url": "https://images.unsplash.com/photo-1715202145156-ca09159c3183?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4NDM0ODN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3NjkxODM2Njl8&ixlib=rb-4.1.0&q=80&w=1080",
+        "mode": "fill"
+      },
+      "children": [
+        {
+          "type": "frame",
+          "id": "7amFb",
+          "name": "backBtn",
+          "width": "fill_container",
+          "height": "fill_container",
+          "layout": "none",
+          "children": [
+            {
+              "type": "icon_font",
+              "id": "A7Gks",
+              "x": 8,
+              "y": 8,
+              "name": "backIcon",
+              "width": 20,
+              "height": 20,
+              "iconFontName": "arrow-left",
+              "iconFontFamily": "lucide",
+              "fill": "#FFFFFF"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "KYsgp",
+      "name": "content",
+      "width": "fill_container",
+      "height": "fill_container",
+      "layout": "vertical",
+      "gap": 20,
+      "padding": 20,
+      "children": [
+        {
+          "type": "frame",
+          "id": "tU5Np",
+          "name": "creatorRow",
+          "width": "fill_container",
+          "gap": 12,
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "ellipse",
+              "id": "kgJHs",
+              "name": "creatorAvatar",
+              "metadata": {
+                "type": "unsplash",
+                "username": "phulls",
+                "link": "https://unsplash.com/@phulls",
+                "author": "Gourav Phulwaria"
+              },
+              "fill": {
+                "type": "image",
+                "enabled": true,
+                "url": "https://images.unsplash.com/photo-1715188160310-66dc447b78af?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4NDM0ODN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3NjkxODM2ODB8&ixlib=rb-4.1.0&q=80&w=1080",
+                "mode": "fill"
+              },
+              "width": 48,
+              "height": 48
+            },
+            {
+              "type": "frame",
+              "id": "w6IHF",
+              "name": "creatorInfo",
+              "width": "fill_container",
+              "layout": "vertical",
+              "gap": 4,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "8NvBL",
+                  "name": "creatorName",
+                  "fill": "#1F2937",
+                  "content": "@wanderlust.amy",
+                  "fontFamily": "DM Sans",
+                  "fontSize": 15,
+                  "fontWeight": "600"
+                },
+                {
+                  "type": "text",
+                  "id": "dl2Vp",
+                  "name": "creatorMeta",
+                  "fill": "#9CA3AF",
+                  "content": "Travel Creator \u00b7 12.4k followers",
+                  "fontFamily": "DM Sans",
+                  "fontSize": 12,
+                  "fontWeight": "normal"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "ZKfqk",
+              "name": "followBtn",
+              "fill": "#1F2937",
+              "cornerRadius": 20,
+              "padding": [
+                8,
+                16
+              ],
+              "children": [
+                {
+                  "type": "text",
+                  "id": "2GEnT",
+                  "name": "followText",
+                  "fill": "#FFFFFF",
+                  "content": "Follow",
+                  "fontFamily": "DM Sans",
+                  "fontSize": 13,
+                  "fontWeight": "600"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "v5yvI",
+          "name": "titleSection",
+          "width": "fill_container",
+          "layout": "vertical",
+          "gap": 8,
+          "children": [
+            {
+              "type": "text",
+              "id": "FUVp0",
+              "name": "itinTitle",
+              "fill": "#1F2937",
+              "content": "Tokyo Explorer",
+              "fontFamily": "DM Sans",
+              "fontSize": 26,
+              "fontWeight": "700"
+            },
+            {
+              "type": "text",
+              "id": "PbVKW",
+              "name": "itinDesc",
+              "fill": "#6B7280",
+              "textGrowth": "fixed-width",
+              "width": "fill_container",
+              "content": "The ultimate Tokyo itinerary covering Shibuya, Shinjuku, Harajuku, Asakusa and day trips to Mt. Fuji.",
+              "lineHeight": 1.5,
+              "fontFamily": "DM Sans",
+              "fontSize": 14,
+              "fontWeight": "normal"
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "b0o60",
+          "name": "statsRow",
+          "width": "fill_container",
+          "gap": 24,
+          "children": [
+            {
+              "type": "frame",
+              "id": "v8Xzl",
+              "name": "stat1",
+              "gap": 6,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "icon_font",
+                  "id": "l0cel",
+                  "name": "stat1Icon",
+                  "width": 18,
+                  "height": 18,
+                  "iconFontName": "calendar",
+                  "iconFontFamily": "lucide",
+                  "fill": "#6B7280"
+                },
+                {
+                  "type": "text",
+                  "id": "2g5dD",
+                  "name": "stat1Text",
+                  "fill": "#6B7280",
+                  "content": "7 days \u00b7 Tokyo",
+                  "fontFamily": "DM Sans",
+                  "fontSize": 14,
+                  "fontWeight": "normal"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "QTjyq",
+              "name": "stat2",
+              "gap": 6,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "icon_font",
+                  "id": "EG34C",
+                  "name": "stat2Icon",
+                  "width": 18,
+                  "height": 18,
+                  "iconFontName": "map-pin",
+                  "iconFontFamily": "lucide",
+                  "fill": "#6B7280"
+                },
+                {
+                  "type": "text",
+                  "id": "ko0rI",
+                  "name": "stat2Text",
+                  "fill": "#6B7280",
+                  "content": "12 places",
+                  "fontFamily": "DM Sans",
+                  "fontSize": 14,
+                  "fontWeight": "normal"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "mf5U8",
+              "name": "stat3",
+              "gap": 6,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "icon_font",
+                  "id": "Si9TE",
+                  "name": "stat3Icon",
+                  "width": 18,
+                  "height": 18,
+                  "iconFontName": "bookmark",
+                  "iconFontFamily": "lucide",
+                  "fill": "#6B7280"
+                },
+                {
+                  "type": "text",
+                  "id": "xR2Lp",
+                  "name": "stat3Text",
+                  "fill": "#6B7280",
+                  "content": "2.4k saves",
+                  "fontFamily": "DM Sans",
+                  "fontSize": 14,
+                  "fontWeight": "normal"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "rectangle",
+          "id": "Ff3Ho",
+          "name": "divider",
+          "fill": "#E5E7EB",
+          "width": "fill_container",
+          "height": 1
+        },
+        {
+          "type": "frame",
+          "id": "70hmL",
+          "name": "previewSection",
+          "width": "fill_container",
+          "layout": "vertical",
+          "gap": 12,
+          "children": [
+            {
+              "type": "text",
+              "id": "VkaAi",
+              "name": "previewLabel",
+              "fill": "#1F2937",
+              "content": "What's Inside",
+              "fontFamily": "DM Sans",
+              "fontSize": 16,
+              "fontWeight": "600"
+            },
+            {
+              "type": "frame",
+              "id": "U8mS0",
+              "name": "daysList",
+              "width": "fill_container",
+              "layout": "vertical",
+              "gap": 8,
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "jw8hy",
+                  "name": "day1",
+                  "width": "fill_container",
+                  "fill": "#F9FAFB",
+                  "cornerRadius": 12,
+                  "gap": 12,
+                  "padding": 12,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "4oyFl",
+                      "name": "day1Badge",
+                      "fill": "#BFFF00",
+                      "cornerRadius": 8,
+                      "padding": [
+                        6,
+                        10
+                      ],
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "5Zo6Q",
+                          "name": "day1Num",
+                          "fill": "#1F2937",
+                          "content": "1",
+                          "fontFamily": "DM Sans",
+                          "fontSize": 13,
+                          "fontWeight": "700"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "NQBJA",
+                      "name": "day1Info",
+                      "width": "fill_container",
+                      "layout": "vertical",
+                      "gap": 2,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "SJANJ",
+                          "name": "day1Title",
+                          "fill": "#1F2937",
+                          "content": "Shibuya & Harajuku",
+                          "fontFamily": "DM Sans",
+                          "fontSize": 14,
+                          "fontWeight": "600"
+                        },
+                        {
+                          "type": "text",
+                          "id": "kp8L5",
+                          "name": "day1Places",
+                          "fill": "#9CA3AF",
+                          "content": "4 places",
+                          "fontFamily": "DM Sans",
+                          "fontSize": 12,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "icon_font",
+                      "id": "bBrVe",
+                      "name": "day1Arrow",
+                      "width": 18,
+                      "height": 18,
+                      "iconFontName": "chevron-right",
+                      "iconFontFamily": "lucide",
+                      "fill": "#9CA3AF"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "RTuYX",
+                  "name": "day2",
+                  "width": "fill_container",
+                  "fill": "#F9FAFB",
+                  "cornerRadius": 12,
+                  "gap": 12,
+                  "padding": 12,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "WyCgS",
+                      "name": "day2Badge",
+                      "fill": "#E5E7EB",
+                      "cornerRadius": 8,
+                      "padding": [
+                        6,
+                        10
+                      ],
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "T8GqU",
+                          "name": "day2Num",
+                          "fill": "#6B7280",
+                          "content": "2",
+                          "fontFamily": "DM Sans",
+                          "fontSize": 13,
+                          "fontWeight": "700"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "iIQNJ",
+                      "name": "day2Info",
+                      "width": "fill_container",
+                      "layout": "vertical",
+                      "gap": 2,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "iMNdW",
+                          "name": "day2Title",
+                          "fill": "#1F2937",
+                          "content": "Shinjuku & Golden Gai",
+                          "fontFamily": "DM Sans",
+                          "fontSize": 14,
+                          "fontWeight": "600"
+                        },
+                        {
+                          "type": "text",
+                          "id": "MMi8V",
+                          "name": "day2Places",
+                          "fill": "#9CA3AF",
+                          "content": "3 places",
+                          "fontFamily": "DM Sans",
+                          "fontSize": 12,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "icon_font",
+                      "id": "t2CEm",
+                      "name": "day2Arrow",
+                      "width": 18,
+                      "height": 18,
+                      "iconFontName": "chevron-right",
+                      "iconFontFamily": "lucide",
+                      "fill": "#9CA3AF"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "N9yTB",
+                  "name": "day3",
+                  "width": "fill_container",
+                  "fill": "#F9FAFB",
+                  "cornerRadius": 12,
+                  "gap": 12,
+                  "padding": 12,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "QvM3L",
+                      "name": "day3Badge",
+                      "fill": "#E5E7EB",
+                      "cornerRadius": 8,
+                      "padding": [
+                        6,
+                        10
+                      ],
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "S829B",
+                          "name": "day3Num",
+                          "fill": "#6B7280",
+                          "content": "3",
+                          "fontFamily": "DM Sans",
+                          "fontSize": 13,
+                          "fontWeight": "700"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "ya2eV",
+                      "name": "day3Info",
+                      "width": "fill_container",
+                      "layout": "vertical",
+                      "gap": 2,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "ZPe6M",
+                          "name": "day3Title",
+                          "fill": "#1F2937",
+                          "content": "Asakusa & Senso-ji",
+                          "fontFamily": "DM Sans",
+                          "fontSize": 14,
+                          "fontWeight": "600"
+                        },
+                        {
+                          "type": "text",
+                          "id": "8sON0",
+                          "name": "day3Places",
+                          "fill": "#9CA3AF",
+                          "content": "3 places",
+                          "fontFamily": "DM Sans",
+                          "fontSize": 12,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "icon_font",
+                      "id": "Pa7WE",
+                      "name": "day3Arrow",
+                      "width": 18,
+                      "height": 18,
+                      "iconFontName": "chevron-right",
+                      "iconFontFamily": "lucide",
+                      "fill": "#9CA3AF"
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "id": "amchg",
+                  "name": "moreText",
+                  "fill": "#6B7280",
+                  "content": "+ 4 more days",
+                  "textAlign": "center",
+                  "fontFamily": "DM Sans",
+                  "fontSize": 13,
+                  "fontWeight": "normal"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "SXGc0",
+          "name": "btnRow",
+          "width": "fill_container",
+          "gap": 12,
+          "children": [
+            {
+              "type": "frame",
+              "id": "Z2e1j",
+              "name": "saveBtn",
+              "width": "fill_container",
+              "fill": "none",
+              "cornerRadius": 12,
+              "stroke": {
+                "thickness": 1,
+                "fill": "#E5E7EB"
+              },
+              "gap": 8,
+              "padding": [
+                14,
+                20
+              ],
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "icon_font",
+                  "id": "HXxIn",
+                  "name": "saveIcon",
+                  "enabled": false,
+                  "width": 18,
+                  "height": 18,
+                  "iconFontName": "bookmark",
+                  "iconFontFamily": "lucide",
+                  "fill": "#1F2937"
+                },
+                {
+                  "type": "text",
+                  "id": "O2wjT",
+                  "name": "saveText",
+                  "fill": "#1A1A1A",
+                  "content": "Save Itinerary",
+                  "fontFamily": "DM Sans",
+                  "fontSize": 15,
+                  "fontWeight": "600"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "71Au9",
+              "name": "useBtn",
+              "width": "fill_container",
+              "fill": "#BFFF00",
+              "cornerRadius": 12,
+              "gap": 8,
+              "padding": [
+                14,
+                20
+              ],
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "icon_font",
+                  "id": "0qmc7",
+                  "name": "useIcon",
+                  "enabled": false,
+                  "width": 18,
+                  "height": 18,
+                  "iconFontName": "plus",
+                  "iconFontFamily": "lucide",
+                  "fill": "#FFFFFF"
+                },
+                {
+                  "type": "text",
+                  "id": "Nzg3b",
+                  "name": "useText",
+                  "fill": "#1A1A1A",
+                  "content": "Use This Trip",
+                  "fontFamily": "DM Sans",
+                  "fontSize": 15,
+                  "fontWeight": "600"
+                },
+                {
+                  "type": "icon_font",
+                  "id": "9D21h",
+                  "name": "arrow1",
+                  "width": 18,
+                  "height": 18,
+                  "iconFontName": "arrow-right",
+                  "iconFontFamily": "lucide",
+                  "fill": "#1A1A1A"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

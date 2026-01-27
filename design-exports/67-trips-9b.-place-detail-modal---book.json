@@ -1,0 +1,517 @@
+{
+  "type": "frame",
+  "id": "kQujn",
+  "x": 8100,
+  "y": 1000,
+  "name": "Trips 9b. Place Detail Modal - Book",
+  "width": 390,
+  "height": 844,
+  "fill": "#00000080",
+  "cornerRadius": 40,
+  "layout": "vertical",
+  "justifyContent": "end",
+  "children": [
+    {
+      "type": "frame",
+      "id": "UGCwO",
+      "name": "bottomSheet",
+      "clip": true,
+      "width": "fill_container",
+      "height": 760,
+      "fill": "#FFFFFF",
+      "cornerRadius": [
+        24,
+        24,
+        40,
+        40
+      ],
+      "layout": "vertical",
+      "children": [
+        {
+          "type": "frame",
+          "id": "KJBxK",
+          "name": "handleBar",
+          "width": "fill_container",
+          "height": 24,
+          "fill": "#FFFFFF",
+          "justifyContent": "center",
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "rectangle",
+              "cornerRadius": 2,
+              "id": "dAuDb",
+              "name": "handle9b",
+              "fill": "#D1D5DB",
+              "width": 40,
+              "height": 4
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "c8eFC",
+          "name": "heroImg",
+          "metadata": {
+            "type": "unsplash",
+            "username": "fifernando",
+            "link": "https://unsplash.com/@fifernando",
+            "author": "Fidel Fernando"
+          },
+          "width": "fill_container",
+          "height": 200,
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "https://images.unsplash.com/photo-1603497953639-2e798e2f9177?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4NDM0ODN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3NjkxNDA3MjF8&ixlib=rb-4.1.0&q=80&w=1080",
+            "mode": "fill"
+          },
+          "cornerRadius": [
+            24,
+            24,
+            0,
+            0
+          ],
+          "layout": "vertical",
+          "children": [
+            {
+              "type": "frame",
+              "id": "F8ull",
+              "name": "headerOverlay",
+              "width": "fill_container",
+              "height": 56,
+              "padding": [
+                12,
+                16,
+                0,
+                16
+              ],
+              "justifyContent": "end",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "0Cqnw",
+                  "name": "closeBtn",
+                  "width": 36,
+                  "height": 36,
+                  "fill": "#FFFFFF",
+                  "cornerRadius": 18,
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "icon_font",
+                      "id": "ulEqg",
+                      "name": "closeIcon1",
+                      "width": 20,
+                      "height": 20,
+                      "iconFontName": "x",
+                      "iconFontFamily": "lucide",
+                      "fill": "#1A1A1A"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "zrQO6",
+          "name": "content",
+          "width": "fill_container",
+          "height": "fill_container",
+          "layout": "vertical",
+          "gap": 16,
+          "padding": [
+            20,
+            20,
+            40,
+            20
+          ],
+          "children": [
+            {
+              "type": "frame",
+              "id": "FFTbf",
+              "name": "titleRow",
+              "width": "fill_container",
+              "gap": 12,
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "1hAD6",
+                  "name": "titleInfo",
+                  "width": "fill_container",
+                  "layout": "vertical",
+                  "gap": 6,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "BCCQ3",
+                      "name": "placeName",
+                      "fill": "#1A1A1A",
+                      "content": "Sukiyabashi Jiro",
+                      "fontFamily": "DM Sans",
+                      "fontSize": 22,
+                      "fontWeight": "700"
+                    },
+                    {
+                      "type": "text",
+                      "id": "cGhNK",
+                      "name": "placeLocation",
+                      "fill": "#6B7280",
+                      "content": "Ginza, Tokyo",
+                      "fontFamily": "DM Sans",
+                      "fontSize": 14,
+                      "fontWeight": "normal"
+                    },
+                    {
+                      "type": "frame",
+                      "id": "Ueh2u",
+                      "name": "ratingRow",
+                      "gap": 6,
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "icon_font",
+                          "id": "T8yWW",
+                          "name": "starIcon",
+                          "width": 14,
+                          "height": 14,
+                          "iconFontName": "star",
+                          "iconFontFamily": "lucide",
+                          "fill": "#FBBF24"
+                        },
+                        {
+                          "type": "text",
+                          "id": "mYnhe",
+                          "name": "ratingText",
+                          "fill": "#6B7280",
+                          "content": "4.9 \u00b7 3,847 reviews",
+                          "fontFamily": "DM Sans",
+                          "fontSize": 13,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "PiIoH",
+                  "name": "saveBtn",
+                  "width": 40,
+                  "height": 40,
+                  "fill": "#F3F4F6",
+                  "cornerRadius": 20,
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "icon_font",
+                      "id": "8wa5Z",
+                      "name": "saveIcon",
+                      "width": 20,
+                      "height": 20,
+                      "iconFontName": "bookmark",
+                      "iconFontFamily": "lucide",
+                      "fill": "#6B7280"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "x8fkU",
+              "name": "hoursSection",
+              "width": "fill_container",
+              "fill": "#F9FAFB",
+              "cornerRadius": 12,
+              "layout": "vertical",
+              "gap": 8,
+              "padding": 16,
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "Yinke",
+                  "name": "hoursHeader",
+                  "width": "fill_container",
+                  "gap": 8,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "icon_font",
+                      "id": "BcJmT",
+                      "name": "clockIcon",
+                      "width": 16,
+                      "height": 16,
+                      "iconFontName": "clock-3",
+                      "iconFontFamily": "lucide",
+                      "fill": "#6B7280"
+                    },
+                    {
+                      "type": "text",
+                      "id": "jv3dt",
+                      "name": "hoursTitle",
+                      "fill": "#1A1A1A",
+                      "content": "Opening Hours",
+                      "fontFamily": "DM Sans",
+                      "fontSize": 14,
+                      "fontWeight": "600"
+                    },
+                    {
+                      "type": "frame",
+                      "id": "io0My",
+                      "name": "hoursSpacer",
+                      "width": "fill_container",
+                      "height": 1
+                    },
+                    {
+                      "type": "frame",
+                      "id": "nOEOm",
+                      "name": "openBadge",
+                      "fill": "#DCFCE7",
+                      "cornerRadius": 4,
+                      "padding": [
+                        4,
+                        8
+                      ],
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "0rzbK",
+                          "name": "openText",
+                          "fill": "#1A1A1A",
+                          "content": "Open now",
+                          "fontFamily": "DM Sans",
+                          "fontSize": 11,
+                          "fontWeight": "600"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "id": "zpykL",
+                  "name": "hoursDetail",
+                  "fill": "#6B7280",
+                  "content": "10:00 AM \u2013 7:00 PM (Last entry 6:00 PM)",
+                  "fontFamily": "DM Sans",
+                  "fontSize": 13,
+                  "fontWeight": "normal"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "udcfv",
+              "name": "ticketSection",
+              "width": "fill_container",
+              "fill": "#F9FAFB",
+              "cornerRadius": 12,
+              "gap": 12,
+              "padding": 16,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "uuMeI",
+                  "name": "ticketIcon",
+                  "width": 44,
+                  "height": 44,
+                  "fill": "#00000000",
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "icon_font",
+                      "id": "1Hq2n",
+                      "name": "ticketIconInner",
+                      "width": 22,
+                      "height": 22,
+                      "iconFontName": "calendar",
+                      "iconFontFamily": "lucide",
+                      "fill": "#E65100"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "vC1kj",
+                  "name": "ticketInfo",
+                  "width": "fill_container",
+                  "layout": "vertical",
+                  "gap": 2,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "EZKzr",
+                      "name": "ticketTitle",
+                      "fill": "#1A1A1A",
+                      "content": "Reservation Required",
+                      "fontFamily": "DM Sans",
+                      "fontSize": 14,
+                      "fontWeight": "600"
+                    },
+                    {
+                      "type": "text",
+                      "id": "xOa1F",
+                      "name": "ticketDetail",
+                      "fill": "#6B7280",
+                      "content": "Advance booking required",
+                      "fontFamily": "DM Sans",
+                      "fontSize": 12,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "zj47K",
+                  "name": "viewBtn",
+                  "fill": "#BFFF00",
+                  "cornerRadius": 8,
+                  "padding": [
+                    10,
+                    16
+                  ],
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "ZWxbR",
+                      "name": "viewBtnText",
+                      "fill": "#1A1A1A",
+                      "content": "Book",
+                      "fontFamily": "DM Sans",
+                      "fontSize": 13,
+                      "fontWeight": "600"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "qScfZ",
+              "name": "aboutSection",
+              "width": "fill_container",
+              "layout": "vertical",
+              "gap": 8,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "7YL6W",
+                  "name": "aboutTitle",
+                  "fill": "#1A1A1A",
+                  "content": "About",
+                  "fontFamily": "DM Sans",
+                  "fontSize": 16,
+                  "fontWeight": "600"
+                },
+                {
+                  "type": "text",
+                  "id": "SAMPt",
+                  "name": "aboutText",
+                  "fill": "#6B7280",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "Sukiyabashi Jiro is a world-renowned sushi restaurant run by chef Jiro Ono, featured in the documentary 'Jiro Dreams of Sushi'. The intimate 10-seat counter offers an unforgettable omakase experience.",
+                  "lineHeight": 1.5,
+                  "fontFamily": "DM Sans",
+                  "fontSize": 14,
+                  "fontWeight": "normal"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "rsIpJ",
+              "name": "tipsSection",
+              "width": "fill_container",
+              "layout": "vertical",
+              "gap": 8,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "cbFhs",
+                  "name": "tipsTitle",
+                  "fill": "#1A1A1A",
+                  "content": "Tips",
+                  "fontFamily": "DM Sans",
+                  "fontSize": 16,
+                  "fontWeight": "600"
+                },
+                {
+                  "type": "frame",
+                  "id": "13kSy",
+                  "name": "tip1",
+                  "width": "fill_container",
+                  "gap": 8,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "RFeXO",
+                      "name": "tip1Bullet",
+                      "fill": "#6B7280",
+                      "content": "\u2022",
+                      "fontFamily": "DM Sans",
+                      "fontSize": 14,
+                      "fontWeight": "normal"
+                    },
+                    {
+                      "type": "text",
+                      "id": "Vmr3y",
+                      "name": "tip1Text",
+                      "fill": "#6B7280",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "Reservations must be made months in advance",
+                      "lineHeight": 1.4,
+                      "fontFamily": "DM Sans",
+                      "fontSize": 14,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "bbs4H",
+                  "name": "tip2",
+                  "width": "fill_container",
+                  "gap": 8,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "F8cJn",
+                      "name": "tip2Bullet",
+                      "fill": "#6B7280",
+                      "content": "\u2022",
+                      "fontFamily": "DM Sans",
+                      "fontSize": 14,
+                      "fontWeight": "normal"
+                    },
+                    {
+                      "type": "text",
+                      "id": "AcixU",
+                      "name": "tip2Text",
+                      "fill": "#6B7280",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "Expect to spend \u00a530,000+ per person",
+                      "lineHeight": 1.4,
+                      "fontFamily": "DM Sans",
+                      "fontSize": 14,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

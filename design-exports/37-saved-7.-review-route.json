@@ -1,0 +1,990 @@
+{
+  "type": "frame",
+  "id": "e1AVb",
+  "x": 5460,
+  "y": 6238,
+  "name": "Saved 7. Review Route",
+  "clip": true,
+  "width": 390,
+  "height": 844,
+  "fill": "#FFFFFF",
+  "cornerRadius": 40,
+  "layout": "vertical",
+  "children": [
+    {
+      "type": "frame",
+      "id": "ZNM4O",
+      "name": "content",
+      "width": "fill_container",
+      "height": "fill_container",
+      "layout": "vertical",
+      "children": [
+        {
+          "type": "frame",
+          "id": "NsCsf",
+          "name": "header",
+          "width": "fill_container",
+          "gap": 12,
+          "padding": [
+            56,
+            24,
+            16,
+            24
+          ],
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "frame",
+              "id": "Hed6l",
+              "name": "backBtn",
+              "width": 40,
+              "height": 40,
+              "fill": "#F3F4F6",
+              "cornerRadius": 20,
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "icon_font",
+                  "id": "MGcLn",
+                  "name": "backIcon",
+                  "width": 20,
+                  "height": 20,
+                  "iconFontName": "arrow-left",
+                  "iconFontFamily": "lucide",
+                  "fill": "#1A1A1A"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "jr8Vz",
+              "name": "headerText",
+              "width": "fill_container",
+              "layout": "vertical",
+              "gap": 2,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "oeP64",
+                  "name": "headerTitle",
+                  "fill": "#1A1A1A",
+                  "content": "Review Route",
+                  "fontFamily": "DM Sans",
+                  "fontSize": 18,
+                  "fontWeight": "600"
+                },
+                {
+                  "type": "text",
+                  "id": "jJ6rf",
+                  "name": "headerSub",
+                  "fill": "#6B7280",
+                  "content": "Drag to reorder \u2022 Check distances",
+                  "fontFamily": "DM Sans",
+                  "fontSize": 13,
+                  "fontWeight": "normal"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "2qgb7",
+          "name": "main",
+          "width": "fill_container",
+          "height": "fill_container",
+          "layout": "vertical",
+          "children": [
+            {
+              "type": "frame",
+              "id": "zwSaE",
+              "name": "mapSection",
+              "metadata": {
+                "type": "unsplash",
+                "username": "levimeirclancy",
+                "link": "https://unsplash.com/@levimeirclancy",
+                "author": "Levi Meir Clancy"
+              },
+              "clip": true,
+              "width": "fill_container",
+              "height": 220,
+              "fill": {
+                "type": "image",
+                "enabled": true,
+                "url": "https://images.unsplash.com/photo-1568554766943-c077eb3a4a03?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4NDM0ODN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3NjkxOTc0Mjh8&ixlib=rb-4.1.0&q=80&w=1080",
+                "mode": "fill"
+              },
+              "layout": "none",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "Omp4V",
+                  "x": 80,
+                  "y": 60,
+                  "name": "mapPin1",
+                  "width": 32,
+                  "height": 32,
+                  "fill": "#BFFF00",
+                  "cornerRadius": 16,
+                  "stroke": {
+                    "thickness": 2,
+                    "fill": "#FFFFFF"
+                  },
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "5C8nX",
+                      "name": "pin1Num",
+                      "fill": "#1A1A1A",
+                      "content": "1",
+                      "fontFamily": "DM Sans",
+                      "fontSize": 14,
+                      "fontWeight": "700"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "5XpiY",
+                  "x": 140,
+                  "y": 120,
+                  "name": "mapPin2",
+                  "width": 32,
+                  "height": 32,
+                  "fill": "#BFFF00",
+                  "cornerRadius": 16,
+                  "stroke": {
+                    "thickness": 2,
+                    "fill": "#FFFFFF"
+                  },
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "rSPEW",
+                      "name": "pin2Num",
+                      "fill": "#1A1A1A",
+                      "content": "2",
+                      "fontFamily": "DM Sans",
+                      "fontSize": 14,
+                      "fontWeight": "700"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "ko9wX",
+                  "x": 200,
+                  "y": 80,
+                  "name": "mapPin3",
+                  "width": 32,
+                  "height": 32,
+                  "fill": "#E5E7EB",
+                  "cornerRadius": 16,
+                  "stroke": {
+                    "thickness": 2,
+                    "fill": "#FFFFFF"
+                  },
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "Y8ZNz",
+                      "name": "pin3Num",
+                      "fill": "#6B7280",
+                      "content": "3",
+                      "fontFamily": "DM Sans",
+                      "fontSize": 14,
+                      "fontWeight": "600"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "B6tnB",
+                  "x": 280,
+                  "y": 140,
+                  "name": "mapPin4",
+                  "width": 32,
+                  "height": 32,
+                  "fill": "#E5E7EB",
+                  "cornerRadius": 16,
+                  "stroke": {
+                    "thickness": 2,
+                    "fill": "#FFFFFF"
+                  },
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "ednJQ",
+                      "name": "pin4Num",
+                      "fill": "#6B7280",
+                      "content": "4",
+                      "fontFamily": "DM Sans",
+                      "fontSize": 14,
+                      "fontWeight": "600"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "8xQYk",
+                  "x": 320,
+                  "y": 60,
+                  "name": "mapPin5",
+                  "width": 32,
+                  "height": 32,
+                  "fill": "#E5E7EB",
+                  "cornerRadius": 16,
+                  "stroke": {
+                    "thickness": 2,
+                    "fill": "#FFFFFF"
+                  },
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "lw5sL",
+                      "name": "pin5Num",
+                      "fill": "#6B7280",
+                      "content": "5",
+                      "fontFamily": "DM Sans",
+                      "fontSize": 14,
+                      "fontWeight": "600"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "i33SR",
+              "name": "listSection",
+              "width": "fill_container",
+              "height": "fill_container",
+              "layout": "vertical",
+              "gap": 12,
+              "padding": [
+                16,
+                24,
+                24,
+                24
+              ],
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "kXqgA",
+                  "name": "listHeader",
+                  "width": "fill_container",
+                  "justifyContent": "space_between",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "oai0F",
+                      "name": "listLabel",
+                      "fill": "#6B7280",
+                      "content": "5 places",
+                      "fontFamily": "DM Sans",
+                      "fontSize": 14,
+                      "fontWeight": "500"
+                    },
+                    {
+                      "type": "text",
+                      "id": "atF7V",
+                      "name": "selectAllBtn",
+                      "fill": "#1A1A1A",
+                      "content": "Select All",
+                      "fontFamily": "DM Sans",
+                      "fontSize": 14,
+                      "fontWeight": "600"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "Y3tyL",
+                  "name": "placesList",
+                  "width": "fill_container",
+                  "layout": "vertical",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "Cww0r",
+                      "name": "day1Header",
+                      "width": "fill_container",
+                      "padding": [
+                        8,
+                        0
+                      ],
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "6wP6l",
+                          "name": "day1Text",
+                          "fill": "#1A1A1A",
+                          "content": "Day 1",
+                          "fontFamily": "DM Sans",
+                          "fontSize": 14,
+                          "fontWeight": "600"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "Q2FeT",
+                      "name": "placeItem1",
+                      "width": "fill_container",
+                      "fill": "#FFFFFF",
+                      "cornerRadius": 12,
+                      "stroke": {
+                        "thickness": 1,
+                        "fill": "#E5E7EB"
+                      },
+                      "gap": 12,
+                      "padding": 10,
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "fdEsJ",
+                          "name": "num",
+                          "width": 24,
+                          "height": 24,
+                          "fill": "#F3F4F6",
+                          "cornerRadius": 12,
+                          "justifyContent": "center",
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "Yfefe",
+                              "name": "num1Text",
+                              "fill": "#1A1A1A",
+                              "content": "1",
+                              "fontFamily": "DM Sans",
+                              "fontSize": 12,
+                              "fontWeight": "700"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
+                          "id": "5wRLD",
+                          "name": "content",
+                          "width": "fill_container",
+                          "layout": "vertical",
+                          "gap": 2,
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "fhdrc",
+                              "name": "placeTitle1",
+                              "fill": "#1A1A1A",
+                              "content": "Ichiran Ramen",
+                              "fontFamily": "DM Sans",
+                              "fontSize": 14,
+                              "fontWeight": "600"
+                            },
+                            {
+                              "type": "text",
+                              "id": "7R7CO",
+                              "name": "placeDesc1",
+                              "fill": "#6B7280",
+                              "content": "Restaurant \u2022 Shibuya",
+                              "fontFamily": "DM Sans",
+                              "fontSize": 12,
+                              "fontWeight": "normal"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "icon_font",
+                          "id": "C1PCo",
+                          "name": "dragHandle",
+                          "width": 16,
+                          "height": 16,
+                          "iconFontName": "grip-vertical",
+                          "iconFontFamily": "lucide",
+                          "fill": "#9CA3AF"
+                        },
+                        {
+                          "type": "icon_font",
+                          "id": "UHBHk",
+                          "name": "removeBtn",
+                          "width": 18,
+                          "height": 18,
+                          "iconFontName": "x",
+                          "iconFontFamily": "lucide",
+                          "fill": "#9CA3AF"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "5Oy0T",
+                      "name": "transitConnector1",
+                      "width": "fill_container",
+                      "gap": 6,
+                      "padding": [
+                        6,
+                        0,
+                        6,
+                        36
+                      ],
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "icon_font",
+                          "id": "SzLiO",
+                          "name": "walkIcon1",
+                          "width": 14,
+                          "height": 14,
+                          "iconFontName": "footprints",
+                          "iconFontFamily": "lucide",
+                          "fill": "#9CA3AF"
+                        },
+                        {
+                          "type": "text",
+                          "id": "yu4eG",
+                          "name": "walkText1",
+                          "fill": "#9CA3AF",
+                          "content": "12 min walk",
+                          "fontFamily": "DM Sans",
+                          "fontSize": 12,
+                          "fontWeight": "500"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "mjsdP",
+                      "name": "placeItem2",
+                      "width": "fill_container",
+                      "fill": "#FFFFFF",
+                      "cornerRadius": 12,
+                      "stroke": {
+                        "thickness": 1,
+                        "fill": "#E5E7EB"
+                      },
+                      "gap": 12,
+                      "padding": 10,
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "RRHok",
+                          "name": "num",
+                          "width": 24,
+                          "height": 24,
+                          "fill": "#F3F4F6",
+                          "cornerRadius": 12,
+                          "justifyContent": "center",
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "AR4OB",
+                              "name": "num2Text",
+                              "fill": "#1A1A1A",
+                              "content": "2",
+                              "fontFamily": "DM Sans",
+                              "fontSize": 12,
+                              "fontWeight": "700"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
+                          "id": "6bFUx",
+                          "name": "content",
+                          "width": "fill_container",
+                          "layout": "vertical",
+                          "gap": 2,
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "JDB2r",
+                              "name": "placeTitle2",
+                              "fill": "#1A1A1A",
+                              "content": "Senso-ji Temple",
+                              "fontFamily": "DM Sans",
+                              "fontSize": 14,
+                              "fontWeight": "600"
+                            },
+                            {
+                              "type": "text",
+                              "id": "ENnsT",
+                              "name": "placeDesc2",
+                              "fill": "#6B7280",
+                              "content": "Attraction \u2022 Asakusa",
+                              "fontFamily": "DM Sans",
+                              "fontSize": 12,
+                              "fontWeight": "normal"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "icon_font",
+                          "id": "OweoE",
+                          "name": "dragHandle",
+                          "width": 16,
+                          "height": 16,
+                          "iconFontName": "grip-vertical",
+                          "iconFontFamily": "lucide",
+                          "fill": "#9CA3AF"
+                        },
+                        {
+                          "type": "icon_font",
+                          "id": "qS2uq",
+                          "name": "removeBtn",
+                          "width": 18,
+                          "height": 18,
+                          "iconFontName": "x",
+                          "iconFontFamily": "lucide",
+                          "fill": "#9CA3AF"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "1ZaiC",
+                      "name": "day2Header",
+                      "width": "fill_container",
+                      "padding": [
+                        12,
+                        0,
+                        8,
+                        0
+                      ],
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "rS0kb",
+                          "name": "day2Text",
+                          "fill": "#1A1A1A",
+                          "content": "Day 2",
+                          "fontFamily": "DM Sans",
+                          "fontSize": 14,
+                          "fontWeight": "600"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "0RKQ9",
+                      "name": "placeItem3",
+                      "width": "fill_container",
+                      "fill": "#FFFFFF",
+                      "cornerRadius": 12,
+                      "stroke": {
+                        "thickness": 1,
+                        "fill": "#E5E7EB"
+                      },
+                      "gap": 12,
+                      "padding": 10,
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "oFyet",
+                          "name": "num",
+                          "width": 24,
+                          "height": 24,
+                          "fill": "#F3F4F6",
+                          "cornerRadius": 12,
+                          "justifyContent": "center",
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "LeAFQ",
+                              "name": "num3Text",
+                              "fill": "#1A1A1A",
+                              "content": "3",
+                              "fontFamily": "DM Sans",
+                              "fontSize": 12,
+                              "fontWeight": "600"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
+                          "id": "osrYU",
+                          "name": "content",
+                          "width": "fill_container",
+                          "layout": "vertical",
+                          "gap": 2,
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "dYxiu",
+                              "name": "placeTitle3",
+                              "fill": "#1A1A1A",
+                              "content": "Shibuya Crossing",
+                              "fontFamily": "DM Sans",
+                              "fontSize": 14,
+                              "fontWeight": "600"
+                            },
+                            {
+                              "type": "text",
+                              "id": "G1GUs",
+                              "name": "placeDesc3",
+                              "fill": "#6B7280",
+                              "content": "Attraction \u2022 Shibuya",
+                              "fontFamily": "DM Sans",
+                              "fontSize": 12,
+                              "fontWeight": "normal"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "icon_font",
+                          "id": "my0nz",
+                          "name": "dragHandle",
+                          "width": 16,
+                          "height": 16,
+                          "iconFontName": "grip-vertical",
+                          "iconFontFamily": "lucide",
+                          "fill": "#9CA3AF"
+                        },
+                        {
+                          "type": "icon_font",
+                          "id": "hKZgr",
+                          "name": "removeBtn",
+                          "width": 18,
+                          "height": 18,
+                          "iconFontName": "x",
+                          "iconFontFamily": "lucide",
+                          "fill": "#9CA3AF"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "t82JJ",
+                      "name": "transitConnector3",
+                      "width": "fill_container",
+                      "gap": 6,
+                      "padding": [
+                        6,
+                        0,
+                        6,
+                        36
+                      ],
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "icon_font",
+                          "id": "AvjPt",
+                          "name": "walkIcon3",
+                          "width": 14,
+                          "height": 14,
+                          "iconFontName": "footprints",
+                          "iconFontFamily": "lucide",
+                          "fill": "#9CA3AF"
+                        },
+                        {
+                          "type": "text",
+                          "id": "U39kQ",
+                          "name": "walkText3",
+                          "fill": "#9CA3AF",
+                          "content": "8 min walk",
+                          "fontFamily": "DM Sans",
+                          "fontSize": 12,
+                          "fontWeight": "500"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "Y6HNj",
+                      "name": "placeItem4",
+                      "width": "fill_container",
+                      "fill": "#FFFFFF",
+                      "cornerRadius": 12,
+                      "stroke": {
+                        "thickness": 1,
+                        "fill": "#E5E7EB"
+                      },
+                      "gap": 12,
+                      "padding": 10,
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "rgaTa",
+                          "name": "num",
+                          "width": 24,
+                          "height": 24,
+                          "fill": "#F3F4F6",
+                          "cornerRadius": 12,
+                          "justifyContent": "center",
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "YuDtG",
+                              "name": "num4Text",
+                              "fill": "#1A1A1A",
+                              "content": "4",
+                              "fontFamily": "DM Sans",
+                              "fontSize": 12,
+                              "fontWeight": "600"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
+                          "id": "jTAHo",
+                          "name": "content",
+                          "width": "fill_container",
+                          "layout": "vertical",
+                          "gap": 2,
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "dGq8f",
+                              "name": "placeTitle4",
+                              "fill": "#1A1A1A",
+                              "content": "Tsukiji Outer Market",
+                              "fontFamily": "DM Sans",
+                              "fontSize": 14,
+                              "fontWeight": "600"
+                            },
+                            {
+                              "type": "text",
+                              "id": "B1jvi",
+                              "name": "placeDesc4",
+                              "fill": "#6B7280",
+                              "content": "Food Market \u2022 Tsukiji",
+                              "fontFamily": "DM Sans",
+                              "fontSize": 12,
+                              "fontWeight": "normal"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "icon_font",
+                          "id": "Twv1D",
+                          "name": "dragHandle",
+                          "width": 16,
+                          "height": 16,
+                          "iconFontName": "grip-vertical",
+                          "iconFontFamily": "lucide",
+                          "fill": "#9CA3AF"
+                        },
+                        {
+                          "type": "icon_font",
+                          "id": "Yhrar",
+                          "name": "removeBtn",
+                          "width": 18,
+                          "height": 18,
+                          "iconFontName": "x",
+                          "iconFontFamily": "lucide",
+                          "fill": "#9CA3AF"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "MnF3p",
+                      "name": "transitConnector4",
+                      "width": "fill_container",
+                      "gap": 6,
+                      "padding": [
+                        6,
+                        0,
+                        6,
+                        36
+                      ],
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "icon_font",
+                          "id": "k95jc",
+                          "name": "walkIcon4",
+                          "width": 14,
+                          "height": 14,
+                          "iconFontName": "train-front",
+                          "iconFontFamily": "lucide",
+                          "fill": "#D1D5DB"
+                        },
+                        {
+                          "type": "text",
+                          "id": "nCKgt",
+                          "name": "walkText4",
+                          "fill": "#D1D5DB",
+                          "content": "15 min transit",
+                          "fontFamily": "DM Sans",
+                          "fontSize": 12,
+                          "fontWeight": "500"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "wJspT",
+                      "name": "placeItem5",
+                      "width": "fill_container",
+                      "fill": "#FFFFFF",
+                      "cornerRadius": 12,
+                      "stroke": {
+                        "thickness": 1,
+                        "fill": "#E5E7EB"
+                      },
+                      "gap": 12,
+                      "padding": 10,
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "luuX7",
+                          "name": "num",
+                          "width": 24,
+                          "height": 24,
+                          "fill": "#F3F4F6",
+                          "cornerRadius": 12,
+                          "justifyContent": "center",
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "pBdu1",
+                              "name": "num5Text",
+                              "fill": "#9CA3AF",
+                              "content": "5",
+                              "fontFamily": "DM Sans",
+                              "fontSize": 12,
+                              "fontWeight": "600"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
+                          "id": "wk6VK",
+                          "name": "content",
+                          "width": "fill_container",
+                          "layout": "vertical",
+                          "gap": 2,
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "b4r9s",
+                              "name": "placeTitle5",
+                              "fill": "#1A1A1A",
+                              "content": "Meiji Shrine",
+                              "fontFamily": "DM Sans",
+                              "fontSize": 14,
+                              "fontWeight": "600"
+                            },
+                            {
+                              "type": "text",
+                              "id": "04zT6",
+                              "name": "placeDesc5",
+                              "fill": "#6B7280",
+                              "content": "Shrine \u2022 Harajuku",
+                              "fontFamily": "DM Sans",
+                              "fontSize": 12,
+                              "fontWeight": "normal"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "icon_font",
+                          "id": "pIs4K",
+                          "name": "dragHandle",
+                          "width": 16,
+                          "height": 16,
+                          "iconFontName": "grip-vertical",
+                          "iconFontFamily": "lucide",
+                          "fill": "#9CA3AF"
+                        },
+                        {
+                          "type": "icon_font",
+                          "id": "UOnTl",
+                          "name": "removeBtn",
+                          "width": 18,
+                          "height": 18,
+                          "iconFontName": "x",
+                          "iconFontFamily": "lucide",
+                          "fill": "#9CA3AF"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "To6J7",
+          "name": "footer",
+          "width": "fill_container",
+          "fill": "#FFFFFF",
+          "stroke": {
+            "thickness": {
+              "top": 1
+            },
+            "fill": "#E5E7EB"
+          },
+          "layout": "vertical",
+          "padding": [
+            16,
+            24,
+            40,
+            24
+          ],
+          "children": [
+            {
+              "type": "frame",
+              "id": "kY3ls",
+              "name": "nextBtn",
+              "width": "fill_container",
+              "height": 52,
+              "fill": "#BFFF00",
+              "cornerRadius": 16,
+              "gap": 8,
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "t9RJY",
+                  "name": "nextText",
+                  "fill": "#1A1A1A",
+                  "content": "Create Itinerary",
+                  "fontFamily": "DM Sans",
+                  "fontSize": 15,
+                  "fontWeight": "600"
+                },
+                {
+                  "type": "icon_font",
+                  "id": "IgJ3g",
+                  "name": "nextIcon",
+                  "width": 20,
+                  "height": 20,
+                  "iconFontName": "check",
+                  "iconFontFamily": "lucide",
+                  "fill": "#1A1A1A"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

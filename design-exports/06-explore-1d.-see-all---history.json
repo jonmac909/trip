@@ -1,0 +1,390 @@
+{
+  "type": "frame",
+  "id": "JjcPO",
+  "x": 3700,
+  "y": 4000,
+  "name": "Explore 1d. See All - History",
+  "clip": true,
+  "width": 390,
+  "height": 844,
+  "fill": "#FFFFFF",
+  "cornerRadius": 40,
+  "layout": "vertical",
+  "children": [
+    {
+      "type": "frame",
+      "id": "5CyNE",
+      "name": "screenContent",
+      "width": "fill_container",
+      "height": "fill_container",
+      "layout": "vertical",
+      "justifyContent": "space_between",
+      "children": [
+        {
+          "type": "frame",
+          "id": "drFVd",
+          "name": "mainContent",
+          "width": "fill_container",
+          "layout": "vertical",
+          "gap": 20,
+          "padding": [
+            56,
+            20,
+            24,
+            20
+          ],
+          "children": [
+            {
+              "type": "frame",
+              "id": "UXWKK",
+              "name": "header",
+              "width": "fill_container",
+              "gap": 12,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "3pS9d",
+                  "name": "backBtn",
+                  "width": 40,
+                  "height": 40,
+                  "fill": "#F3F4F6",
+                  "cornerRadius": 20,
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "icon_font",
+                      "id": "J84i9",
+                      "name": "backIcon",
+                      "width": 20,
+                      "height": 20,
+                      "iconFontName": "arrow-left",
+                      "iconFontFamily": "lucide",
+                      "fill": "#1A1A1A"
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "id": "tNWEt",
+                  "name": "headerTitle",
+                  "fill": "#1A1A1A",
+                  "content": "History & Culture",
+                  "fontFamily": "DM Sans",
+                  "fontSize": 20,
+                  "fontWeight": "600"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "2fmgr",
+              "name": "cardGrid",
+              "width": "fill_container",
+              "gap": 12,
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "dln7B",
+                  "name": "column1",
+                  "width": "fill_container",
+                  "layout": "vertical",
+                  "gap": 12,
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "UmadQ",
+                      "name": "itinCard1",
+                      "metadata": {
+                        "type": "unsplash",
+                        "username": "alexispresa",
+                        "link": "https://unsplash.com/@alexispresa",
+                        "author": "Alexis Presa"
+                      },
+                      "clip": true,
+                      "width": "fill_container",
+                      "height": 200,
+                      "fill": {
+                        "type": "image",
+                        "enabled": true,
+                        "url": "https://images.unsplash.com/photo-1717445123544-a4543034d33e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4NDM0ODN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3NjkxOTY0OTd8&ixlib=rb-4.1.0&q=80&w=1080",
+                        "mode": "fill"
+                      },
+                      "cornerRadius": 16,
+                      "layout": "vertical",
+                      "padding": 14,
+                      "justifyContent": "end",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "cCPyz",
+                          "name": "card1Title",
+                          "fill": "#FFFFFF",
+                          "content": "Ancient Rome",
+                          "fontFamily": "DM Sans",
+                          "fontSize": 15,
+                          "fontWeight": "600"
+                        },
+                        {
+                          "type": "text",
+                          "id": "8bvrM",
+                          "name": "card1Sub",
+                          "fill": "#FFFFFFcc",
+                          "content": "Italy \u00b7 7 days",
+                          "fontFamily": "DM Sans",
+                          "fontSize": 12,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "3s9lz",
+                      "name": "itinCard2",
+                      "metadata": {
+                        "type": "unsplash",
+                        "username": "lishavelez",
+                        "link": "https://unsplash.com/@lishavelez",
+                        "author": "Lisha V\u00e9lez"
+                      },
+                      "clip": true,
+                      "width": "fill_container",
+                      "height": 200,
+                      "fill": {
+                        "type": "image",
+                        "enabled": true,
+                        "url": "https://images.unsplash.com/photo-1615239684960-f443deb29a61?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4NDM0ODN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3NjkxOTY0OTl8&ixlib=rb-4.1.0&q=80&w=1080",
+                        "mode": "fill"
+                      },
+                      "cornerRadius": 16,
+                      "layout": "vertical",
+                      "padding": 14,
+                      "justifyContent": "end",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "tAQMP",
+                          "name": "card2Title",
+                          "fill": "#FFFFFF",
+                          "content": "Incan Trail",
+                          "fontFamily": "DM Sans",
+                          "fontSize": 15,
+                          "fontWeight": "600"
+                        },
+                        {
+                          "type": "text",
+                          "id": "rUpdm",
+                          "name": "card2Sub",
+                          "fill": "#FFFFFFcc",
+                          "content": "Peru \u00b7 12 days",
+                          "fontFamily": "DM Sans",
+                          "fontSize": 12,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "zhMSb",
+                      "name": "itinCard3",
+                      "metadata": {
+                        "type": "unsplash",
+                        "username": "jplenio",
+                        "link": "https://unsplash.com/@jplenio",
+                        "author": "Johannes Plenio"
+                      },
+                      "clip": true,
+                      "width": "fill_container",
+                      "height": 200,
+                      "fill": {
+                        "type": "image",
+                        "enabled": true,
+                        "url": "https://images.unsplash.com/photo-1539987225288-7d998989461e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4NDM0ODN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3NjkxOTY1MDB8&ixlib=rb-4.1.0&q=80&w=1080",
+                        "mode": "fill"
+                      },
+                      "cornerRadius": 16,
+                      "layout": "vertical",
+                      "padding": 14,
+                      "justifyContent": "end",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "FMKpZ",
+                          "name": "card3Title",
+                          "fill": "#FFFFFF",
+                          "content": "Imperial China",
+                          "fontFamily": "DM Sans",
+                          "fontSize": 15,
+                          "fontWeight": "600"
+                        },
+                        {
+                          "type": "text",
+                          "id": "UqU2L",
+                          "name": "card3Sub",
+                          "fill": "#FFFFFFcc",
+                          "content": "China \u00b7 14 days",
+                          "fontFamily": "DM Sans",
+                          "fontSize": 12,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "Y1cQr",
+                  "name": "column2",
+                  "width": "fill_container",
+                  "layout": "vertical",
+                  "gap": 12,
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "dAHbE",
+                      "name": "itinCard4",
+                      "metadata": {
+                        "type": "unsplash",
+                        "username": "mfbeki",
+                        "link": "https://unsplash.com/@mfbeki",
+                        "author": "Fatih Beki"
+                      },
+                      "clip": true,
+                      "width": "fill_container",
+                      "height": 200,
+                      "fill": {
+                        "type": "image",
+                        "enabled": true,
+                        "url": "https://images.unsplash.com/photo-1761688150081-03d62cc49678?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4NDM0ODN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3NjkxOTY1MDF8&ixlib=rb-4.1.0&q=80&w=1080",
+                        "mode": "fill"
+                      },
+                      "cornerRadius": 16,
+                      "layout": "vertical",
+                      "padding": 14,
+                      "justifyContent": "end",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "ldJTo",
+                          "name": "card4Title",
+                          "fill": "#FFFFFF",
+                          "content": "Egyptian Wonders",
+                          "fontFamily": "DM Sans",
+                          "fontSize": 15,
+                          "fontWeight": "600"
+                        },
+                        {
+                          "type": "text",
+                          "id": "1wCEM",
+                          "name": "card4Sub",
+                          "fill": "#FFFFFFcc",
+                          "content": "Egypt \u00b7 10 days",
+                          "fontFamily": "DM Sans",
+                          "fontSize": 12,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "x14d3",
+                      "name": "itinCard5",
+                      "metadata": {
+                        "type": "unsplash",
+                        "username": "snapsbyshayno",
+                        "link": "https://unsplash.com/@snapsbyshayno",
+                        "author": "SHAYNO"
+                      },
+                      "clip": true,
+                      "width": "fill_container",
+                      "height": 200,
+                      "fill": {
+                        "type": "image",
+                        "enabled": true,
+                        "url": "https://images.unsplash.com/photo-1733338684434-399686e8cde8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4NDM0ODN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3NjkxOTY1MDN8&ixlib=rb-4.1.0&q=80&w=1080",
+                        "mode": "fill"
+                      },
+                      "cornerRadius": 16,
+                      "layout": "vertical",
+                      "padding": 14,
+                      "justifyContent": "end",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "GZc4E",
+                          "name": "card5Title",
+                          "fill": "#FFFFFF",
+                          "content": "Greek Odyssey",
+                          "fontFamily": "DM Sans",
+                          "fontSize": 15,
+                          "fontWeight": "600"
+                        },
+                        {
+                          "type": "text",
+                          "id": "4zazW",
+                          "name": "card5Sub",
+                          "fill": "#FFFFFFcc",
+                          "content": "Greece \u00b7 8 days",
+                          "fontFamily": "DM Sans",
+                          "fontSize": 12,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "yg60P",
+                      "name": "itinCard6",
+                      "metadata": {
+                        "type": "unsplash",
+                        "username": "ryrish2401",
+                        "link": "https://unsplash.com/@ryrish2401",
+                        "author": "Rishabh dev"
+                      },
+                      "clip": true,
+                      "width": "fill_container",
+                      "height": 200,
+                      "fill": {
+                        "type": "image",
+                        "enabled": true,
+                        "url": "https://images.unsplash.com/photo-1679395397579-2094cbc46731?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4NDM0ODN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3NjkxOTY1MDR8&ixlib=rb-4.1.0&q=80&w=1080",
+                        "mode": "fill"
+                      },
+                      "cornerRadius": 16,
+                      "layout": "vertical",
+                      "padding": 14,
+                      "justifyContent": "end",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "sYhqQ",
+                          "name": "card6Title",
+                          "fill": "#FFFFFF",
+                          "content": "Golden Triangle",
+                          "fontFamily": "DM Sans",
+                          "fontSize": 15,
+                          "fontWeight": "600"
+                        },
+                        {
+                          "type": "text",
+                          "id": "U0vxc",
+                          "name": "card6Sub",
+                          "fill": "#FFFFFFcc",
+                          "content": "India \u00b7 9 days",
+                          "fontFamily": "DM Sans",
+                          "fontSize": 12,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

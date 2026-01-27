@@ -33,7 +33,7 @@ class ActivityRepository {
           .order('rating', ascending: false)
           .range(offset, offset + limit - 1);
 
-      return (response as List).map((json) => Activity.fromJson(json)).toList();
+      return (response as List).map((json) => Activity.fromJson(json as Map<String, dynamic>)).toList();
     } on PostgrestException catch (e) {
       throw DatabaseException('Failed to fetch activities: ${e.message}');
     }
@@ -55,6 +55,12 @@ class ActivityRepository {
       }
       throw DatabaseException('Failed to fetch activity: ${e.message}');
     }
+  }
+
+  /// Helper to safely cast json map
+  Map<String, dynamic>? _safeJsonCast(dynamic value) {
+    if (value == null) return null;
+    return value as Map<String, dynamic>;
   }
 
   /// Create a new activity
@@ -124,11 +130,12 @@ class ActivityRepository {
       ''')
           .single();
 
-      final activity = response['activities'] != null
-          ? Activity.fromJson(response['activities'])
+      final activityJson = _safeJsonCast(response['activities']);
+      final activity = activityJson != null
+          ? Activity.fromJson(activityJson)
           : null;
 
-      return DayActivity.fromJson(response, activity: activity);
+      return DayActivity.fromJson(response as Map<String, dynamic>, activity: activity);
     } on PostgrestException catch (e) {
       throw DatabaseException('Failed to add activity to day: ${e.message}');
     }
@@ -147,11 +154,12 @@ class ActivityRepository {
           ''')
           .single();
 
-      final activity = response['activities'] != null
-          ? Activity.fromJson(response['activities'])
+      final activityJson = _safeJsonCast(response['activities']);
+      final activity = activityJson != null
+          ? Activity.fromJson(activityJson)
           : null;
 
-      return DayActivity.fromJson(response, activity: activity);
+      return DayActivity.fromJson(response as Map<String, dynamic>, activity: activity);
     } on PostgrestException catch (e) {
       throw DatabaseException('Failed to update day activity: ${e.message}');
     }
@@ -196,7 +204,7 @@ class ActivityRepository {
           .order('rating', ascending: false)
           .limit(20);
 
-      return (response as List).map((json) => Activity.fromJson(json)).toList();
+      return (response as List).map((json) => Activity.fromJson(json as Map<String, dynamic>)).toList();
     } on PostgrestException catch (e) {
       throw DatabaseException('Failed to search activities: ${e.message}');
     }

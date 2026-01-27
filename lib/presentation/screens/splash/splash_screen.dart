@@ -1,37 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:lucide_icons/lucide_icons.dart';
 
 import 'package:trippified/core/constants/app_colors.dart';
 import 'package:trippified/core/constants/app_spacing.dart';
 import 'package:trippified/core/services/supabase_service.dart';
-import 'package:trippified/core/widgets/trippified_logo.dart';
 import 'package:trippified/presentation/navigation/app_router.dart';
 
-/// Splash screen shown on app launch
-class SplashScreen extends StatefulWidget {
+/// Splash/onboarding screen with hero image and CTA
+class SplashScreen extends StatelessWidget {
   const SplashScreen({super.key});
 
-  @override
-  State<SplashScreen> createState() => _SplashScreenState();
-}
-
-class _SplashScreenState extends State<SplashScreen> {
-  @override
-  void initState() {
-    super.initState();
-    _initialize();
-  }
-
-  Future<void> _initialize() async {
-    // Add a small delay for splash visibility
-    await Future<void>.delayed(const Duration(milliseconds: 1500));
-
-    if (!mounted) return;
-
-    // Check auth state and navigate
-    final isAuthenticated = SupabaseService.instance.isAuthenticated;
-
-    if (isAuthenticated) {
+  void _onExploreNow(BuildContext context) {
+    if (SupabaseService.instance.isAuthenticated) {
       context.go(AppRoutes.home);
     } else {
       context.go(AppRoutes.login);
@@ -41,37 +23,140 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: AppColors.primary,
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
+      backgroundColor: AppColors.splashBackground,
+      body: Column(
+        children: [
+          // Hero image with rounded bottom corners
+          ClipRRect(
+            borderRadius: const BorderRadius.vertical(
+              bottom: Radius.circular(40),
+            ),
+            child: SizedBox(
+              height: 500,
+              width: double.infinity,
+              child: Image.network(
+                'https://images.unsplash.com/photo-1687960507238-5f6565a08b2f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0&ixlib=rb-4.1.0&q=80&w=1080',
+                fit: BoxFit.cover,
+                errorBuilder: (context, error, stackTrace) => Container(
+                  color: AppColors.splashBackground,
+                ),
+              ),
+            ),
+          ),
+          // Bottom section with gradient
+          Expanded(
+            child: Container(
+              width: double.infinity,
+              decoration: const BoxDecoration(
+                gradient: LinearGradient(
+                  begin: Alignment.topCenter,
+                  end: Alignment.bottomCenter,
+                  colors: [
+                    AppColors.splashGradientStart,
+                    AppColors.splashGradientEnd,
+                  ],
+                ),
+              ),
+              child: Padding(
+                padding: const EdgeInsets.fromLTRB(32, 40, 32, 48),
+                child: Column(
+                  children: [
+                    // Title
+                    Text(
+                      'Unveil The\nTravel Wonders',
+                      textAlign: TextAlign.center,
+                      style: GoogleFonts.dmSans(
+                        fontSize: 32,
+                        fontWeight: FontWeight.w700,
+                        color: Colors.white,
+                      ),
+                    ),
+                    const SizedBox(height: AppSpacing.md),
+                    // Brand name - TRIPPIFIED
+                    Text(
+                      'TRIPPIFIED',
+                      textAlign: TextAlign.center,
+                      style: GoogleFonts.dmSans(
+                        fontSize: 14,
+                        fontWeight: FontWeight.w500,
+                        color: Colors.white.withValues(alpha: 0.5),
+                        letterSpacing: 4,
+                      ),
+                    ),
+                    const SizedBox(height: AppSpacing.md),
+                    // Description
+                    Text(
+                      'Take the first step into\nan unforgettable journey',
+                      textAlign: TextAlign.center,
+                      style: GoogleFonts.dmSans(
+                        fontSize: 14,
+                        fontWeight: FontWeight.w400,
+                        color: Colors.white.withValues(alpha: 0.6),
+                        height: 1.5,
+                      ),
+                    ),
+                    const Spacer(),
+                    // CTA Button
+                    _buildCtaButton(context),
+                  ],
+                ),
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget _buildCtaButton(BuildContext context) {
+    return GestureDetector(
+      onTap: () => _onExploreNow(context),
+      child: Container(
+        width: double.infinity,
+        height: 56,
+        decoration: BoxDecoration(
+          color: AppColors.splashButtonBg,
+          borderRadius: BorderRadius.circular(28),
+          border: Border.all(color: AppColors.splashButtonBorder),
+        ),
+        padding: const EdgeInsets.symmetric(horizontal: 6),
+        child: Row(
           children: [
-            // Logo placeholder
+            // Icon circle with lime green background
             Container(
-              width: 120,
-              height: 120,
-              decoration: BoxDecoration(
-                color: AppColors.surface,
-                borderRadius: BorderRadius.circular(AppSpacing.radiusXl),
+              width: 44,
+              height: 44,
+              decoration: const BoxDecoration(
+                color: AppColors.accent,
+                shape: BoxShape.circle,
               ),
               child: const Icon(
-                Icons.explore,
-                size: 64,
-                color: AppColors.primary,
+                LucideIcons.navigation,
+                size: 20,
+                color: AppColors.splashGradientStart,
               ),
             ),
-            const SizedBox(height: AppSpacing.lg),
-            const TrippifiedLogo(
-              fontSize: 36,
-              color: AppColors.textOnPrimary,
-            ),
-            const SizedBox(height: AppSpacing.sm),
+            const Spacer(),
+            // Button text
             Text(
-              'Trip planning made simple',
-              style: Theme.of(context).textTheme.bodyLarge?.copyWith(
-                color: AppColors.textOnPrimary.withValues(alpha: 0.8),
+              'Explore Now',
+              style: GoogleFonts.dmSans(
+                fontSize: 16,
+                fontWeight: FontWeight.w600,
+                color: Colors.white,
               ),
             ),
+            const Spacer(),
+            // Arrows indicator
+            Text(
+              '\u00bb',
+              style: GoogleFonts.dmSans(
+                fontSize: 20,
+                fontWeight: FontWeight.w600,
+                color: Colors.white.withValues(alpha: 0.6),
+              ),
+            ),
+            const SizedBox(width: AppSpacing.md),
           ],
         ),
       ),

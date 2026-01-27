@@ -1,0 +1,925 @@
+{
+  "type": "frame",
+  "id": "MhgBv",
+  "x": 6780,
+  "y": 4000,
+  "name": "Explore 2d. Destination - History",
+  "clip": true,
+  "width": 390,
+  "height": 844,
+  "fill": "#FFFFFF",
+  "cornerRadius": 40,
+  "layout": "vertical",
+  "children": [
+    {
+      "type": "frame",
+      "id": "ikm4i",
+      "name": "destDetailContent",
+      "width": "fill_container",
+      "height": "fill_container",
+      "layout": "vertical",
+      "justifyContent": "space_between",
+      "children": [
+        {
+          "type": "frame",
+          "id": "KYkN1",
+          "name": "destDetailMain",
+          "width": "fill_container",
+          "height": "fill_container",
+          "layout": "vertical",
+          "children": [
+            {
+              "type": "frame",
+              "id": "1Q591",
+              "name": "destHero",
+              "metadata": {
+                "type": "unsplash",
+                "username": "insolitus",
+                "link": "https://unsplash.com/@insolitus",
+                "author": "Rowan Heuvel"
+              },
+              "width": "fill_container",
+              "height": 220,
+              "fill": {
+                "type": "image",
+                "enabled": true,
+                "url": "https://images.unsplash.com/photo-1768746845614-e757e075007b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4NDM0ODN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3NjkyNzM4MjZ8&ixlib=rb-4.1.0&q=80&w=1080",
+                "mode": "fill"
+              },
+              "layout": "vertical",
+              "padding": [
+                20,
+                24
+              ],
+              "justifyContent": "space_between",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "63wr8",
+                  "name": "backBtn",
+                  "width": 36,
+                  "height": 36,
+                  "fill": "#00000033",
+                  "cornerRadius": 18,
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "icon_font",
+                      "id": "sKpJa",
+                      "name": "backIcon",
+                      "width": 20,
+                      "height": 20,
+                      "iconFontName": "arrow-left",
+                      "iconFontFamily": "lucide",
+                      "fill": "#FFFFFF"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "rPjbj",
+                  "name": "heroText",
+                  "layout": "vertical",
+                  "gap": 4,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "5WSfJ",
+                      "name": "heroTitle",
+                      "fill": "#FFFFFF",
+                      "content": "Thailand",
+                      "fontFamily": "DM Sans",
+                      "fontSize": 32,
+                      "fontWeight": "700"
+                    },
+                    {
+                      "type": "text",
+                      "id": "htv9t",
+                      "name": "thai6",
+                      "fill": "#FFFFFFcc",
+                      "content": "\u0e02\u0e2d\u0e1a\u0e04\u0e38\u0e13\u0e04\u0e23\u0e31\u0e1a/\u0e04\u0e48\u0e30 \u00b7 \"khob khun krap/ka\"",
+                      "fontFamily": "DM Sans",
+                      "fontSize": 14,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "bqP3A",
+              "name": "destBody",
+              "clip": true,
+              "width": "fill_container",
+              "height": "fill_container",
+              "layout": "vertical",
+              "padding": [
+                16,
+                0,
+                0,
+                0
+              ],
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "J6qRq",
+                  "name": "tabBar",
+                  "width": "fill_container",
+                  "stroke": {
+                    "thickness": {
+                      "bottom": 1
+                    },
+                    "fill": "#E5E7EB"
+                  },
+                  "padding": [
+                    0,
+                    24
+                  ],
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "GQTxK",
+                      "name": "tabOverview",
+                      "stroke": {
+                        "thickness": 0,
+                        "fill": "#1A1A1A"
+                      },
+                      "padding": [
+                        12,
+                        16
+                      ],
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "zGkwA",
+                          "name": "tab1Text",
+                          "fill": "#6B7280",
+                          "content": "Overview",
+                          "fontFamily": "DM Sans",
+                          "fontSize": 14,
+                          "fontWeight": "500"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "jo6gm",
+                      "name": "tabCities",
+                      "padding": [
+                        12,
+                        16
+                      ],
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "YqpEx",
+                          "name": "tab2Text",
+                          "fill": "#6B7280",
+                          "content": "Cities",
+                          "fontFamily": "DM Sans",
+                          "fontSize": 14,
+                          "fontWeight": "500"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "v8tIu",
+                      "name": "tabItineraries",
+                      "padding": [
+                        12,
+                        16
+                      ],
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "4mR2X",
+                          "name": "tab3Text",
+                          "fill": "#6B7280",
+                          "content": "Itineraries",
+                          "fontFamily": "DM Sans",
+                          "fontSize": 14,
+                          "fontWeight": "500"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "ibCnQ",
+                      "name": "tabHistory",
+                      "stroke": {
+                        "thickness": {
+                          "bottom": 2
+                        },
+                        "fill": "#1A1A1A"
+                      },
+                      "padding": [
+                        12,
+                        16
+                      ],
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "WwNnw",
+                          "name": "histTabText",
+                          "fill": "#1A1A1A",
+                          "content": "History",
+                          "fontFamily": "DM Sans",
+                          "fontSize": 14,
+                          "fontWeight": "600"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "2cDeT",
+                  "name": "tabContent",
+                  "clip": true,
+                  "width": "fill_container",
+                  "height": "fill_container",
+                  "layout": "vertical",
+                  "gap": 16,
+                  "padding": [
+                    20,
+                    24
+                  ],
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "vB43m",
+                      "name": "histIntro",
+                      "fill": "#6B7280",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "The only Southeast Asian nation never colonized. From ancient Sukhothai to the modern Chakri dynasty.",
+                      "lineHeight": 1.5,
+                      "fontFamily": "DM Sans",
+                      "fontSize": 14,
+                      "fontWeight": "normal"
+                    },
+                    {
+                      "type": "frame",
+                      "id": "2aTZl",
+                      "name": "timeline",
+                      "width": "fill_container",
+                      "layout": "vertical",
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "sYUGK",
+                          "name": "timelineItem",
+                          "width": "fill_container",
+                          "gap": 12,
+                          "children": [
+                            {
+                              "type": "frame",
+                              "id": "HBII8",
+                              "name": "dotCol",
+                              "width": 20,
+                              "layout": "vertical",
+                              "alignItems": "center",
+                              "children": [
+                                {
+                                  "type": "frame",
+                                  "id": "DI02I",
+                                  "name": "dot1",
+                                  "width": 16,
+                                  "height": 16,
+                                  "fill": "#00000000",
+                                  "cornerRadius": 8,
+                                  "stroke": {
+                                    "thickness": 2,
+                                    "fill": "#BFFF00"
+                                  },
+                                  "layout": "none",
+                                  "children": [
+                                    {
+                                      "type": "ellipse",
+                                      "id": "3F9e4",
+                                      "x": 5,
+                                      "y": 5,
+                                      "name": "innerDot1",
+                                      "fill": "#BFFF00",
+                                      "width": 6,
+                                      "height": 6
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "frame",
+                                  "id": "gTOoh",
+                                  "name": "t1line",
+                                  "width": 2,
+                                  "height": 50,
+                                  "fill": "#E5E7EB"
+                                }
+                              ]
+                            },
+                            {
+                              "type": "frame",
+                              "id": "AhxA5",
+                              "name": "timeContent",
+                              "width": "fill_container",
+                              "layout": "vertical",
+                              "gap": 4,
+                              "padding": [
+                                0,
+                                0,
+                                16,
+                                0
+                              ],
+                              "children": [
+                                {
+                                  "type": "text",
+                                  "id": "IchGX",
+                                  "name": "t1year",
+                                  "fill": "#1A1A1A",
+                                  "content": "1238",
+                                  "fontFamily": "DM Sans",
+                                  "fontSize": 16,
+                                  "fontWeight": "700"
+                                },
+                                {
+                                  "type": "text",
+                                  "id": "pz2a9",
+                                  "name": "t1title",
+                                  "fill": "#1A1A1A",
+                                  "content": "Sukhothai Kingdom Founded",
+                                  "fontFamily": "DM Sans",
+                                  "fontSize": 14,
+                                  "fontWeight": "600"
+                                },
+                                {
+                                  "type": "text",
+                                  "id": "al8I1",
+                                  "name": "t1desc",
+                                  "fill": "#6B7280",
+                                  "textGrowth": "fixed-width",
+                                  "width": "fill_container",
+                                  "content": "First Thai kingdom established, considered the birthplace of Thai culture, art, and language.",
+                                  "lineHeight": 1.4,
+                                  "fontFamily": "DM Sans",
+                                  "fontSize": 13,
+                                  "fontWeight": "normal"
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
+                          "id": "QZF9Z",
+                          "name": "timelineItem",
+                          "width": "fill_container",
+                          "gap": 12,
+                          "children": [
+                            {
+                              "type": "frame",
+                              "id": "Smuk8",
+                              "name": "dotCol",
+                              "width": 20,
+                              "layout": "vertical",
+                              "alignItems": "center",
+                              "children": [
+                                {
+                                  "type": "frame",
+                                  "id": "wKupM",
+                                  "name": "dot2",
+                                  "width": 16,
+                                  "height": 16,
+                                  "fill": "#00000000",
+                                  "cornerRadius": 8,
+                                  "stroke": {
+                                    "thickness": 2,
+                                    "fill": "#BFFF00"
+                                  },
+                                  "layout": "none",
+                                  "children": [
+                                    {
+                                      "type": "ellipse",
+                                      "id": "2qA7l",
+                                      "x": 5,
+                                      "y": 5,
+                                      "name": "innerDot2",
+                                      "fill": "#BFFF00",
+                                      "width": 6,
+                                      "height": 6
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "frame",
+                                  "id": "ibUYq",
+                                  "name": "t2line",
+                                  "width": 2,
+                                  "height": 50,
+                                  "fill": "#E5E7EB"
+                                }
+                              ]
+                            },
+                            {
+                              "type": "frame",
+                              "id": "KqBNA",
+                              "name": "timeContent",
+                              "width": "fill_container",
+                              "layout": "vertical",
+                              "gap": 4,
+                              "padding": [
+                                0,
+                                0,
+                                16,
+                                0
+                              ],
+                              "children": [
+                                {
+                                  "type": "text",
+                                  "id": "5LRBE",
+                                  "name": "t2year",
+                                  "fill": "#1A1A1A",
+                                  "content": "1351",
+                                  "fontFamily": "DM Sans",
+                                  "fontSize": 16,
+                                  "fontWeight": "700"
+                                },
+                                {
+                                  "type": "text",
+                                  "id": "OLhPl",
+                                  "name": "t2title",
+                                  "fill": "#1A1A1A",
+                                  "content": "Ayutthaya Kingdom Rises",
+                                  "fontFamily": "DM Sans",
+                                  "fontSize": 14,
+                                  "fontWeight": "600"
+                                },
+                                {
+                                  "type": "text",
+                                  "id": "7951Z",
+                                  "name": "t2desc",
+                                  "fill": "#6B7280",
+                                  "textGrowth": "fixed-width",
+                                  "width": "fill_container",
+                                  "content": "Golden age of Thai civilization. Major trading hub connecting East and West.",
+                                  "lineHeight": 1.4,
+                                  "fontFamily": "DM Sans",
+                                  "fontSize": 13,
+                                  "fontWeight": "normal"
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
+                          "id": "IF8LT",
+                          "name": "timelineItem",
+                          "width": "fill_container",
+                          "gap": 12,
+                          "children": [
+                            {
+                              "type": "frame",
+                              "id": "A3yDK",
+                              "name": "dotCol",
+                              "width": 20,
+                              "layout": "vertical",
+                              "alignItems": "center",
+                              "children": [
+                                {
+                                  "type": "frame",
+                                  "id": "gOtgz",
+                                  "name": "dot3",
+                                  "width": 16,
+                                  "height": 16,
+                                  "fill": "#00000000",
+                                  "cornerRadius": 8,
+                                  "stroke": {
+                                    "thickness": 2,
+                                    "fill": "#BFFF00"
+                                  },
+                                  "layout": "none",
+                                  "children": [
+                                    {
+                                      "type": "ellipse",
+                                      "id": "upsst",
+                                      "x": 5,
+                                      "y": 5,
+                                      "name": "innerDot3",
+                                      "fill": "#BFFF00",
+                                      "width": 6,
+                                      "height": 6
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "frame",
+                                  "id": "FTqTV",
+                                  "name": "t3line",
+                                  "width": 2,
+                                  "height": 50,
+                                  "fill": "#E5E7EB"
+                                }
+                              ]
+                            },
+                            {
+                              "type": "frame",
+                              "id": "SsifJ",
+                              "name": "timeContent",
+                              "width": "fill_container",
+                              "layout": "vertical",
+                              "gap": 4,
+                              "padding": [
+                                0,
+                                0,
+                                16,
+                                0
+                              ],
+                              "children": [
+                                {
+                                  "type": "text",
+                                  "id": "n8x4U",
+                                  "name": "t3year",
+                                  "fill": "#1A1A1A",
+                                  "content": "1782",
+                                  "fontFamily": "DM Sans",
+                                  "fontSize": 16,
+                                  "fontWeight": "700"
+                                },
+                                {
+                                  "type": "text",
+                                  "id": "eueyc",
+                                  "name": "t3title",
+                                  "fill": "#1A1A1A",
+                                  "content": "Chakri Dynasty Begins",
+                                  "fontFamily": "DM Sans",
+                                  "fontSize": 14,
+                                  "fontWeight": "600"
+                                },
+                                {
+                                  "type": "text",
+                                  "id": "7mtTb",
+                                  "name": "t3desc",
+                                  "fill": "#6B7280",
+                                  "textGrowth": "fixed-width",
+                                  "width": "fill_container",
+                                  "content": "Bangkok founded as capital. Current royal dynasty established, continuing to present day.",
+                                  "lineHeight": 1.4,
+                                  "fontFamily": "DM Sans",
+                                  "fontSize": 13,
+                                  "fontWeight": "normal"
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
+                          "id": "VBUZb",
+                          "name": "timelineItem",
+                          "width": "fill_container",
+                          "gap": 12,
+                          "children": [
+                            {
+                              "type": "frame",
+                              "id": "CLGBC",
+                              "name": "dotCol",
+                              "width": 20,
+                              "layout": "vertical",
+                              "alignItems": "center",
+                              "children": [
+                                {
+                                  "type": "frame",
+                                  "id": "RDjBA",
+                                  "name": "dot4",
+                                  "width": 16,
+                                  "height": 16,
+                                  "fill": "#00000000",
+                                  "cornerRadius": 8,
+                                  "stroke": {
+                                    "thickness": 2,
+                                    "fill": "#BFFF00"
+                                  },
+                                  "layout": "none",
+                                  "children": [
+                                    {
+                                      "type": "ellipse",
+                                      "id": "Vx5sZ",
+                                      "x": 5,
+                                      "y": 5,
+                                      "name": "innerDot4",
+                                      "fill": "#BFFF00",
+                                      "width": 6,
+                                      "height": 6
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "frame",
+                                  "id": "12vhF",
+                                  "name": "t4line",
+                                  "width": 2,
+                                  "height": 50,
+                                  "fill": "#E5E7EB"
+                                }
+                              ]
+                            },
+                            {
+                              "type": "frame",
+                              "id": "cTREs",
+                              "name": "timeContent",
+                              "width": "fill_container",
+                              "layout": "vertical",
+                              "gap": 4,
+                              "padding": [
+                                0,
+                                0,
+                                16,
+                                0
+                              ],
+                              "children": [
+                                {
+                                  "type": "text",
+                                  "id": "zIW0g",
+                                  "name": "t4year",
+                                  "fill": "#1A1A1A",
+                                  "content": "1939",
+                                  "fontFamily": "DM Sans",
+                                  "fontSize": 16,
+                                  "fontWeight": "700"
+                                },
+                                {
+                                  "type": "text",
+                                  "id": "VVyRE",
+                                  "name": "t4title",
+                                  "fill": "#1A1A1A",
+                                  "content": "Siam Becomes Thailand",
+                                  "fontFamily": "DM Sans",
+                                  "fontSize": 14,
+                                  "fontWeight": "600"
+                                },
+                                {
+                                  "type": "text",
+                                  "id": "JATTe",
+                                  "name": "t4desc",
+                                  "fill": "#6B7280",
+                                  "textGrowth": "fixed-width",
+                                  "width": "fill_container",
+                                  "content": "Country renamed from Siam to Thailand, meaning 'Land of the Free'.",
+                                  "lineHeight": 1.4,
+                                  "fontFamily": "DM Sans",
+                                  "fontSize": 13,
+                                  "fontWeight": "normal"
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
+                          "id": "lXHU1",
+                          "name": "timelineItem",
+                          "width": "fill_container",
+                          "gap": 12,
+                          "children": [
+                            {
+                              "type": "frame",
+                              "id": "l8gyo",
+                              "name": "dotCol",
+                              "width": 20,
+                              "layout": "vertical",
+                              "alignItems": "center",
+                              "children": [
+                                {
+                                  "type": "frame",
+                                  "id": "aPFHc",
+                                  "name": "dot5",
+                                  "width": 16,
+                                  "height": 16,
+                                  "fill": "#00000000",
+                                  "cornerRadius": 8,
+                                  "stroke": {
+                                    "thickness": 2,
+                                    "fill": "#BFFF00"
+                                  },
+                                  "layout": "none",
+                                  "children": [
+                                    {
+                                      "type": "ellipse",
+                                      "id": "Gjy0g",
+                                      "x": 5,
+                                      "y": 5,
+                                      "name": "innerDot5",
+                                      "fill": "#BFFF00",
+                                      "width": 6,
+                                      "height": 6
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "type": "frame",
+                              "id": "qsdk8",
+                              "name": "timeContent",
+                              "width": "fill_container",
+                              "layout": "vertical",
+                              "gap": 4,
+                              "children": [
+                                {
+                                  "type": "text",
+                                  "id": "zN3Vm",
+                                  "name": "t5year",
+                                  "fill": "#1A1A1A",
+                                  "content": "Today",
+                                  "fontFamily": "DM Sans",
+                                  "fontSize": 16,
+                                  "fontWeight": "700"
+                                },
+                                {
+                                  "type": "text",
+                                  "id": "4p076",
+                                  "name": "t5title",
+                                  "fill": "#1A1A1A",
+                                  "content": "Modern Thailand",
+                                  "fontFamily": "DM Sans",
+                                  "fontSize": 14,
+                                  "fontWeight": "600"
+                                },
+                                {
+                                  "type": "text",
+                                  "id": "8yQbz",
+                                  "name": "t5desc",
+                                  "fill": "#6B7280",
+                                  "textGrowth": "fixed-width",
+                                  "width": "fill_container",
+                                  "content": "Constitutional monarchy, major tourist destination, and Southeast Asia's second-largest economy.",
+                                  "lineHeight": 1.4,
+                                  "fontFamily": "DM Sans",
+                                  "fontSize": 13,
+                                  "fontWeight": "normal"
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "GGzLg",
+          "name": "destDetailBottomNav",
+          "width": "fill_container",
+          "height": 90,
+          "fill": "#FFFFFF",
+          "stroke": {
+            "thickness": {
+              "top": 1
+            },
+            "fill": "#E5E7EB"
+          },
+          "padding": [
+            12,
+            24,
+            30,
+            24
+          ],
+          "justifyContent": "space_around",
+          "children": [
+            {
+              "type": "frame",
+              "id": "7ARmh",
+              "name": "navItem1",
+              "width": 60,
+              "layout": "vertical",
+              "gap": 4,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "icon_font",
+                  "id": "GdBXr",
+                  "name": "navIcon1",
+                  "width": 24,
+                  "height": 24,
+                  "iconFontName": "map",
+                  "iconFontFamily": "lucide",
+                  "fill": "#9CA3AF"
+                },
+                {
+                  "type": "text",
+                  "id": "qdO8w",
+                  "name": "navLabel1",
+                  "fill": "#6B7280",
+                  "content": "Trips",
+                  "fontFamily": "DM Sans",
+                  "fontSize": 10,
+                  "fontWeight": "500"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "GrLmd",
+              "name": "navItem2",
+              "width": 60,
+              "layout": "vertical",
+              "gap": 4,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "icon_font",
+                  "id": "XdM1X",
+                  "name": "navIcon2",
+                  "width": 24,
+                  "height": 24,
+                  "iconFontName": "compass",
+                  "iconFontFamily": "lucide",
+                  "fill": "#1A1A1A"
+                },
+                {
+                  "type": "text",
+                  "id": "GKnIP",
+                  "name": "navLabel2",
+                  "fill": "#1A1A1A",
+                  "content": "Explore",
+                  "fontFamily": "DM Sans",
+                  "fontSize": 10,
+                  "fontWeight": "600"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "FL0z5",
+              "name": "navItem3",
+              "width": 60,
+              "layout": "vertical",
+              "gap": 4,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "icon_font",
+                  "id": "wStTI",
+                  "name": "navIcon3",
+                  "width": 24,
+                  "height": 24,
+                  "iconFontName": "bookmark",
+                  "iconFontFamily": "lucide",
+                  "fill": "#9CA3AF"
+                },
+                {
+                  "type": "text",
+                  "id": "kND52",
+                  "name": "navLabel3",
+                  "fill": "#6B7280",
+                  "content": "Saved",
+                  "fontFamily": "DM Sans",
+                  "fontSize": 10,
+                  "fontWeight": "500"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "xRN3j",
+              "name": "navItem4",
+              "width": 60,
+              "layout": "vertical",
+              "gap": 4,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "icon_font",
+                  "id": "isjw0",
+                  "name": "navIcon4",
+                  "width": 24,
+                  "height": 24,
+                  "iconFontName": "user",
+                  "iconFontFamily": "lucide",
+                  "fill": "#9CA3AF"
+                },
+                {
+                  "type": "text",
+                  "id": "GgQ20",
+                  "name": "navLabel4",
+                  "fill": "#6B7280",
+                  "content": "Profile",
+                  "fontFamily": "DM Sans",
+                  "fontSize": 10,
+                  "fontWeight": "500"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

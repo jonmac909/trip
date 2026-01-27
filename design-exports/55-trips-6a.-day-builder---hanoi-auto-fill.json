@@ -1,0 +1,842 @@
+{
+  "type": "frame",
+  "id": "HYZHW",
+  "x": 5460,
+  "y": 2000,
+  "name": "Trips 6a. Day Builder - Hanoi Auto-fill",
+  "clip": true,
+  "width": 390,
+  "height": 844,
+  "fill": "#FFFFFF",
+  "cornerRadius": 40,
+  "layout": "vertical",
+  "children": [
+    {
+      "type": "frame",
+      "id": "SGUoq",
+      "name": "mapSection",
+      "metadata": {
+        "type": "unsplash",
+        "username": "firi",
+        "link": "https://unsplash.com/@firi",
+        "author": "Muhammad Firdaus Abdullah"
+      },
+      "width": "fill_container",
+      "height": 280,
+      "fill": {
+        "type": "image",
+        "enabled": true,
+        "url": "./images/generated-1769119469664.png",
+        "mode": "fill"
+      },
+      "layout": "vertical",
+      "justifyContent": "space_between",
+      "children": [
+        {
+          "type": "frame",
+          "id": "LCuLT",
+          "name": "backBtnWrap",
+          "width": "fill_container",
+          "padding": [
+            20,
+            24
+          ],
+          "children": [
+            {
+              "type": "frame",
+              "id": "s235Z",
+              "name": "backBtn",
+              "width": 36,
+              "height": 36,
+              "fill": "#00000033",
+              "cornerRadius": 18,
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "icon_font",
+                  "id": "0nNqy",
+                  "name": "back7icon",
+                  "width": 20,
+                  "height": 20,
+                  "iconFontName": "arrow-left",
+                  "iconFontFamily": "lucide",
+                  "fill": "#FFFFFF"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "yLlQC",
+          "name": "collapseBar",
+          "width": "fill_container",
+          "height": 32,
+          "fill": "#FFFFFF",
+          "cornerRadius": [
+            16,
+            16,
+            0,
+            0
+          ],
+          "justifyContent": "center",
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "frame",
+              "id": "1nqYC",
+              "name": "collapseHandle",
+              "width": 40,
+              "height": 4,
+              "fill": "#E5E7EB",
+              "cornerRadius": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "2dDbx",
+      "name": "contentSection",
+      "width": "fill_container",
+      "height": "fill_container",
+      "fill": "#FFFFFF",
+      "layout": "vertical",
+      "children": [
+        {
+          "type": "frame",
+          "id": "12fF4",
+          "name": "dayBuilderHeader",
+          "width": "fill_container",
+          "padding": [
+            16,
+            24
+          ],
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "frame",
+              "id": "D0nTv",
+              "name": "headerLeft",
+              "width": "fill_container",
+              "gap": 8,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "UMWYz",
+                  "name": "cityTitle",
+                  "fill": "#1A1A1A",
+                  "content": "4 Days in Hanoi",
+                  "fontFamily": "DM Sans",
+                  "fontSize": 20,
+                  "fontWeight": "700"
+                },
+                {
+                  "type": "icon_font",
+                  "id": "duBA1",
+                  "name": "dropdown",
+                  "width": 18,
+                  "height": 18,
+                  "iconFontName": "chevron-down",
+                  "iconFontFamily": "lucide",
+                  "fill": "#6B7280"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "r1YpF",
+              "name": "addDates",
+              "fill": "#F0F0F0",
+              "cornerRadius": 16,
+              "gap": 6,
+              "padding": [
+                6,
+                12
+              ],
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "icon_font",
+                  "id": "0brDU",
+                  "name": "calIcon",
+                  "width": 14,
+                  "height": 14,
+                  "iconFontName": "calendar",
+                  "iconFontFamily": "lucide",
+                  "fill": "#6B7280"
+                },
+                {
+                  "type": "text",
+                  "id": "Ashoo",
+                  "name": "addDatesText",
+                  "rotation": 0.1477412912741441,
+                  "fill": "#1A1A1A",
+                  "content": "Feb 16 - 19",
+                  "fontFamily": "DM Sans",
+                  "fontSize": 12,
+                  "fontWeight": "500"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "GIy2C",
+          "name": "tabsRow",
+          "width": "fill_container",
+          "padding": [
+            0,
+            24
+          ],
+          "children": [
+            {
+              "type": "frame",
+              "id": "rASeQ",
+              "name": "overviewTab",
+              "width": "fill_container",
+              "layout": "vertical",
+              "gap": 8,
+              "padding": [
+                12,
+                0
+              ],
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "x352g",
+                  "name": "overviewText",
+                  "fill": "#1A1A1A",
+                  "content": "Overview",
+                  "fontFamily": "DM Sans",
+                  "fontSize": 14,
+                  "fontWeight": "600"
+                },
+                {
+                  "type": "frame",
+                  "id": "iAjXc",
+                  "name": "overviewIndicator",
+                  "width": "fill_container",
+                  "height": 2,
+                  "fill": "#1A1A1A",
+                  "cornerRadius": 1
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "CoTJZ",
+              "name": "itinTab",
+              "width": "fill_container",
+              "layout": "vertical",
+              "gap": 8,
+              "padding": [
+                12,
+                0
+              ],
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "yDiFx",
+                  "name": "itinText",
+                  "fill": "#9CA3AF",
+                  "content": "Itinerary",
+                  "fontFamily": "DM Sans",
+                  "fontSize": 14,
+                  "fontWeight": "500"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "Rz5mH",
+              "name": "ticketsTab",
+              "width": "fill_container",
+              "layout": "vertical",
+              "gap": 8,
+              "padding": [
+                12,
+                0
+              ],
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "FDxdp",
+                  "name": "ticketsText1",
+                  "fill": "#9CA3AF",
+                  "content": "Bookings",
+                  "fontFamily": "DM Sans",
+                  "fontSize": 14,
+                  "fontWeight": "500"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "fI32w",
+          "name": "scrollWrapper",
+          "width": "fill_container",
+          "height": "fill_container",
+          "layout": "vertical",
+          "children": [
+            {
+              "type": "frame",
+              "id": "kKV6F",
+              "name": "daysList",
+              "clip": true,
+              "width": 390,
+              "height": "fill_container",
+              "layout": "vertical",
+              "gap": 8,
+              "padding": [
+                10,
+                24
+              ],
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "DFGLj",
+                  "name": "headerRow",
+                  "width": "fill_container",
+                  "padding": [
+                    0,
+                    14,
+                    0,
+                    0
+                  ],
+                  "justifyContent": "space_between",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "tBsrQ",
+                      "name": "subtitle",
+                      "fill": "#6B7280",
+                      "content": "4 days to plan",
+                      "fontFamily": "DM Sans",
+                      "fontSize": 13,
+                      "fontWeight": "normal"
+                    },
+                    {
+                      "type": "frame",
+                      "id": "UFKD7",
+                      "name": "autoFillAllBtn",
+                      "fill": "#BFFF00",
+                      "cornerRadius": 10,
+                      "gap": 8,
+                      "padding": [
+                        8,
+                        14
+                      ],
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "icon_font",
+                          "id": "1CqcO",
+                          "name": "sparkleIcon",
+                          "width": 14,
+                          "height": 14,
+                          "iconFontName": "sparkles",
+                          "iconFontFamily": "lucide",
+                          "fill": "#1A1A1A"
+                        },
+                        {
+                          "type": "text",
+                          "id": "fzWzq",
+                          "name": "autoFillText",
+                          "fill": "#1A1A1A",
+                          "content": "Auto-fill",
+                          "fontFamily": "DM Sans",
+                          "fontSize": 12,
+                          "fontWeight": "600"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "BgmDA",
+                  "name": "day1Row",
+                  "width": "fill_container",
+                  "fill": "#F9FAFB",
+                  "cornerRadius": 14,
+                  "stroke": {
+                    "thickness": 1,
+                    "fill": "#E5E7EB"
+                  },
+                  "gap": 12,
+                  "padding": [
+                    10,
+                    14,
+                    10,
+                    10
+                  ],
+                  "justifyContent": "space_between",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "sSOao",
+                      "name": "day1Left",
+                      "width": "fill_container",
+                      "layout": "vertical",
+                      "gap": 2,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "1VGsM",
+                          "name": "day1Title",
+                          "fill": "#1A1A1A",
+                          "content": "Day 1",
+                          "fontFamily": "DM Sans",
+                          "fontSize": 15,
+                          "fontWeight": "600"
+                        },
+                        {
+                          "type": "text",
+                          "id": "AJrbj",
+                          "name": "day1Status",
+                          "fill": "#6B7280",
+                          "content": "Feb 16 \u00b7 Free day",
+                          "fontFamily": "DM Sans",
+                          "fontSize": 13,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "ywrlU",
+                      "name": "day1Btn",
+                      "fill": "#1A1A1A",
+                      "cornerRadius": 12,
+                      "padding": [
+                        8,
+                        16
+                      ],
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "gK5Gp",
+                          "name": "day1BtnText",
+                          "fill": "#FFFFFF",
+                          "content": "Generate",
+                          "fontFamily": "DM Sans",
+                          "fontSize": 13,
+                          "fontWeight": "600"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "BjLJo",
+                  "name": "day2Row",
+                  "width": "fill_container",
+                  "fill": "#F9FAFB",
+                  "cornerRadius": 14,
+                  "stroke": {
+                    "thickness": 1,
+                    "fill": "#E5E7EB"
+                  },
+                  "gap": 12,
+                  "padding": [
+                    10,
+                    14,
+                    10,
+                    10
+                  ],
+                  "justifyContent": "space_between",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "lWQeF",
+                      "name": "day2Left",
+                      "width": "fill_container",
+                      "layout": "vertical",
+                      "gap": 2,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "BeVGw",
+                          "name": "day2Title",
+                          "fill": "#1A1A1A",
+                          "content": "Day 2",
+                          "fontFamily": "DM Sans",
+                          "fontSize": 15,
+                          "fontWeight": "600"
+                        },
+                        {
+                          "type": "text",
+                          "id": "3lz4v",
+                          "name": "day2Status",
+                          "fill": "#6B7280",
+                          "content": "Feb 17 \u00b7 Free day",
+                          "fontFamily": "DM Sans",
+                          "fontSize": 13,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "0CRbx",
+                      "name": "day2Btn",
+                      "fill": "#1A1A1A",
+                      "cornerRadius": 12,
+                      "padding": [
+                        8,
+                        16
+                      ],
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "5hz09",
+                          "name": "day2BtnText",
+                          "fill": "#FFFFFF",
+                          "content": "Generate",
+                          "fontFamily": "DM Sans",
+                          "fontSize": 13,
+                          "fontWeight": "600"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "d5xyG",
+                  "name": "day3Row",
+                  "width": "fill_container",
+                  "fill": "#F9FAFB",
+                  "cornerRadius": 14,
+                  "stroke": {
+                    "thickness": 1,
+                    "fill": "#E5E7EB"
+                  },
+                  "gap": 12,
+                  "padding": [
+                    10,
+                    14,
+                    10,
+                    10
+                  ],
+                  "justifyContent": "space_between",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "gXFAb",
+                      "name": "day3Left",
+                      "width": "fill_container",
+                      "layout": "vertical",
+                      "gap": 2,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "ioznt",
+                          "name": "day3Title",
+                          "fill": "#1A1A1A",
+                          "content": "Day 3",
+                          "fontFamily": "DM Sans",
+                          "fontSize": 15,
+                          "fontWeight": "600"
+                        },
+                        {
+                          "type": "text",
+                          "id": "phdHD",
+                          "name": "day3Status",
+                          "fill": "#6B7280",
+                          "content": "Feb 18 \u00b7 Free day",
+                          "fontFamily": "DM Sans",
+                          "fontSize": 13,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "vNXTo",
+                      "name": "day3Btn",
+                      "fill": "#1A1A1A",
+                      "cornerRadius": 12,
+                      "padding": [
+                        8,
+                        16
+                      ],
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "ji7pQ",
+                          "name": "day3BtnText",
+                          "fill": "#FFFFFF",
+                          "content": "Generate",
+                          "fontFamily": "DM Sans",
+                          "fontSize": 13,
+                          "fontWeight": "600"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "MmAOW",
+                  "name": "day4Row",
+                  "width": "fill_container",
+                  "fill": "#F9FAFB",
+                  "cornerRadius": 14,
+                  "stroke": {
+                    "thickness": 1,
+                    "fill": "#E5E7EB"
+                  },
+                  "gap": 12,
+                  "padding": [
+                    10,
+                    14,
+                    10,
+                    10
+                  ],
+                  "justifyContent": "space_between",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "bBiVZ",
+                      "name": "day4Left",
+                      "width": "fill_container",
+                      "layout": "vertical",
+                      "gap": 2,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "HODS8",
+                          "name": "day4Title",
+                          "fill": "#1A1A1A",
+                          "content": "Day 4",
+                          "fontFamily": "DM Sans",
+                          "fontSize": 15,
+                          "fontWeight": "600"
+                        },
+                        {
+                          "type": "text",
+                          "id": "kHGfT",
+                          "name": "day4Status",
+                          "fill": "#6B7280",
+                          "content": "Feb 19 \u00b7 Free day",
+                          "fontFamily": "DM Sans",
+                          "fontSize": 13,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "YnaS7",
+                      "name": "day4Btn",
+                      "fill": "#1A1A1A",
+                      "cornerRadius": 12,
+                      "padding": [
+                        8,
+                        16
+                      ],
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "ieU22",
+                          "name": "day4BtnText",
+                          "fill": "#FFFFFF",
+                          "content": "Generate",
+                          "fontFamily": "DM Sans",
+                          "fontSize": 13,
+                          "fontWeight": "600"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "oXTGo",
+          "name": "bottomSection",
+          "width": "fill_container",
+          "children": [
+            {
+              "type": "frame",
+              "id": "K8ZWy",
+              "name": "bottomNav",
+              "width": "fill_container",
+              "height": 83,
+              "fill": "#FFFFFF",
+              "stroke": {
+                "thickness": {
+                  "top": 1
+                },
+                "fill": "#E5E7EB"
+              },
+              "padding": [
+                12,
+                0,
+                34,
+                0
+              ],
+              "justifyContent": "space_around",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "5aBTA",
+                  "name": "navTrips",
+                  "width": 64,
+                  "layout": "vertical",
+                  "gap": 4,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "icon_font",
+                      "id": "PcCPR",
+                      "name": "navTripsIcon6aH",
+                      "width": 24,
+                      "height": 24,
+                      "iconFontName": "map",
+                      "iconFontFamily": "lucide",
+                      "fill": "#1A1A1A"
+                    },
+                    {
+                      "type": "text",
+                      "id": "LiOpA",
+                      "name": "navTripsLabel6aH",
+                      "fill": "#1A1A1A",
+                      "content": "Trips",
+                      "fontFamily": "DM Sans",
+                      "fontSize": 10,
+                      "fontWeight": "600"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "3YqKB",
+                  "name": "navExplore",
+                  "width": 64,
+                  "layout": "vertical",
+                  "gap": 4,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "icon_font",
+                      "id": "mkXDS",
+                      "name": "navExploreIcon6aH",
+                      "width": 24,
+                      "height": 24,
+                      "iconFontName": "compass",
+                      "iconFontFamily": "lucide",
+                      "fill": "#9CA3AF"
+                    },
+                    {
+                      "type": "text",
+                      "id": "dXlq7",
+                      "name": "navExploreLabel6aH",
+                      "fill": "#9CA3AF",
+                      "content": "Explore",
+                      "fontFamily": "DM Sans",
+                      "fontSize": 10,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "QjLW9",
+                  "name": "navSaved",
+                  "width": 64,
+                  "layout": "vertical",
+                  "gap": 4,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "icon_font",
+                      "id": "sGigM",
+                      "name": "navSavedIcon6aH",
+                      "width": 24,
+                      "height": 24,
+                      "iconFontName": "bookmark",
+                      "iconFontFamily": "lucide",
+                      "fill": "#9CA3AF"
+                    },
+                    {
+                      "type": "text",
+                      "id": "asywp",
+                      "name": "navSavedLabel6aH",
+                      "fill": "#9CA3AF",
+                      "content": "Saved",
+                      "fontFamily": "DM Sans",
+                      "fontSize": 10,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "a6FJ4",
+                  "name": "navProfile",
+                  "width": 64,
+                  "layout": "vertical",
+                  "gap": 4,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "icon_font",
+                      "id": "u9D4X",
+                      "name": "navProfileIcon6aH",
+                      "width": 24,
+                      "height": 24,
+                      "iconFontName": "user",
+                      "iconFontFamily": "lucide",
+                      "fill": "#9CA3AF"
+                    },
+                    {
+                      "type": "text",
+                      "id": "wv1Ts",
+                      "name": "navProfileLabel6aH",
+                      "fill": "#9CA3AF",
+                      "content": "Profile",
+                      "fontFamily": "DM Sans",
+                      "fontSize": 10,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

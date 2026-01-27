@@ -1,0 +1,1186 @@
+{
+  "type": "frame",
+  "id": "kSziY",
+  "x": 6780,
+  "y": 1000,
+  "name": "Trips 7. Day Builder - Itinerary",
+  "clip": true,
+  "width": 390,
+  "height": 844,
+  "fill": "#FFFFFF",
+  "cornerRadius": 40,
+  "layout": "vertical",
+  "children": [
+    {
+      "type": "frame",
+      "id": "6i4TQ",
+      "name": "mapSection",
+      "width": "fill_container",
+      "height": 280,
+      "fill": {
+        "type": "image",
+        "enabled": true,
+        "url": "./images/generated-1769119469664.png",
+        "mode": "fill"
+      },
+      "layout": "vertical",
+      "justifyContent": "space_between",
+      "children": [
+        {
+          "type": "frame",
+          "id": "KMJ0y",
+          "name": "backBtnWrap",
+          "width": "fill_container",
+          "padding": [
+            20,
+            24
+          ],
+          "children": [
+            {
+              "type": "frame",
+              "id": "f4XiQ",
+              "name": "backBtn",
+              "width": 36,
+              "height": 36,
+              "fill": "#00000033",
+              "cornerRadius": 18,
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "icon_font",
+                  "id": "SzSda",
+                  "name": "back2icon",
+                  "width": 20,
+                  "height": 20,
+                  "iconFontName": "arrow-left",
+                  "iconFontFamily": "lucide",
+                  "fill": "#FFFFFF"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "m4kP0",
+          "name": "collapseBar",
+          "width": "fill_container",
+          "height": 32,
+          "fill": "#FFFFFF",
+          "cornerRadius": [
+            16,
+            16,
+            0,
+            0
+          ],
+          "justifyContent": "center",
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "frame",
+              "id": "oowGv",
+              "name": "handle",
+              "width": 40,
+              "height": 4,
+              "fill": "#E5E7EB",
+              "cornerRadius": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "2s5b9",
+      "name": "contentSection",
+      "width": "fill_container",
+      "height": "fill_container",
+      "fill": "#FFFFFF",
+      "layout": "vertical",
+      "children": [
+        {
+          "type": "frame",
+          "id": "8UB3L",
+          "name": "header",
+          "width": "fill_container",
+          "layout": "vertical",
+          "gap": 12,
+          "padding": [
+            16,
+            24,
+            12,
+            24
+          ],
+          "justifyContent": "space_between",
+          "children": [
+            {
+              "type": "frame",
+              "id": "Mjopu",
+              "name": "titleRow",
+              "width": "fill_container",
+              "justifyContent": "space_between",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "8meNn",
+                  "name": "headerLeft",
+                  "width": "fill_container",
+                  "gap": 8,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "tkjmf",
+                      "name": "titleText",
+                      "fill": "#1A1A1A",
+                      "content": "5 Days in Tokyo",
+                      "fontFamily": "DM Sans",
+                      "fontSize": 20,
+                      "fontWeight": "700"
+                    },
+                    {
+                      "type": "icon_font",
+                      "id": "hyRbn",
+                      "name": "dropdown",
+                      "width": 18,
+                      "height": 18,
+                      "iconFontName": "chevron-down",
+                      "iconFontFamily": "lucide",
+                      "fill": "#6B7280"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "qSf5x",
+                  "name": "draftBadge",
+                  "fill": "#F9FAFB",
+                  "cornerRadius": 20,
+                  "stroke": {
+                    "thickness": 1,
+                    "fill": "#E5E7EB"
+                  },
+                  "gap": 8,
+                  "padding": [
+                    6,
+                    10
+                  ],
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "icon_font",
+                      "id": "psCIi",
+                      "name": "draftIcon",
+                      "width": 12,
+                      "height": 12,
+                      "iconFontName": "pencil",
+                      "iconFontFamily": "lucide",
+                      "fill": "#6B7280"
+                    },
+                    {
+                      "type": "text",
+                      "id": "BpdWI",
+                      "name": "draftText",
+                      "fill": "#6B7280",
+                      "content": "Edit",
+                      "fontFamily": "DM Sans",
+                      "fontSize": 12,
+                      "fontWeight": "500"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "pTAC8",
+              "name": "dayTabsRow",
+              "clip": true,
+              "width": "fill_container",
+              "gap": 16,
+              "justifyContent": "center",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "6XnW8",
+                  "name": "day1Tab",
+                  "fill": "#00000000",
+                  "padding": [
+                    6,
+                    12
+                  ],
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "3NJhi",
+                      "name": "day1Text",
+                      "fill": "#1A1A1A",
+                      "content": "Day 1",
+                      "fontFamily": "DM Sans",
+                      "fontSize": 12,
+                      "fontWeight": "600"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "nLXFr",
+                  "name": "day2Tab",
+                  "stroke": {
+                    "thickness": 0,
+                    "fill": "#00000000"
+                  },
+                  "padding": [
+                    6,
+                    12
+                  ],
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "Zk5yz",
+                      "name": "day2Text",
+                      "fill": "#6B7280",
+                      "content": "Day 2",
+                      "fontFamily": "DM Sans",
+                      "fontSize": 12,
+                      "fontWeight": "500"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "juXCK",
+                  "name": "day3Tab",
+                  "stroke": {
+                    "thickness": 0,
+                    "fill": "#00000000"
+                  },
+                  "padding": [
+                    6,
+                    12
+                  ],
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "6caLo",
+                      "name": "day3Text",
+                      "fill": "#6B7280",
+                      "content": "Day 3",
+                      "fontFamily": "DM Sans",
+                      "fontSize": 12,
+                      "fontWeight": "500"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "eQkrl",
+                  "name": "day4Tab",
+                  "stroke": {
+                    "thickness": 0,
+                    "fill": "#00000000"
+                  },
+                  "padding": [
+                    6,
+                    12
+                  ],
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "hnoYq",
+                      "name": "day4Text",
+                      "fill": "#6B7280",
+                      "content": "Day 4",
+                      "fontFamily": "DM Sans",
+                      "fontSize": 12,
+                      "fontWeight": "500"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "5XTwM",
+                  "name": "day5Tab",
+                  "stroke": {
+                    "thickness": 0,
+                    "fill": "#00000000"
+                  },
+                  "padding": [
+                    6,
+                    12
+                  ],
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "pQh2y",
+                      "name": "day5Text",
+                      "fill": "#6B7280",
+                      "content": "Day 5",
+                      "fontFamily": "DM Sans",
+                      "fontSize": 12,
+                      "fontWeight": "500"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "tmfkx",
+          "name": "tabsRow",
+          "width": "fill_container",
+          "padding": [
+            0,
+            24
+          ],
+          "children": [
+            {
+              "type": "frame",
+              "id": "zKqfE",
+              "name": "overviewTab",
+              "width": "fill_container",
+              "layout": "vertical",
+              "gap": 8,
+              "padding": [
+                12,
+                0
+              ],
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "HZN41",
+                  "name": "overviewText",
+                  "fill": "#9CA3AF",
+                  "content": "Overview",
+                  "fontFamily": "DM Sans",
+                  "fontSize": 14,
+                  "fontWeight": "500"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "ZCSMC",
+              "name": "itinTab",
+              "width": "fill_container",
+              "layout": "vertical",
+              "gap": 8,
+              "padding": [
+                12,
+                0
+              ],
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "6x4U0",
+                  "name": "itinText",
+                  "fill": "#1A1A1A",
+                  "content": "Itinerary",
+                  "fontFamily": "DM Sans",
+                  "fontSize": 14,
+                  "fontWeight": "600"
+                },
+                {
+                  "type": "frame",
+                  "id": "KxkmE",
+                  "name": "indicator",
+                  "width": "fill_container",
+                  "height": 2,
+                  "fill": "#1A1A1A",
+                  "cornerRadius": 1
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "I3D1O",
+              "name": "ticketsTab",
+              "width": "fill_container",
+              "layout": "vertical",
+              "gap": 8,
+              "padding": [
+                12,
+                0
+              ],
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "3BmgN",
+                  "name": "ticketsText",
+                  "fill": "#9CA3AF",
+                  "content": "Bookings",
+                  "fontFamily": "DM Sans",
+                  "fontSize": 14,
+                  "fontWeight": "500"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "fmeip",
+          "name": "itinList",
+          "clip": true,
+          "width": "fill_container",
+          "height": "fill_container",
+          "layout": "vertical",
+          "gap": 16,
+          "padding": [
+            16,
+            24
+          ],
+          "children": [
+            {
+              "type": "text",
+              "id": "i3tfD",
+              "name": "morningLabel",
+              "fill": "#6B7280",
+              "content": "Morning",
+              "fontFamily": "DM Sans",
+              "fontSize": 13,
+              "fontWeight": "600"
+            },
+            {
+              "type": "frame",
+              "id": "NHu9d",
+              "name": "activity1",
+              "width": "fill_container",
+              "fill": "#F9FAFB",
+              "cornerRadius": 12,
+              "stroke": {
+                "thickness": 1,
+                "fill": "#E5E7EB"
+              },
+              "gap": 12,
+              "padding": 12,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "FNIca",
+                  "name": "thumb1",
+                  "metadata": {
+                    "type": "unsplash",
+                    "username": "m_camper",
+                    "link": "https://unsplash.com/@m_camper",
+                    "author": "Micah Camper"
+                  },
+                  "width": 44,
+                  "height": 44,
+                  "fill": {
+                    "type": "image",
+                    "enabled": true,
+                    "url": "https://images.unsplash.com/photo-1669296215357-a70bad7df68c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4NDM0ODN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3NjkxNDU1MjR8&ixlib=rb-4.1.0&q=80&w=1080",
+                    "mode": "fill"
+                  },
+                  "cornerRadius": 8
+                },
+                {
+                  "type": "frame",
+                  "id": "9tVxU",
+                  "name": "left",
+                  "width": "fill_container",
+                  "layout": "vertical",
+                  "gap": 4,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "vLmKM",
+                      "name": "activity1Name",
+                      "fill": "#1A1A1A",
+                      "content": "Senso-ji Temple",
+                      "fontFamily": "DM Sans",
+                      "fontSize": 15,
+                      "fontWeight": "600"
+                    },
+                    {
+                      "type": "text",
+                      "id": "sCHUY",
+                      "name": "activity1Desc",
+                      "fill": "#6B7280",
+                      "content": "9:00 AM \u00b7 Asakusa \u00b7 Main temple",
+                      "fontFamily": "DM Sans",
+                      "fontSize": 12,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "94gmG",
+                  "name": "right",
+                  "layout": "vertical",
+                  "gap": 4,
+                  "alignItems": "end",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "tZpMP",
+                      "name": "activity1Time",
+                      "fill": "#9CA3AF",
+                      "content": "~2 hrs",
+                      "fontFamily": "DM Sans",
+                      "fontSize": 12,
+                      "fontWeight": "500"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "u7mwa",
+              "name": "travelTime",
+              "width": "fill_container",
+              "gap": 8,
+              "padding": [
+                0,
+                0,
+                0,
+                16
+              ],
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "nBjEv",
+                  "name": "travelLine1",
+                  "width": 1,
+                  "height": 16,
+                  "fill": "#E5E7EB"
+                },
+                {
+                  "type": "icon_font",
+                  "id": "ZUXvg",
+                  "name": "travelIcon1",
+                  "width": 14,
+                  "height": 14,
+                  "iconFontName": "footprints",
+                  "iconFontFamily": "lucide",
+                  "fill": "#9CA3AF"
+                },
+                {
+                  "type": "text",
+                  "id": "pvJkS",
+                  "name": "travelText1",
+                  "fill": "#9CA3AF",
+                  "content": "10 min walk",
+                  "fontFamily": "DM Sans",
+                  "fontSize": 11,
+                  "fontWeight": "normal"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "pMdDQ",
+              "name": "activity2",
+              "width": "fill_container",
+              "fill": "#F9FAFB",
+              "cornerRadius": 12,
+              "stroke": {
+                "thickness": 1,
+                "fill": "#E5E7EB"
+              },
+              "gap": 12,
+              "padding": 12,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "mPiPi",
+                  "name": "thumb2",
+                  "metadata": {
+                    "type": "unsplash",
+                    "username": "liuxuedi",
+                    "link": "https://unsplash.com/@liuxuedi",
+                    "author": "Xuedi Liu"
+                  },
+                  "width": 44,
+                  "height": 44,
+                  "fill": {
+                    "type": "image",
+                    "enabled": true,
+                    "url": "https://images.unsplash.com/photo-1759674348947-75fd9d5a5262?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4NDM0ODN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3NjkxNDU1Mjl8&ixlib=rb-4.1.0&q=80&w=1080",
+                    "mode": "fill"
+                  },
+                  "cornerRadius": 8
+                },
+                {
+                  "type": "frame",
+                  "id": "GNFp7",
+                  "name": "left",
+                  "width": "fill_container",
+                  "layout": "vertical",
+                  "gap": 4,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "oyT7a",
+                      "name": "activity2Name",
+                      "fill": "#1A1A1A",
+                      "content": "Nakamise Shopping Street",
+                      "fontFamily": "DM Sans",
+                      "fontSize": 15,
+                      "fontWeight": "600"
+                    },
+                    {
+                      "type": "text",
+                      "id": "qRfl8",
+                      "name": "activity2Desc",
+                      "fill": "#6B7280",
+                      "content": "11:00 AM \u00b7 Asakusa \u00b7 Traditional shops",
+                      "fontFamily": "DM Sans",
+                      "fontSize": 12,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "0EIIn",
+                  "name": "right",
+                  "layout": "vertical",
+                  "gap": 4,
+                  "alignItems": "end",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "tMgsn",
+                      "name": "activity2Time",
+                      "fill": "#9CA3AF",
+                      "content": "~1 hr",
+                      "fontFamily": "DM Sans",
+                      "fontSize": 12,
+                      "fontWeight": "500"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "id": "2ALFq",
+              "name": "middayLabel",
+              "fill": "#6B7280",
+              "content": "Midday",
+              "fontFamily": "DM Sans",
+              "fontSize": 13,
+              "fontWeight": "600"
+            },
+            {
+              "type": "frame",
+              "id": "hcbGf",
+              "name": "activity3",
+              "width": "fill_container",
+              "fill": "#F9FAFB",
+              "cornerRadius": 12,
+              "stroke": {
+                "thickness": 1,
+                "fill": "#E5E7EB"
+              },
+              "gap": 12,
+              "padding": 12,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "sKloE",
+                  "name": "thumb3",
+                  "metadata": {
+                    "type": "unsplash",
+                    "username": "space_face_films",
+                    "link": "https://unsplash.com/@space_face_films",
+                    "author": "Luke Galloway"
+                  },
+                  "width": 44,
+                  "height": 44,
+                  "fill": {
+                    "type": "image",
+                    "enabled": true,
+                    "url": "https://images.unsplash.com/photo-1677778819640-964036f500fc?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4NDM0ODN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3NjkxNDU1MzV8&ixlib=rb-4.1.0&q=80&w=1080",
+                    "mode": "fill"
+                  },
+                  "cornerRadius": 8
+                },
+                {
+                  "type": "frame",
+                  "id": "KJ20w",
+                  "name": "left",
+                  "width": "fill_container",
+                  "layout": "vertical",
+                  "gap": 6,
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "OHpdl",
+                      "name": "titleRow3",
+                      "gap": 8,
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "mDjOy",
+                          "name": "activity3Name",
+                          "fill": "#1A1A1A",
+                          "content": "teamLab Borderless",
+                          "fontFamily": "DM Sans",
+                          "fontSize": 15,
+                          "fontWeight": "600"
+                        },
+                        {
+                          "type": "frame",
+                          "id": "WzMH5",
+                          "name": "bookedBadge",
+                          "fill": "#FFFFFF",
+                          "cornerRadius": 4,
+                          "padding": [
+                            3,
+                            8
+                          ],
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "d1ZMQ",
+                              "name": "bookedText",
+                              "fill": "#1A1A1A",
+                              "content": "Booked",
+                              "fontFamily": "DM Sans",
+                              "fontSize": 10,
+                              "fontWeight": "600"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "text",
+                      "id": "gNQvH",
+                      "name": "activity3Desc",
+                      "fill": "#6B7280",
+                      "content": "12:30 PM \u00b7 Odaiba \u00b7 Digital art museum",
+                      "fontFamily": "DM Sans",
+                      "fontSize": 12,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "kJshK",
+                  "name": "right",
+                  "layout": "vertical",
+                  "gap": 4,
+                  "alignItems": "end",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "BlmMx",
+                      "name": "activity3Time",
+                      "fill": "#9CA3AF",
+                      "content": "~1 hr",
+                      "fontFamily": "DM Sans",
+                      "fontSize": 12,
+                      "fontWeight": "500"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "id": "V7Qft",
+              "name": "afternoonLabel",
+              "fill": "#6B7280",
+              "content": "Afternoon",
+              "fontFamily": "DM Sans",
+              "fontSize": 13,
+              "fontWeight": "600"
+            },
+            {
+              "type": "frame",
+              "id": "Xez55",
+              "name": "activity4",
+              "width": "fill_container",
+              "fill": "#F9FAFB",
+              "cornerRadius": 12,
+              "stroke": {
+                "thickness": 1,
+                "fill": "#E5E7EB"
+              },
+              "gap": 12,
+              "padding": 12,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "Z8vtn",
+                  "name": "thumb4",
+                  "metadata": {
+                    "type": "unsplash",
+                    "username": "pafuxu",
+                    "link": "https://unsplash.com/@pafuxu",
+                    "author": "Kouji Tsuru"
+                  },
+                  "width": 44,
+                  "height": 44,
+                  "fill": {
+                    "type": "image",
+                    "enabled": true,
+                    "url": "https://images.unsplash.com/photo-1764480527319-ec99e5a9df78?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4NDM0ODN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3NjkxNDU1NDB8&ixlib=rb-4.1.0&q=80&w=1080",
+                    "mode": "fill"
+                  },
+                  "cornerRadius": 8
+                },
+                {
+                  "type": "frame",
+                  "id": "jfOIw",
+                  "name": "left",
+                  "width": "fill_container",
+                  "layout": "vertical",
+                  "gap": 4,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "XEfnj",
+                      "name": "activity4Name",
+                      "fill": "#1A1A1A",
+                      "content": "Demboin Garden",
+                      "fontFamily": "DM Sans",
+                      "fontSize": 15,
+                      "fontWeight": "600"
+                    },
+                    {
+                      "type": "text",
+                      "id": "0rLRS",
+                      "name": "activity4Desc",
+                      "fill": "#6B7280",
+                      "content": "3:00 PM \u00b7 Asakusa \u00b7 Hidden temple garden",
+                      "fontFamily": "DM Sans",
+                      "fontSize": 12,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "rOg8n",
+                  "name": "right",
+                  "layout": "vertical",
+                  "gap": 4,
+                  "alignItems": "end",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "4lfFf",
+                      "name": "activity4Time",
+                      "fill": "#9CA3AF",
+                      "content": "~2 hrs",
+                      "fontFamily": "DM Sans",
+                      "fontSize": 12,
+                      "fontWeight": "500"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "id": "2pkkK",
+              "name": "eveningLabel",
+              "fill": "#6B7280",
+              "content": "Evening",
+              "fontFamily": "DM Sans",
+              "fontSize": 13,
+              "fontWeight": "600"
+            },
+            {
+              "type": "frame",
+              "id": "TiuJ9",
+              "name": "activity5",
+              "width": "fill_container",
+              "fill": "#F9FAFB",
+              "cornerRadius": 12,
+              "stroke": {
+                "thickness": 1,
+                "fill": "#E5E7EB"
+              },
+              "gap": 12,
+              "padding": 12,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "ei3JK",
+                  "name": "thumb5",
+                  "metadata": {
+                    "type": "unsplash",
+                    "username": "mosdesign",
+                    "link": "https://unsplash.com/@mosdesign",
+                    "author": "mos design"
+                  },
+                  "width": 44,
+                  "height": 44,
+                  "fill": {
+                    "type": "image",
+                    "enabled": true,
+                    "url": "https://images.unsplash.com/photo-1704377133466-784bc482e366?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4NDM0ODN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3NjkxNDU1NDV8&ixlib=rb-4.1.0&q=80&w=1080",
+                    "mode": "fill"
+                  },
+                  "cornerRadius": 8
+                },
+                {
+                  "type": "frame",
+                  "id": "ZDY6X",
+                  "name": "left",
+                  "width": "fill_container",
+                  "layout": "vertical",
+                  "gap": 6,
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "6prNi",
+                      "name": "titleRow5",
+                      "gap": 8,
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "j3GwM",
+                          "name": "activity5Name",
+                          "fill": "#1A1A1A",
+                          "content": "Sukiyabashi Jiro",
+                          "fontFamily": "DM Sans",
+                          "fontSize": 15,
+                          "fontWeight": "600"
+                        },
+                        {
+                          "type": "frame",
+                          "id": "1GlFF",
+                          "name": "needBookBadge",
+                          "fill": "#FFFFFF",
+                          "cornerRadius": 4,
+                          "padding": [
+                            3,
+                            8
+                          ],
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "fLYB2",
+                              "name": "needBookText",
+                              "fill": "#E65100",
+                              "content": "Need to book",
+                              "fontFamily": "DM Sans",
+                              "fontSize": 10,
+                              "fontWeight": "600"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "text",
+                      "id": "uG9Vs",
+                      "name": "activity5Desc",
+                      "fill": "#6B7280",
+                      "content": "6:00 PM \u00b7 Ginza \u00b7 Sushi omakase",
+                      "fontFamily": "DM Sans",
+                      "fontSize": 12,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "doT45",
+                  "name": "right",
+                  "layout": "vertical",
+                  "gap": 4,
+                  "alignItems": "end",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "2XbVl",
+                      "name": "activity5Time",
+                      "fill": "#9CA3AF",
+                      "content": "~2 hrs",
+                      "fontFamily": "DM Sans",
+                      "fontSize": 12,
+                      "fontWeight": "500"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "ILM65",
+          "name": "bottomSection",
+          "width": "fill_container",
+          "gap": 12,
+          "children": [
+            {
+              "type": "frame",
+              "id": "Y8ZQ0",
+              "name": "bottomNav",
+              "width": "fill_container",
+              "height": 83,
+              "fill": "#FFFFFF",
+              "stroke": {
+                "thickness": {
+                  "top": 1
+                },
+                "fill": "#E8E8E8"
+              },
+              "padding": [
+                12,
+                0,
+                34,
+                0
+              ],
+              "justifyContent": "space_around",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "sLHIt",
+                  "name": "navTrips",
+                  "width": 64,
+                  "layout": "vertical",
+                  "gap": 4,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "icon_font",
+                      "id": "SJtZt",
+                      "name": "navTripsIcon",
+                      "width": 24,
+                      "height": 24,
+                      "iconFontName": "map",
+                      "iconFontFamily": "lucide",
+                      "fill": "#1A1A1A"
+                    },
+                    {
+                      "type": "text",
+                      "id": "xKESy",
+                      "name": "navTripsLabel",
+                      "fill": "#1A1A1A",
+                      "content": "Trips",
+                      "fontFamily": "DM Sans",
+                      "fontSize": 10,
+                      "fontWeight": "600"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "hRhTT",
+                  "name": "navExplore",
+                  "width": 64,
+                  "layout": "vertical",
+                  "gap": 4,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "icon_font",
+                      "id": "jqszo",
+                      "name": "navExploreIcon",
+                      "width": 24,
+                      "height": 24,
+                      "iconFontName": "compass",
+                      "iconFontFamily": "lucide",
+                      "fill": "#9CA3AF"
+                    },
+                    {
+                      "type": "text",
+                      "id": "qvmpJ",
+                      "name": "navExploreLabel",
+                      "fill": "#9CA3AF",
+                      "content": "Explore",
+                      "fontFamily": "DM Sans",
+                      "fontSize": 10,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "ddmOD",
+                  "name": "navSaved",
+                  "width": 64,
+                  "layout": "vertical",
+                  "gap": 4,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "icon_font",
+                      "id": "v8L33",
+                      "name": "navSavedIcon",
+                      "width": 24,
+                      "height": 24,
+                      "iconFontName": "bookmark",
+                      "iconFontFamily": "lucide",
+                      "fill": "#9CA3AF"
+                    },
+                    {
+                      "type": "text",
+                      "id": "BY0v1",
+                      "name": "navSavedLabel",
+                      "fill": "#9CA3AF",
+                      "content": "Saved",
+                      "fontFamily": "DM Sans",
+                      "fontSize": 10,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "WuUdo",
+                  "name": "navProfile",
+                  "width": 64,
+                  "layout": "vertical",
+                  "gap": 4,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "icon_font",
+                      "id": "FMhE0",
+                      "name": "navProfileIcon",
+                      "width": 24,
+                      "height": 24,
+                      "iconFontName": "user",
+                      "iconFontFamily": "lucide",
+                      "fill": "#9CA3AF"
+                    },
+                    {
+                      "type": "text",
+                      "id": "gsobG",
+                      "name": "navProfileLabel",
+                      "fill": "#9CA3AF",
+                      "content": "Profile",
+                      "fontFamily": "DM Sans",
+                      "fontSize": 10,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

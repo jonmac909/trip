@@ -1,51 +1,65 @@
 import 'package:flutter/material.dart';
 
-/// Trippified color palette - Chocolate & Burgundy tones
+/// Trippified color palette - Monochrome with Lime Green accents
 abstract final class AppColors {
-  // Primary - Chocolate Brown
-  static const primary = Color(0xFF5D3A1A);
-  static const primaryLight = Color(0xFF8B5A3C);
-  static const primaryDark = Color(0xFF3D2314);
+  // Primary - Black
+  static const primary = Color(0xFF1A1A1A);
+  static const primaryLight = Color(0xFFF9FAFB);
+  static const primaryDark = Color(0xFF111111);
 
-  // Secondary - Burgundy/Maroon
-  static const secondary = Color(0xFF6B2D3C);
-  static const secondaryLight = Color(0xFF8B4D5C);
-  static const secondaryDark = Color(0xFF4A1D2C);
+  // Secondary - Dark Gray
+  static const secondary = Color(0xFF374151);
+  static const secondaryLight = Color(0xFF6B7280);
+  static const secondaryDark = Color(0xFF1F2937);
 
-  // Accent - Wine/Purple-Brown
-  static const accent = Color(0xFF7A3E4D);
+  // Accent - Lime Green
+  static const accent = Color(0xFFBFFF00);
+  static const accentDark = Color(0xFF9ACD00);
 
   // Neutrals
-  static const background = Color(0xFFFCF9F6);
-  static const surface = Color(0xFFFFFFFF);
-  static const surfaceVariant = Color(0xFFF7F3EF);
+  static const background = Color(0xFFFFFFFF);
+  static const surface = Color(0xFFF9FAFB);
+  static const surfaceVariant = Color(0xFFF3F4F6);
   static const card = Color(0xFFFFFFFF);
 
   // Text
-  static const textPrimary = Color(0xFF2D2D2D);
-  static const textSecondary = Color(0xFF6B6B6B);
-  static const textTertiary = Color(0xFF9B9B9B);
+  static const textPrimary = Color(0xFF1F2937);
+  static const textSecondary = Color(0xFF6B7280);
+  static const textTertiary = Color(0xFF9CA3AF);
   static const textOnPrimary = Color(0xFFFFFFFF);
+  static const textOnAccent = Color(0xFF1A1A1A);
 
   // Semantic
-  static const success = Color(0xFF4CAF50);
-  static const warning = Color(0xFFFFA726);
-  static const error = Color(0xFFE53935);
-  static const info = Color(0xFF42A5F5);
+  static const success = Color(0xFF10B981);
+  static const warning = Color(0xFFF59E0B);
+  static const error = Color(0xFFEF4444);
+  static const info = Color(0xFF3B82F6);
 
   // Border
-  static const border = Color(0xFFE0DCD7);
-  static const borderLight = Color(0xFFF0EDE9);
+  static const border = Color(0xFFE5E7EB);
+  static const borderLight = Color(0xFFF3F4F6);
+  static const borderDark = Color(0xFFD1D5DB);
 
   // Shadow
   static const shadow = Color(0x1A000000);
 
   // Specific UI elements
-  static const shimmerBase = Color(0xFFE0E0E0);
-  static const shimmerHighlight = Color(0xFFF5F5F5);
+  static const shimmerBase = Color(0xFFE5E7EB);
+  static const shimmerHighlight = Color(0xFFF9FAFB);
 
   // Day status colors
-  static const dayFree = Color(0xFFF0EBE6);
-  static const dayGenerated = Color(0xFFE8D8DC);
-  static const dayCustom = Color(0xFFE5DDD0);
+  static const dayFree = Color(0xFFF3F4F6);
+  static const dayGenerated = Color(0xFFECFCCB);
+  static const dayCustom = Color(0xFFE0F2FE);
+
+  // Splash screen colors
+  static const splashBackground = Color(0xFF0F1A1A);
+  static const splashGradientStart = Color(0xFF0A1A1A);
+  static const splashGradientEnd = Color(0xFF1A2F2F);
+  static const splashButtonBg = Color(0xFF1A2F2F);
+  static const splashButtonBorder = Color(0xFF2A4040);
+
+  // Gradient colors (legacy - use splash colors above)
+  static const gradientStart = Color(0x00000000);
+  static const gradientEnd = Color(0xFF0F4C4C);
 }

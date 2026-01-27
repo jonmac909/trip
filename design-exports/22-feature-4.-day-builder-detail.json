@@ -1,0 +1,886 @@
+{
+  "type": "frame",
+  "id": "8c7vl",
+  "x": 3700,
+  "y": 8256,
+  "name": "Feature 4. Day Builder Detail",
+  "clip": true,
+  "width": 390,
+  "height": 844,
+  "fill": "#FFFFFF",
+  "cornerRadius": 40,
+  "layout": "vertical",
+  "children": [
+    {
+      "type": "frame",
+      "id": "K3Fiw",
+      "name": "mapSection",
+      "metadata": {
+        "type": "unsplash",
+        "username": "fellowferdi",
+        "link": "https://unsplash.com/@fellowferdi",
+        "author": "Ferdinand St\u00f6hr"
+      },
+      "width": "fill_container",
+      "height": 240,
+      "fill": {
+        "type": "image",
+        "enabled": true,
+        "url": "https://images.unsplash.com/photo-1556821862-dc1f261b8416?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4NDM0ODN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3NjkxODMyNDF8&ixlib=rb-4.1.0&q=80&w=1080",
+        "mode": "fill"
+      },
+      "layout": "vertical",
+      "justifyContent": "end",
+      "children": [
+        {
+          "type": "frame",
+          "id": "Xy251",
+          "name": "collapseBar",
+          "width": "fill_container",
+          "height": 32,
+          "fill": "#FFFFFF",
+          "cornerRadius": [
+            16,
+            16,
+            0,
+            0
+          ],
+          "justifyContent": "center",
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "frame",
+              "id": "lBQzb",
+              "name": "handle",
+              "width": 40,
+              "height": 4,
+              "fill": "#E5E7EB",
+              "cornerRadius": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "gBHf3",
+      "name": "contentSection",
+      "width": "fill_container",
+      "height": "fill_container",
+      "fill": "#FFFFFF",
+      "layout": "vertical",
+      "children": [
+        {
+          "type": "frame",
+          "id": "owUGV",
+          "name": "header",
+          "width": "fill_container",
+          "layout": "vertical",
+          "gap": 12,
+          "padding": [
+            16,
+            24,
+            12,
+            24
+          ],
+          "children": [
+            {
+              "type": "frame",
+              "id": "VXtkT",
+              "name": "titleRow",
+              "width": "fill_container",
+              "justifyContent": "space_between",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "Vbjfg",
+                  "name": "titleLeft",
+                  "width": "fill_container",
+                  "gap": 8,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "oMeiA",
+                      "name": "backBtn",
+                      "width": 24,
+                      "height": 24,
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "icon_font",
+                          "id": "9NFej",
+                          "name": "backIcon3",
+                          "width": 20,
+                          "height": 20,
+                          "iconFontName": "arrow-left",
+                          "iconFontFamily": "lucide",
+                          "fill": "#1A1A1A"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "text",
+                      "id": "uhAuO",
+                      "name": "titleText3",
+                      "fill": "#1A1A1A",
+                      "content": "London",
+                      "fontFamily": "DM Sans",
+                      "fontSize": 20,
+                      "fontWeight": "700"
+                    },
+                    {
+                      "type": "icon_font",
+                      "id": "HYOwG",
+                      "name": "dropdown",
+                      "width": 18,
+                      "height": 18,
+                      "iconFontName": "chevron-down",
+                      "iconFontFamily": "lucide",
+                      "fill": "#6B7280"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "PWUze",
+                  "name": "draftBadge",
+                  "fill": "#F9FAFB",
+                  "cornerRadius": 20,
+                  "stroke": {
+                    "thickness": 1,
+                    "fill": "#E5E7EB"
+                  },
+                  "gap": 8,
+                  "padding": [
+                    6,
+                    10
+                  ],
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "icon_font",
+                      "id": "Qq6Lp",
+                      "name": "draftIcon",
+                      "width": 12,
+                      "height": 12,
+                      "iconFontName": "pencil",
+                      "iconFontFamily": "lucide",
+                      "fill": "#6B7280"
+                    },
+                    {
+                      "type": "text",
+                      "id": "tvrXd",
+                      "name": "draftText",
+                      "fill": "#6B7280",
+                      "content": "Edit",
+                      "fontFamily": "DM Sans",
+                      "fontSize": 12,
+                      "fontWeight": "500"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "8TGKQ",
+              "name": "dayTabs",
+              "width": "fill_container",
+              "gap": 16,
+              "justifyContent": "center",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "gNQuP",
+                  "name": "day1Tab",
+                  "padding": [
+                    6,
+                    12
+                  ],
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "MHNvl",
+                      "name": "day1Text",
+                      "fill": "#1A1A1A",
+                      "content": "Day 1",
+                      "fontFamily": "DM Sans",
+                      "fontSize": 12,
+                      "fontWeight": "600"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "afAux",
+                  "name": "day2Tab",
+                  "padding": [
+                    6,
+                    12
+                  ],
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "33bNh",
+                      "name": "day2Text",
+                      "fill": "#6B7280",
+                      "content": "Day 2",
+                      "fontFamily": "DM Sans",
+                      "fontSize": 12,
+                      "fontWeight": "500"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "3PmHT",
+                  "name": "day3Tab",
+                  "padding": [
+                    6,
+                    12
+                  ],
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "MGfnU",
+                      "name": "day3Text",
+                      "fill": "#6B7280",
+                      "content": "Day 3",
+                      "fontFamily": "DM Sans",
+                      "fontSize": 12,
+                      "fontWeight": "500"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "tbgtw",
+                  "name": "day4Tab",
+                  "padding": [
+                    6,
+                    12
+                  ],
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "a7jon",
+                      "name": "day4Text",
+                      "fill": "#6B7280",
+                      "content": "Day 4",
+                      "fontFamily": "DM Sans",
+                      "fontSize": 12,
+                      "fontWeight": "500"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "P841N",
+          "name": "tabsRow",
+          "width": "fill_container",
+          "children": [
+            {
+              "type": "frame",
+              "id": "gL7PU",
+              "name": "overviewTab",
+              "width": "fill_container",
+              "layout": "vertical",
+              "gap": 8,
+              "padding": [
+                12,
+                0
+              ],
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "8VJ0P",
+                  "name": "overviewText",
+                  "fill": "#9CA3AF",
+                  "content": "Overview",
+                  "fontFamily": "DM Sans",
+                  "fontSize": 14,
+                  "fontWeight": "500"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "5lojP",
+              "name": "itinTab",
+              "width": "fill_container",
+              "layout": "vertical",
+              "gap": 8,
+              "padding": [
+                12,
+                0
+              ],
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "uxhOd",
+                  "name": "itinText",
+                  "fill": "#1A1A1A",
+                  "content": "Itinerary",
+                  "fontFamily": "DM Sans",
+                  "fontSize": 14,
+                  "fontWeight": "600"
+                },
+                {
+                  "type": "frame",
+                  "id": "mr75Z",
+                  "name": "indicator",
+                  "width": "fill_container",
+                  "height": 2,
+                  "fill": "#1A1A1A",
+                  "cornerRadius": 1
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "N9s5p",
+              "name": "ticketsTab",
+              "width": "fill_container",
+              "layout": "vertical",
+              "gap": 8,
+              "padding": [
+                12,
+                0
+              ],
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "D2GDE",
+                  "name": "ticketsText",
+                  "fill": "#9CA3AF",
+                  "content": "Bookings",
+                  "fontFamily": "DM Sans",
+                  "fontSize": 14,
+                  "fontWeight": "500"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "ggCSI",
+          "name": "itinList",
+          "clip": true,
+          "width": "fill_container",
+          "height": "fill_container",
+          "layout": "vertical",
+          "gap": 12,
+          "padding": [
+            16,
+            24
+          ],
+          "children": [
+            {
+              "type": "text",
+              "id": "rxSQG",
+              "name": "morningLabel",
+              "fill": "#6B7280",
+              "content": "Morning",
+              "fontFamily": "DM Sans",
+              "fontSize": 13,
+              "fontWeight": "600"
+            },
+            {
+              "type": "frame",
+              "id": "DX6Dy",
+              "name": "activity1",
+              "width": "fill_container",
+              "fill": "#F9FAFB",
+              "cornerRadius": 12,
+              "stroke": {
+                "thickness": 1,
+                "fill": "#E5E7EB"
+              },
+              "gap": 12,
+              "padding": 12,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "yIkWK",
+                  "name": "thumb1",
+                  "metadata": {
+                    "type": "unsplash",
+                    "username": "egdekker",
+                    "link": "https://unsplash.com/@egdekker",
+                    "author": "Eric Dekker"
+                  },
+                  "width": 44,
+                  "height": 44,
+                  "fill": {
+                    "type": "image",
+                    "enabled": true,
+                    "url": "https://images.unsplash.com/photo-1672244438282-aab5aae2bc2a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4NDM0ODN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3NjkxODMyNjl8&ixlib=rb-4.1.0&q=80&w=1080",
+                    "mode": "fill"
+                  },
+                  "cornerRadius": 8
+                },
+                {
+                  "type": "frame",
+                  "id": "qvuxi",
+                  "name": "left1",
+                  "width": "fill_container",
+                  "layout": "vertical",
+                  "gap": 4,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "es73g",
+                      "name": "actName1",
+                      "fill": "#1A1A1A",
+                      "content": "British Museum",
+                      "fontFamily": "DM Sans",
+                      "fontSize": 15,
+                      "fontWeight": "600"
+                    },
+                    {
+                      "type": "text",
+                      "id": "uvKC8",
+                      "name": "actDesc1",
+                      "fill": "#6B7280",
+                      "content": "9:00 AM \u00b7 Bloomsbury \u00b7 Free entry",
+                      "fontFamily": "DM Sans",
+                      "fontSize": 12,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "YH2vH",
+                  "name": "right1",
+                  "layout": "vertical",
+                  "gap": 4,
+                  "alignItems": "end",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "tLQ1j",
+                      "name": "actTime1",
+                      "fill": "#9CA3AF",
+                      "content": "~3 hrs",
+                      "fontFamily": "DM Sans",
+                      "fontSize": 12,
+                      "fontWeight": "500"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "pd73W",
+              "name": "travelTime1",
+              "width": "fill_container",
+              "gap": 8,
+              "padding": [
+                0,
+                0,
+                0,
+                16
+              ],
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "OKcYE",
+                  "name": "travelLine1",
+                  "width": 1,
+                  "height": 16,
+                  "fill": "#E5E7EB"
+                },
+                {
+                  "type": "icon_font",
+                  "id": "XVW7h",
+                  "name": "travelIcon1",
+                  "width": 14,
+                  "height": 14,
+                  "iconFontName": "footprints",
+                  "iconFontFamily": "lucide",
+                  "fill": "#9CA3AF"
+                },
+                {
+                  "type": "text",
+                  "id": "vag4g",
+                  "name": "travelText1",
+                  "fill": "#9CA3AF",
+                  "content": "15 min walk",
+                  "fontFamily": "DM Sans",
+                  "fontSize": 11,
+                  "fontWeight": "normal"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "id": "Ahr9g",
+              "name": "middayLabel",
+              "fill": "#6B7280",
+              "content": "Midday",
+              "fontFamily": "DM Sans",
+              "fontSize": 13,
+              "fontWeight": "600"
+            },
+            {
+              "type": "frame",
+              "id": "c2VUW",
+              "name": "activity2",
+              "width": "fill_container",
+              "fill": "#F9FAFB",
+              "cornerRadius": 12,
+              "stroke": {
+                "thickness": 1,
+                "fill": "#E5E7EB"
+              },
+              "gap": 12,
+              "padding": 12,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "j1lLc",
+                  "name": "thumb2",
+                  "metadata": {
+                    "type": "unsplash",
+                    "username": "suricattaontheway",
+                    "link": "https://unsplash.com/@suricattaontheway",
+                    "author": "David Sury"
+                  },
+                  "width": 44,
+                  "height": 44,
+                  "fill": {
+                    "type": "image",
+                    "enabled": true,
+                    "url": "https://images.unsplash.com/photo-1543484623-542877a80db5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4NDM0ODN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3NjkxODMyNzV8&ixlib=rb-4.1.0&q=80&w=1080",
+                    "mode": "fill"
+                  },
+                  "cornerRadius": 8
+                },
+                {
+                  "type": "frame",
+                  "id": "qzdAb",
+                  "name": "left2",
+                  "width": "fill_container",
+                  "layout": "vertical",
+                  "gap": 4,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "r4L8i",
+                      "name": "actName2",
+                      "fill": "#1A1A1A",
+                      "content": "Covent Garden",
+                      "fontFamily": "DM Sans",
+                      "fontSize": 15,
+                      "fontWeight": "600"
+                    },
+                    {
+                      "type": "text",
+                      "id": "H6QxI",
+                      "name": "actDesc2",
+                      "fill": "#6B7280",
+                      "content": "12:30 PM \u00b7 West End \u00b7 Lunch & explore",
+                      "fontFamily": "DM Sans",
+                      "fontSize": 12,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "qQ2c1",
+                  "name": "right2",
+                  "layout": "vertical",
+                  "gap": 4,
+                  "alignItems": "end",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "sq9Xj",
+                      "name": "actTime2",
+                      "fill": "#9CA3AF",
+                      "content": "~2 hrs",
+                      "fontFamily": "DM Sans",
+                      "fontSize": 12,
+                      "fontWeight": "500"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "id": "rgBa9",
+              "name": "afternoonLabel",
+              "fill": "#6B7280",
+              "content": "Afternoon",
+              "fontFamily": "DM Sans",
+              "fontSize": 13,
+              "fontWeight": "600"
+            },
+            {
+              "type": "frame",
+              "id": "EATiu",
+              "name": "activity3",
+              "width": "fill_container",
+              "fill": "#F9FAFB",
+              "cornerRadius": 12,
+              "stroke": {
+                "thickness": 1,
+                "fill": "#E5E7EB"
+              },
+              "gap": 12,
+              "padding": 12,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "dYvvh",
+                  "name": "thumb3",
+                  "metadata": {
+                    "type": "unsplash",
+                    "username": "matty_pearce",
+                    "link": "https://unsplash.com/@matty_pearce",
+                    "author": "Matthew Pearce"
+                  },
+                  "width": 44,
+                  "height": 44,
+                  "fill": {
+                    "type": "image",
+                    "enabled": true,
+                    "url": "https://images.unsplash.com/photo-1712865640443-c74e7528b343?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4NDM0ODN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3NjkxODMyOTJ8&ixlib=rb-4.1.0&q=80&w=1080",
+                    "mode": "fill"
+                  },
+                  "cornerRadius": 8
+                },
+                {
+                  "type": "frame",
+                  "id": "jNOef",
+                  "name": "left3",
+                  "width": "fill_container",
+                  "layout": "vertical",
+                  "gap": 4,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "3JkBM",
+                      "name": "actName3",
+                      "fill": "#1A1A1A",
+                      "content": "Tower of London",
+                      "fontFamily": "DM Sans",
+                      "fontSize": 15,
+                      "fontWeight": "600"
+                    },
+                    {
+                      "type": "text",
+                      "id": "Sghds",
+                      "name": "actDesc3",
+                      "fill": "#6B7280",
+                      "content": "3:00 PM \u00b7 Tower Hill \u00b7 Crown Jewels",
+                      "fontFamily": "DM Sans",
+                      "fontSize": 12,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "QBQNC",
+                  "name": "right3",
+                  "layout": "vertical",
+                  "gap": 4,
+                  "alignItems": "end",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "JDOxb",
+                      "name": "actTime3",
+                      "fill": "#9CA3AF",
+                      "content": "~2.5 hrs",
+                      "fontFamily": "DM Sans",
+                      "fontSize": 12,
+                      "fontWeight": "500"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "pUhfA",
+          "name": "bottomNav",
+          "width": "fill_container",
+          "height": 83,
+          "fill": "#FFFFFF",
+          "stroke": {
+            "thickness": {
+              "top": 1
+            },
+            "fill": "#E8E8E8"
+          },
+          "padding": [
+            12,
+            0,
+            34,
+            0
+          ],
+          "justifyContent": "space_around",
+          "children": [
+            {
+              "type": "frame",
+              "id": "zxagp",
+              "name": "navTrips",
+              "width": 64,
+              "layout": "vertical",
+              "gap": 4,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "icon_font",
+                  "id": "xCt84",
+                  "name": "navTripsIcon",
+                  "width": 24,
+                  "height": 24,
+                  "iconFontName": "map",
+                  "iconFontFamily": "lucide",
+                  "fill": "#1A1A1A"
+                },
+                {
+                  "type": "text",
+                  "id": "hOvnp",
+                  "name": "navTripsLabel",
+                  "fill": "#1A1A1A",
+                  "content": "Trips",
+                  "fontFamily": "DM Sans",
+                  "fontSize": 10,
+                  "fontWeight": "600"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "R6k2n",
+              "name": "navExplore",
+              "width": 64,
+              "height": "fit_content(0)",
+              "layout": "vertical",
+              "gap": 4,
+              "alignItems": "center"
+            },
+            {
+              "type": "frame",
+              "id": "lN1KC",
+              "name": "navExplore",
+              "width": 64,
+              "layout": "vertical",
+              "gap": 4,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "icon_font",
+                  "id": "Y8oZc",
+                  "name": "navExploreIcon",
+                  "width": 24,
+                  "height": 24,
+                  "iconFontName": "compass",
+                  "iconFontFamily": "lucide",
+                  "fill": "#9CA3AF"
+                },
+                {
+                  "type": "text",
+                  "id": "KXC1n",
+                  "name": "navExploreLabel",
+                  "fill": "#9CA3AF",
+                  "content": "Explore",
+                  "fontFamily": "DM Sans",
+                  "fontSize": 10,
+                  "fontWeight": "normal"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "Xiedh",
+              "name": "navSaved",
+              "width": 64,
+              "layout": "vertical",
+              "gap": 4,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "icon_font",
+                  "id": "IBQha",
+                  "name": "navSavedIcon",
+                  "width": 24,
+                  "height": 24,
+                  "iconFontName": "bookmark",
+                  "iconFontFamily": "lucide",
+                  "fill": "#9CA3AF"
+                },
+                {
+                  "type": "text",
+                  "id": "txc8G",
+                  "name": "navSavedLabel",
+                  "fill": "#9CA3AF",
+                  "content": "Saved",
+                  "fontFamily": "DM Sans",
+                  "fontSize": 10,
+                  "fontWeight": "normal"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "vZpmr",
+              "name": "navProfile",
+              "width": 64,
+              "layout": "vertical",
+              "gap": 4,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "icon_font",
+                  "id": "BFzVH",
+                  "name": "navProfileIcon",
+                  "width": 24,
+                  "height": 24,
+                  "iconFontName": "user",
+                  "iconFontFamily": "lucide",
+                  "fill": "#9CA3AF"
+                },
+                {
+                  "type": "text",
+                  "id": "g8Dtf",
+                  "name": "navProfileLabel",
+                  "fill": "#9CA3AF",
+                  "content": "Profile",
+                  "fontFamily": "DM Sans",
+                  "fontSize": 10,
+                  "fontWeight": "normal"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

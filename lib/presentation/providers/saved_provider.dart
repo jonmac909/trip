@@ -1,6 +1,7 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import 'package:trippified/data/repositories/saved_repository.dart';
+import 'package:trippified/domain/models/scanned_place.dart';
 
 /// Provider for SavedRepository
 final savedRepositoryProvider = Provider<SavedRepository>((ref) {
@@ -87,10 +88,16 @@ class SavedItemsNotifier extends StateNotifier<AsyncValue<List<SavedItem>>> {
     }
   }
 
-  /// Import from social media
-  Future<List<SavedItem>> importFromSocialMedia(String url) async {
+  /// Save scanned places from social media import
+  Future<List<SavedItem>> saveScanResults({
+    required List<ScannedPlace> places,
+    String? sourceUrl,
+  }) async {
     try {
-      final imported = await _repository.importFromSocialMedia(url);
+      final imported = await _repository.saveScanResults(
+        places: places,
+        sourceUrl: sourceUrl,
+      );
 
       // Update state with imported items
       state = AsyncValue.data([...imported, ...state.value ?? []]);

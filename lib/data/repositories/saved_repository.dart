@@ -1,14 +1,22 @@
 import 'package:supabase_flutter/supabase_flutter.dart';
+import 'package:uuid/uuid.dart';
 
+import 'package:trippified/core/config/env_config.dart';
 import 'package:trippified/core/errors/exceptions.dart';
 import 'package:trippified/core/services/supabase_service.dart';
+import 'package:trippified/domain/models/scanned_place.dart';
 
 /// Repository for saved items (places, itineraries, social imports)
 class SavedRepository {
   SavedRepository({SupabaseClient? client})
-    : _client = client ?? SupabaseService.instance.client;
+    : _client = EnvConfig.isConfigured
+          ? (client ?? SupabaseService.instance.client)
+          : null;
 
-  final SupabaseClient _client;
+  final SupabaseClient? _client;
+
+  /// In-memory store for demo mode (no Supabase)
+  static final List<SavedItem> _memoryStore = [];
 
   /// Get all saved items for the current user
   Future<List<SavedItem>> getSavedItems({
@@ -16,6 +24,11 @@ class SavedRepository {
     int limit = 50,
     int offset = 0,
   }) async {
+    if (_client == null) {
+      if (type == null) return List.unmodifiable(_memoryStore);
+      return _memoryStore.where((i) => i.itemType == type).toList();
+    }
+
     try {
       final userId = _client.auth.currentUser?.id;
       if (userId == null) {
@@ -33,7 +46,7 @@ class SavedRepository {
           .range(offset, offset + limit - 1);
 
       return (response as List)
-          .map((json) => SavedItem.fromJson(json))
+          .map((json) => SavedItem.fromJson(json as Map<String, dynamic>))
           .toList();
     } on PostgrestException catch (e) {
       throw DatabaseException('Failed to fetch saved items: ${e.message}');
@@ -50,6 +63,23 @@ class SavedRepository {
     Map<String, dynamic>? metadata,
     String? sourceUrl,
   }) async {
+    if (_client == null) {
+      final item = SavedItem(
+        id: const Uuid().v4(),
+        userId: 'demo',
+        itemType: type,
+        itemId: itemId,
+        title: title,
+        description: description,
+        imageUrl: imageUrl,
+        metadata: metadata,
+        sourceUrl: sourceUrl,
+        createdAt: DateTime.now(),
+      );
+      _memoryStore.insert(0, item);
+      return item;
+    }
+
     try {
       final userId = _client.auth.currentUser?.id;
       if (userId == null) {
@@ -79,6 +109,11 @@ class SavedRepository {
 
   /// Remove a saved item
   Future<void> unsaveItem(String savedItemId) async {
+    if (_client == null) {
+      _memoryStore.removeWhere((i) => i.id == savedItemId);
+      return;
+    }
+
     try {
       await _client.from('saved_items').delete().eq('id', savedItemId);
     } on PostgrestException catch (e) {
@@ -88,6 +123,10 @@ class SavedRepository {
 
   /// Check if an item is saved
   Future<bool> isItemSaved(String itemId) async {
+    if (_client == null) {
+      return _memoryStore.any((i) => i.itemId == itemId);
+    }
+
     try {
       final userId = _client.auth.currentUser?.id;
       if (userId == null) return false;
@@ -105,15 +144,29 @@ class SavedRepository {
     }
   }
 
-  /// Import from social media URL (calls edge function)
-  Future<List<SavedItem>> importFromSocialMedia(String url) async {
-    try {
-      // This would call a Supabase Edge Function that uses AI to extract places
-      // For now, return empty list
-      return [];
-    } catch (e) {
-      throw ExternalServiceException('Failed to import from social media: $e');
+  /// Save scanned places from social media import
+  Future<List<SavedItem>> saveScanResults({
+    required List<ScannedPlace> places,
+    String? sourceUrl,
+  }) async {
+    final savedItems = <SavedItem>[];
+    for (final place in places) {
+      final item = await saveItem(
+        type: SavedItemType.socialImport,
+        itemId: place.id,
+        title: place.name,
+        description: '${place.category} - ${place.location}',
+        metadata: {
+          'category': place.category,
+          'location': place.location,
+          'confidence': place.confidence,
+          'source_url': sourceUrl,
+        },
+        sourceUrl: sourceUrl,
+      );
+      savedItems.add(item);
     }
+    return savedItems;
   }
 }
 

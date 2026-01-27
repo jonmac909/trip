@@ -1,0 +1,604 @@
+{
+  "type": "frame",
+  "id": "MMxS5",
+  "x": 5900,
+  "y": 1000,
+  "name": "Trips 6b. Generate Day Modal",
+  "clip": true,
+  "width": 390,
+  "height": 844,
+  "fill": "#00000066",
+  "cornerRadius": 40,
+  "layout": "vertical",
+  "justifyContent": "end",
+  "children": [
+    {
+      "type": "frame",
+      "id": "ORbJ3",
+      "name": "bottomSheet",
+      "width": "fill_container",
+      "height": 760,
+      "fill": "#FFFFFF",
+      "cornerRadius": [
+        24,
+        24,
+        40,
+        40
+      ],
+      "layout": "vertical",
+      "children": [
+        {
+          "type": "frame",
+          "id": "5TFZh",
+          "name": "handleBar",
+          "width": "fill_container",
+          "height": 32,
+          "layout": "vertical",
+          "padding": [
+            12,
+            0
+          ],
+          "justifyContent": "center",
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "frame",
+              "id": "IQ8IL",
+              "name": "handle",
+              "width": 40,
+              "height": 4,
+              "fill": "#E5E7EB",
+              "cornerRadius": 2
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "TPcLX",
+          "name": "header",
+          "width": "fill_container",
+          "padding": [
+            0,
+            24,
+            16,
+            24
+          ],
+          "justifyContent": "space_between",
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "frame",
+              "id": "4uSay",
+              "name": "headerLeft",
+              "layout": "vertical",
+              "gap": 4,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "KkWMO",
+                  "name": "title",
+                  "fill": "#1A1A1A",
+                  "content": "Generate Day 1",
+                  "fontFamily": "DM Sans",
+                  "fontSize": 20,
+                  "fontWeight": "700"
+                },
+                {
+                  "type": "text",
+                  "id": "agO0D",
+                  "name": "subtitle",
+                  "fill": "#6B7280",
+                  "content": "Each day is built around one anchor",
+                  "fontFamily": "DM Sans",
+                  "fontSize": 14,
+                  "fontWeight": "normal"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "6owmg",
+              "name": "closeBtn",
+              "width": 32,
+              "height": 32,
+              "fill": "#F3F4F6",
+              "cornerRadius": 100,
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "icon_font",
+                  "id": "l0DKZ",
+                  "name": "closeIcon",
+                  "width": 18,
+                  "height": 18,
+                  "iconFontName": "x",
+                  "iconFontFamily": "lucide",
+                  "fill": "#6B7280"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "tJZXR",
+          "name": "optionsContainer",
+          "width": "fill_container",
+          "layout": "vertical",
+          "gap": 12,
+          "padding": [
+            0,
+            24
+          ],
+          "children": [
+            {
+              "type": "frame",
+              "id": "AQ93R",
+              "name": "option1",
+              "width": "fill_container",
+              "fill": "#F9FAFB",
+              "cornerRadius": 14,
+              "stroke": {
+                "thickness": 1,
+                "fill": "#E5E7EB"
+              },
+              "gap": 14,
+              "padding": 16,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "lVn8S",
+                  "name": "iconWrap",
+                  "width": 44,
+                  "height": 44,
+                  "fill": "#00000000",
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "icon_font",
+                      "id": "tvElU",
+                      "name": "opt1IconInner",
+                      "width": 22,
+                      "height": 22,
+                      "iconFontName": "church",
+                      "iconFontFamily": "lucide",
+                      "fill": "#DC2626"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "N4Qx0",
+                  "name": "content",
+                  "width": "fill_container",
+                  "layout": "vertical",
+                  "gap": 2,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "x6SJn",
+                      "name": "opt1Title",
+                      "fill": "#1A1A1A",
+                      "content": "Temple Day",
+                      "fontFamily": "DM Sans",
+                      "fontSize": 15,
+                      "fontWeight": "600"
+                    },
+                    {
+                      "type": "text",
+                      "id": "UwTz8",
+                      "name": "opt1Desc",
+                      "fill": "#6B7280",
+                      "content": "Asakusa temples, shrines & gardens walk",
+                      "fontFamily": "DM Sans",
+                      "fontSize": 13,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "E6HTX",
+              "name": "option2",
+              "width": "fill_container",
+              "fill": "#FFFFFF",
+              "cornerRadius": 14,
+              "stroke": {
+                "thickness": 2,
+                "fill": "#1A1A1A"
+              },
+              "gap": 14,
+              "padding": 16,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "mdo9y",
+                  "name": "iconWrap",
+                  "width": 44,
+                  "height": 44,
+                  "fill": "#00000000",
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "icon_font",
+                      "id": "9w2RL",
+                      "name": "opt2IconInner",
+                      "width": 22,
+                      "height": 22,
+                      "iconFontName": "sparkles",
+                      "iconFontFamily": "lucide",
+                      "fill": "#4F46E5"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "eRRSP",
+                  "name": "content",
+                  "width": "fill_container",
+                  "layout": "vertical",
+                  "gap": 2,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "2AuEz",
+                      "name": "opt2Title",
+                      "fill": "#1A1A1A",
+                      "content": "Digital Art Day",
+                      "fontFamily": "DM Sans",
+                      "fontSize": 15,
+                      "fontWeight": "600"
+                    },
+                    {
+                      "type": "text",
+                      "id": "9ihhH",
+                      "name": "opt2Desc",
+                      "fill": "#6B7280",
+                      "content": "teamLab + Odaiba waterfront exploration",
+                      "fontFamily": "DM Sans",
+                      "fontSize": 13,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "pLJ0E",
+              "name": "option3",
+              "width": "fill_container",
+              "fill": "#F9FAFB",
+              "cornerRadius": 14,
+              "stroke": {
+                "thickness": 1,
+                "fill": "#E5E7EB"
+              },
+              "gap": 14,
+              "padding": 16,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "2Noza",
+                  "name": "iconWrap",
+                  "width": 44,
+                  "height": 44,
+                  "fill": "#00000000",
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "icon_font",
+                      "id": "N9iQK",
+                      "name": "opt3IconInner",
+                      "width": 22,
+                      "height": 22,
+                      "iconFontName": "shirt",
+                      "iconFontFamily": "lucide",
+                      "fill": "#DB2777"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "JtH08",
+                  "name": "content",
+                  "width": "fill_container",
+                  "layout": "vertical",
+                  "gap": 2,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "T8UvO",
+                      "name": "opt3Title",
+                      "fill": "#1A1A1A",
+                      "content": "Harajuku & Fashion Day",
+                      "fontFamily": "DM Sans",
+                      "fontSize": 15,
+                      "fontWeight": "600"
+                    },
+                    {
+                      "type": "text",
+                      "id": "NoG6e",
+                      "name": "opt3Desc",
+                      "fill": "#6B7280",
+                      "content": "Takeshita St, vintage shops, Omotesando",
+                      "fontFamily": "DM Sans",
+                      "fontSize": 13,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "rLTy5",
+              "name": "option4",
+              "width": "fill_container",
+              "fill": "#F9FAFB",
+              "cornerRadius": 14,
+              "stroke": {
+                "thickness": 1,
+                "fill": "#E5E7EB"
+              },
+              "gap": 14,
+              "padding": 16,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "5VKR5",
+                  "name": "iconWrap",
+                  "width": 44,
+                  "height": 44,
+                  "fill": "#00000000",
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "icon_font",
+                      "id": "hgGxj",
+                      "name": "opt4IconInner",
+                      "width": 22,
+                      "height": 22,
+                      "iconFontName": "fish",
+                      "iconFontFamily": "lucide",
+                      "fill": "#EA580C"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "PtVqJ",
+                  "name": "content",
+                  "width": "fill_container",
+                  "layout": "vertical",
+                  "gap": 2,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "aH5Qp",
+                      "name": "opt4Title",
+                      "fill": "#1A1A1A",
+                      "content": "Street Food Crawl",
+                      "fontFamily": "DM Sans",
+                      "fontSize": 15,
+                      "fontWeight": "600"
+                    },
+                    {
+                      "type": "text",
+                      "id": "xsGeL",
+                      "name": "opt4Desc",
+                      "fill": "#6B7280",
+                      "content": "Tsukiji \u2192 Ginza food walk & tastings",
+                      "fontFamily": "DM Sans",
+                      "fontSize": 13,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "rg1Mh",
+              "name": "option5",
+              "width": "fill_container",
+              "fill": "#F9FAFB",
+              "cornerRadius": 14,
+              "stroke": {
+                "thickness": 1,
+                "fill": "#E5E7EB"
+              },
+              "gap": 14,
+              "padding": 16,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "HcuO6",
+                  "name": "iconWrap",
+                  "width": 44,
+                  "height": 44,
+                  "fill": "#00000000",
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "icon_font",
+                      "id": "bvHp2",
+                      "name": "opt5IconInner",
+                      "width": 22,
+                      "height": 22,
+                      "iconFontName": "chef-hat",
+                      "iconFontFamily": "lucide",
+                      "fill": "#D97706"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "iK9Fs",
+                  "name": "content",
+                  "width": "fill_container",
+                  "layout": "vertical",
+                  "gap": 2,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "aWsu6",
+                      "name": "opt5Title",
+                      "fill": "#1A1A1A",
+                      "content": "Sushi & Cooking Class",
+                      "fontFamily": "DM Sans",
+                      "fontSize": 15,
+                      "fontWeight": "600"
+                    },
+                    {
+                      "type": "text",
+                      "id": "8faIk",
+                      "name": "opt5Desc",
+                      "fill": "#6B7280",
+                      "content": "Market tour + hands-on sushi lesson",
+                      "fontFamily": "DM Sans",
+                      "fontSize": 13,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "Pi358",
+              "name": "option6",
+              "width": "fill_container",
+              "fill": "#F9FAFB",
+              "cornerRadius": 14,
+              "stroke": {
+                "thickness": 1,
+                "fill": "#E5E7EB"
+              },
+              "gap": 14,
+              "padding": 16,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "snkVC",
+                  "name": "iconWrap",
+                  "width": 44,
+                  "height": 44,
+                  "fill": "#00000000",
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "icon_font",
+                      "id": "SJ4eM",
+                      "name": "opt6IconInner",
+                      "width": 22,
+                      "height": 22,
+                      "iconFontName": "wine",
+                      "iconFontFamily": "lucide",
+                      "fill": "#7C3AED"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "Q0lRr",
+                  "name": "content",
+                  "width": "fill_container",
+                  "layout": "vertical",
+                  "gap": 2,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "20Y3a",
+                      "name": "opt6Title",
+                      "fill": "#1A1A1A",
+                      "content": "Izakaya Night Tour",
+                      "fontFamily": "DM Sans",
+                      "fontSize": 15,
+                      "fontWeight": "600"
+                    },
+                    {
+                      "type": "text",
+                      "id": "QJrQo",
+                      "name": "opt6Desc",
+                      "fill": "#6B7280",
+                      "content": "Golden Gai bar hop + yakitori alleys",
+                      "fontFamily": "DM Sans",
+                      "fontSize": 13,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "xPObw",
+          "name": "bottomSection",
+          "width": "fill_container",
+          "layout": "vertical",
+          "gap": 12,
+          "padding": [
+            24,
+            24,
+            40,
+            24
+          ],
+          "children": [
+            {
+              "type": "frame",
+              "id": "tOoeH",
+              "name": "generateBtn",
+              "width": "fill_container",
+              "height": 52,
+              "fill": "#1A1A1A",
+              "cornerRadius": 16,
+              "gap": 8,
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "icon_font",
+                  "id": "uGJtQ",
+                  "name": "generateIcon",
+                  "width": 20,
+                  "height": 20,
+                  "iconFontName": "sparkles",
+                  "iconFontFamily": "lucide",
+                  "fill": "#FFFFFF"
+                },
+                {
+                  "type": "text",
+                  "id": "fSCS6",
+                  "name": "generateText",
+                  "fill": "#FFFFFF",
+                  "content": "Generate Day",
+                  "fontFamily": "DM Sans",
+                  "fontSize": 16,
+                  "fontWeight": "600"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,471 @@
+{
+  "type": "frame",
+  "id": "BMGXc",
+  "x": 3260,
+  "y": 8256,
+  "name": "Feature 3. Itinerary Stacking",
+  "clip": true,
+  "width": 390,
+  "height": 844,
+  "fill": "#FFFFFF",
+  "cornerRadius": 40,
+  "layout": "vertical",
+  "children": [
+    {
+      "type": "frame",
+      "id": "Hp4JP",
+      "name": "content",
+      "width": "fill_container",
+      "height": "fill_container",
+      "layout": "vertical",
+      "justifyContent": "space_between",
+      "children": [
+        {
+          "type": "frame",
+          "id": "GHdgS",
+          "name": "header",
+          "width": "fill_container",
+          "layout": "vertical",
+          "gap": 16,
+          "padding": [
+            60,
+            24,
+            16,
+            24
+          ],
+          "children": [
+            {
+              "type": "frame",
+              "id": "PugAj",
+              "name": "headerRow",
+              "width": "fill_container",
+              "justifyContent": "space_between",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "XtVpN",
+                  "name": "headerLeft",
+                  "gap": 12,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "BqOWG",
+                      "name": "backBtn",
+                      "width": 24,
+                      "height": 24,
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "icon_font",
+                          "id": "jhs8s",
+                          "name": "backIcon",
+                          "width": 20,
+                          "height": 20,
+                          "iconFontName": "arrow-left",
+                          "iconFontFamily": "lucide",
+                          "fill": "#1A1A1A"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "text",
+                      "id": "MhMAC",
+                      "name": "titleText",
+                      "fill": "#1A1A1A",
+                      "content": "Build Your Trip",
+                      "fontFamily": "DM Sans",
+                      "fontSize": 20,
+                      "fontWeight": "700"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "W3xxo",
+                  "name": "totalBadge",
+                  "fill": "#F0F0F0",
+                  "cornerRadius": 16,
+                  "padding": [
+                    6,
+                    12
+                  ],
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "A8uE8",
+                      "name": "totalText",
+                      "fill": "#1A1A1A",
+                      "content": "8 days",
+                      "fontFamily": "DM Sans",
+                      "fontSize": 12,
+                      "fontWeight": "600"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "id": "tIDjr",
+              "name": "subtitle",
+              "fill": "#6B7280",
+              "content": "Stack itinerary blocks to create your perfect trip",
+              "fontFamily": "DM Sans",
+              "fontSize": 14,
+              "fontWeight": "normal"
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "LULxo",
+          "name": "blocksSection",
+          "clip": true,
+          "width": "fill_container",
+          "height": "fill_container",
+          "layout": "vertical",
+          "padding": [
+            0,
+            24
+          ],
+          "children": [
+            {
+              "type": "frame",
+              "id": "NZF9s",
+              "name": "ukSection",
+              "width": "fill_container",
+              "layout": "vertical",
+              "gap": 10,
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "fWYtl",
+                  "name": "ukHeader",
+                  "width": "fill_container",
+                  "gap": 8,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "icon_font",
+                      "id": "VbwC1",
+                      "name": "ukDrag",
+                      "width": 18,
+                      "height": 18,
+                      "iconFontName": "grip-vertical",
+                      "iconFontFamily": "lucide",
+                      "fill": "#6B7280"
+                    },
+                    {
+                      "type": "text",
+                      "id": "5Gqdn",
+                      "name": "ukFlag",
+                      "fill": "#1A1A1A",
+                      "content": "\ud83c\uddec\ud83c\udde7 United Kingdom",
+                      "fontFamily": "DM Sans",
+                      "fontSize": 16,
+                      "fontWeight": "600"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "zOUHT",
+                  "name": "londonBlock",
+                  "width": "fill_container",
+                  "fill": "#F9FAFB",
+                  "cornerRadius": 14,
+                  "stroke": {
+                    "thickness": 2,
+                    "fill": "#1A1A1A"
+                  },
+                  "gap": 14,
+                  "padding": 14,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "icon_font",
+                      "id": "TqzE5",
+                      "name": "londonDrag",
+                      "width": 18,
+                      "height": 18,
+                      "iconFontName": "grip-vertical",
+                      "iconFontFamily": "lucide",
+                      "fill": "#6B7280"
+                    },
+                    {
+                      "type": "frame",
+                      "id": "camrX",
+                      "name": "londonContent",
+                      "width": "fill_container",
+                      "layout": "vertical",
+                      "gap": 4,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "qyNN0",
+                          "name": "londonTitle",
+                          "fill": "#1A1A1A",
+                          "content": "London",
+                          "fontFamily": "DM Sans",
+                          "fontSize": 15,
+                          "fontWeight": "600"
+                        },
+                        {
+                          "type": "text",
+                          "id": "6jH07",
+                          "name": "londonMeta",
+                          "fill": "#6B7280",
+                          "content": "4 days \u00b7 Museums & Culture",
+                          "fontFamily": "DM Sans",
+                          "fontSize": 12,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "icon_font",
+                      "id": "WRLhZ",
+                      "name": "londonArrow",
+                      "width": 18,
+                      "height": 18,
+                      "iconFontName": "chevron-right",
+                      "iconFontFamily": "lucide",
+                      "fill": "#9CA3AF"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "HEtp1",
+                  "name": "connector1",
+                  "width": "fill_container",
+                  "gap": 6,
+                  "padding": [
+                    0,
+                    0,
+                    0,
+                    40
+                  ],
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "hPJHp",
+                      "name": "connLine1",
+                      "width": 1,
+                      "height": 20,
+                      "fill": "#E5E7EB"
+                    },
+                    {
+                      "type": "frame",
+                      "id": "ox60L",
+                      "name": "connInfo1",
+                      "gap": 6,
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "icon_font",
+                          "id": "rgRRM",
+                          "name": "connIcon1",
+                          "width": 14,
+                          "height": 14,
+                          "iconFontName": "car",
+                          "iconFontFamily": "lucide",
+                          "fill": "#9CA3AF"
+                        },
+                        {
+                          "type": "text",
+                          "id": "G6QgZ",
+                          "name": "connText1",
+                          "fill": "#9CA3AF",
+                          "content": "2 hr drive",
+                          "fontFamily": "DM Sans",
+                          "fontSize": 11,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "ZB0qv",
+                  "name": "cotswoldsBlock",
+                  "width": "fill_container",
+                  "fill": "#F9FAFB",
+                  "cornerRadius": 14,
+                  "stroke": {
+                    "thickness": 1,
+                    "fill": "#E5E7EB"
+                  },
+                  "gap": 14,
+                  "padding": 14,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "icon_font",
+                      "id": "ftwHl",
+                      "name": "cotsDrag",
+                      "width": 18,
+                      "height": 18,
+                      "iconFontName": "grip-vertical",
+                      "iconFontFamily": "lucide",
+                      "fill": "#6B7280"
+                    },
+                    {
+                      "type": "frame",
+                      "id": "IRIMk",
+                      "name": "cotsContent",
+                      "width": "fill_container",
+                      "layout": "vertical",
+                      "gap": 4,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "YwHoS",
+                          "name": "cotsTitle",
+                          "fill": "#1A1A1A",
+                          "content": "Cotswolds",
+                          "fontFamily": "DM Sans",
+                          "fontSize": 15,
+                          "fontWeight": "600"
+                        },
+                        {
+                          "type": "text",
+                          "id": "SxTV6",
+                          "name": "cotsMeta",
+                          "fill": "#6B7280",
+                          "content": "4 days \u00b7 Countryside & Villages",
+                          "fontFamily": "DM Sans",
+                          "fontSize": 12,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "icon_font",
+                      "id": "KU1Kq",
+                      "name": "cotsArrow",
+                      "width": 18,
+                      "height": 18,
+                      "iconFontName": "chevron-right",
+                      "iconFontFamily": "lucide",
+                      "fill": "#9CA3AF"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "oZgi8",
+              "name": "addBlockBtn",
+              "width": "fill_container",
+              "fill": "#F9FAFB",
+              "cornerRadius": 14,
+              "stroke": {
+                "thickness": 1.5,
+                "fill": "#D1D5DB"
+              },
+              "gap": 10,
+              "padding": 14,
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "icon_font",
+                  "id": "QLl5y",
+                  "name": "addIcon",
+                  "width": 18,
+                  "height": 18,
+                  "iconFontName": "plus",
+                  "iconFontFamily": "lucide",
+                  "fill": "#6B7280"
+                },
+                {
+                  "type": "text",
+                  "id": "n71Nw",
+                  "name": "addText",
+                  "fill": "#6B7280",
+                  "content": "Add another itinerary block",
+                  "fontFamily": "DM Sans",
+                  "fontSize": 14,
+                  "fontWeight": "500"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "t20KB",
+          "name": "bottomSection",
+          "width": "fill_container",
+          "layout": "vertical",
+          "gap": 12,
+          "padding": [
+            16,
+            24,
+            40,
+            24
+          ],
+          "children": [
+            {
+              "type": "frame",
+              "id": "2fTXC",
+              "name": "saveBtn",
+              "width": "fill_container",
+              "height": 52,
+              "fill": "#FFFFFF",
+              "cornerRadius": 16,
+              "stroke": {
+                "thickness": 2,
+                "fill": "#1A1A1A"
+              },
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "5ddBF",
+                  "name": "saveBtnText",
+                  "fill": "#1A1A1A",
+                  "content": "Save to My Trips",
+                  "fontFamily": "DM Sans",
+                  "fontSize": 16,
+                  "fontWeight": "600"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "tgda7",
+              "name": "dayBuilderBtn",
+              "width": "fill_container",
+              "height": 52,
+              "fill": "#1A1A1A",
+              "cornerRadius": 16,
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "eTbkl",
+                  "name": "dayBuilderText",
+                  "fill": "#FFFFFF",
+                  "content": "Open Day Builder",
+                  "fontFamily": "DM Sans",
+                  "fontSize": 16,
+                  "fontWeight": "600"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

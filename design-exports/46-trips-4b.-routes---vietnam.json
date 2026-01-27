@@ -1,0 +1,877 @@
+{
+  "type": "frame",
+  "id": "r8utq",
+  "x": 4140,
+  "y": 2000,
+  "name": "Trips 4b. Routes - Vietnam",
+  "clip": true,
+  "width": 390,
+  "height": 844,
+  "fill": "#FFFFFF",
+  "cornerRadius": 40,
+  "layout": "vertical",
+  "children": [
+    {
+      "type": "frame",
+      "id": "MfMPW",
+      "name": "routesContent",
+      "width": "fill_container",
+      "height": "fill_container",
+      "layout": "vertical",
+      "gap": 24,
+      "padding": [
+        60,
+        24,
+        40,
+        24
+      ],
+      "children": [
+        {
+          "type": "frame",
+          "id": "a8jPt",
+          "name": "routesHeader",
+          "width": "fill_container",
+          "gap": 12,
+          "justifyContent": "space_between",
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "frame",
+              "id": "sqgHv",
+              "name": "headerLeft",
+              "gap": 12,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "oQiY2",
+                  "name": "routesBackBtn",
+                  "width": 24,
+                  "height": 24,
+                  "fill": "#FFFFFF",
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "icon_font",
+                      "id": "3hOq5",
+                      "name": "routesBackIcon",
+                      "width": 20,
+                      "height": 20,
+                      "iconFontName": "arrow-left",
+                      "iconFontFamily": "lucide",
+                      "fill": "#1A1A1A"
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "id": "EKAGh",
+                  "name": "routesTitle",
+                  "fill": "#1A1A1A",
+                  "content": "Routes",
+                  "fontFamily": "DM Sans",
+                  "fontSize": 20,
+                  "fontWeight": "700"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "yMln8",
+              "name": "countryBadge",
+              "fill": "#F0F0F0",
+              "cornerRadius": 16,
+              "gap": 6,
+              "padding": [
+                6,
+                12
+              ],
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "ki8gj",
+                  "name": "countryFlag2",
+                  "content": "\ud83c\uddfb\ud83c\uddf3",
+                  "fontFamily": "Inter",
+                  "fontSize": 14,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "text",
+                  "id": "jWdzq",
+                  "name": "countryName2",
+                  "fill": "#1A1A1A",
+                  "content": "Vietnam",
+                  "fontFamily": "DM Sans",
+                  "fontSize": 12,
+                  "fontWeight": "600"
+                },
+                {
+                  "type": "text",
+                  "id": "FrJ58",
+                  "name": "countryCount2",
+                  "fill": "#6B7280",
+                  "content": "2/2",
+                  "fontFamily": "DM Sans",
+                  "fontSize": 12,
+                  "fontWeight": "500"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "eEJ5V",
+          "name": "routesSubtitle",
+          "fill": "#6B7280",
+          "content": "Choose a pre-made route or create your own",
+          "fontFamily": "DM Sans",
+          "fontSize": 14,
+          "fontWeight": "normal"
+        },
+        {
+          "type": "frame",
+          "id": "X5eY2",
+          "name": "routesList",
+          "clip": true,
+          "width": "fill_container",
+          "height": "fill_container",
+          "layout": "vertical",
+          "gap": 16,
+          "children": [
+            {
+              "type": "frame",
+              "id": "2GHbj",
+              "name": "routeCard1",
+              "width": "fill_container",
+              "height": 110,
+              "fill": "#F9FAFB",
+              "cornerRadius": 16,
+              "stroke": {
+                "thickness": 2,
+                "fill": "#1A1A1A"
+              },
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "ZKYZp",
+                  "name": "routeImg1",
+                  "metadata": {
+                    "type": "unsplash",
+                    "username": "matthewryanstephenson",
+                    "link": "https://unsplash.com/@matthewryanstephenson",
+                    "author": "Matthew Stephenson"
+                  },
+                  "width": 100,
+                  "height": "fill_container",
+                  "fill": {
+                    "type": "image",
+                    "enabled": true,
+                    "url": "https://images.unsplash.com/photo-1751842838476-9b376f956ea2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4NDM0ODN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3NjkxMTQzNzV8&ixlib=rb-4.1.0&q=80&w=1080",
+                    "mode": "fill"
+                  },
+                  "cornerRadius": [
+                    14,
+                    0,
+                    0,
+                    14
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "TWxNA",
+                  "name": "routeContent1",
+                  "width": "fill_container",
+                  "layout": "vertical",
+                  "gap": 10,
+                  "padding": 14,
+                  "justifyContent": "center",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "FAFkk",
+                      "name": "routeCard1Header",
+                      "width": "fill_container",
+                      "justifyContent": "space_between",
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "ChCs5",
+                          "name": "routeCard1Info",
+                          "layout": "vertical",
+                          "gap": 4,
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "COyFn",
+                              "name": "routeCard1Title",
+                              "fill": "#1A1A1A",
+                              "content": "Hanoi & Ho Chi Minh",
+                              "fontFamily": "DM Sans",
+                              "fontSize": 16,
+                              "fontWeight": "600"
+                            },
+                            {
+                              "type": "text",
+                              "id": "z120j",
+                              "name": "routeCard1Duration",
+                              "fill": "#6B7280",
+                              "content": "7 days \u2022 2 cities",
+                              "fontFamily": "DM Sans",
+                              "fontSize": 12,
+                              "fontWeight": "normal"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "6darb",
+                      "name": "routeCard1Cities",
+                      "width": "fill_container",
+                      "gap": 6,
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "xDR9m",
+                          "name": "city1",
+                          "height": 28,
+                          "fill": "#E5E7EB",
+                          "cornerRadius": 14,
+                          "padding": [
+                            0,
+                            10
+                          ],
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "jzdNg",
+                              "name": "city1Text",
+                              "fill": "#1A1A1A",
+                              "content": "Hanoi",
+                              "fontFamily": "DM Sans",
+                              "fontSize": 12,
+                              "fontWeight": "normal"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "icon_font",
+                          "id": "Dqy4t",
+                          "name": "cityArrow1",
+                          "width": 14,
+                          "height": 14,
+                          "iconFontName": "arrow-right",
+                          "iconFontFamily": "lucide",
+                          "fill": "#9CA3AF"
+                        },
+                        {
+                          "type": "frame",
+                          "id": "1FgIz",
+                          "name": "city2",
+                          "height": 28,
+                          "fill": "#E5E7EB",
+                          "cornerRadius": 14,
+                          "padding": [
+                            0,
+                            10
+                          ],
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "PE4Kf",
+                              "name": "city2Text",
+                              "fill": "#1A1A1A",
+                              "content": "Ho Chi Minh",
+                              "fontFamily": "DM Sans",
+                              "fontSize": 12,
+                              "fontWeight": "normal"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "OOGW0",
+              "name": "routeCard2",
+              "width": "fill_container",
+              "fill": "#F9FAFB",
+              "cornerRadius": 16,
+              "stroke": {
+                "thickness": 1,
+                "fill": "#E5E7EB"
+              },
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "b3H7o",
+                  "name": "routeImg2",
+                  "metadata": {
+                    "type": "unsplash",
+                    "username": "milo_photo",
+                    "link": "https://unsplash.com/@milo_photo",
+                    "author": "Michael Lock"
+                  },
+                  "width": 100,
+                  "height": "fill_container",
+                  "fill": {
+                    "type": "image",
+                    "enabled": true,
+                    "url": "https://images.unsplash.com/photo-1718942901281-1d2984221696?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4NDM0ODN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3NjkxMTQzNzV8&ixlib=rb-4.1.0&q=80&w=1080",
+                    "mode": "fill"
+                  },
+                  "cornerRadius": [
+                    14,
+                    0,
+                    0,
+                    14
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "tlyNi",
+                  "name": "routeContent2",
+                  "width": "fill_container",
+                  "layout": "vertical",
+                  "gap": 10,
+                  "padding": 14,
+                  "justifyContent": "center",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "syqCq",
+                      "name": "routeCard2Header",
+                      "width": "fill_container",
+                      "justifyContent": "space_between",
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "nYn6C",
+                          "name": "routeCard2Info",
+                          "layout": "vertical",
+                          "gap": 4,
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "ZmSXA",
+                              "name": "routeCard2Title",
+                              "fill": "#1A1A1A",
+                              "content": "Hanoi Explorer",
+                              "fontFamily": "DM Sans",
+                              "fontSize": 16,
+                              "fontWeight": "600"
+                            },
+                            {
+                              "type": "text",
+                              "id": "ypMYI",
+                              "name": "routeCard2Duration",
+                              "fill": "#6B7280",
+                              "content": "7 days \u2022 1 city",
+                              "fontFamily": "DM Sans",
+                              "fontSize": 12,
+                              "fontWeight": "normal"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
+                          "id": "nHvup",
+                          "name": "routeCard2Badge",
+                          "width": 24,
+                          "height": 24,
+                          "fill": "#BFFF00",
+                          "cornerRadius": 12,
+                          "gap": 6,
+                          "justifyContent": "center",
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "icon_font",
+                              "id": "xEl6u",
+                              "name": "starIcon3",
+                              "width": 14,
+                              "height": 14,
+                              "iconFontName": "star",
+                              "iconFontFamily": "lucide",
+                              "fill": "#1A1A1A"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "q57fD",
+                      "name": "routeCard2Cities",
+                      "width": "fill_container",
+                      "gap": 8,
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "B6yWC",
+                          "name": "city2_1",
+                          "height": 28,
+                          "fill": "#E5E7EB",
+                          "cornerRadius": 14,
+                          "padding": [
+                            0,
+                            12
+                          ],
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "xzsSF",
+                              "name": "city2_1Text",
+                              "fill": "#1A1A1A",
+                              "content": "Hanoi",
+                              "fontFamily": "DM Sans",
+                              "fontSize": 12,
+                              "fontWeight": "normal"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "9YAw4",
+              "name": "routeVN3",
+              "width": "fill_container",
+              "fill": "#F9FAFB",
+              "cornerRadius": 16,
+              "stroke": {
+                "thickness": 1,
+                "fill": "#E5E7EB"
+              },
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "Bujl0",
+                  "name": "routeImg2",
+                  "metadata": {
+                    "type": "unsplash",
+                    "username": "axcreativeagency",
+                    "link": "https://unsplash.com/@axcreativeagency",
+                    "author": "Christian"
+                  },
+                  "width": 100,
+                  "height": "fill_container",
+                  "fill": {
+                    "type": "image",
+                    "enabled": true,
+                    "url": "https://images.unsplash.com/photo-1696215104901-39bdce4ebaae?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4NDM0ODN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3NjkxMTQ4MDB8&ixlib=rb-4.1.0&q=80&w=1080",
+                    "mode": "fill"
+                  },
+                  "cornerRadius": [
+                    14,
+                    0,
+                    0,
+                    14
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "LeNqU",
+                  "name": "routeContent2",
+                  "width": "fill_container",
+                  "layout": "vertical",
+                  "gap": 10,
+                  "padding": 14,
+                  "justifyContent": "center",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "EujsM",
+                      "name": "routeCard2Header",
+                      "width": "fill_container",
+                      "justifyContent": "space_between",
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "mfnfD",
+                          "name": "routeCard2Info",
+                          "layout": "vertical",
+                          "gap": 4,
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "h9058",
+                              "name": "routeCard2Title",
+                              "fill": "#1A1A1A",
+                              "content": "Central Coast",
+                              "fontFamily": "DM Sans",
+                              "fontSize": 16,
+                              "fontWeight": "600"
+                            },
+                            {
+                              "type": "text",
+                              "id": "r6L8d",
+                              "name": "routeCard2Duration",
+                              "fill": "#6B7280",
+                              "content": "7 days \u2022 2 cities",
+                              "fontFamily": "DM Sans",
+                              "fontSize": 12,
+                              "fontWeight": "normal"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
+                          "id": "mD36B",
+                          "name": "routeCard2Badge",
+                          "width": 24,
+                          "height": 24,
+                          "fill": "#BFFF00",
+                          "cornerRadius": 12,
+                          "gap": 6,
+                          "justifyContent": "center",
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "icon_font",
+                              "id": "lcb6d",
+                              "name": "starIcon4",
+                              "width": 14,
+                              "height": 14,
+                              "iconFontName": "star",
+                              "iconFontFamily": "lucide",
+                              "fill": "#1A1A1A"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "TYYIq",
+                      "name": "routeCard2Cities",
+                      "width": "fill_container",
+                      "gap": 8,
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "eENdR",
+                          "name": "city2_1",
+                          "height": 28,
+                          "fill": "#E5E7EB",
+                          "cornerRadius": 14,
+                          "padding": [
+                            0,
+                            12
+                          ],
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "lLwIW",
+                              "name": "city2_1Text",
+                              "fill": "#1A1A1A",
+                              "content": "Da Nang",
+                              "fontFamily": "DM Sans",
+                              "fontSize": 12,
+                              "fontWeight": "normal"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "icon_font",
+                          "id": "keTfa",
+                          "name": "arrowVN3",
+                          "width": 14,
+                          "height": 14,
+                          "iconFontName": "arrow-right",
+                          "iconFontFamily": "lucide",
+                          "fill": "#9CA3AF"
+                        },
+                        {
+                          "type": "frame",
+                          "id": "SuA8H",
+                          "name": "city2_2",
+                          "height": 28,
+                          "fill": "#E5E7EB",
+                          "cornerRadius": 14,
+                          "padding": [
+                            0,
+                            12
+                          ],
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "tvdft",
+                              "name": "hoianText",
+                              "fill": "#1A1A1A",
+                              "content": "Hoi An",
+                              "fontFamily": "DM Sans",
+                              "fontSize": 12,
+                              "fontWeight": "normal"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "hwL39",
+              "name": "routeVN4",
+              "width": "fill_container",
+              "height": 110,
+              "fill": "#F9FAFB",
+              "cornerRadius": 16,
+              "stroke": {
+                "thickness": 1,
+                "fill": "#E5E7EB"
+              },
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "VxZkh",
+                  "name": "routeImg1",
+                  "metadata": {
+                    "type": "unsplash",
+                    "username": "fabimoe",
+                    "link": "https://unsplash.com/@fabimoe",
+                    "author": "Fabian M\u00f8ller"
+                  },
+                  "width": 100,
+                  "height": "fill_container",
+                  "fill": {
+                    "type": "image",
+                    "enabled": true,
+                    "url": "https://images.unsplash.com/photo-1552564707-f4b04724a59e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4NDM0ODN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3NjkxMTQ4MTV8&ixlib=rb-4.1.0&q=80&w=1080",
+                    "mode": "fill"
+                  },
+                  "cornerRadius": [
+                    14,
+                    0,
+                    0,
+                    14
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "TxazI",
+                  "name": "routeContent1",
+                  "width": "fill_container",
+                  "layout": "vertical",
+                  "gap": 10,
+                  "padding": 14,
+                  "justifyContent": "center",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "Kkzsq",
+                      "name": "routeCard1Header",
+                      "width": "fill_container",
+                      "justifyContent": "space_between",
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "hQZe1",
+                          "name": "routeCard1Info",
+                          "layout": "vertical",
+                          "gap": 4,
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "B4m0k",
+                              "name": "routeCard1Title",
+                              "fill": "#1A1A1A",
+                              "content": "Mekong Delta",
+                              "fontFamily": "DM Sans",
+                              "fontSize": 16,
+                              "fontWeight": "600"
+                            },
+                            {
+                              "type": "text",
+                              "id": "uHw1K",
+                              "name": "routeCard1Duration",
+                              "fill": "#6B7280",
+                              "content": "5 days \u2022 2 cities",
+                              "fontFamily": "DM Sans",
+                              "fontSize": 12,
+                              "fontWeight": "normal"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "BeYkv",
+                      "name": "routeCard1Cities",
+                      "width": "fill_container",
+                      "gap": 6,
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "kSqkB",
+                          "name": "city1",
+                          "height": 28,
+                          "fill": "#E5E7EB",
+                          "cornerRadius": 14,
+                          "padding": [
+                            0,
+                            10
+                          ],
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "kNwid",
+                              "name": "city1Text",
+                              "fill": "#1A1A1A",
+                              "content": "HCMC",
+                              "fontFamily": "DM Sans",
+                              "fontSize": 12,
+                              "fontWeight": "normal"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "icon_font",
+                          "id": "pFWru",
+                          "name": "cityArrow1",
+                          "width": 14,
+                          "height": 14,
+                          "iconFontName": "arrow-right",
+                          "iconFontFamily": "lucide",
+                          "fill": "#9CA3AF"
+                        },
+                        {
+                          "type": "frame",
+                          "id": "8cV1N",
+                          "name": "city2",
+                          "height": 28,
+                          "fill": "#E5E7EB",
+                          "cornerRadius": 14,
+                          "padding": [
+                            0,
+                            10
+                          ],
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "v5p1N",
+                              "name": "city2Text",
+                              "fill": "#1A1A1A",
+                              "content": "Can Tho",
+                              "fontFamily": "DM Sans",
+                              "fontSize": 12,
+                              "fontWeight": "normal"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "Zmbs0",
+              "name": "customOption",
+              "width": "fill_container",
+              "height": 56,
+              "fill": "transparent",
+              "cornerRadius": 16,
+              "stroke": {
+                "thickness": 1,
+                "fill": "#E5E7EB"
+              },
+              "gap": 8,
+              "padding": [
+                0,
+                16
+              ],
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "icon_font",
+                  "id": "8fBZ0",
+                  "name": "customIcon",
+                  "width": 20,
+                  "height": 20,
+                  "iconFontName": "plus",
+                  "iconFontFamily": "lucide",
+                  "fill": "#1A1A1A"
+                },
+                {
+                  "type": "text",
+                  "id": "MVrkh",
+                  "name": "customText",
+                  "fill": "#1A1A1A",
+                  "content": "Create custom route",
+                  "fontFamily": "DM Sans",
+                  "fontSize": 15,
+                  "fontWeight": "500"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "GxRkW",
+          "name": "routesContinueBtn",
+          "width": "fill_container",
+          "height": 52,
+          "fill": "#1A1A1A",
+          "cornerRadius": 16,
+          "gap": 8,
+          "justifyContent": "center",
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "text",
+              "id": "fQmnz",
+              "name": "routesContinueText",
+              "fill": "#FFFFFF",
+              "content": "Build Itinerary",
+              "fontFamily": "DM Sans",
+              "fontSize": 16,
+              "fontWeight": "600"
+            },
+            {
+              "type": "icon_font",
+              "id": "nLD2X",
+              "name": "routesContinueIcon",
+              "width": 20,
+              "height": 20,
+              "iconFontName": "arrow-right",
+              "iconFontFamily": "lucide",
+              "fill": "#FFFFFF"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
