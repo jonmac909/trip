@@ -1,0 +1,21 @@
+# Maestro Configuration
+# https://maestro.mobile.dev/
+
+appId: com.trippified.app
+name: Trippified
+
+# Tags for organizing flows
+tags:
+  - smoke
+  - regression
+  - critical
+
+# Default settings
+onFlowStart:
+  - launchApp:
+      clearState: true
+      clearKeychain: true
+
+# Environment variables
+env:
+  TEST_MODE: "true"

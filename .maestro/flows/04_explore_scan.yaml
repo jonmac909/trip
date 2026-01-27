@@ -1,0 +1,55 @@
+# Flow: Explore & Content Scanning
+# Tests the TikTok/Instagram content scanning feature
+
+appId: com.trippified.app
+tags:
+  - critical
+  - regression
+name: "Explore and Content Scanning"
+
+---
+
+- launchApp:
+    clearState: true
+
+# Skip to home
+- extendedWaitUntil:
+    visible: "Continue without account"
+    timeout: 10000
+- tapOn: "Continue without account"
+- extendedWaitUntil:
+    visible: "My Trips"
+    timeout: 5000
+
+# Navigate to Explore
+- tapOn: "Explore"
+- extendedWaitUntil:
+    visible: "Discover"
+    timeout: 3000
+
+# Verify search bar is present
+- assertVisible:
+    id: "explore_search_bar"
+
+# Test URL paste flow
+- tapOn:
+    id: "explore_search_bar"
+
+# Enter a TikTok URL
+- inputText: "https://www.tiktok.com/@user/video/123"
+
+# Tap scan button
+- tapOn: "Scan"
+
+# Should show scanning progress
+- extendedWaitUntil:
+    visible: "Scanning"
+    timeout: 5000
+
+# Wait for results (or error in test mode)
+- extendedWaitUntil:
+    anyVisible:
+      - "Places found"
+      - "No places found"
+      - "Unable to scan"
+    timeout: 30000

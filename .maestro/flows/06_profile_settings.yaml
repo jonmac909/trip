@@ -1,0 +1,56 @@
+# Flow: Profile and Settings
+# Tests profile screen and settings access
+
+appId: com.trippified.app
+tags:
+  - smoke
+  - regression
+name: "Profile and Settings"
+
+---
+
+- launchApp:
+    clearState: true
+
+# Skip to home
+- extendedWaitUntil:
+    visible: "Continue without account"
+    timeout: 10000
+- tapOn: "Continue without account"
+- extendedWaitUntil:
+    visible: "My Trips"
+    timeout: 5000
+
+# Navigate to Profile
+- tapOn: "Profile"
+- extendedWaitUntil:
+    visible: "Settings"
+    timeout: 3000
+
+# Verify profile sections
+- assertVisible: "My Trips"
+- assertVisible: "My Tickets"
+- assertVisible: "Settings"
+
+# Tap on My Tickets
+- tapOn: "My Tickets"
+- extendedWaitUntil:
+    anyVisible:
+      - "No tickets yet"
+      - "Your Tickets"
+    timeout: 5000
+
+# Go back
+- tapOn:
+    id: "back_button"
+
+# Tap Settings
+- tapOn: "Settings"
+- extendedWaitUntil:
+    visible: "Account"
+    timeout: 5000
+
+# Verify settings options
+- assertVisible: "Notifications"
+- assertVisible: "Privacy"
+- assertVisible: "About"

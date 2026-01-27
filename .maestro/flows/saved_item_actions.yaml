@@ -1,0 +1,34 @@
+# Subflow: Saved Item Actions
+# Tests swipe-to-delete and item details
+
+appId: com.trippified.app
+name: "Saved Item Actions"
+
+---
+
+# Test swipe to delete
+- swipe:
+    from:
+      text: "Tokyo Tower"
+    direction: LEFT
+    
+# Delete button should appear
+- assertVisible: "Delete"
+
+# Cancel by tapping elsewhere
+- tapOn: "Saved"
+
+# Test tap to view details
+- tapOn: "Tokyo Tower"
+
+# Should navigate to detail view
+- extendedWaitUntil:
+    visible: "Add to Trip"
+    timeout: 5000
+
+# Go back
+- tapOn:
+    id: "back_button"
+
+# Verify returned to saved list
+- assertVisible: "Tokyo Tower"

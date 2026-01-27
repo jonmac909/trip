@@ -1,0 +1,40 @@
+# Flow: Saved Items Management
+# Tests viewing, organizing, and deleting saved places
+
+appId: com.trippified.app
+tags:
+  - regression
+name: "Saved Items Management"
+
+---
+
+- launchApp:
+    clearState: true
+
+# Skip to home
+- extendedWaitUntil:
+    visible: "Continue without account"
+    timeout: 10000
+- tapOn: "Continue without account"
+- extendedWaitUntil:
+    visible: "My Trips"
+    timeout: 5000
+
+# Navigate to Saved
+- tapOn: "Saved"
+- extendedWaitUntil:
+    visible: "Saved"
+    timeout: 3000
+
+# Check if saved items exist (mock data)
+- runFlow:
+    when:
+      visible: "Tokyo Tower"
+    file: flows/saved_item_actions.yaml
+
+# If no items, verify empty state
+- runFlow:
+    when:
+      visible: "No saved places"
+    commands:
+      - assertVisible: "Start exploring"

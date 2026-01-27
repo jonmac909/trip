@@ -1,0 +1,57 @@
+# Flow: Wishlist Management
+# Tests adding and managing wishlist destinations
+
+appId: com.trippified.app
+tags:
+  - regression
+name: "Wishlist Management"
+
+---
+
+- launchApp:
+    clearState: true
+
+# Skip to home
+- extendedWaitUntil:
+    visible: "Continue without account"
+    timeout: 10000
+- tapOn: "Continue without account"
+- extendedWaitUntil:
+    visible: "My Trips"
+    timeout: 5000
+
+# Navigate to Wishlist tab
+- tapOn: "Wishlist"
+
+# Verify wishlist UI
+- assertVisible: "Add a place to your wishlist"
+
+# Check existing items
+- runFlow:
+    when:
+      visible: "Santorini"
+    commands:
+      - assertVisible: "Plan a Trip"
+
+# Add new place to wishlist
+- tapOn: "Add a place to your wishlist"
+- inputText: "Maldives"
+- extendedWaitUntil:
+    visible: "Maldives"
+    timeout: 5000
+- tapOn:
+    text: "Maldives"
+    index: 0
+
+# Verify added
+- assertVisible: "Maldives"
+
+# Test Plan a Trip from wishlist
+- tapOn:
+    text: "Plan a Trip"
+    index: 0
+
+# Should navigate to trip setup
+- extendedWaitUntil:
+    visible: "Where do you want to go?"
+    timeout: 5000

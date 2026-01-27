@@ -1,0 +1,76 @@
+# Flow: Create New Trip
+# Tests the trip setup wizard flow
+
+appId: com.trippified.app
+tags:
+  - critical
+  - regression
+name: "Create New Trip Flow"
+
+---
+
+- launchApp:
+    clearState: true
+
+# Skip to home
+- extendedWaitUntil:
+    visible: "Continue without account"
+    timeout: 10000
+- tapOn: "Continue without account"
+- extendedWaitUntil:
+    visible: "My Trips"
+    timeout: 5000
+
+# Tap FAB to start new trip
+- tapOn:
+    id: "add_trip_fab"
+
+# Trip Setup Screen should appear
+- extendedWaitUntil:
+    visible: "Where do you want to go?"
+    timeout: 5000
+
+# Enter destination
+- tapOn:
+    id: "destination_input"
+- inputText: "Paris"
+
+# Select from suggestions (wait for autocomplete)
+- extendedWaitUntil:
+    visible: "Paris, France"
+    timeout: 5000
+- tapOn: "Paris, France"
+
+# Verify destination added
+- assertVisible: "Paris"
+
+# Add another destination
+- tapOn: "Add another destination"
+- inputText: "Rome"
+- extendedWaitUntil:
+    visible: "Rome, Italy"
+    timeout: 5000
+- tapOn: "Rome, Italy"
+
+# Continue to dates
+- tapOn: "Continue"
+
+# Date picker should appear
+- extendedWaitUntil:
+    visible: "When are you traveling?"
+    timeout: 5000
+
+# Select dates (tap on calendar)
+- tapOn: "I'm flexible"
+
+# Continue to route selection
+- tapOn: "Continue"
+
+# Should show route options
+- extendedWaitUntil:
+    visible: "Recommended Routes"
+    timeout: 10000
+
+# Verify routes are displayed
+- assertVisible: "Paris"
+- assertVisible: "Rome"

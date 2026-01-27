@@ -1,0 +1,57 @@
+# Flow: Itinerary Generation
+# Tests AI-powered itinerary generation from Explore
+
+appId: com.trippified.app
+tags:
+  - critical
+  - regression
+name: "Itinerary Generation Flow"
+
+---
+
+- launchApp:
+    clearState: true
+
+# Skip to home
+- extendedWaitUntil:
+    visible: "Continue without account"
+    timeout: 10000
+- tapOn: "Continue without account"
+- extendedWaitUntil:
+    visible: "My Trips"
+    timeout: 5000
+
+# Navigate to Explore
+- tapOn: "Explore"
+- extendedWaitUntil:
+    visible: "Discover"
+    timeout: 3000
+
+# Tap on a destination card (if featured destinations exist)
+- runFlow:
+    when:
+      visible: "Tokyo"
+    commands:
+      - tapOn: "Tokyo"
+      - extendedWaitUntil:
+          visible: "Generate Itinerary"
+          timeout: 5000
+      - tapOn: "Generate Itinerary"
+      - extendedWaitUntil:
+          anyVisible:
+            - "Generating"
+            - "Your Itinerary"
+          timeout: 10000
+
+# Alternative: Search for destination
+- runFlow:
+    when:
+      notVisible: "Tokyo"
+    commands:
+      - tapOn:
+          id: "explore_search_bar"
+      - inputText: "Barcelona"
+      - extendedWaitUntil:
+          visible: "Barcelona"
+          timeout: 5000
+      - tapOn: "Barcelona"

@@ -1,0 +1,69 @@
+# Flow: Trip Detail & Day Builder
+# Tests viewing trip details and building daily itineraries
+
+appId: com.trippified.app
+tags:
+  - critical
+  - regression
+name: "Trip Detail and Day Builder"
+
+---
+
+- launchApp:
+    clearState: true
+
+# Skip to home
+- extendedWaitUntil:
+    visible: "Continue without account"
+    timeout: 10000
+- tapOn: "Continue without account"
+- extendedWaitUntil:
+    visible: "My Trips"
+    timeout: 5000
+
+# Ensure on Upcoming tab
+- tapOn: "Upcoming"
+
+# Tap on Japan Adventure trip
+- tapOn: "Japan Adventure"
+
+# Trip dashboard should load
+- extendedWaitUntil:
+    visible: "Tokyo"
+    timeout: 5000
+
+# Verify trip info displayed
+- assertVisible: "Kyoto"
+- assertVisible: "Osaka"
+
+# Tap on a day to open day builder
+- tapOn: "Day 1"
+
+# Day builder should open
+- extendedWaitUntil:
+    visible: "Add Activity"
+    timeout: 5000
+
+# Verify day builder layout
+- assertVisible:
+    id: "day_timeline"
+
+# Add an activity
+- tapOn: "Add Activity"
+
+# Activity picker should appear
+- extendedWaitUntil:
+    anyVisible:
+      - "Search places"
+      - "Suggested"
+    timeout: 5000
+
+# Cancel and go back
+- tapOn:
+    id: "close_button"
+    
+- tapOn:
+    id: "back_button"
+
+# Back to trip dashboard
+- assertVisible: "Japan Adventure"

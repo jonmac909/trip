@@ -1,0 +1,58 @@
+# Flow: Home Screen Navigation
+# Tests bottom nav and trip tab switching
+
+appId: com.trippified.app
+tags:
+  - smoke
+  - regression
+name: "Home Screen Navigation"
+
+---
+
+- launchApp:
+    clearState: true
+
+# Skip splash
+- extendedWaitUntil:
+    visible: "Continue without account"
+    timeout: 10000
+- tapOn: "Continue without account"
+
+# Wait for home
+- extendedWaitUntil:
+    visible: "My Trips"
+    timeout: 5000
+
+# Test trip tabs
+- tapOn: "Upcoming"
+- assertVisible: "Japan Adventure"
+
+- tapOn: "Drafts"
+- assertVisible: "No dates? No problem."
+
+- tapOn: "Past"
+- assertVisible: "No past trips"
+
+- tapOn: "Wishlist"
+- assertVisible: "Add a place to your wishlist"
+
+# Test bottom navigation
+- tapOn: "Explore"
+- extendedWaitUntil:
+    visible: "Discover"
+    timeout: 3000
+
+- tapOn: "Saved"
+- extendedWaitUntil:
+    visible:
+      text: "Saved"
+    timeout: 3000
+
+- tapOn: "Profile"
+- extendedWaitUntil:
+    visible: "Settings"
+    timeout: 3000
+
+# Return to Trips
+- tapOn: "Trips"
+- assertVisible: "My Trips"

@@ -10,3 +10,6 @@ export 'saved_robot.dart';
 export 'profile_robot.dart';
 export 'day_builder_robot.dart';
 export 'trip_dashboard_robot.dart';
+export 'itinerary_robot.dart';
+export 'tickets_robot.dart';
+export 'explore_history_robot.dart';

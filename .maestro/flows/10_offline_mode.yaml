@@ -1,0 +1,48 @@
+# Flow: Offline/Demo Mode
+# Tests app behavior without network or Supabase
+
+appId: com.trippified.app
+tags:
+  - regression
+name: "Offline Demo Mode"
+
+---
+
+- launchApp:
+    clearState: true
+
+# Skip authentication
+- extendedWaitUntil:
+    visible: "Continue without account"
+    timeout: 10000
+- tapOn: "Continue without account"
+
+# Verify app loads with mock data
+- extendedWaitUntil:
+    visible: "My Trips"
+    timeout: 5000
+
+# Mock trips should be visible
+- assertVisible: "Japan Adventure"
+
+# Navigate around - should not crash
+- tapOn: "Explore"
+- extendedWaitUntil:
+    visible: "Discover"
+    timeout: 3000
+
+- tapOn: "Saved"
+- wait: 2000
+
+- tapOn: "Profile"
+- extendedWaitUntil:
+    visible: "Settings"
+    timeout: 3000
+
+# Verify free tier limits message if visible
+- runFlow:
+    when:
+      visible: "Upgrade"
+    commands:
+      - tapOn: "Upgrade"
+      - assertVisible: "Premium"

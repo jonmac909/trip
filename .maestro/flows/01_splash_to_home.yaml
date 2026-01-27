@@ -1,0 +1,37 @@
+# Flow: Splash → Login → Home
+# Tests the initial app launch and authentication bypass flow
+
+appId: com.trippified.app
+tags:
+  - smoke
+  - critical
+name: "Splash to Home Navigation"
+
+---
+
+# App launches at splash screen
+- launchApp:
+    clearState: true
+
+# Wait for splash animation
+- extendedWaitUntil:
+    visible: "Continue without account"
+    timeout: 10000
+
+# Tap continue without account (demo mode)
+- tapOn: "Continue without account"
+
+# Verify home screen loads
+- extendedWaitUntil:
+    visible: "My Trips"
+    timeout: 5000
+
+# Verify bottom navigation is present
+- assertVisible: "Trips"
+- assertVisible: "Explore"
+- assertVisible: "Saved"
+- assertVisible: "Profile"
+
+# Verify FAB is present
+- assertVisible:
+    id: "add_trip_fab"
