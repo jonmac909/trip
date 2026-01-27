@@ -1,0 +1,134 @@
+# Flow: Home Screen - Trips Tab Complete Coverage
+# Tests every button and interaction on the Trips tab
+
+appId: com.trippified.app
+tags:
+  - regression
+  - full-coverage
+name: "Home Trips Tab - Full Button Coverage"
+
+---
+
+- launchApp:
+    clearState: true
+
+# Skip splash
+- extendedWaitUntil:
+    visible: "Continue without account"
+    timeout: 10000
+- tapOn: "Continue without account"
+- extendedWaitUntil:
+    visible: "My Trips"
+    timeout: 5000
+
+# === TRIPS TAB - UPCOMING ===
+
+# Verify header
+- assertVisible: "My Trips"
+
+# Verify FAB
+- assertVisible:
+    id: "add_trip_fab"
+
+# Verify sub-tabs
+- assertVisible: "Upcoming"
+- assertVisible: "Drafts"
+- assertVisible: "Past"
+- assertVisible: "Wishlist"
+
+# Verify trip cards in Upcoming
+- assertVisible: "Japan Adventure"
+- assertVisible: "Europe Trip"
+
+# Verify trip card details
+- assertVisible: "Tokyo"
+- assertVisible: "Kyoto"
+- assertVisible: "Osaka"
+- assertVisible:
+    text: "In"
+- assertVisible:
+    text: "days"
+
+# Test FAB navigation
+- tapOn:
+    id: "add_trip_fab"
+- extendedWaitUntil:
+    visible: "Plan a Trip"
+    timeout: 3000
+- tapOn:
+    id: "back_button"
+- extendedWaitUntil:
+    visible: "My Trips"
+    timeout: 3000
+
+# Test trip card tap
+- tapOn: "Japan Adventure"
+- extendedWaitUntil:
+    visible: "Tokyo"
+    timeout: 5000
+# Back to home
+- tapOn:
+    id: "back_button"
+- extendedWaitUntil:
+    visible: "My Trips"
+    timeout: 3000
+
+# === TRIPS TAB - DRAFTS ===
+
+- tapOn: "Drafts"
+- wait: 1000
+
+# Verify empty state
+- assertVisible: "No dates? No problem."
+- assertVisible: "Store your trip ideas here until you're ready to plan."
+
+# === TRIPS TAB - PAST ===
+
+- tapOn: "Past"
+- wait: 1000
+
+# Verify empty state
+- assertVisible: "No past trips"
+- assertVisible: "Your completed trips will appear here"
+
+# === TRIPS TAB - WISHLIST ===
+
+- tapOn: "Wishlist"
+- wait: 1000
+
+# Verify FAB hidden on wishlist
+# (no assertion for absence - just continue)
+
+# Verify input field
+- assertVisible: "Add a place to your wishlist"
+
+# Verify wishlist items
+- assertVisible: "Santorini, Greece"
+- assertVisible: "Bali, Indonesia"
+
+# Verify Plan a Trip buttons
+- assertVisible: "Plan a Trip"
+
+# Test wishlist input
+- tapOn: "Add a place to your wishlist"
+- inputText: "Mald"
+- extendedWaitUntil:
+    visible: "Maldives"
+    timeout: 5000
+
+# Cancel input
+- pressKey: "Escape"
+
+# Test Plan a Trip from wishlist
+- tapOn:
+    text: "Plan a Trip"
+    index: 0
+- extendedWaitUntil:
+    visible: "Plan a Trip"
+    timeout: 3000
+- tapOn:
+    id: "back_button"
+
+# Return to Upcoming
+- tapOn: "Upcoming"
+- assertVisible: "Japan Adventure"

@@ -1,0 +1,222 @@
+# Flow: Trip Setup - Complete Coverage
+# Tests every button and interaction in the trip setup wizard
+
+appId: com.trippified.app
+tags:
+  - regression
+  - full-coverage
+name: "Trip Setup Wizard - Full Button Coverage"
+
+---
+
+- launchApp:
+    clearState: true
+
+# Skip to home
+- extendedWaitUntil:
+    visible: "Continue without account"
+    timeout: 10000
+- tapOn: "Continue without account"
+- extendedWaitUntil:
+    visible: "My Trips"
+    timeout: 5000
+
+# === START TRIP SETUP ===
+
+- tapOn:
+    id: "add_trip_fab"
+- extendedWaitUntil:
+    visible: "Plan a Trip"
+    timeout: 5000
+
+# === HEADER ===
+
+# Verify back button
+- assertVisible:
+    id: "back_button"
+
+# Verify title
+- assertVisible: "Plan a Trip"
+
+# Test back button (and return)
+- tapOn:
+    id: "back_button"
+- extendedWaitUntil:
+    visible: "My Trips"
+    timeout: 3000
+- tapOn:
+    id: "add_trip_fab"
+- extendedWaitUntil:
+    visible: "Plan a Trip"
+    timeout: 5000
+
+# === COUNTRY SECTION ===
+
+# Verify question
+- assertVisible: "Where do you want to go?"
+
+# Verify hint
+- assertVisible: "Add one or more countries"
+
+# Test search field
+- tapOn:
+    id: "destination_input"
+
+# Verify keyboard appears and suggestions show
+- inputText: "Jap"
+- extendedWaitUntil:
+    visible: "Japan"
+    timeout: 5000
+
+# Select Japan
+- tapOn: "Japan"
+
+# Verify chip added
+- assertVisible: "Japan"
+
+# Add another country
+- tapOn:
+    id: "destination_input"
+- inputText: "Thai"
+- extendedWaitUntil:
+    visible: "Thailand"
+    timeout: 5000
+- tapOn: "Thailand"
+
+# Verify both chips
+- assertVisible: "Japan"
+- assertVisible: "Thailand"
+
+# Test remove chip (X button)
+- tapOn:
+    id: "remove_thailand"
+    optional: true
+
+# Add Thailand back if removed
+- runFlow:
+    when:
+      notVisible: "Thailand"
+    commands:
+      - tapOn:
+          id: "destination_input"
+      - inputText: "Thailand"
+      - extendedWaitUntil:
+          visible: "Thailand"
+          timeout: 5000
+      - tapOn: "Thailand"
+
+# === TRIP SIZE SECTION ===
+
+# Verify question
+- assertVisible: "How long is your trip?"
+
+# Verify options
+- assertVisible: "Short trip"
+- assertVisible: "Week-long"
+- assertVisible: "Long"
+
+# Test Short trip selection
+- tapOn: "Short trip"
+- assertVisible: "1-4 days"
+
+# Test Week-long selection
+- tapOn: "Week-long"
+- assertVisible: "5-10 days"
+
+# Test Long selection
+- tapOn: "Long"
+- assertVisible: "10+ days"
+
+# Select Week-long for the flow
+- tapOn: "Week-long"
+
+# === CONTINUE BUTTON ===
+
+# Verify Continue button
+- assertVisible: "Continue"
+
+# Tap Continue
+- tapOn: "Continue"
+
+# === RECOMMENDED ROUTES ===
+
+- extendedWaitUntil:
+    anyVisible:
+      - "Recommended Routes"
+      - "Routes"
+      - "Japan"
+    timeout: 10000
+
+# Verify back button
+- assertVisible:
+    id: "back_button"
+
+# Verify route cards
+- assertVisible: "Japan"
+- assertVisible: "Thailand"
+
+# Test tap on route card
+- tapOn:
+    textContaining: "Japan"
+    index: 0
+
+# Card should be selected/highlighted
+- wait: 1000
+
+# Test another route
+- tapOn:
+    textContaining: "Thailand"
+    index: 0
+
+# === MAP PREVIEW ===
+
+# If map visible
+- runFlow:
+    when:
+      visible:
+        id: "route_map"
+    commands:
+      - wait: 1000
+
+# === SELECT ROUTE ===
+
+# Look for CTA
+- runFlow:
+    when:
+      visible: "Select Route"
+    commands:
+      - tapOn: "Select Route"
+      - extendedWaitUntil:
+          anyVisible:
+            - "Build Itinerary"
+            - "Builder"
+            - "Day 1"
+          timeout: 10000
+
+- runFlow:
+    when:
+      visible: "Continue"
+    commands:
+      - tapOn: "Continue"
+      - extendedWaitUntil:
+          anyVisible:
+            - "Build Itinerary"
+            - "Builder"
+            - "Day 1"
+          timeout: 10000
+
+# === BACK NAVIGATION TEST ===
+
+# Go back through the flow
+- tapOn:
+    id: "back_button"
+- wait: 1000
+- tapOn:
+    id: "back_button"
+- wait: 1000
+
+# Should be back at trip setup or home
+- assertVisible:
+    anyOf:
+      - "Plan a Trip"
+      - "My Trips"

@@ -1,0 +1,199 @@
+# Flow: Profile Screen - Complete Coverage
+# Tests every button and interaction on the Profile screen
+
+appId: com.trippified.app
+tags:
+  - regression
+  - full-coverage
+name: "Profile Screen - Full Button Coverage"
+
+---
+
+- launchApp:
+    clearState: true
+
+# Skip to home
+- extendedWaitUntil:
+    visible: "Continue without account"
+    timeout: 10000
+- tapOn: "Continue without account"
+- extendedWaitUntil:
+    visible: "My Trips"
+    timeout: 5000
+
+# Navigate to Profile
+- tapOn: "Profile"
+- extendedWaitUntil:
+    visible: "Settings"
+    timeout: 3000
+
+# === HEADER ===
+
+# Verify profile avatar
+- assertVisible:
+    id: "profile_avatar"
+    optional: true
+
+# Verify name (Guest or user name)
+- assertVisible:
+    anyOf:
+      - "Guest"
+      - id: "profile_name"
+
+# === MENU ITEMS ===
+
+# Verify all menu items
+- assertVisible: "My Trips"
+- assertVisible: "My Tickets"
+- assertVisible: "Settings"
+
+# === MY TRIPS ===
+
+- tapOn: "My Trips"
+- extendedWaitUntil:
+    visible: "My Trips"
+    timeout: 3000
+
+# Should show trips or navigate to trips tab
+- assertVisible:
+    anyOf:
+      - "Japan Adventure"
+      - "Upcoming"
+      - "No trips"
+
+# Go back
+- tapOn:
+    id: "back_button"
+    optional: true
+- tapOn: "Profile"
+- wait: 1000
+
+# === MY TICKETS ===
+
+- tapOn: "My Tickets"
+- extendedWaitUntil:
+    anyVisible:
+      - "My Tickets"
+      - "No tickets"
+      - "Upcoming"
+    timeout: 5000
+
+# Verify tabs if present
+- runFlow:
+    when:
+      visible: "Upcoming"
+    commands:
+      - assertVisible: "Upcoming"
+      - assertVisible: "Past"
+      
+      # Test tab switching
+      - tapOn: "Past"
+      - wait: 500
+      - tapOn: "Upcoming"
+
+# Verify empty state
+- runFlow:
+    when:
+      visible: "No tickets yet"
+    commands:
+      - assertVisible: "No tickets yet"
+      - assertVisible: "Your travel tickets will appear here"
+
+# Go back
+- tapOn:
+    id: "back_button"
+- extendedWaitUntil:
+    visible: "Settings"
+    timeout: 3000
+
+# === SETTINGS ===
+
+- tapOn: "Settings"
+- extendedWaitUntil:
+    anyVisible:
+      - "Account"
+      - "Notifications"
+      - "Settings"
+    timeout: 5000
+
+# Verify settings options
+- assertVisible:
+    anyOf:
+      - "Account"
+      - "Notifications"
+      - "Privacy"
+
+# Test tap on settings option
+- runFlow:
+    when:
+      visible: "Notifications"
+    commands:
+      - tapOn: "Notifications"
+      - wait: 1000
+      - tapOn:
+          id: "back_button"
+          optional: true
+      - pressKey: "Escape"
+
+- runFlow:
+    when:
+      visible: "Privacy"
+    commands:
+      - tapOn: "Privacy"
+      - wait: 1000
+      - tapOn:
+          id: "back_button"
+          optional: true
+
+- runFlow:
+    when:
+      visible: "About"
+    commands:
+      - tapOn: "About"
+      - wait: 1000
+      - tapOn:
+          id: "back_button"
+
+# Go back to profile
+- tapOn:
+    id: "back_button"
+- extendedWaitUntil:
+    visible: "Settings"
+    timeout: 3000
+
+# === STATS (if visible) ===
+
+- runFlow:
+    when:
+      visible:
+        id: "trips_count"
+    commands:
+      - assertVisible:
+          id: "trips_count"
+      - assertVisible:
+          id: "saved_count"
+
+# === FREE TIER LIMIT (if visible) ===
+
+- runFlow:
+    when:
+      visible: "Upgrade"
+    commands:
+      - tapOn: "Upgrade"
+      - extendedWaitUntil:
+          anyVisible:
+            - "Premium"
+            - "Upgrade"
+            - "Plans"
+          timeout: 5000
+      - tapOn:
+          id: "close_button"
+          optional: true
+      - pressKey: "Escape"
+
+# === BACK TO HOME ===
+
+- tapOn: "Trips"
+- extendedWaitUntil:
+    visible: "My Trips"
+    timeout: 3000

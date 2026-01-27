@@ -1,0 +1,196 @@
+# Flow: Explore Screen - Complete Coverage
+# Tests every button and interaction on the Explore screen
+
+appId: com.trippified.app
+tags:
+  - regression
+  - full-coverage
+name: "Explore Screen - Full Button Coverage"
+
+---
+
+- launchApp:
+    clearState: true
+
+# Skip to home
+- extendedWaitUntil:
+    visible: "Continue without account"
+    timeout: 10000
+- tapOn: "Continue without account"
+- extendedWaitUntil:
+    visible: "My Trips"
+    timeout: 5000
+
+# Navigate to Explore
+- tapOn: "Explore"
+- extendedWaitUntil:
+    visible: "Search destinations"
+    timeout: 3000
+
+# === HEADER VERIFICATION ===
+
+# Verify search bar
+- assertVisible: "Search destinations"
+
+# === TAB VERIFICATION ===
+
+# Verify tabs
+- assertVisible: "Destinations"
+- assertVisible: "Itineraries"
+
+# === DESTINATIONS TAB ===
+
+# Verify region sections
+- assertVisible: "Asia"
+
+# Verify destination cards
+- assertVisible: "Thailand"
+- assertVisible: "Japan"
+
+# Test scroll horizontal (destinations)
+- scroll:
+    direction: RIGHT
+    from:
+      text: "Thailand"
+
+# Test scroll vertical (regions)
+- scroll:
+    direction: DOWN
+
+# Look for more regions
+- runFlow:
+    when:
+      visible: "Europe"
+    commands:
+      - assertVisible: "Europe"
+
+# Scroll back up
+- scroll:
+    direction: UP
+
+# Test tap on destination
+- tapOn: "Thailand"
+- extendedWaitUntil:
+    visible: "Thailand"
+    timeout: 5000
+# Verify destination detail loaded
+- assertVisible:
+    anyOf:
+      - "Popular Cities"
+      - "Plan a Trip"
+      - "Bangkok"
+
+# Go back
+- tapOn:
+    id: "back_button"
+- extendedWaitUntil:
+    visible: "Destinations"
+    timeout: 3000
+
+# Test another destination
+- tapOn: "Japan"
+- extendedWaitUntil:
+    visible: "Japan"
+    timeout: 5000
+- tapOn:
+    id: "back_button"
+
+# === ITINERARIES TAB ===
+
+- tapOn: "Itineraries"
+- wait: 1000
+
+# Verify URL input
+- assertVisible: "Paste TikTok"
+
+# Verify history access
+- runFlow:
+    when:
+      visible: "See all"
+    commands:
+      - tapOn: "See all"
+      - extendedWaitUntil:
+          visible: "History"
+          timeout: 3000
+      - tapOn:
+          id: "back_button"
+
+# === SEARCH FLOW ===
+
+# Return to Destinations
+- tapOn: "Destinations"
+
+# Test search
+- tapOn: "Search destinations"
+- inputText: "Tokyo"
+- extendedWaitUntil:
+    visible: "Tokyo"
+    timeout: 5000
+
+# Tap search result
+- tapOn:
+    text: "Tokyo"
+    index: 0
+
+# Should navigate to city detail
+- extendedWaitUntil:
+    anyVisible:
+      - "Tokyo"
+      - "Generate Itinerary"
+    timeout: 5000
+
+# Go back
+- tapOn:
+    id: "back_button"
+- wait: 1000
+
+# Clear search
+- tapOn:
+    id: "clear_search"
+    optional: true
+
+# Dismiss keyboard
+- pressKey: "Escape"
+
+# === DESTINATION DETAIL DEEP DIVE ===
+
+# Go to a destination
+- tapOn: "Thailand"
+- extendedWaitUntil:
+    visible: "Thailand"
+    timeout: 5000
+
+# Test Plan a Trip
+- runFlow:
+    when:
+      visible: "Plan a Trip"
+    commands:
+      - tapOn: "Plan a Trip"
+      - extendedWaitUntil:
+          visible: "Plan a Trip"
+          timeout: 3000
+      - tapOn:
+          id: "back_button"
+      - wait: 1000
+
+# Test Save to wishlist
+- runFlow:
+    when:
+      visible:
+        id: "save_button"
+    commands:
+      - tapOn:
+          id: "save_button"
+      - wait: 1000
+
+# Test city card tap
+- runFlow:
+    when:
+      visible: "Bangkok"
+    commands:
+      - tapOn: "Bangkok"
+      - extendedWaitUntil:
+          visible: "Bangkok"
+          timeout: 5000
+      - tapOn:
+          id: "back_button"

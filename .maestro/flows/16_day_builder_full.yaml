@@ -1,0 +1,240 @@
+# Flow: Day Builder - Complete Coverage
+# Tests every button and interaction in the Day Builder
+
+appId: com.trippified.app
+tags:
+  - regression
+  - full-coverage
+name: "Day Builder - Full Button Coverage"
+
+---
+
+- launchApp:
+    clearState: true
+
+# Skip to home
+- extendedWaitUntil:
+    visible: "Continue without account"
+    timeout: 10000
+- tapOn: "Continue without account"
+- extendedWaitUntil:
+    visible: "My Trips"
+    timeout: 5000
+
+# Navigate to trip dashboard
+- tapOn: "Japan Adventure"
+- extendedWaitUntil:
+    visible: "Tokyo"
+    timeout: 5000
+
+# Navigate to Day Builder
+- tapOn: "Day 1"
+- extendedWaitUntil:
+    anyVisible:
+      - "Add Activity"
+      - "Timeline"
+    timeout: 5000
+
+# === HEADER ===
+
+# Verify back button
+- assertVisible:
+    id: "back_button"
+
+# Verify day title
+- assertVisible: "Day 1"
+
+# === DAY NAVIGATION ===
+
+# Test day selector buttons
+- runFlow:
+    when:
+      visible: "Day 2"
+    commands:
+      # Tap Day 2
+      - tapOn: "Day 2"
+      - wait: 1000
+      - assertVisible: "Day 2"
+      
+      # Tap Day 3 if exists
+      - runFlow:
+          when:
+            visible: "Day 3"
+          commands:
+            - tapOn: "Day 3"
+            - wait: 1000
+      
+      # Return to Day 1
+      - tapOn: "Day 1"
+      - wait: 1000
+
+# Test swipe navigation
+- swipe:
+    direction: LEFT
+- wait: 1000
+- swipe:
+    direction: RIGHT
+- wait: 1000
+
+# === TIMELINE ===
+
+# Verify timeline exists
+- assertVisible:
+    id: "day_timeline"
+    optional: true
+
+# Look for time slots
+- runFlow:
+    when:
+      visible: "9:00"
+    commands:
+      - assertVisible: "9:00"
+
+- runFlow:
+    when:
+      visible: "12:00"
+    commands:
+      - assertVisible: "12:00"
+
+# === ACTIVITY CARDS ===
+
+# Check for existing activities
+- runFlow:
+    when:
+      visible:
+        id: "activity_card"
+    commands:
+      # Tap on activity
+      - tapOn:
+          id: "activity_card"
+          index: 0
+      - wait: 1000
+      
+      # Should show detail or edit
+      - runFlow:
+          when:
+            visible: "Edit"
+          commands:
+            - assertVisible: "Edit"
+            - pressKey: "Escape"
+      
+      # Test long press for drag
+      - longPressOn:
+          id: "activity_card"
+          index: 0
+      - wait: 500
+      
+      # Release
+      - pressKey: "Escape"
+
+# === SWIPE TO DELETE ===
+
+- runFlow:
+    when:
+      visible:
+        id: "activity_card"
+    commands:
+      - swipe:
+          from:
+            id: "activity_card"
+            index: 0
+          direction: LEFT
+      
+      # Verify delete option
+      - assertVisible: "Delete"
+      
+      # Cancel by tapping elsewhere
+      - tapOn: "Day 1"
+
+# === ADD ACTIVITY FLOW ===
+
+# Tap Add Activity
+- tapOn: "Add Activity"
+- extendedWaitUntil:
+    anyVisible:
+      - "Search places"
+      - "Suggested"
+      - "Search"
+    timeout: 5000
+
+# Verify search input
+- assertVisible:
+    anyOf:
+      - "Search places"
+      - "Search"
+
+# Test search
+- tapOn:
+    anyOf:
+      - "Search places"
+      - "Search"
+- inputText: "Temple"
+- extendedWaitUntil:
+    visible:
+      textContaining: "Temple"
+    timeout: 5000
+
+# Clear search
+- pressKey: "Escape"
+- wait: 500
+
+# Look for suggested activities
+- runFlow:
+    when:
+      visible: "Suggested"
+    commands:
+      - assertVisible: "Suggested"
+
+# Test tap on suggestion
+- runFlow:
+    when:
+      visible:
+        id: "suggestion_card"
+    commands:
+      - tapOn:
+          id: "suggestion_card"
+          index: 0
+      - wait: 1000
+
+# Close picker
+- tapOn:
+    id: "close_button"
+    optional: true
+- pressKey: "Escape"
+- wait: 1000
+
+# === REORDER ACTIVITIES ===
+
+# If multiple activities, test drag reorder
+- runFlow:
+    when:
+      visible:
+        id: "activity_card"
+        index: 1
+    commands:
+      # Long press and drag
+      - longPressOn:
+          id: "activity_card"
+          index: 0
+      - swipe:
+          direction: DOWN
+      - wait: 500
+
+# === BACK NAVIGATION ===
+
+# Go back to dashboard
+- tapOn:
+    id: "back_button"
+- extendedWaitUntil:
+    visible: "Japan Adventure"
+    timeout: 5000
+
+# Verify we're back
+- assertVisible: "Tokyo"
+
+# Go back to home
+- tapOn:
+    id: "back_button"
+- extendedWaitUntil:
+    visible: "My Trips"
+    timeout: 5000

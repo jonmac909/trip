@@ -1,0 +1,190 @@
+# Flow: Trip Dashboard - Complete Coverage
+# Tests every button and interaction on the Trip Dashboard
+
+appId: com.trippified.app
+tags:
+  - regression
+  - full-coverage
+name: "Trip Dashboard - Full Button Coverage"
+
+---
+
+- launchApp:
+    clearState: true
+
+# Skip to home
+- extendedWaitUntil:
+    visible: "Continue without account"
+    timeout: 10000
+- tapOn: "Continue without account"
+- extendedWaitUntil:
+    visible: "My Trips"
+    timeout: 5000
+
+# Navigate to trip dashboard
+- tapOn: "Japan Adventure"
+- extendedWaitUntil:
+    visible: "Tokyo"
+    timeout: 5000
+
+# === HEADER ===
+
+# Verify back button
+- assertVisible:
+    id: "back_button"
+
+# Verify trip title
+- assertVisible: "Japan Adventure"
+
+# Verify share button
+- assertVisible:
+    id: "share_button"
+
+# Test share button
+- tapOn:
+    id: "share_button"
+- wait: 2000
+# Dismiss share sheet
+- pressKey: "Escape"
+
+# === TRIP INFO ===
+
+# Verify dates
+- assertVisible: "Mar 15"
+- assertVisible: "Mar 28"
+
+# Verify countdown
+- assertVisible:
+    text: "In"
+- assertVisible:
+    text: "days"
+
+# === CITY BLOCKS ===
+
+# Verify all cities
+- assertVisible: "Tokyo"
+- assertVisible: "Kyoto"
+- assertVisible: "Osaka"
+
+# Test tap on city
+- tapOn: "Tokyo"
+- wait: 1000
+
+# If city expands or navigates
+- runFlow:
+    when:
+      visible: "Day 1"
+    commands:
+      - assertVisible: "Day 1"
+
+# === DAY LIST ===
+
+# Look for day list
+- scroll:
+    direction: DOWN
+
+# Verify days
+- assertVisible: "Day 1"
+- assertVisible: "Day 2"
+
+# Test tap on day (Day Builder)
+- tapOn: "Day 1"
+- extendedWaitUntil:
+    anyVisible:
+      - "Add Activity"
+      - "Day 1"
+      - "Timeline"
+    timeout: 5000
+
+# === DAY BUILDER NAVIGATION ===
+
+# Verify back button in Day Builder
+- assertVisible:
+    id: "back_button"
+
+# Verify day title
+- assertVisible: "Day 1"
+
+# Test day selector if visible
+- runFlow:
+    when:
+      visible: "Day 2"
+    commands:
+      - tapOn: "Day 2"
+      - wait: 1000
+      - tapOn: "Day 1"
+
+# Verify Add Activity button
+- assertVisible: "Add Activity"
+
+# Test Add Activity
+- tapOn: "Add Activity"
+- extendedWaitUntil:
+    anyVisible:
+      - "Search places"
+      - "Suggested"
+      - "Add"
+    timeout: 5000
+
+# Close activity picker
+- tapOn:
+    id: "close_button"
+    optional: true
+- pressKey: "Escape"
+- wait: 1000
+
+# Go back to dashboard
+- tapOn:
+    id: "back_button"
+- extendedWaitUntil:
+    visible: "Japan Adventure"
+    timeout: 5000
+
+# === TICKETS ACCESS ===
+
+# Look for tickets button
+- scroll:
+    direction: UP
+
+- runFlow:
+    when:
+      visible: "Tickets"
+    commands:
+      - tapOn: "Tickets"
+      - extendedWaitUntil:
+          anyVisible:
+            - "Smart Tickets"
+            - "No tickets"
+            - "Flights"
+          timeout: 5000
+      - tapOn:
+          id: "back_button"
+      - wait: 1000
+
+# === MAP INTERACTION ===
+
+# Scroll to map
+- scroll:
+    direction: DOWN
+
+# If map visible, test interactions
+- runFlow:
+    when:
+      visible:
+        id: "trip_map"
+    commands:
+      # Pinch to zoom (not directly supported, skip)
+      # Tap on marker if visible
+      - tapOn:
+          id: "map_marker_tokyo"
+          optional: true
+      - wait: 1000
+
+# === BACK TO HOME ===
+
+- tapOn:
+    id: "back_button"
+- extendedWaitUntil:
+    visible: "My Trips"
+    timeout: 5000
+- assertVisible: "Japan Adventure"

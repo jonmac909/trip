@@ -1,0 +1,187 @@
+# Flow: Saved Screen - Complete Coverage
+# Tests every button and interaction on the Saved screen
+
+appId: com.trippified.app
+tags:
+  - regression
+  - full-coverage
+name: "Saved Screen - Full Button Coverage"
+
+---
+
+- launchApp:
+    clearState: true
+
+# Skip to home
+- extendedWaitUntil:
+    visible: "Continue without account"
+    timeout: 10000
+- tapOn: "Continue without account"
+- extendedWaitUntil:
+    visible: "My Trips"
+    timeout: 5000
+
+# Navigate to Saved
+- tapOn: "Saved"
+- extendedWaitUntil:
+    visible: "Itineraries"
+    timeout: 3000
+
+# === TABS VERIFICATION ===
+
+# Verify all tabs
+- assertVisible: "Itineraries"
+- assertVisible: "Places"
+- assertVisible: "Links"
+
+# === IMPORT ROW ===
+
+# Verify URL input
+- assertVisible: "Paste TikTok or Instagram URL"
+
+# Verify Scan button
+- assertVisible: "Scan"
+
+# Test URL input
+- tapOn: "Paste TikTok or Instagram URL"
+- inputText: "https://tiktok.com/test"
+- assertVisible: "https://tiktok.com/test"
+
+# Clear input
+- tapOn:
+    id: "clear_input"
+    optional: true
+    
+# === ITINERARIES TAB ===
+
+- tapOn: "Itineraries"
+- wait: 1000
+
+# Verify itinerary cards (mock data)
+- assertVisible: "Classic Thailand"
+- assertVisible: "Tokyo Explorer"
+- assertVisible: "Best of Bali"
+
+# Verify card details
+- assertVisible: "14 days"
+- assertVisible: "7 days"
+- assertVisible: "10 days"
+
+# Verify ratings
+- assertVisible: "4.9"
+- assertVisible: "4.8"
+
+# Verify saves count
+- assertVisible: "2.3k"
+- assertVisible: "5.1k"
+
+# Test tap on itinerary card
+- tapOn: "Classic Thailand"
+- extendedWaitUntil:
+    anyVisible:
+      - "Thailand"
+      - "Customize"
+    timeout: 5000
+- tapOn:
+    id: "back_button"
+- extendedWaitUntil:
+    visible: "Itineraries"
+    timeout: 3000
+
+# === PLACES TAB ===
+
+- tapOn: "Places"
+- wait: 1000
+
+# Check for places content (depends on mock data)
+- runFlow:
+    when:
+      visible: "Tokyo"
+    commands:
+      # Verify city grouping
+      - assertVisible: "Tokyo"
+      # Test tap on city header
+      - tapOn: "Tokyo"
+      - extendedWaitUntil:
+          anyVisible:
+            - "Create itinerary"
+            - "Tokyo"
+          timeout: 3000
+      - tapOn:
+          id: "back_button"
+
+# If empty state
+- runFlow:
+    when:
+      visible: "Nothing saved yet"
+    commands:
+      - assertVisible: "Start Exploring"
+      - tapOn: "Start Exploring"
+      - extendedWaitUntil:
+          visible: "Destinations"
+          timeout: 3000
+      # Go back to Saved
+      - tapOn: "Saved"
+
+# === LINKS TAB ===
+
+- tapOn: "Links"
+- wait: 1000
+
+# Verify link cards (mock data)
+- assertVisible: "Best Street Food in Bangkok"
+- assertVisible: "Hidden Gems in Tokyo"
+
+# Verify source
+- assertVisible: "eater.com"
+- assertVisible: "youtube.com"
+
+# Verify content type
+- assertVisible: "Article"
+- assertVisible: "Video"
+
+# Test tap on link
+- tapOn: "Best Street Food in Bangkok"
+# May open in browser or detail view
+- wait: 2000
+
+# Return to Saved if needed
+- tapOn: "Saved"
+- wait: 1000
+
+# === SWIPE TO DELETE TEST ===
+
+- tapOn: "Links"
+- wait: 500
+
+# Test swipe to delete on a link
+- swipe:
+    from:
+      text: "Hidden Gems in Tokyo"
+    direction: LEFT
+
+# Verify delete option appears
+- assertVisible: "Delete"
+
+# Cancel by tapping elsewhere
+- tapOn: "Links"
+
+# === SCAN FLOW ===
+
+# Test Scan button
+- tapOn: "Paste TikTok or Instagram URL"
+- inputText: "https://www.tiktok.com/@user/video/123456"
+- tapOn: "Scan"
+
+# Should navigate to scan results
+- extendedWaitUntil:
+    anyVisible:
+      - "Scanning"
+      - "Found"
+      - "No places"
+      - "Unable to scan"
+    timeout: 30000
+
+# Go back
+- tapOn:
+    id: "back_button"
