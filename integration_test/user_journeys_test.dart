@@ -155,8 +155,8 @@ void main() {
           );
           await tester.pumpAndSettle();
 
-          // Verify we can access trip dashboard
-          expect(find.text('Japan'), findsWidgets);
+          // Verify we can access trip dashboard - title is "Japan Adventure"
+          expect(find.textContaining('Japan'), findsWidgets);
         },
       );
     });

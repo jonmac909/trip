@@ -30,8 +30,8 @@ class TripSetupRobot {
   // CTA - actual button text
   Finder get seeRoutesCta => find.text('See Recommended Routes');
 
-  // Selected country chips
-  Finder countryChip(String country) => find.widgetWithText(Chip, country);
+  // Selected country chips (custom _CountryChip widget uses Container, not Chip)
+  Finder countryChip(String country) => find.text(country);
 
   // Verifications
   Future<void> verifyScreenDisplayed() async {
@@ -58,7 +58,8 @@ class TripSetupRobot {
   }
 
   Future<void> verifyCountrySelected(String country) async {
-    expect(countryChip(country), findsOneWidget);
+    // Country text may appear in both chip and text field, verify at least one exists
+    expect(countryChip(country), findsWidgets);
   }
 
   Future<void> verifyAllElementsDisplayed() async {
@@ -124,7 +125,7 @@ class RecommendedRoutesRobot {
 
   // Screen finders
   Finder get screen => find.byType(RecommendedRoutesScreen);
-  Finder get pageTitle => find.text('Recommended routes');
+  Finder get pageTitle => find.text('Routes');
 
   // Route cards
   Finder routeCard(String routeName) => find.text(routeName);

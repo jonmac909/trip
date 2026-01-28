@@ -1,3 +1,4 @@
+import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 import 'package:trippified/presentation/screens/splash/splash_screen.dart';
@@ -34,6 +35,16 @@ class SplashRobot {
   }
 
   Future<void> verifyExploreNowButtonDisplayed() async {
+    // Scroll to make button visible if needed
+    final scrollable = find.byType(Scrollable);
+    if (scrollable.evaluate().isNotEmpty) {
+      await tester.scrollUntilVisible(
+        exploreNowButton,
+        100,
+        scrollable: scrollable.first,
+      );
+      await tester.pumpAndSettle();
+    }
     expect(exploreNowButton, findsOneWidget);
   }
 
@@ -47,6 +58,16 @@ class SplashRobot {
 
   // Actions
   Future<void> tapExploreNow() async {
+    // Scroll to make button visible if needed
+    final scrollable = find.byType(Scrollable);
+    if (scrollable.evaluate().isNotEmpty) {
+      await tester.scrollUntilVisible(
+        exploreNowButton,
+        100,
+        scrollable: scrollable.first,
+      );
+      await tester.pumpAndSettle();
+    }
     await tester.tap(exploreNowButton);
     await tester.pumpAndSettle();
   }
