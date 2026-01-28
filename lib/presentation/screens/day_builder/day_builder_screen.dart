@@ -302,7 +302,7 @@ class _DayBuilderScreenState extends State<DayBuilderScreen>
           Positioned.fill(
             child: AppleMap(
               key: const ValueKey('day_builder_map'),
-              mapType: MapType.mutedStandard,
+              mapType: MapType.standard,
               initialCameraPosition: CameraPosition(
                 target: _cityCenter,
                 zoom: 13,
