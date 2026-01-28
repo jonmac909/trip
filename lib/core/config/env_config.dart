@@ -26,11 +26,8 @@ abstract final class EnvConfig {
   // AI Vision
   static const String claudeApiKey = String.fromEnvironment('CLAUDE_API_KEY');
 
-  // Gemini AI (override via --dart-define=GEMINI_API_KEY=your_key)
-  static const String geminiApiKey = String.fromEnvironment(
-    'GEMINI_API_KEY',
-    defaultValue: 'AIzaSyDHD350zoqDnS0ZqQ1B-7ZwGUdkHbO9RA8',
-  );
+  // Gemini AI (required: --dart-define=GEMINI_API_KEY=your_key)
+  static const String geminiApiKey = String.fromEnvironment('GEMINI_API_KEY');
 
   // Feature flags
   static const bool enableAnalytics = bool.fromEnvironment('ENABLE_ANALYTICS');
