@@ -102,6 +102,16 @@ class LoginRobot {
   }
 
   Future<void> tapSignIn() async {
+    // Scroll to make button visible if needed (may be below keyboard)
+    final scrollable = find.byType(Scrollable);
+    if (scrollable.evaluate().isNotEmpty) {
+      await tester.scrollUntilVisible(
+        signInButton,
+        100,
+        scrollable: scrollable.first,
+      );
+      await tester.pumpAndSettle();
+    }
     await tester.tap(signInButton);
     await tester.pumpAndSettle();
   }

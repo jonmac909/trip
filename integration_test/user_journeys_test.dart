@@ -35,8 +35,8 @@ void main() {
           final home = HomeRobot(tester);
           await home.verifyScreenDisplayed();
 
-          // Navigate to trip setup from Trippified tab
-          await home.tapTripsTab();
+          // Navigate to trip setup via FAB (add trip button)
+          await home.tapAddTripFab();
           await tester.pumpAndSettle();
 
           // Verify trip setup screen loads
