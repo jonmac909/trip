@@ -35,6 +35,30 @@ jobs:
       - name: Run unit tests
         run: flutter test
 
+      - name: List available iOS simulators
+        run: xcrun simctl list devices available
+
+      - name: Boot iOS Simulator
+        run: |
+          # Get iPhone 15 simulator ID (or fallback to any available iPhone)
+          SIMULATOR_ID=$(xcrun simctl list devices available | grep "iPhone 15" | head -1 | grep -o "[0-9A-F]\{8\}-[0-9A-F]\{4\}-[0-9A-F]\{4\}-[0-9A-F]\{4\}-[0-9A-F]\{12\}")
+          if [ -z "$SIMULATOR_ID" ]; then
+            echo "iPhone 15 not found, using any available iPhone"
+            SIMULATOR_ID=$(xcrun simctl list devices available | grep "iPhone" | head -1 | grep -o "[0-9A-F]\{8\}-[0-9A-F]\{4\}-[0-9A-F]\{4\}-[0-9A-F]\{4\}-[0-9A-F]\{12\}")
+          fi
+          echo "Using simulator: $SIMULATOR_ID"
+          xcrun simctl boot "$SIMULATOR_ID" || echo "Simulator already booted"
+          echo "SIMULATOR_ID=$SIMULATOR_ID" >> $GITHUB_ENV
+
+      - name: Run integration tests on iOS simulator
+        run: |
+          flutter test integration_test/user_journeys_test.dart --timeout=10m
+        timeout-minutes: 15
+
+      - name: Shutdown iOS Simulator
+        if: always()
+        run: xcrun simctl shutdown all || true
+
       - name: Build iOS (no codesign)
         run: flutter build ios --release --no-codesign
 

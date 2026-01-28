@@ -13,6 +13,7 @@ import 'profile_test.dart' as profile;
 import 'trip_dashboard_test.dart' as trip_dashboard;
 import 'day_builder_test.dart' as day_builder;
 import 'features_test.dart' as features;
+import 'user_journeys_test.dart' as user_journeys;
 
 void main() {
   // Auth module tests (Splash, Login)
@@ -41,4 +42,7 @@ void main() {
 
   // Features module tests
   features.main();
+
+  // Comprehensive user journey tests
+  user_journeys.main();
 }

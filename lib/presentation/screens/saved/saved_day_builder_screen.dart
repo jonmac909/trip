@@ -3,7 +3,8 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:intl/intl.dart';
 import 'package:lucide_icons/lucide_icons.dart';
 import 'package:go_router/go_router.dart';
-import 'package:apple_maps_flutter/apple_maps_flutter.dart';
+import 'package:trippified/core/maps/map_widget.dart';
+import 'package:trippified/core/maps/geo_point.dart';
 
 import 'package:trippified/core/constants/app_colors.dart';
 import 'package:trippified/core/constants/app_spacing.dart';
@@ -38,37 +39,37 @@ class _SavedDayBuilderScreenState extends State<SavedDayBuilderScreen> {
   DateTime? _startDate;
   DateTime? _endDate;
 
-  static const _cityCoordinates = <String, LatLng>{
-    'Tokyo': LatLng(35.6762, 139.6503),
-    'Kyoto': LatLng(35.0116, 135.7681),
-    'Osaka': LatLng(34.6937, 135.5023),
-    'Hanoi': LatLng(21.0285, 105.8542),
-    'Nara': LatLng(34.6851, 135.8048),
-    'Paris': LatLng(48.8566, 2.3522),
-    'Rome': LatLng(41.9028, 12.4964),
-    'London': LatLng(51.5074, -0.1278),
-    'Barcelona': LatLng(41.3874, 2.1686),
-    'Bangkok': LatLng(13.7563, 100.5018),
-    'Seoul': LatLng(37.5665, 126.978),
-    'Singapore': LatLng(1.3521, 103.8198),
-    'New York': LatLng(40.7128, -74.006),
-    'Dubai': LatLng(25.2048, 55.2708),
-    'Istanbul': LatLng(41.0082, 28.9784),
-    'Lisbon': LatLng(38.7223, -9.1393),
-    'Amsterdam': LatLng(52.3676, 4.9041),
-    'Prague': LatLng(50.0755, 14.4378),
-    'Vienna': LatLng(48.2082, 16.3738),
-    'Berlin': LatLng(52.52, 13.405),
-    'Bali': LatLng(-8.3405, 115.092),
-    'Sydney': LatLng(-33.8688, 151.2093),
-    'Ho Chi Minh City': LatLng(10.8231, 106.6297),
-    'Taipei': LatLng(25.033, 121.5654),
-    'Hong Kong': LatLng(22.3193, 114.1694),
+  static const _cityCoordinates = <String, GeoPoint>{
+    'Tokyo': GeoPoint(35.6762, 139.6503),
+    'Kyoto': GeoPoint(35.0116, 135.7681),
+    'Osaka': GeoPoint(34.6937, 135.5023),
+    'Hanoi': GeoPoint(21.0285, 105.8542),
+    'Nara': GeoPoint(34.6851, 135.8048),
+    'Paris': GeoPoint(48.8566, 2.3522),
+    'Rome': GeoPoint(41.9028, 12.4964),
+    'London': GeoPoint(51.5074, -0.1278),
+    'Barcelona': GeoPoint(41.3874, 2.1686),
+    'Bangkok': GeoPoint(13.7563, 100.5018),
+    'Seoul': GeoPoint(37.5665, 126.978),
+    'Singapore': GeoPoint(1.3521, 103.8198),
+    'New York': GeoPoint(40.7128, -74.006),
+    'Dubai': GeoPoint(25.2048, 55.2708),
+    'Istanbul': GeoPoint(41.0082, 28.9784),
+    'Lisbon': GeoPoint(38.7223, -9.1393),
+    'Amsterdam': GeoPoint(52.3676, 4.9041),
+    'Prague': GeoPoint(50.0755, 14.4378),
+    'Vienna': GeoPoint(48.2082, 16.3738),
+    'Berlin': GeoPoint(52.52, 13.405),
+    'Bali': GeoPoint(-8.3405, 115.092),
+    'Sydney': GeoPoint(-33.8688, 151.2093),
+    'Ho Chi Minh City': GeoPoint(10.8231, 106.6297),
+    'Taipei': GeoPoint(25.033, 121.5654),
+    'Hong Kong': GeoPoint(22.3193, 114.1694),
   };
 
-  LatLng get _cityCenter =>
+  GeoPoint get _cityCenter =>
       _cityCoordinates[widget.cityName] ??
-      const LatLng(35.6762, 139.6503);
+      const GeoPoint(35.6762, 139.6503);
 
   String get _dateRangeText {
     if (_startDate == null || _endDate == null) return 'Add dates';
@@ -176,28 +177,12 @@ class _SavedDayBuilderScreenState extends State<SavedDayBuilderScreen> {
       width: double.infinity,
       child: Stack(
         children: [
-          // Apple Maps
-          AppleMap(
-            key: const ValueKey('saved_day_builder_map'),
-            initialCameraPosition: CameraPosition(
-              target: _cityCenter,
-              zoom: 13,
-            ),
-            annotations: {
-              Annotation(
-                annotationId: AnnotationId('city_pin'),
-                position: _cityCenter,
-                infoWindow: InfoWindow(
-                  title: widget.cityName ?? 'Location',
-                ),
-              ),
-            },
-            myLocationEnabled: false,
-            compassEnabled: false,
-            rotateGesturesEnabled: true,
-            scrollGesturesEnabled: true,
-            zoomGesturesEnabled: true,
-            pitchGesturesEnabled: true,
+          // Map — Apple Maps on iOS, placeholder on web
+          AppMapWidget(
+            locationName: widget.cityName ?? 'Location',
+            latitude: _cityCenter.latitude,
+            longitude: _cityCenter.longitude,
+            zoom: 13,
           ),
 
           // Collapse bar handle at bottom

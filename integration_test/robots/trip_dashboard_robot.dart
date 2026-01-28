@@ -152,6 +152,13 @@ class SmartTicketsRobot {
   }
 
   Future<void> verifyAddTicketButtonDisplayed() async {
+    // Scroll down to find the button which is at the bottom of the list
+    await tester.scrollUntilVisible(
+      addTicketButton,
+      100,
+      scrollable: find.byType(Scrollable).first,
+    );
+    await tester.pumpAndSettle();
     expect(addTicketButton, findsOneWidget);
   }
 

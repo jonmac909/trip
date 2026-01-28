@@ -194,7 +194,7 @@ class CityDetailRobot {
 
   // Tabs
   Finder get overviewTab => find.text('Overview');
-  Finder get thingsToDoTab => find.text('Things to do');
+  Finder get thingsToDoTab => find.text('Things to Do');
   Finder get itinerariesTab => find.text('Itineraries');
 
   // Place cards

@@ -22,6 +22,10 @@ class SplashScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final screenHeight = MediaQuery.of(context).size.height;
+    // Use 55% of screen for hero image, minimum 300, maximum 500
+    final heroHeight = (screenHeight * 0.55).clamp(300.0, 500.0);
+    
     return Scaffold(
       backgroundColor: AppColors.splashBackground,
       body: Column(
@@ -32,7 +36,7 @@ class SplashScreen extends StatelessWidget {
               bottom: Radius.circular(40),
             ),
             child: SizedBox(
-              height: 500,
+              height: heroHeight,
               width: double.infinity,
               child: Image.network(
                 'https://images.unsplash.com/photo-1687960507238-5f6565a08b2f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0&ixlib=rb-4.1.0&q=80&w=1080',
@@ -57,48 +61,51 @@ class SplashScreen extends StatelessWidget {
                   ],
                 ),
               ),
-              child: Padding(
-                padding: const EdgeInsets.fromLTRB(32, 40, 32, 48),
-                child: Column(
-                  children: [
-                    // Title
-                    Text(
-                      'Unveil The\nTravel Wonders',
-                      textAlign: TextAlign.center,
-                      style: GoogleFonts.dmSans(
-                        fontSize: 32,
-                        fontWeight: FontWeight.w700,
-                        color: Colors.white,
+              child: SingleChildScrollView(
+                child: Padding(
+                  padding: const EdgeInsets.fromLTRB(32, 40, 32, 48),
+                  child: Column(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      // Title
+                      Text(
+                        'Unveil The\nTravel Wonders',
+                        textAlign: TextAlign.center,
+                        style: GoogleFonts.dmSans(
+                          fontSize: 32,
+                          fontWeight: FontWeight.w700,
+                          color: Colors.white,
+                        ),
                       ),
-                    ),
-                    const SizedBox(height: AppSpacing.md),
-                    // Brand name - TRIPPIFIED
-                    Text(
-                      'TRIPPIFIED',
-                      textAlign: TextAlign.center,
-                      style: GoogleFonts.dmSans(
-                        fontSize: 14,
-                        fontWeight: FontWeight.w500,
-                        color: Colors.white.withValues(alpha: 0.5),
-                        letterSpacing: 4,
+                      const SizedBox(height: AppSpacing.md),
+                      // Brand name - TRIPPIFIED
+                      Text(
+                        'TRIPPIFIED',
+                        textAlign: TextAlign.center,
+                        style: GoogleFonts.dmSans(
+                          fontSize: 14,
+                          fontWeight: FontWeight.w500,
+                          color: Colors.white.withValues(alpha: 0.5),
+                          letterSpacing: 4,
+                        ),
                       ),
-                    ),
-                    const SizedBox(height: AppSpacing.md),
-                    // Description
-                    Text(
-                      'Take the first step into\nan unforgettable journey',
-                      textAlign: TextAlign.center,
-                      style: GoogleFonts.dmSans(
-                        fontSize: 14,
-                        fontWeight: FontWeight.w400,
-                        color: Colors.white.withValues(alpha: 0.6),
-                        height: 1.5,
+                      const SizedBox(height: AppSpacing.md),
+                      // Description
+                      Text(
+                        'Take the first step into\nan unforgettable journey',
+                        textAlign: TextAlign.center,
+                        style: GoogleFonts.dmSans(
+                          fontSize: 14,
+                          fontWeight: FontWeight.w400,
+                          color: Colors.white.withValues(alpha: 0.6),
+                          height: 1.5,
+                        ),
                       ),
-                    ),
-                    const Spacer(),
-                    // CTA Button
-                    _buildCtaButton(context),
-                  ],
+                      const SizedBox(height: AppSpacing.xl),
+                      // CTA Button
+                      _buildCtaButton(context),
+                    ],
+                  ),
                 ),
               ),
             ),

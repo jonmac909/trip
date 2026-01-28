@@ -77,7 +77,8 @@ class TripSetupRobot {
 
   Future<void> selectCountry(String country) async {
     await enterCountry(country);
-    await tester.tap(countryOption(country));
+    // Use .last to get the dropdown option, not the text field
+    await tester.tap(countryOption(country).last);
     await tester.pumpAndSettle();
   }
 
