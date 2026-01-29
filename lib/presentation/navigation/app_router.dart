@@ -21,6 +21,7 @@ import 'package:trippified/presentation/screens/trip/trip_dashboard_screen.dart'
 import 'package:trippified/presentation/screens/trip_setup/recommended_routes_screen.dart';
 import 'package:trippified/presentation/screens/trip_setup/trip_setup_screen.dart';
 import 'package:trippified/presentation/screens/profile/my_tickets_screen.dart';
+import 'package:trippified/presentation/screens/profile/settings_screen.dart';
 import 'package:trippified/presentation/screens/saved/tiktok_scan_results_screen.dart';
 import 'package:trippified/presentation/screens/saved/trip_hub_drafts_screen.dart';
 import 'package:trippified/presentation/screens/saved/saved_city_detail_screen.dart';
@@ -236,6 +237,10 @@ final appRouter = GoRouter(
     GoRoute(
       path: AppRoutes.myTickets,
       builder: (context, state) => const MyTicketsScreen(),
+    ),
+    GoRoute(
+      path: AppRoutes.settings,
+      builder: (context, state) => const SettingsScreen(),
     ),
     // Saved routes
     GoRoute(

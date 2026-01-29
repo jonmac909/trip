@@ -20,6 +20,8 @@ class _ExploreScreenState extends State<ExploreScreen>
     with SingleTickerProviderStateMixin {
   late TabController _tabController;
   int _selectedTabIndex = 0;
+  final TextEditingController _searchController = TextEditingController();
+  final FocusNode _searchFocusNode = FocusNode();
 
   @override
   void initState() {
@@ -37,6 +39,8 @@ class _ExploreScreenState extends State<ExploreScreen>
   @override
   void dispose() {
     _tabController.dispose();
+    _searchController.dispose();
+    _searchFocusNode.dispose();
     super.dispose();
   }
 
@@ -88,35 +92,46 @@ class _ExploreScreenState extends State<ExploreScreen>
   }
 
   Widget _buildSearchBar() {
-    return GestureDetector(
-      onTap: () {
-        // Open search
-      },
-      child: Container(
-        height: 48,
-        padding: const EdgeInsets.symmetric(horizontal: AppSpacing.md),
-        decoration: BoxDecoration(
-          color: AppColors.surface,
-          borderRadius: BorderRadius.circular(AppSpacing.radiusXl),
-          border: Border.all(color: AppColors.border),
-        ),
-        child: Row(
-          children: [
-            const Icon(
-              LucideIcons.search,
-              size: 20,
-              color: AppColors.textTertiary,
-            ),
-            const SizedBox(width: AppSpacing.sm),
-            Text(
-              'Search destinations...',
+    return Container(
+      height: 48,
+      padding: const EdgeInsets.symmetric(horizontal: AppSpacing.md),
+      decoration: BoxDecoration(
+        color: AppColors.surface,
+        borderRadius: BorderRadius.circular(AppSpacing.radiusXl),
+        border: Border.all(color: AppColors.border),
+      ),
+      child: Row(
+        children: [
+          const Icon(
+            LucideIcons.search,
+            size: 20,
+            color: AppColors.textTertiary,
+          ),
+          const SizedBox(width: AppSpacing.sm),
+          Expanded(
+            child: TextField(
+              controller: _searchController,
+              focusNode: _searchFocusNode,
               style: GoogleFonts.dmSans(
                 fontSize: 15,
-                color: AppColors.textTertiary,
+                color: AppColors.textPrimary,
               ),
+              decoration: InputDecoration(
+                hintText: 'Search destinations...',
+                hintStyle: GoogleFonts.dmSans(
+                  fontSize: 15,
+                  color: AppColors.textTertiary,
+                ),
+                border: InputBorder.none,
+                isDense: true,
+                contentPadding: EdgeInsets.zero,
+              ),
+              onChanged: (value) {
+                // TODO: Implement search filtering
+              },
             ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }

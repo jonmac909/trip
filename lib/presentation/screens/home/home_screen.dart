@@ -672,33 +672,39 @@ class _WishlistTab extends StatelessWidget {
           ),
           child: SafeArea(
             top: false,
-            child: GestureDetector(
-              onTap: () => context.push(AppRoutes.tripSetup),
-              child: Container(
-                width: double.infinity,
-                height: 52,
-                decoration: BoxDecoration(
-                  color: AppColors.primary,
+            child: Semantics(
+              button: true,
+              label: 'Plan a Trip',
+              child: Material(
+                color: AppColors.primary,
+                borderRadius: BorderRadius.circular(16),
+                child: InkWell(
+                  onTap: () => context.push(AppRoutes.tripSetup),
                   borderRadius: BorderRadius.circular(16),
-                ),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    const Icon(
-                      LucideIcons.sparkles,
-                      size: 18,
-                      color: AppColors.textOnPrimary,
+                  child: Container(
+                    width: double.infinity,
+                    height: 52,
+                    alignment: Alignment.center,
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        const Icon(
+                          LucideIcons.sparkles,
+                          size: 18,
+                          color: AppColors.textOnPrimary,
+                        ),
+                        const SizedBox(width: 8),
+                        Text(
+                          'Plan a Trip',
+                          style: GoogleFonts.dmSans(
+                            fontSize: 15,
+                            fontWeight: FontWeight.w600,
+                            color: AppColors.textOnPrimary,
+                          ),
+                        ),
+                      ],
                     ),
-                    const SizedBox(width: 8),
-                    Text(
-                      'Plan a Trip',
-                      style: GoogleFonts.dmSans(
-                        fontSize: 15,
-                        fontWeight: FontWeight.w600,
-                        color: AppColors.textOnPrimary,
-                      ),
-                    ),
-                  ],
+                  ),
                 ),
               ),
             ),

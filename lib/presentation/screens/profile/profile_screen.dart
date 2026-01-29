@@ -117,7 +117,7 @@ class ProfileScreen extends StatelessWidget {
           _buildMenuItem(
             icon: LucideIcons.settings,
             label: 'Settings',
-            onTap: () => _showComingSoon(context),
+            onTap: () => context.push(AppRoutes.settings),
           ),
           const SizedBox(height: 4),
 

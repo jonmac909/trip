@@ -201,9 +201,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   ),
                   const SizedBox(width: 4),
                   GestureDetector(
-                    onTap: () {
-                      // TODO(auth): Navigate to sign up
-                    },
+                    onTap: () => _signUp(context),
                     child: Text(
                       'Sign Up',
                       style: GoogleFonts.dmSans(
@@ -214,6 +212,21 @@ class _LoginScreenState extends State<LoginScreen> {
                     ),
                   ),
                 ],
+              ),
+              const SizedBox(height: AppSpacing.xl),
+              // Skip login / Continue as guest
+              GestureDetector(
+                onTap: () => _continueAsGuest(context),
+                child: Text(
+                  'Continue without an account',
+                  textAlign: TextAlign.center,
+                  style: GoogleFonts.dmSans(
+                    fontSize: 14,
+                    fontWeight: FontWeight.w500,
+                    color: AppColors.textSecondary,
+                    decoration: TextDecoration.underline,
+                  ),
+                ),
               ),
             ],
           ),
@@ -297,6 +310,17 @@ class _LoginScreenState extends State<LoginScreen> {
 
   Future<void> _signInWithEmail(BuildContext context) async {
     // TODO(auth): Implement email sign-in
+    context.go(AppRoutes.home);
+  }
+
+  Future<void> _signUp(BuildContext context) async {
+    // TODO(auth): Implement sign up screen
+    // For now, navigate to home as guest
+    context.go(AppRoutes.home);
+  }
+
+  Future<void> _continueAsGuest(BuildContext context) async {
+    // Skip login and go directly to home
     context.go(AppRoutes.home);
   }
 }
