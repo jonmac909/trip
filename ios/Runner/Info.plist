@@ -51,6 +51,8 @@
 	<true/>
 	<key>ITSAppUsesNonExemptEncryption</key>
 	<false/>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Trippified uses your location to show nearby places and help plan your trips.</string>
 	<key>CFBundleURLTypes</key>
 	<array>
 		<dict>
