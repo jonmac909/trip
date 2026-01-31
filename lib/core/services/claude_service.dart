@@ -71,8 +71,7 @@ class ClaudeService {
   static ClaudeService? _instance;
   static ClaudeService get instance => _instance ??= ClaudeService._();
 
-  // Use Haiku for faster generation (3x faster than Sonnet, good enough for itineraries)
-  static const _model = 'anthropic/claude-3-5-haiku-latest';
+  static const _model = 'anthropic/claude-sonnet-4-5';
 
   String _getApiUrl() {
     final url = EnvConfig.clawdbotApiUrl;

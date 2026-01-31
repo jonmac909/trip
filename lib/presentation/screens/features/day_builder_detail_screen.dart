@@ -112,6 +112,28 @@ class _DayBuilderDetailScreenState extends State<DayBuilderDetailScreen> {
     }
   }
 
+  /// Parse hour from time string (handles both "3:00 PM" and "15:00" formats)
+  int _parseHour(String time) {
+    if (time.isEmpty) return 9;
+
+    final upperTime = time.toUpperCase();
+    final isPM = upperTime.contains('PM');
+    final isAM = upperTime.contains('AM');
+
+    // Extract hour number
+    final hourStr = time.split(':').first.replaceAll(RegExp(r'[^0-9]'), '');
+    var hour = int.tryParse(hourStr) ?? 9;
+
+    // Convert to 24-hour format
+    if (isPM && hour != 12) {
+      hour += 12; // 3 PM -> 15
+    } else if (isAM && hour == 12) {
+      hour = 0; // 12 AM -> 0
+    }
+
+    return hour;
+  }
+
   List<_Activity> _parseDayActivities(List<Map<String, dynamic>> activities) {
     return activities.asMap().entries.map((entry) {
       final index = entry.key;
@@ -122,7 +144,7 @@ class _DayBuilderDetailScreenState extends State<DayBuilderDetailScreen> {
       // Determine time of day based on time string
       _TimeOfDay timeOfDay = _TimeOfDay.morning;
       if (time.isNotEmpty) {
-        final hour = int.tryParse(time.split(':').first) ?? 9;
+        final hour = _parseHour(time);
         if (hour >= 17) {
           timeOfDay = _TimeOfDay.evening;
         } else if (hour >= 14) {
