@@ -71,7 +71,8 @@ class ClaudeService {
   static ClaudeService? _instance;
   static ClaudeService get instance => _instance ??= ClaudeService._();
 
-  static const _model = 'anthropic/claude-sonnet-4-5';
+  // Use Haiku for faster generation (3x faster than Sonnet, good enough for itineraries)
+  static const _model = 'anthropic/claude-3-5-haiku-latest';
 
   String _getApiUrl() {
     final url = EnvConfig.clawdbotApiUrl;
@@ -143,6 +144,7 @@ class ClaudeService {
   }
 
   /// Generate days in parallel by splitting across destinations
+  /// Each destination is further split into small batches for maximum parallelism
   Future<List<GeneratedDayPlan>> _generateParallelByDestination({
     required String cityName,
     required List<String> destinations,
@@ -158,6 +160,9 @@ class ClaudeService {
     final futures = <Future<List<GeneratedDayPlan>>>[];
     var dayIndex = 0;
 
+    // Small batch size for maximum parallelism (3 days per API call)
+    const batchSize = 3;
+
     for (var i = 0; i < destinations.length; i++) {
       final daysForThis = daysPerDestination + (i < extraDays ? 1 : 0);
       if (daysForThis == 0) continue;
@@ -165,20 +170,25 @@ class ClaudeService {
       final destinationDays = emptyDayNumbers.skip(dayIndex).take(daysForThis).toList();
       dayIndex += daysForThis;
 
-      print('Parallel: generating ${destinationDays.length} days for ${destinations[i]}');
+      // Further split each destination into small batches
+      for (var j = 0; j < destinationDays.length; j += batchSize) {
+        final batchDays = destinationDays.skip(j).take(batchSize).toList();
+        print('Parallel: ${destinations[i]} days $batchDays');
 
-      // Each destination gets its own API call in parallel
-      futures.add(_generateBatch(
-        cityName: destinations[i],
-        destinations: [destinations[i]], // Single destination for this batch
-        totalDays: totalDays,
-        emptyDayNumbers: destinationDays,
-        filledDayThemes: filledDayThemes,
-        themePreference: themePreference,
-      ));
+        futures.add(_generateBatch(
+          cityName: destinations[i],
+          destinations: [destinations[i]],
+          totalDays: totalDays,
+          emptyDayNumbers: batchDays,
+          filledDayThemes: filledDayThemes,
+          themePreference: themePreference,
+        ));
+      }
     }
 
-    // Run all destination batches in parallel
+    print('Launching ${futures.length} parallel API calls...');
+
+    // Run ALL batches in parallel
     final results = await Future.wait(futures);
 
     // Flatten results
@@ -201,8 +211,8 @@ class ClaudeService {
     required Map<int, String> filledDayThemes,
     String? themePreference,
   }) async {
-    // Split into batches of 5 days each
-    const batchSize = 5;
+    // Small batch size for maximum parallelism (3 days per API call)
+    const batchSize = 3;
     final futures = <Future<List<GeneratedDayPlan>>>[];
 
     for (var i = 0; i < emptyDayNumbers.length; i += batchSize) {
@@ -218,6 +228,8 @@ class ClaudeService {
         themePreference: themePreference,
       ));
     }
+
+    print('Launching ${futures.length} parallel API calls...');
 
     // Run all batches in parallel
     final results = await Future.wait(futures);
@@ -252,8 +264,9 @@ class ClaudeService {
         themePreference: themePreference,
       );
 
-      final responseText = await _callClawdbot(prompt);
-      print('Claude response (first 300 chars): ${responseText.substring(0, responseText.length > 300 ? 300 : responseText.length)}');
+      // Use fewer tokens for small batches (3 days = ~1500 tokens max)
+      final responseText = await _callClawdbot(prompt, maxTokens: 2000);
+      print('Claude response (first 200 chars): ${responseText.substring(0, responseText.length > 200 ? 200 : responseText.length)}');
 
       return _parseItineraryResponse(responseText);
     } on AiGenerationException {
