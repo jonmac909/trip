@@ -16,27 +16,8 @@ class ItineraryStackingScreen extends StatefulWidget {
 }
 
 class _ItineraryStackingScreenState extends State<ItineraryStackingScreen> {
-  // Mock data for itinerary blocks
-  final List<_ItineraryBlock> _blocks = [
-    _ItineraryBlock(
-      id: '1',
-      city: 'London',
-      country: 'United Kingdom',
-      countryFlag: 'GB',
-      days: 4,
-      theme: 'Museums & Culture',
-      isSelected: true,
-    ),
-    _ItineraryBlock(
-      id: '2',
-      city: 'Cotswolds',
-      country: 'United Kingdom',
-      countryFlag: 'GB',
-      days: 4,
-      theme: 'Countryside & Villages',
-      isSelected: false,
-    ),
-  ];
+  // Itinerary blocks - populated from navigation params
+  final List<_ItineraryBlock> _blocks = [];
 
   int get _totalDays => _blocks.fold(0, (sum, block) => sum + block.days);
 

@@ -3,6 +3,7 @@ import 'dart:typed_data' as typed_data;
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
+import 'package:trippified/core/services/supabase_service.dart';
 import 'package:trippified/presentation/screens/auth/login_screen.dart';
 import 'package:trippified/presentation/screens/day_builder/day_builder_screen.dart';
 import 'package:trippified/presentation/screens/explore/city_detail_screen.dart';
@@ -69,12 +70,55 @@ abstract final class AppRoutes {
   static const dayBuilderDetail = '/features/day-detail';
   static const itineraryDetail = '/features/itinerary-detail';
   static const addItinerary = '/features/add-itinerary';
+
+  /// Routes that don't require authentication
+  static const publicRoutes = [splash, login];
+}
+
+/// Notifier that triggers router refresh on auth state changes
+class _AuthStateNotifier extends ChangeNotifier {
+  _AuthStateNotifier() {
+    SupabaseService.instance.authStateChanges.listen((_) {
+      notifyListeners();
+    });
+  }
 }
 
 /// App router configuration
 final appRouter = GoRouter(
   initialLocation: AppRoutes.splash,
   debugLogDiagnostics: true,
+
+  // Redirect logic for authentication
+  redirect: (context, state) {
+    final isAuthenticated = SupabaseService.instance.isAuthenticatedWithAccount;
+    final isPublicRoute = AppRoutes.publicRoutes.contains(
+      state.matchedLocation,
+    );
+    final isGoingToLogin = state.matchedLocation == AppRoutes.login;
+    final isGoingToSplash = state.matchedLocation == AppRoutes.splash;
+
+    // If on splash, let the splash screen handle navigation
+    if (isGoingToSplash) {
+      return null;
+    }
+
+    // If not authenticated and trying to access protected route, redirect to login
+    if (!isAuthenticated && !isPublicRoute) {
+      return AppRoutes.login;
+    }
+
+    // If authenticated and trying to access login, redirect to home
+    if (isAuthenticated && isGoingToLogin) {
+      return AppRoutes.home;
+    }
+
+    return null;
+  },
+
+  // Refresh listenable to re-evaluate routes when auth state changes
+  refreshListenable: _AuthStateNotifier(),
+
   routes: [
     GoRoute(
       path: AppRoutes.splash,
@@ -104,12 +148,60 @@ final appRouter = GoRouter(
       path: AppRoutes.itineraryBuilder,
       builder: (context, state) {
         final extra = state.extra as Map<String, dynamic>?;
+
+        // Check if coming from routes flow (has countries and selectedRoutes)
+        final countries = extra?['countries'] as List<String>?;
+        final selectedRoutes = extra?['selectedRoutes'] as Map<String, int?>?;
+        final customRouteCities =
+            extra?['customRouteCities'] as Map<String, List<String>>?;
+
+        if (countries != null && countries.isNotEmpty) {
+          // Routes flow - derive data from selections
+          final firstCountry = countries.first;
+          final routeIndex = selectedRoutes?[firstCountry];
+          final customCities = customRouteCities?[firstCountry] ?? [];
+          final routeDurations = extra?['routeDurations'] as Map<String, int>?;
+
+          // Use first city from custom route or country name as destination
+          final destination = customCities.isNotEmpty
+              ? customCities.join(' → ')
+              : firstCountry;
+
+          // Calculate total days by summing durations from ALL selected routes
+          final startDate = DateTime.now().add(const Duration(days: 14));
+          int totalDays;
+          if (routeDurations != null && routeDurations.isNotEmpty) {
+            // Sum up durations from all countries
+            totalDays = routeDurations.values.fold(0, (sum, days) => sum + days);
+          } else if (routeIndex == -1) {
+            // Fallback for custom routes without durations
+            totalDays = (customCities.length * 2).clamp(3, 14);
+          } else {
+            // Fallback default
+            totalDays = 7;
+          }
+          final endDate = startDate.add(Duration(days: totalDays - 1));
+
+          return ItineraryBuilderScreen(
+            destination: destination,
+            country: countries.join(', '), // Pass all countries, comma-separated
+            startDate: startDate,
+            endDate: endDate,
+            travelers: 1,
+            routeIndex: routeIndex,
+          );
+        }
+
+        // Direct flow with explicit data
         final destination = extra?['destination'] as String?;
         final startDate = extra?['startDate'] as DateTime?;
         final endDate = extra?['endDate'] as DateTime?;
         final travelers = extra?['travelers'] as int?;
 
-        if (destination == null || startDate == null || endDate == null || travelers == null) {
+        if (destination == null ||
+            startDate == null ||
+            endDate == null ||
+            travelers == null) {
           return const Scaffold(body: Center(child: Text('Missing trip data')));
         }
         return ItineraryBuilderScreen(
@@ -153,15 +245,14 @@ final appRouter = GoRouter(
 
         // Parse trip cities list for the city switcher
         final rawCities = extra?['tripCities'] as List<dynamic>?;
-        final tripCities = rawCities
-                ?.map((c) {
-                  final map = c as Map<String, dynamic>;
-                  return TripCityInfo(
-                    cityName: map['cityName'] as String,
-                    days: map['days'] as int,
-                  );
-                })
-                .toList() ??
+        final tripCities =
+            rawCities?.map((c) {
+              final map = c as Map<String, dynamic>;
+              return TripCityInfo(
+                cityName: map['cityName'] as String,
+                days: map['days'] as int,
+              );
+            }).toList() ??
             [];
 
         return DayBuilderScreen(
@@ -215,10 +306,21 @@ final appRouter = GoRouter(
         final cityName = extra?['cityName'] as String? ?? 'City';
         final dayNumber = extra?['dayNumber'] as int? ?? 1;
         final totalDays = extra?['totalDays'] as int? ?? 4;
+        // Support both old 'activities' (single day) and new 'allDaysActivities' (all days)
+        final allDaysRaw = extra?['allDaysActivities'] as List<dynamic>?;
+        final allDaysActivities = allDaysRaw?.map((dayList) {
+          return (dayList as List<dynamic>).cast<Map<String, dynamic>>();
+        }).toList() ?? [];
+        // Fallback for old navigation calls
+        final singleDayActivities =
+            extra?['activities'] as List<Map<String, dynamic>>?;
         return DayBuilderDetailScreen(
           cityName: cityName,
           dayNumber: dayNumber,
           totalDays: totalDays,
+          allDaysActivities: allDaysActivities.isNotEmpty
+              ? allDaysActivities
+              : (singleDayActivities != null ? [singleDayActivities] : []),
         );
       },
     ),
@@ -252,8 +354,7 @@ final appRouter = GoRouter(
       builder: (context, state) {
         final extra = state.extra as Map<String, dynamic>?;
         final url = extra?['url'] as String?;
-        final mediaBytes =
-            extra?['mediaBytes'] as List<typed_data.Uint8List>?;
+        final mediaBytes = extra?['mediaBytes'] as List<typed_data.Uint8List>?;
         final mediaType = extra?['mediaType'] as String?;
         return TiktokScanResultsScreen(
           url: url,

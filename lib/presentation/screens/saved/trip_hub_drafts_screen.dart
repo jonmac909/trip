@@ -22,18 +22,8 @@ class _TripHubDraftsScreenState extends State<TripHubDraftsScreen>
     with SingleTickerProviderStateMixin {
   late TabController _tabController;
 
-  // Mock data for draft trips
-  final List<_DraftTrip> _draftTrips = const [
-    _DraftTrip(
-      id: '1',
-      name: 'Tokyo Weekend',
-      days: 2,
-      placeCount: 5,
-      cities: ['Tokyo'],
-      imageUrl:
-          'https://images.unsplash.com/photo-1743515169286-7be1203c641a?w=400',
-    ),
-  ];
+  // Draft trips - populated from provider
+  final List<_DraftTrip> _draftTrips = const [];
 
   @override
   void initState() {

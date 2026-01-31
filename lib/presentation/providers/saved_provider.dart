@@ -88,6 +88,14 @@ class SavedItemsNotifier extends StateNotifier<AsyncValue<List<SavedItem>>> {
     }
   }
 
+  /// Add item back to state (for undo functionality)
+  void addItemToState(SavedItem item) {
+    final items = state.value ?? [];
+    if (!items.any((i) => i.id == item.id)) {
+      state = AsyncValue.data([item, ...items]);
+    }
+  }
+
   /// Save scanned places from social media import
   Future<List<SavedItem>> saveScanResults({
     required List<ScannedPlace> places,

@@ -15,11 +15,13 @@ class DayBuilderDetailScreen extends StatefulWidget {
     required this.cityName,
     this.dayNumber = 1,
     this.totalDays = 4,
+    this.allDaysActivities = const [],
   });
 
   final String cityName;
   final int dayNumber;
   final int totalDays;
+  final List<List<Map<String, dynamic>>> allDaysActivities;
 
   @override
   State<DayBuilderDetailScreen> createState() => _DayBuilderDetailScreenState();
@@ -29,47 +31,169 @@ class _DayBuilderDetailScreenState extends State<DayBuilderDetailScreen> {
   int _selectedDayIndex = 0;
   int _selectedTabIndex = 1; // Itinerary tab selected by default
   int _bottomNavIndex = 0;
+  bool _isEditMode = false;
 
-  final List<_Activity> _activities = [
-    _Activity(
-      id: '1',
-      name: 'British Museum',
-      time: '9:00 AM',
-      location: 'Bloomsbury',
-      note: 'Free entry',
-      duration: '~3 hrs',
-      imageUrl:
-          'https://images.unsplash.com/photo-1672244438282-aab5aae2bc2a?w=400&q=80',
-      timeOfDay: TimeOfDay.morning,
-    ),
-    _Activity(
-      id: '2',
-      name: 'Covent Garden',
-      time: '12:30 PM',
-      location: 'West End',
-      note: 'Lunch & explore',
-      duration: '~2 hrs',
-      imageUrl:
-          'https://images.unsplash.com/photo-1543484623-542877a80db5?w=400&q=80',
-      timeOfDay: TimeOfDay.midday,
-    ),
-    _Activity(
-      id: '3',
-      name: 'Tower of London',
-      time: '3:00 PM',
-      location: 'Tower Hill',
-      note: 'Crown Jewels',
-      duration: '~2.5 hrs',
-      imageUrl:
-          'https://images.unsplash.com/photo-1712865640443-c74e7528b343?w=400&q=80',
-      timeOfDay: TimeOfDay.afternoon,
-    ),
-  ];
+  // Activities per day - parsed from navigation params
+  late List<List<_Activity>> _allDaysActivities;
+
+  // Category-based images for activities
+  static const _categoryImages = {
+    'restaurant': 'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=200&q=80',
+    'cafe': 'https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?w=200&q=80',
+    'bar': 'https://images.unsplash.com/photo-1572116469696-31de0f17cc34?w=200&q=80',
+    'museum': 'https://images.unsplash.com/photo-1554907984-15263bfd63bd?w=200&q=80',
+    'temple': 'https://images.unsplash.com/photo-1528181304800-259b08848526?w=200&q=80',
+    'landmark': 'https://images.unsplash.com/photo-1552832230-c0197dd311b5?w=200&q=80',
+    'shopping': 'https://images.unsplash.com/photo-1481437156560-3205f6a55735?w=200&q=80',
+    'park': 'https://images.unsplash.com/photo-1519331379826-f10be5486c6f?w=200&q=80',
+    'beach': 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=200&q=80',
+    'tour': 'https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?w=200&q=80',
+    'nightlife': 'https://images.unsplash.com/photo-1566417713940-fe7c737a9ef2?w=200&q=80',
+    'entertainment': 'https://images.unsplash.com/photo-1603190287605-e6ade32fa852?w=200&q=80',
+    'spa': 'https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=200&q=80',
+    'sport': 'https://images.unsplash.com/photo-1461896836934-ffe607ba8211?w=200&q=80',
+  };
+
+  // City-based header images
+  static const _cityImages = {
+    'bangkok': 'https://images.unsplash.com/photo-1508009603885-50cf7c579365?w=800&q=80',
+    'chiang mai': 'https://images.unsplash.com/photo-1512553594657-f48d01b99f76?w=800&q=80',
+    'phuket': 'https://images.unsplash.com/photo-1589394815804-964ed0be2eb5?w=800&q=80',
+    'tokyo': 'https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?w=800&q=80',
+    'kyoto': 'https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?w=800&q=80',
+    'osaka': 'https://images.unsplash.com/photo-1590559899731-a382839e5549?w=800&q=80',
+    'paris': 'https://images.unsplash.com/photo-1502602898657-3e91760cbb34?w=800&q=80',
+    'london': 'https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?w=800&q=80',
+    'new york': 'https://images.unsplash.com/photo-1485738422979-f5c462d49f74?w=800&q=80',
+    'rome': 'https://images.unsplash.com/photo-1552832230-c0197dd311b5?w=800&q=80',
+    'barcelona': 'https://images.unsplash.com/photo-1583422409516-2895a77efded?w=800&q=80',
+    'bali': 'https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=800&q=80',
+    'seoul': 'https://images.unsplash.com/photo-1538485399081-7191377e8241?w=800&q=80',
+    'sydney': 'https://images.unsplash.com/photo-1506973035872-a4ec16b8e8d9?w=800&q=80',
+    'dubai': 'https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=800&q=80',
+    'singapore': 'https://images.unsplash.com/photo-1525625293386-3f8f99389edd?w=800&q=80',
+    'hong kong': 'https://images.unsplash.com/photo-1536599018102-9f803c979b10?w=800&q=80',
+    'vietnam': 'https://images.unsplash.com/photo-1583417319070-4a69db38a482?w=800&q=80',
+    'hanoi': 'https://images.unsplash.com/photo-1583417319070-4a69db38a482?w=800&q=80',
+    'ho chi minh': 'https://images.unsplash.com/photo-1583417319070-4a69db38a482?w=800&q=80',
+  };
+
+  String _getCityImage() {
+    final cityLower = widget.cityName.toLowerCase();
+    return _cityImages[cityLower] ??
+        'https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=800&q=80';
+  }
+
+  String _getCategoryImage(String? category) {
+    if (category == null) return _categoryImages['landmark']!;
+    return _categoryImages[category.toLowerCase()] ??
+        _categoryImages['landmark']!;
+  }
 
   @override
   void initState() {
     super.initState();
     _selectedDayIndex = widget.dayNumber - 1;
+    _parseAllDaysActivities();
+  }
+
+  void _parseAllDaysActivities() {
+    // Parse activities for all days
+    _allDaysActivities = [];
+
+    // Ensure we have entries for all days
+    for (var dayIndex = 0; dayIndex < widget.totalDays; dayIndex++) {
+      if (dayIndex < widget.allDaysActivities.length) {
+        final dayActivities = widget.allDaysActivities[dayIndex];
+        _allDaysActivities.add(_parseDayActivities(dayActivities));
+      } else {
+        _allDaysActivities.add([]); // Empty day
+      }
+    }
+  }
+
+  List<_Activity> _parseDayActivities(List<Map<String, dynamic>> activities) {
+    return activities.asMap().entries.map((entry) {
+      final index = entry.key;
+      final a = entry.value;
+      final time = a['time'] as String? ?? '';
+      final category = a['category'] as String?;
+
+      // Determine time of day based on time string
+      _TimeOfDay timeOfDay = _TimeOfDay.morning;
+      if (time.isNotEmpty) {
+        final hour = int.tryParse(time.split(':').first) ?? 9;
+        if (hour >= 17) {
+          timeOfDay = _TimeOfDay.evening;
+        } else if (hour >= 14) {
+          timeOfDay = _TimeOfDay.afternoon;
+        } else if (hour >= 12) {
+          timeOfDay = _TimeOfDay.midday;
+        }
+      } else {
+        // Distribute activities evenly if no time
+        if (index >= 3) {
+          timeOfDay = _TimeOfDay.afternoon;
+        } else if (index >= 2) {
+          timeOfDay = _TimeOfDay.midday;
+        }
+      }
+
+      return _Activity(
+        id: 'activity-$index',
+        name: a['name'] as String? ?? 'Activity',
+        time: time.isNotEmpty ? time : '${9 + index * 2}:00',
+        location: a['location'] as String? ?? '',
+        note: a['note'] as String? ?? '',
+        category: category ?? 'landmark',
+        duration: '1-2h',
+        imageUrl: _getCategoryImage(category),
+        timeOfDay: timeOfDay,
+      );
+    }).toList();
+  }
+
+  List<_Activity> get _currentDayActivities {
+    if (_selectedDayIndex >= 0 && _selectedDayIndex < _allDaysActivities.length) {
+      return _allDaysActivities[_selectedDayIndex];
+    }
+    return [];
+  }
+
+  void _toggleEditMode() {
+    setState(() {
+      _isEditMode = !_isEditMode;
+    });
+
+    if (_isEditMode) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: Text(
+            'Edit mode enabled. Tap activities to modify.',
+            style: GoogleFonts.dmSans(),
+          ),
+          behavior: SnackBarBehavior.floating,
+          backgroundColor: AppColors.primary,
+          action: SnackBarAction(
+            label: 'Done',
+            textColor: AppColors.accent,
+            onPressed: () => setState(() => _isEditMode = false),
+          ),
+        ),
+      );
+    }
+  }
+
+  void _deleteActivity(int activityIndex) {
+    setState(() {
+      _allDaysActivities[_selectedDayIndex].removeAt(activityIndex);
+    });
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(
+        content: Text('Activity removed', style: GoogleFonts.dmSans()),
+        behavior: SnackBarBehavior.floating,
+      ),
+    );
   }
 
   @override
@@ -93,8 +217,7 @@ class _DayBuilderDetailScreenState extends State<DayBuilderDetailScreen> {
     return Stack(
       children: [
         CachedNetworkImage(
-          imageUrl:
-              'https://images.unsplash.com/photo-1556821862-dc1f261b8416?w=800&q=80',
+          imageUrl: _getCityImage(),
           height: 240,
           width: double.infinity,
           fit: BoxFit.cover,
@@ -109,6 +232,26 @@ class _DayBuilderDetailScreenState extends State<DayBuilderDetailScreen> {
               LucideIcons.map,
               size: 48,
               color: AppColors.textTertiary,
+            ),
+          ),
+        ),
+        // Day indicator overlay
+        Positioned(
+          top: MediaQuery.of(context).padding.top + 16,
+          right: 16,
+          child: Container(
+            padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+            decoration: BoxDecoration(
+              color: Colors.black.withValues(alpha: 0.6),
+              borderRadius: BorderRadius.circular(20),
+            ),
+            child: Text(
+              'Day ${_selectedDayIndex + 1} of ${widget.totalDays}',
+              style: GoogleFonts.dmSans(
+                fontSize: 12,
+                fontWeight: FontWeight.w600,
+                color: Colors.white,
+              ),
             ),
           ),
         ),
@@ -148,7 +291,7 @@ class _DayBuilderDetailScreenState extends State<DayBuilderDetailScreen> {
           _buildHeader(),
           _buildDayTabs(),
           _buildMainTabs(),
-          Expanded(child: _buildActivitiesList()),
+          Expanded(child: _buildTabContent()),
         ],
       ),
     );
@@ -204,34 +347,39 @@ class _DayBuilderDetailScreenState extends State<DayBuilderDetailScreen> {
   }
 
   Widget _buildEditBadge() {
-    return Container(
-      padding: const EdgeInsets.symmetric(
-        horizontal: AppSpacing.sm,
-        vertical: AppSpacing.xs,
-      ),
-      decoration: BoxDecoration(
-        color: AppColors.surface,
-        borderRadius: BorderRadius.circular(AppSpacing.radiusFull),
-        border: Border.all(color: AppColors.border),
-      ),
-      child: Row(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          const Icon(
-            LucideIcons.pencil,
-            size: 12,
-            color: AppColors.textSecondary,
+    return GestureDetector(
+      onTap: _toggleEditMode,
+      child: Container(
+        padding: const EdgeInsets.symmetric(
+          horizontal: AppSpacing.sm,
+          vertical: AppSpacing.xs,
+        ),
+        decoration: BoxDecoration(
+          color: _isEditMode ? AppColors.primary : AppColors.surface,
+          borderRadius: BorderRadius.circular(AppSpacing.radiusFull),
+          border: Border.all(
+            color: _isEditMode ? AppColors.primary : AppColors.border,
           ),
-          const SizedBox(width: AppSpacing.xs),
-          Text(
-            'Edit',
-            style: GoogleFonts.dmSans(
-              fontSize: 12,
-              fontWeight: FontWeight.w500,
-              color: AppColors.textSecondary,
+        ),
+        child: Row(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Icon(
+              _isEditMode ? LucideIcons.check : LucideIcons.pencil,
+              size: 12,
+              color: _isEditMode ? AppColors.textOnPrimary : AppColors.textSecondary,
             ),
-          ),
-        ],
+            const SizedBox(width: AppSpacing.xs),
+            Text(
+              _isEditMode ? 'Done' : 'Edit',
+              style: GoogleFonts.dmSans(
+                fontSize: 12,
+                fontWeight: FontWeight.w500,
+                color: _isEditMode ? AppColors.textOnPrimary : AppColors.textSecondary,
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
@@ -239,32 +387,64 @@ class _DayBuilderDetailScreenState extends State<DayBuilderDetailScreen> {
   Widget _buildDayTabs() {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: AppSpacing.sm),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: List.generate(widget.totalDays, (index) {
-          final isSelected = index == _selectedDayIndex;
-          return Padding(
-            padding: const EdgeInsets.symmetric(horizontal: AppSpacing.sm),
-            child: GestureDetector(
-              onTap: () => setState(() => _selectedDayIndex = index),
-              child: Padding(
-                padding: const EdgeInsets.symmetric(
-                  horizontal: AppSpacing.sm,
-                  vertical: AppSpacing.xs,
-                ),
-                child: Text(
-                  'Day ${index + 1}',
-                  style: GoogleFonts.dmSans(
-                    fontSize: 12,
-                    fontWeight: isSelected ? FontWeight.w600 : FontWeight.w500,
-                    color:
-                        isSelected ? AppColors.primary : AppColors.textSecondary,
+      child: SingleChildScrollView(
+        scrollDirection: Axis.horizontal,
+        padding: const EdgeInsets.symmetric(horizontal: AppSpacing.md),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: List.generate(widget.totalDays, (index) {
+            final isSelected = index == _selectedDayIndex;
+            final hasActivities = index < _allDaysActivities.length &&
+                _allDaysActivities[index].isNotEmpty;
+
+            return Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 4),
+              child: GestureDetector(
+                onTap: () => setState(() => _selectedDayIndex = index),
+                child: Container(
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: AppSpacing.md,
+                    vertical: AppSpacing.xs,
+                  ),
+                  decoration: BoxDecoration(
+                    color: isSelected ? AppColors.primary : Colors.transparent,
+                    borderRadius: BorderRadius.circular(20),
+                    border: Border.all(
+                      color: isSelected ? AppColors.primary : AppColors.border,
+                    ),
+                  ),
+                  child: Row(
+                    children: [
+                      Text(
+                        'Day ${index + 1}',
+                        style: GoogleFonts.dmSans(
+                          fontSize: 12,
+                          fontWeight: isSelected ? FontWeight.w600 : FontWeight.w500,
+                          color: isSelected
+                              ? AppColors.textOnPrimary
+                              : AppColors.textSecondary,
+                        ),
+                      ),
+                      if (hasActivities) ...[
+                        const SizedBox(width: 4),
+                        Container(
+                          width: 6,
+                          height: 6,
+                          decoration: BoxDecoration(
+                            color: isSelected
+                                ? AppColors.accent
+                                : AppColors.accent.withValues(alpha: 0.6),
+                            shape: BoxShape.circle,
+                          ),
+                        ),
+                      ],
+                    ],
                   ),
                 ),
               ),
-            ),
-          );
-        }),
+            );
+          }),
+        ),
       ),
     );
   }
@@ -308,33 +488,348 @@ class _DayBuilderDetailScreenState extends State<DayBuilderDetailScreen> {
     );
   }
 
-  Widget _buildActivitiesList() {
+  Widget _buildTabContent() {
+    switch (_selectedTabIndex) {
+      case 0:
+        return _buildOverviewTab();
+      case 1:
+        return _buildItineraryTab();
+      case 2:
+        return _buildBookingsTab();
+      default:
+        return _buildItineraryTab();
+    }
+  }
+
+  Widget _buildOverviewTab() {
+    final activities = _currentDayActivities;
+    final totalActivities = activities.length;
+
+    // Count by category
+    final categoryCount = <String, int>{};
+    for (final activity in activities) {
+      categoryCount[activity.category] =
+          (categoryCount[activity.category] ?? 0) + 1;
+    }
+
+    return ListView(
+      padding: const EdgeInsets.all(AppSpacing.lg),
+      children: [
+        // Day summary card
+        Container(
+          padding: const EdgeInsets.all(AppSpacing.lg),
+          decoration: BoxDecoration(
+            color: AppColors.surface,
+            borderRadius: BorderRadius.circular(AppSpacing.radiusLg),
+            border: Border.all(color: AppColors.border),
+          ),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                'Day ${_selectedDayIndex + 1} Summary',
+                style: GoogleFonts.dmSans(
+                  fontSize: 18,
+                  fontWeight: FontWeight.w700,
+                  color: AppColors.primary,
+                ),
+              ),
+              const SizedBox(height: AppSpacing.md),
+              Row(
+                children: [
+                  _buildStatItem(
+                    icon: LucideIcons.mapPin,
+                    value: '$totalActivities',
+                    label: 'Activities',
+                  ),
+                  const SizedBox(width: AppSpacing.lg),
+                  _buildStatItem(
+                    icon: LucideIcons.clock,
+                    value: '${totalActivities * 2}h',
+                    label: 'Est. Time',
+                  ),
+                ],
+              ),
+            ],
+          ),
+        ),
+        const SizedBox(height: AppSpacing.lg),
+
+        // Categories breakdown
+        if (categoryCount.isNotEmpty) ...[
+          Text(
+            'Activity Types',
+            style: GoogleFonts.dmSans(
+              fontSize: 16,
+              fontWeight: FontWeight.w600,
+              color: AppColors.primary,
+            ),
+          ),
+          const SizedBox(height: AppSpacing.sm),
+          Wrap(
+            spacing: 8,
+            runSpacing: 8,
+            children: categoryCount.entries.map((entry) {
+              return Container(
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 12,
+                  vertical: 6,
+                ),
+                decoration: BoxDecoration(
+                  color: AppColors.accent.withValues(alpha: 0.2),
+                  borderRadius: BorderRadius.circular(20),
+                ),
+                child: Text(
+                  '${entry.key.capitalize()} (${entry.value})',
+                  style: GoogleFonts.dmSans(
+                    fontSize: 12,
+                    fontWeight: FontWeight.w500,
+                    color: AppColors.primary,
+                  ),
+                ),
+              );
+            }).toList(),
+          ),
+          const SizedBox(height: AppSpacing.lg),
+        ],
+
+        // Quick activity list
+        if (activities.isNotEmpty) ...[
+          Text(
+            'Activities',
+            style: GoogleFonts.dmSans(
+              fontSize: 16,
+              fontWeight: FontWeight.w600,
+              color: AppColors.primary,
+            ),
+          ),
+          const SizedBox(height: AppSpacing.sm),
+          ...activities.map((a) => Padding(
+            padding: const EdgeInsets.only(bottom: 8),
+            child: Row(
+              children: [
+                Container(
+                  width: 8,
+                  height: 8,
+                  decoration: BoxDecoration(
+                    color: AppColors.accent,
+                    shape: BoxShape.circle,
+                  ),
+                ),
+                const SizedBox(width: 12),
+                Expanded(
+                  child: Text(
+                    a.name,
+                    style: GoogleFonts.dmSans(
+                      fontSize: 14,
+                      color: AppColors.textSecondary,
+                    ),
+                  ),
+                ),
+                Text(
+                  a.time,
+                  style: GoogleFonts.dmSans(
+                    fontSize: 12,
+                    color: AppColors.textTertiary,
+                  ),
+                ),
+              ],
+            ),
+          )),
+        ] else ...[
+          _buildEmptyState(),
+        ],
+      ],
+    );
+  }
+
+  Widget _buildStatItem({
+    required IconData icon,
+    required String value,
+    required String label,
+  }) {
+    return Row(
+      children: [
+        Icon(icon, size: 20, color: AppColors.primary),
+        const SizedBox(width: 8),
+        Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              value,
+              style: GoogleFonts.dmSans(
+                fontSize: 18,
+                fontWeight: FontWeight.w700,
+                color: AppColors.primary,
+              ),
+            ),
+            Text(
+              label,
+              style: GoogleFonts.dmSans(
+                fontSize: 12,
+                color: AppColors.textSecondary,
+              ),
+            ),
+          ],
+        ),
+      ],
+    );
+  }
+
+  Widget _buildItineraryTab() {
+    final activities = _currentDayActivities;
+
+    if (activities.isEmpty) {
+      return _buildEmptyState();
+    }
+
     // Group activities by time of day
     final morningActivities =
-        _activities.where((a) => a.timeOfDay == TimeOfDay.morning).toList();
+        activities.where((a) => a.timeOfDay == _TimeOfDay.morning).toList();
     final middayActivities =
-        _activities.where((a) => a.timeOfDay == TimeOfDay.midday).toList();
+        activities.where((a) => a.timeOfDay == _TimeOfDay.midday).toList();
     final afternoonActivities =
-        _activities.where((a) => a.timeOfDay == TimeOfDay.afternoon).toList();
+        activities.where((a) => a.timeOfDay == _TimeOfDay.afternoon).toList();
+    final eveningActivities =
+        activities.where((a) => a.timeOfDay == _TimeOfDay.evening).toList();
 
     return ListView(
       padding: const EdgeInsets.all(AppSpacing.lg),
       children: [
         if (morningActivities.isNotEmpty) ...[
           _buildTimeLabel('Morning'),
-          ...morningActivities.map((a) => _ActivityCard(activity: a)),
-          if (morningActivities.isNotEmpty && middayActivities.isNotEmpty)
+          ...morningActivities.asMap().entries.map((e) =>
+              _ActivityCard(
+                activity: e.value,
+                isEditMode: _isEditMode,
+                onDelete: () => _deleteActivity(
+                  activities.indexOf(e.value),
+                ),
+              )),
+          if (middayActivities.isNotEmpty)
             _buildTravelConnector(icon: LucideIcons.footprints, text: '15 min walk'),
         ],
         if (middayActivities.isNotEmpty) ...[
           _buildTimeLabel('Midday'),
-          ...middayActivities.map((a) => _ActivityCard(activity: a)),
+          ...middayActivities.map((a) => _ActivityCard(
+            activity: a,
+            isEditMode: _isEditMode,
+            onDelete: () => _deleteActivity(activities.indexOf(a)),
+          )),
+          if (afternoonActivities.isNotEmpty)
+            _buildTravelConnector(icon: LucideIcons.footprints, text: '10 min walk'),
         ],
         if (afternoonActivities.isNotEmpty) ...[
           _buildTimeLabel('Afternoon'),
-          ...afternoonActivities.map((a) => _ActivityCard(activity: a)),
+          ...afternoonActivities.map((a) => _ActivityCard(
+            activity: a,
+            isEditMode: _isEditMode,
+            onDelete: () => _deleteActivity(activities.indexOf(a)),
+          )),
+          if (eveningActivities.isNotEmpty)
+            _buildTravelConnector(icon: LucideIcons.footprints, text: '15 min walk'),
+        ],
+        if (eveningActivities.isNotEmpty) ...[
+          _buildTimeLabel('Evening'),
+          ...eveningActivities.map((a) => _ActivityCard(
+            activity: a,
+            isEditMode: _isEditMode,
+            onDelete: () => _deleteActivity(activities.indexOf(a)),
+          )),
         ],
       ],
+    );
+  }
+
+  Widget _buildBookingsTab() {
+    return Center(
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Icon(
+            LucideIcons.ticket,
+            size: 48,
+            color: AppColors.textTertiary,
+          ),
+          const SizedBox(height: AppSpacing.md),
+          Text(
+            'No bookings yet',
+            style: GoogleFonts.dmSans(
+              fontSize: 16,
+              fontWeight: FontWeight.w600,
+              color: AppColors.textSecondary,
+            ),
+          ),
+          const SizedBox(height: AppSpacing.xs),
+          Text(
+            'Book tours, tickets, and restaurants\nfor this day',
+            style: GoogleFonts.dmSans(
+              fontSize: 14,
+              color: AppColors.textTertiary,
+            ),
+            textAlign: TextAlign.center,
+          ),
+          const SizedBox(height: AppSpacing.lg),
+          ElevatedButton.icon(
+            onPressed: () {
+              ScaffoldMessenger.of(context).showSnackBar(
+                SnackBar(
+                  content: Text(
+                    'Booking feature coming soon!',
+                    style: GoogleFonts.dmSans(),
+                  ),
+                  behavior: SnackBarBehavior.floating,
+                ),
+              );
+            },
+            icon: const Icon(LucideIcons.plus, size: 18),
+            label: Text(
+              'Add Booking',
+              style: GoogleFonts.dmSans(fontWeight: FontWeight.w600),
+            ),
+            style: ElevatedButton.styleFrom(
+              backgroundColor: AppColors.primary,
+              foregroundColor: AppColors.textOnPrimary,
+              padding: const EdgeInsets.symmetric(
+                horizontal: 24,
+                vertical: 12,
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget _buildEmptyState() {
+    return Center(
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Icon(
+            LucideIcons.calendar,
+            size: 48,
+            color: AppColors.textTertiary,
+          ),
+          const SizedBox(height: AppSpacing.md),
+          Text(
+            'No activities planned',
+            style: GoogleFonts.dmSans(
+              fontSize: 16,
+              fontWeight: FontWeight.w600,
+              color: AppColors.textSecondary,
+            ),
+          ),
+          const SizedBox(height: AppSpacing.xs),
+          Text(
+            'Generate activities with AI or add manually',
+            style: GoogleFonts.dmSans(
+              fontSize: 14,
+              color: AppColors.textTertiary,
+            ),
+          ),
+        ],
+      ),
     );
   }
 
@@ -379,9 +874,15 @@ class _DayBuilderDetailScreenState extends State<DayBuilderDetailScreen> {
 }
 
 class _ActivityCard extends StatelessWidget {
-  const _ActivityCard({required this.activity});
+  const _ActivityCard({
+    required this.activity,
+    this.isEditMode = false,
+    this.onDelete,
+  });
 
   final _Activity activity;
+  final bool isEditMode;
+  final VoidCallback? onDelete;
 
   @override
   Widget build(BuildContext context) {
@@ -392,7 +893,9 @@ class _ActivityCard extends StatelessWidget {
         decoration: BoxDecoration(
           color: AppColors.surface,
           borderRadius: BorderRadius.circular(AppSpacing.radiusLg),
-          border: Border.all(color: AppColors.border),
+          border: Border.all(
+            color: isEditMode ? AppColors.primary.withValues(alpha: 0.5) : AppColors.border,
+          ),
         ),
         child: Row(
           children: [
@@ -430,23 +933,38 @@ class _ActivityCard extends StatelessWidget {
                   ),
                   const SizedBox(height: AppSpacing.xxs),
                   Text(
-                    '${activity.time} \u00b7 ${activity.location} \u00b7 ${activity.note}',
+                    '${activity.time} · ${activity.location.isNotEmpty ? activity.location : activity.category.capitalize()}',
                     style: GoogleFonts.dmSans(
                       fontSize: 12,
                       color: AppColors.textSecondary,
                     ),
+                    maxLines: 1,
+                    overflow: TextOverflow.ellipsis,
                   ),
                 ],
               ),
             ),
-            Text(
-              activity.duration,
-              style: GoogleFonts.dmSans(
-                fontSize: 12,
-                fontWeight: FontWeight.w500,
-                color: AppColors.textTertiary,
+            if (isEditMode)
+              GestureDetector(
+                onTap: onDelete,
+                child: Container(
+                  padding: const EdgeInsets.all(8),
+                  child: const Icon(
+                    LucideIcons.trash2,
+                    size: 18,
+                    color: Colors.red,
+                  ),
+                ),
+              )
+            else
+              Text(
+                activity.duration,
+                style: GoogleFonts.dmSans(
+                  fontSize: 12,
+                  fontWeight: FontWeight.w500,
+                  color: AppColors.textTertiary,
+                ),
               ),
-            ),
           ],
         ),
       ),
@@ -454,7 +972,7 @@ class _ActivityCard extends StatelessWidget {
   }
 }
 
-enum TimeOfDay {
+enum _TimeOfDay {
   morning,
   midday,
   afternoon,
@@ -468,6 +986,7 @@ class _Activity {
     required this.time,
     required this.location,
     required this.note,
+    required this.category,
     required this.duration,
     required this.imageUrl,
     required this.timeOfDay,
@@ -478,7 +997,15 @@ class _Activity {
   final String time;
   final String location;
   final String note;
+  final String category;
   final String duration;
   final String imageUrl;
-  final TimeOfDay timeOfDay;
+  final _TimeOfDay timeOfDay;
+}
+
+extension StringExtension on String {
+  String capitalize() {
+    if (isEmpty) return this;
+    return '${this[0].toUpperCase()}${substring(1)}';
+  }
 }

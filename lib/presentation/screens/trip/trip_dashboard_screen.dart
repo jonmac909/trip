@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:lucide_icons/lucide_icons.dart';
@@ -8,21 +9,23 @@ import 'package:trippified/core/constants/app_colors.dart';
 import 'package:trippified/core/constants/app_spacing.dart';
 import 'package:trippified/core/widgets/app_bottom_nav.dart';
 import 'package:trippified/presentation/navigation/app_router.dart';
+import 'package:trippified/presentation/providers/trips_provider.dart';
 import 'package:trippified/presentation/widgets/checklist_item.dart';
 import 'package:trippified/presentation/widgets/transport_connector.dart';
 
 /// Trip dashboard screen showing trip overview
 /// Matches designs 48-53 (Trip Dashboard variants with checklist)
-class TripDashboardScreen extends StatefulWidget {
+class TripDashboardScreen extends ConsumerStatefulWidget {
   const TripDashboardScreen({required this.tripId, super.key});
 
   final String tripId;
 
   @override
-  State<TripDashboardScreen> createState() => _TripDashboardScreenState();
+  ConsumerState<TripDashboardScreen> createState() =>
+      _TripDashboardScreenState();
 }
 
-class _TripDashboardScreenState extends State<TripDashboardScreen> {
+class _TripDashboardScreenState extends ConsumerState<TripDashboardScreen> {
   int _bottomNavIndex = 0;
   bool _showChecklist = false;
   bool _isEditing = false;
@@ -30,79 +33,8 @@ class _TripDashboardScreenState extends State<TripDashboardScreen> {
   DateTime? _endDate;
   late List<_CityItinerary> _cityItineraries;
 
-  // Mock trip data - would come from provider
-  late final _TripData _tripData;
-
-  static final _mockTrips = <String, _TripData>{
-    '1': _TripData(
-      id: '1',
-      title: 'Japan Adventure',
-      imageUrl:
-          'https://images.unsplash.com/photo-1743515169286-7be1203c641a?w=800&q=80',
-      cities: 3,
-      countries: 1,
-      days: 14,
-      startDate: DateTime(2025, 3, 15),
-      endDate: DateTime(2025, 3, 28),
-      cityItineraries: [
-        _CityItinerary(
-          name: 'Tokyo',
-          imageUrl:
-              'https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?w=400&q=80',
-          days: 5,
-          status: 'Planning',
-        ),
-        _CityItinerary(
-          name: 'Kyoto',
-          imageUrl:
-              'https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?w=400&q=80',
-          days: 5,
-          status: null,
-        ),
-        _CityItinerary(
-          name: 'Osaka',
-          imageUrl:
-              'https://images.unsplash.com/photo-1590559899731-a382839e5549?w=400&q=80',
-          days: 4,
-          status: null,
-        ),
-      ],
-      transports: [
-        _TransportInfo(type: TransportType.train, duration: '2 hr 15 min'),
-        _TransportInfo(type: TransportType.train, duration: '15 min'),
-      ],
-    ),
-    '2': _TripData(
-      id: '2',
-      title: 'Europe Trip 2025',
-      imageUrl:
-          'https://images.unsplash.com/photo-1502602898657-3e91760cbb34?w=800&q=80',
-      cities: 2,
-      countries: 2,
-      days: 9,
-      startDate: DateTime(2025, 6, 15),
-      endDate: DateTime(2025, 6, 24),
-      cityItineraries: [
-        _CityItinerary(
-          name: 'Paris',
-          imageUrl:
-              'https://images.unsplash.com/photo-1502602898657-3e91760cbb34?w=400&q=80',
-          days: 5,
-          status: 'Planning',
-        ),
-        _CityItinerary(
-          name: 'Rome',
-          imageUrl:
-              'https://images.unsplash.com/photo-1552832230-c0197dd311b5?w=400&q=80',
-          days: 4,
-          status: null,
-        ),
-      ],
-      transports: [
-        _TransportInfo(type: TransportType.plane, duration: '2 hr'),
-      ],
-    ),
-  };
+  // Trip data - loaded from provider or fallback to mock
+  late _TripData _tripData;
 
   // Checklist sections state
   late List<ChecklistSectionData> _checklistSections;
@@ -110,166 +42,128 @@ class _TripDashboardScreenState extends State<TripDashboardScreen> {
   @override
   void initState() {
     super.initState();
-    _tripData = _mockTrips[widget.tripId] ?? _mockTrips['1']!;
-    _startDate = _tripData.startDate;
-    _endDate = _tripData.endDate;
-    _cityItineraries = List.from(_tripData.cityItineraries);
+    _loadTripData();
     _initializeChecklist();
   }
 
+  void _loadTripData() {
+    // Get trip from provider
+    final savedTrip = ref.read(tripsProvider.notifier).getTripById(widget.tripId);
+
+    if (savedTrip != null) {
+      // Use actual saved trip data
+      final totalDays = savedTrip.startDate != null && savedTrip.endDate != null
+          ? savedTrip.endDate!.difference(savedTrip.startDate!).inDays + 1
+          : savedTrip.cityNames.length * 3; // Default 3 days per city
+
+      // Create city itineraries from saved city names
+      final daysPerCity = savedTrip.cityNames.isNotEmpty
+          ? (totalDays / savedTrip.cityNames.length).round()
+          : 3;
+
+      final cityItineraries = savedTrip.cityNames.asMap().entries.map((entry) {
+        return _CityItinerary(
+          name: entry.value,
+          imageUrl: _getImageForCity(entry.value),
+          days: daysPerCity,
+          status: entry.key == 0 ? 'Planning' : null,
+        );
+      }).toList();
+
+      // Create transport info between cities
+      final transports = <_TransportInfo>[];
+      for (var i = 0; i < savedTrip.cityNames.length - 1; i++) {
+        transports.add(
+          const _TransportInfo(type: TransportType.train, duration: '2 hr'),
+        );
+      }
+
+      _tripData = _TripData(
+        id: savedTrip.id,
+        title: savedTrip.title,
+        imageUrl: savedTrip.imageUrl,
+        cities: savedTrip.cityNames.length,
+        countries: savedTrip.countries.length,
+        days: totalDays,
+        startDate: savedTrip.startDate,
+        endDate: savedTrip.endDate,
+        cityItineraries: cityItineraries,
+        transports: transports,
+      );
+    } else {
+      // No trip found - create empty placeholder
+      _tripData = _TripData(
+        id: widget.tripId,
+        title: 'Trip Not Found',
+        imageUrl: 'https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=400&q=80',
+        cities: 0,
+        countries: 0,
+        days: 0,
+        cityItineraries: [],
+        transports: [],
+      );
+    }
+
+    _startDate = _tripData.startDate;
+    _endDate = _tripData.endDate;
+    _cityItineraries = List.from(_tripData.cityItineraries);
+  }
+
+  String _getImageForCity(String city) {
+    final cityImages = {
+      'Tokyo': 'https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?w=400&q=80',
+      'Kyoto': 'https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?w=400&q=80',
+      'Osaka': 'https://images.unsplash.com/photo-1590559899731-a382839e5549?w=400&q=80',
+      'Paris': 'https://images.unsplash.com/photo-1502602898657-3e91760cbb34?w=400&q=80',
+      'Rome': 'https://images.unsplash.com/photo-1552832230-c0197dd311b5?w=400&q=80',
+      'Bangkok': 'https://images.unsplash.com/photo-1508009603885-50cf7c579365?w=400&q=80',
+      'Chiang Mai': 'https://images.unsplash.com/photo-1528181304800-259b08848526?w=400&q=80',
+      'Chiang Rai': 'https://images.unsplash.com/photo-1583417319070-4a69db38a482?w=400&q=80',
+      'Phuket': 'https://images.unsplash.com/photo-1589394815804-964ed0be2eb5?w=400&q=80',
+      'Hanoi': 'https://images.unsplash.com/photo-1583417319070-4a69db38a482?w=400&q=80',
+      'Ho Chi Minh': 'https://images.unsplash.com/photo-1583417319070-4a69db38a482?w=400&q=80',
+    };
+    return cityImages[city] ??
+        'https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=400&q=80';
+  }
+
   void _initializeChecklist() {
+    // Initialize with empty checklist sections - user will add items
     _checklistSections = [
       ChecklistSectionData(
         id: 'transport',
         title: 'Transport',
         icon: LucideIcons.plane,
         isExpanded: true,
-        items: [
-          const ChecklistItemData(
-            id: 'flight_tokyo',
-            title: 'Flight to Tokyo',
-            subtitle: 'Japan Airlines \u00b7 Feb 10',
-            isChecked: true,
-            badge: 'Booked',
-          ),
-          const ChecklistItemData(
-            id: 'shinkansen',
-            title: 'Shinkansen to Kyoto',
-            subtitle: 'Nozomi 225 \u00b7 Feb 14',
-            isChecked: true,
-            badge: 'Booked',
-          ),
-          const ChecklistItemData(
-            id: 'flight_vietnam',
-            title: 'Flight to Vietnam',
-            subtitle: 'VietJet Air \u00b7 Feb 18',
-            isChecked: false,
-          ),
-        ],
+        items: [],
       ),
       ChecklistSectionData(
         id: 'accommodation',
         title: 'Accommodation',
         icon: LucideIcons.bed,
         isExpanded: false,
-        items: [
-          const ChecklistItemData(
-            id: 'tokyo_hotel',
-            title: 'Tokyo Hotel',
-            subtitle: 'Shinjuku Prince Hotel \u00b7 7 nights',
-            isChecked: true,
-            badge: 'Booked',
-          ),
-          const ChecklistItemData(
-            id: 'hanoi_hotel',
-            title: 'Hanoi Hotel',
-            subtitle: 'Old Quarter area',
-            isChecked: false,
-          ),
-        ],
+        items: [],
       ),
       ChecklistSectionData(
         id: 'activities',
         title: 'Activities',
         icon: LucideIcons.mapPin,
         isExpanded: false,
-        items: [
-          const ChecklistItemData(
-            id: 'teamlab',
-            title: 'teamLab Borderless',
-            subtitle: 'Tokyo \u00b7 Reservation required',
-            isChecked: true,
-            badge: 'Booked',
-          ),
-          const ChecklistItemData(
-            id: 'fushimi',
-            title: 'Fushimi Inari Shrine',
-            subtitle: 'Kyoto \u00b7 Free entry',
-            isChecked: false,
-          ),
-          const ChecklistItemData(
-            id: 'halong',
-            title: 'Ha Long Bay Cruise',
-            subtitle: 'Vietnam \u00b7 Day trip',
-            isChecked: false,
-          ),
-        ],
+        items: [],
       ),
       ChecklistSectionData(
         id: 'before_you_go',
         title: 'Before You Go',
         icon: LucideIcons.calendarCheck,
         isExpanded: false,
-        items: [
-          const ChecklistItemData(
-            id: 'visa',
-            title: 'Check visa requirements',
-            subtitle: 'Japan \u00b7 Visa-free for 90 days',
-            isChecked: true,
-          ),
-          const ChecklistItemData(
-            id: 'maps',
-            title: 'Download offline maps',
-            subtitle: 'Tokyo, Kyoto, Hanoi areas',
-            isChecked: false,
-          ),
-          const ChecklistItemData(
-            id: 'insurance',
-            title: 'Travel insurance',
-            subtitle: 'Recommended for international travel',
-            isChecked: false,
-          ),
-          const ChecklistItemData(
-            id: 'checkin',
-            title: 'Check-in online',
-            subtitle: 'Japan Airlines \u00b7 24hrs before',
-            isChecked: false,
-          ),
-        ],
+        items: [],
       ),
       ChecklistSectionData(
         id: 'packing',
         title: 'Packing',
         icon: LucideIcons.briefcase,
         isExpanded: false,
-        items: [
-          const ChecklistItemData(
-            id: 'passport',
-            title: 'Passport',
-            subtitle: 'Valid for 6+ months',
-            isChecked: true,
-          ),
-          const ChecklistItemData(
-            id: 'charger',
-            title: 'Universal adapter',
-            subtitle: 'Japan uses Type A/B plugs',
-            isChecked: false,
-          ),
-          const ChecklistItemData(
-            id: 'medications',
-            title: 'Medications',
-            subtitle: 'Pack in carry-on',
-            isChecked: false,
-          ),
-          const ChecklistItemData(
-            id: 'clothes',
-            title: 'Weather-appropriate clothes',
-            subtitle: 'Check forecast before packing',
-            isChecked: false,
-          ),
-          const ChecklistItemData(
-            id: 'toiletries',
-            title: 'Toiletries',
-            subtitle: 'Travel-size for carry-on',
-            isChecked: false,
-          ),
-          const ChecklistItemData(
-            id: 'electronics',
-            title: 'Camera & electronics',
-            subtitle: 'Phone, camera, headphones',
-            isChecked: false,
-          ),
-        ],
+        items: [],
       ),
     ];
   }
@@ -387,16 +281,23 @@ class _TripDashboardScreenState extends State<TripDashboardScreen> {
               }
             },
             child: Container(
-              width: 36,
-              height: 36,
+              width: 40,
+              height: 40,
               decoration: BoxDecoration(
-                color: Colors.black.withValues(alpha: 0.2),
+                color: Colors.white,
                 shape: BoxShape.circle,
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.black.withValues(alpha: 0.15),
+                    blurRadius: 8,
+                    offset: const Offset(0, 2),
+                  ),
+                ],
               ),
               child: const Icon(
                 LucideIcons.arrowLeft,
                 size: 20,
-                color: Colors.white,
+                color: AppColors.primary,
               ),
             ),
           ),

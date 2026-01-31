@@ -18,82 +18,21 @@ class ItineraryPreviewScreen extends StatelessWidget {
 
   final String itineraryId;
 
-  // Mock data - replace with actual data source
+  // Itinerary data - would be loaded from API based on itineraryId
   ItineraryPreviewData get _itinerary {
-    // Single city itinerary example
-    if (itineraryId == 'itin-1') {
-      return const ItineraryPreviewData(
-        id: 'itin-1',
-        title: 'Temple Trail',
-        subtitle: '3 days \u00b7 Chiang Mai',
-        description:
-            'Ancient temples, incredible street food, and mountain views. '
-            'This is northern Thailand at its most magical \u2014 slow, '
-            'soulful, and unforgettable.',
-        imageUrl:
-            'https://images.unsplash.com/photo-1750433857121-6316c791dadb?w=800&q=80',
-        days: 3,
-        placeCount: 12,
-        cities: ['Chiang Mai'],
-        isSingleCity: true,
-        dayOverviews: [
-          DayOverviewData(
-            day: 1,
-            title: 'Temple day',
-            description: 'Doi Suthep, Old City temples',
-          ),
-          DayOverviewData(
-            day: 2,
-            title: 'Old city & markets',
-            description: 'Walking street, night bazaar, khao soi',
-          ),
-          DayOverviewData(
-            day: 3,
-            title: 'Mountains & nature',
-            description: 'Doi Inthanon, waterfalls, coffee farms',
-          ),
-        ],
-        routeStops: [],
-      );
-    }
-
-    // Multi-city itinerary example
-    return const ItineraryPreviewData(
-      id: 'itin-multi',
-      title: 'Classic Thailand',
-      subtitle: '14 days \u00b7 Bangkok \u2192 Chiang Mai \u2192 Phuket \u2192 Krabi',
-      description:
-          'Experience the best of Thailand from vibrant Bangkok to the temples '
-          'of Chiang Mai and the stunning beaches of Phuket and Krabi.',
-      imageUrl:
-          'https://images.unsplash.com/photo-1691934295816-0b8de314494b?w=800&q=80',
-      days: 14,
-      placeCount: 28,
-      cities: ['Bangkok', 'Chiang Mai', 'Phuket', 'Krabi'],
-      isSingleCity: false,
-      dayOverviews: [],
-      routeStops: [
-        RouteStopData(
-          city: 'Bangkok',
-          days: 4,
-          travelInfo: null,
-        ),
-        RouteStopData(
-          city: 'Chiang Mai',
-          days: 3,
-          travelInfo: '1h 15m by flight',
-        ),
-        RouteStopData(
-          city: 'Phuket',
-          days: 4,
-          travelInfo: '1h 30m by flight',
-        ),
-        RouteStopData(
-          city: 'Krabi',
-          days: 3,
-          travelInfo: '3h by ferry',
-        ),
-      ],
+    // Return empty placeholder - would be populated from API
+    return ItineraryPreviewData(
+      id: itineraryId,
+      title: '',
+      subtitle: '',
+      description: '',
+      imageUrl: '',
+      days: 0,
+      placeCount: 0,
+      cities: const [],
+      isSingleCity: true,
+      dayOverviews: const [],
+      routeStops: const [],
     );
   }
 

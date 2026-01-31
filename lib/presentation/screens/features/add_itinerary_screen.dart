@@ -21,55 +21,9 @@ class _AddItineraryScreenState extends State<AddItineraryScreen> {
 
   final List<String> _filters = ['All', 'UK', 'Europe', 'Asia', 'My Saved'];
 
-  final List<_ItineraryCard> _popularItineraries = [
-    _ItineraryCard(
-      id: '1',
-      title: 'Classic London',
-      days: 4,
-      tags: 'Museums, History, Theatre',
-      rating: 4.8,
-      saves: '2.3k',
-      imageUrl:
-          'https://images.unsplash.com/photo-1765924848189-1c4e1c890962?w=400&q=80',
-      isSaved: false,
-    ),
-    _ItineraryCard(
-      id: '2',
-      title: 'Cotswolds Villages',
-      days: 4,
-      tags: 'Countryside, Scenic drives',
-      rating: 4.9,
-      saves: '1.8k',
-      imageUrl:
-          'https://images.unsplash.com/photo-1703291544385-2e616d4fda92?w=400&q=80',
-      isSaved: false,
-    ),
-    _ItineraryCard(
-      id: '3',
-      title: 'Edinburgh & Highlands',
-      days: 5,
-      tags: 'Castles, Nature, Whisky',
-      rating: 4.7,
-      saves: '1.2k',
-      imageUrl:
-          'https://images.unsplash.com/photo-1595275842222-bb71d4209726?w=400&q=80',
-      isSaved: false,
-    ),
-  ];
-
-  final List<_ItineraryCard> _savedItineraries = [
-    _ItineraryCard(
-      id: '4',
-      title: 'My Paris Trip',
-      days: 3,
-      tags: 'Custom itinerary',
-      rating: 0,
-      saves: '',
-      imageUrl:
-          'https://images.unsplash.com/photo-1682261878943-d2c1382ca9a1?w=400&q=80',
-      isSaved: true,
-    ),
-  ];
+  // Itineraries - populated from API
+  final List<_ItineraryCard> _popularItineraries = [];
+  final List<_ItineraryCard> _savedItineraries = [];
 
   @override
   void dispose() {

@@ -101,6 +101,17 @@ Test app helpers in `integration_test/test_app.dart` — `createTestApp()`, `cre
 
 **Important**: Screens with `AnimationController.repeat()` (like the scan results pulse animation) will cause `pumpAndSettle` to hang indefinitely. Use `pump(Duration)` instead for those screens.
 
+## OAuth Configuration
+
+**Google OAuth Client IDs** (Google Cloud Console project `500863193538`):
+- iOS: `500863193538-un8dnveu1754c19044ou95tq6jbfcmpe.apps.googleusercontent.com`
+- Web: `500863193538-6oag4kr62ddm260j83pnne5kncoqt3fk.apps.googleusercontent.com`
+
+**Supabase** (project `vawaszwwsuyuwsasgdtq`):
+- Both client IDs must be in Authentication → Providers → Google → Client IDs
+- Skip nonce checks: ON (required for iOS)
+- Apple Sign-In: Bundle ID `com.jonmac.trippified` in Client IDs
+
 ## Key Constraints
 
 - Supabase is optional — app runs in "demo mode" without credentials

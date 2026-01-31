@@ -18,33 +18,8 @@ class ItineraryBlocksScreen extends StatefulWidget {
 }
 
 class _ItineraryBlocksScreenState extends State<ItineraryBlocksScreen> {
-  // Mock data - would come from provider
-  final List<_CountryItinerary> _itinerary = [
-    _CountryItinerary(
-      name: 'Japan',
-      flag: '\u{1F1EF}\u{1F1F5}',
-      cities: [
-        _CityData(name: 'Tokyo', days: 5),
-        _CityData(name: 'Kyoto', days: 4),
-        _CityData(name: 'Osaka', days: 3),
-      ],
-      transports: [
-        _TransportData(type: TransportType.train, duration: '2h 15m'),
-        _TransportData(type: TransportType.train, duration: '15m'),
-      ],
-    ),
-    _CountryItinerary(
-      name: 'Vietnam',
-      flag: '\u{1F1FB}\u{1F1F3}',
-      cities: [
-        _CityData(name: 'Hanoi', days: 4),
-        _CityData(name: 'Ho Chi Minh City', days: 3),
-      ],
-      transports: [
-        _TransportData(type: TransportType.plane, duration: '1h 20m'),
-      ],
-    ),
-  ];
+  // Itinerary data - populated from navigation params
+  final List<_CountryItinerary> _itinerary = [];
 
   int? _selectedCityIndex;
   int? _selectedCountryIndex;

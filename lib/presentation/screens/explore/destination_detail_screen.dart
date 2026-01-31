@@ -29,91 +29,21 @@ class _DestinationDetailScreenState extends State<DestinationDetailScreen>
   bool _isMapView = true;
   int _selectedRegionIndex = 0;
 
-  // Mock data - replace with actual data fetching
+  // Destination data - would be populated from navigation params or API
   final _destination = _MockDestination(
-    name: 'Thailand',
-    nativeText: '\u0e02\u0e2d\u0e1a\u0e04\u0e38\u0e13\u0e04\u0e23\u0e31\u0e1a/\u0e04\u0e48\u0e30',
-    pronunciation: '"khob khun krap/ka"',
-    imageUrl:
-        'https://images.unsplash.com/photo-1768746845614-e757e075007b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4NDM0ODN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3NjkyNzM4MjZ8&ixlib=rb-4.1.0&q=80&w=1080',
-    description:
-        'Thailand is a Southeast Asian country known for tropical beaches, opulent royal palaces, ancient ruins and ornate temples displaying figures of Buddha.',
-    tags: [
-      'Beaches',
-      'Street Food',
-      'Temples',
-      'Islands',
-      'Wellness',
-    ],
-    phrases: [
-      _Phrase('Hello', '\u0e2a\u0e27\u0e31\u0e2a\u0e14\u0e35', '"sa-wat-dee krap/ka"'),
-      _Phrase('Thank you', '\u0e02\u0e2d\u0e1a\u0e04\u0e38\u0e13', '"khob khun krap/ka"'),
-    ],
-    alerts: [
-      _Alert(LucideIcons.sun, 'Best time: Nov - Feb (cool & dry)'),
-      _Alert(LucideIcons.cloudRain, 'Monsoon season: Jun - Oct'),
-      _Alert(LucideIcons.fileText, 'Visa-free for 30 days (most countries)'),
-      _Alert(LucideIcons.shieldCheck, 'Generally safe for tourists'),
-    ],
+    name: '',
+    nativeText: '',
+    pronunciation: '',
+    imageUrl: '',
+    description: '',
+    tags: [],
+    phrases: [],
+    alerts: [],
   );
-
-  final _regions = [
-    _Region('Northern', 6, const Color(0xFFF87171)),
-    _Region('Central', 5, const Color(0xFF6B7280)),
-    _Region('Eastern', 3, const Color(0xFFFB923C)),
-    _Region('Gulf Islands', 3, const Color(0xFF4ADE80)),
-    _Region('Andaman', 7, const Color(0xFF38BDF8)),
-  ];
-
-  final _cities = [
-    _City('Bangkok', 'Capital', 'Temples, street food, nightlife',
-        'https://images.unsplash.com/photo-1644085237808-c2412ddea427?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=400'),
-    _City('Chiang Mai', 'Northern', 'Mountains, culture, elephants',
-        'https://images.unsplash.com/photo-1721038469269-17abe535770e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=400'),
-    _City('Phuket', 'Andaman', 'Beaches, islands, resorts',
-        'https://images.unsplash.com/photo-1767175937036-4c840d326b8f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=400'),
-    _City('Krabi', 'Andaman', 'Cliffs, kayaking, islands',
-        'https://images.unsplash.com/photo-1735797745671-e9a9ae2516cc?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=400'),
-    _City('Ayutthaya', 'Central', 'UNESCO ruins, ancient temples',
-        'https://images.unsplash.com/photo-1768147097186-d5c4e03dfb11?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=400'),
-  ];
-
-  final _itineraries = [
-    _Itinerary(
-      'Classic Thailand',
-      '14 days',
-      'Bangkok \u2192 Chiang Mai \u2192 Phuket \u2192 Krabi',
-      ['Culture', 'Beach', 'Adventure'],
-      'https://images.unsplash.com/photo-1713862022101-0945a30f2398?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=800',
-    ),
-    _Itinerary(
-      'Beach Hopper',
-      '7 days',
-      'Phuket \u2192 Phi Phi \u2192 Krabi \u2192 Koh Lanta',
-      ['Beach', 'Relaxation'],
-      'https://images.unsplash.com/photo-1551418843-01c6b62e864d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=800',
-    ),
-    _Itinerary(
-      'Northern Explorer',
-      '10 days',
-      'Bangkok \u2192 Ayutthaya \u2192 Chiang Mai \u2192 Pai',
-      ['Culture', 'History'],
-      'https://images.unsplash.com/photo-1682826556359-dfec7215b1f2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=800',
-    ),
-  ];
-
-  final _historyTimeline = [
-    _TimelineEvent('1238', 'Sukhothai Kingdom Founded',
-        'First Thai kingdom established, considered the birthplace of Thai culture, art, and language.'),
-    _TimelineEvent('1351', 'Ayutthaya Kingdom Rises',
-        'Golden age of Thai civilization. Major trading hub connecting East and West.'),
-    _TimelineEvent('1782', 'Chakri Dynasty Begins',
-        'Bangkok founded as capital. Current royal dynasty established, continuing to present day.'),
-    _TimelineEvent('1939', 'Siam Becomes Thailand',
-        "Country renamed from Siam to Thailand, meaning 'Land of the Free'."),
-    _TimelineEvent('Today', 'Modern Thailand',
-        "Constitutional monarchy, major tourist destination, and Southeast Asia's second-largest economy."),
-  ];
+  final List<_Region> _regions = [];
+  final List<_City> _cities = [];
+  final List<_Itinerary> _itineraries = [];
+  final List<_TimelineEvent> _historyTimeline = [];
 
   @override
   void initState() {

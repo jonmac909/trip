@@ -33,65 +33,39 @@ class _CustomizeItineraryScreenState extends State<CustomizeItineraryScreen> {
   static const _minDays = 1.0;
   static const _maxDays = 14.0;
 
-  // Mock data - would come from provider
+  // Selected places - populated from navigation params
   late List<_SelectedPlaceData> _selectedPlaces;
 
   @override
   void initState() {
     super.initState();
-    _nameController.text = '${widget.cityName ?? "Tokyo"} Weekend';
+    _nameController.text = '${widget.cityName ?? "My"} Trip';
 
-    // Initialize selected places from widget or mock data
+    // Initialize selected places from widget params
     _selectedPlaces = widget.places?.asMap().entries.map((entry) {
           return _SelectedPlaceData(
             name: entry.value,
-            category: _getMockCategory(entry.key),
-            area: _getMockArea(entry.key),
+            category: _getCategoryForIndex(entry.key),
+            area: _getAreaForIndex(entry.key),
           );
         }).toList() ??
-        const [
-          _SelectedPlaceData(
-            name: 'Ichiran Ramen',
-            category: 'Restaurant',
-            area: 'Shibuya',
-          ),
-          _SelectedPlaceData(
-            name: 'Senso-ji Temple',
-            category: 'Attraction',
-            area: 'Asakusa',
-          ),
-          _SelectedPlaceData(
-            name: 'Shibuya Crossing',
-            category: 'Attraction',
-            area: 'Shibuya',
-          ),
-          _SelectedPlaceData(
-            name: 'Tsukiji Outer Market',
-            category: 'Food Market',
-            area: 'Tsukiji',
-          ),
-          _SelectedPlaceData(
-            name: 'Meiji Shrine',
-            category: 'Shrine',
-            area: 'Harajuku',
-          ),
-        ];
+        const [];
   }
 
-  String _getMockCategory(int index) {
+  String _getCategoryForIndex(int index) {
     final categories = [
+      'Attraction',
       'Restaurant',
-      'Attraction',
-      'Attraction',
+      'Shopping',
       'Food Market',
-      'Shrine'
+      'Temple'
     ];
     return categories[index % categories.length];
   }
 
-  String _getMockArea(int index) {
-    final areas = ['Shibuya', 'Asakusa', 'Shibuya', 'Tsukiji', 'Harajuku'];
-    return areas[index % areas.length];
+  String _getAreaForIndex(int index) {
+    // Default areas - would be populated from place data
+    return 'City Center';
   }
 
   @override

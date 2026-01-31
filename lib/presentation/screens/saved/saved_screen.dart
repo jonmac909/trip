@@ -27,57 +27,11 @@ class _SavedScreenState extends ConsumerState<SavedScreen>
   final _urlController = TextEditingController();
   final _imagePicker = ImagePicker();
 
-  // Mock data - would come from provider
-  final List<_SavedItineraryData> _savedItineraries = [
-    const _SavedItineraryData(
-      id: '1',
-      title: 'Classic Thailand',
-      country: 'Thailand',
-      duration: '14 days',
-      rating: 4.9,
-      saves: '2.3k',
-      imageUrl:
-          'https://images.unsplash.com/photo-1731168168158-b0574c37716c?w=400',
-    ),
-    const _SavedItineraryData(
-      id: '2',
-      title: 'Tokyo Explorer',
-      country: 'Japan',
-      duration: '7 days',
-      rating: 4.8,
-      saves: '5.1k',
-      imageUrl:
-          'https://images.unsplash.com/photo-1614147892674-e908ce2f95e6?w=400',
-    ),
-    const _SavedItineraryData(
-      id: '3',
-      title: 'Best of Bali',
-      country: 'Indonesia',
-      duration: '10 days',
-      rating: 4.7,
-      saves: '1.9k',
-      imageUrl:
-          'https://images.unsplash.com/photo-1558005137-d9619a5c539f?w=400',
-    ),
-  ];
+  // User's saved itineraries - populated from provider
+  final List<_SavedItineraryData> _savedItineraries = [];
 
-
-  final List<_SavedLinkData> _savedLinks = [
-    const _SavedLinkData(
-      title: 'Best Street Food in Bangkok',
-      source: 'eater.com',
-      contentType: 'Article',
-      savedDaysAgo: 2,
-      icon: LucideIcons.link,
-    ),
-    const _SavedLinkData(
-      title: 'Hidden Gems in Tokyo',
-      source: 'youtube.com',
-      contentType: 'Video',
-      savedDaysAgo: 5,
-      icon: LucideIcons.play,
-    ),
-  ];
+  // User's saved links - populated from provider
+  final List<_SavedLinkData> _savedLinks = [];
 
   @override
   void initState() {
@@ -303,81 +257,82 @@ class _SavedScreenState extends ConsumerState<SavedScreen>
   }
 
   Widget _buildEmptyState() {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: AppSpacing.lg),
-      child: Column(
-        children: [
-          const Spacer(flex: 3),
-          Container(
-            width: 80,
-            height: 80,
-            decoration: const BoxDecoration(
-              color: AppColors.surface,
-              shape: BoxShape.circle,
+    return Center(
+      child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: AppSpacing.lg),
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Container(
+              width: 80,
+              height: 80,
+              decoration: const BoxDecoration(
+                color: AppColors.surface,
+                shape: BoxShape.circle,
+              ),
+              child: const Icon(
+                LucideIcons.bookmark,
+                size: 32,
+                color: AppColors.textTertiary,
+              ),
             ),
-            child: const Icon(
-              LucideIcons.bookmark,
-              size: 32,
-              color: AppColors.textTertiary,
-            ),
-          ),
-          const SizedBox(height: 16),
-          Text(
-            'Nothing saved yet',
-            style: GoogleFonts.dmSans(
-              fontSize: 18,
-              fontWeight: FontWeight.w600,
-              color: AppColors.primary,
-            ),
-          ),
-          const SizedBox(height: 8),
-          SizedBox(
-            width: 280,
-            child: Text(
-              'Save places from Explore or import from\nTikTok and Instagram',
+            const SizedBox(height: 16),
+            Text(
+              'Nothing saved yet',
               style: GoogleFonts.dmSans(
-                fontSize: 14,
-                color: AppColors.textSecondary,
-                height: 1.5,
+                fontSize: 18,
+                fontWeight: FontWeight.w600,
+                color: AppColors.primary,
               ),
-              textAlign: TextAlign.center,
             ),
-          ),
-          const SizedBox(height: 16),
-          GestureDetector(
-            onTap: () {
-              // Navigate to explore
-            },
-            child: Container(
-              height: 48,
-              padding: const EdgeInsets.symmetric(horizontal: 20),
-              decoration: BoxDecoration(
-                color: AppColors.accent,
-                borderRadius: BorderRadius.circular(24),
+            const SizedBox(height: 8),
+            SizedBox(
+              width: 280,
+              child: Text(
+                'Save places from Explore or import from\nTikTok and Instagram',
+                style: GoogleFonts.dmSans(
+                  fontSize: 14,
+                  color: AppColors.textSecondary,
+                  height: 1.5,
+                ),
+                textAlign: TextAlign.center,
               ),
-              child: Row(
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  const Icon(
-                    LucideIcons.compass,
-                    size: 20,
-                    color: AppColors.primary,
-                  ),
-                  const SizedBox(width: 8),
-                  Text(
-                    'Start Exploring',
-                    style: GoogleFonts.dmSans(
-                      fontSize: 15,
-                      fontWeight: FontWeight.w600,
+            ),
+            const SizedBox(height: 16),
+            GestureDetector(
+              onTap: () {
+                // Navigate to explore
+              },
+              child: Container(
+                height: 48,
+                padding: const EdgeInsets.symmetric(horizontal: 20),
+                decoration: BoxDecoration(
+                  color: AppColors.accent,
+                  borderRadius: BorderRadius.circular(24),
+                ),
+                child: Row(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    const Icon(
+                      LucideIcons.compass,
+                      size: 20,
                       color: AppColors.primary,
                     ),
-                  ),
-                ],
+                    const SizedBox(width: 8),
+                    Text(
+                      'Start Exploring',
+                      style: GoogleFonts.dmSans(
+                        fontSize: 15,
+                        fontWeight: FontWeight.w600,
+                        color: AppColors.primary,
+                      ),
+                    ),
+                  ],
+                ),
               ),
             ),
-          ),
-          const Spacer(flex: 4),
-        ],
+          ],
+        ),
       ),
     );
   }
@@ -425,18 +380,27 @@ class _SavedScreenState extends ConsumerState<SavedScreen>
           ],
         ),
         const SizedBox(height: AppSpacing.md),
-        ..._savedItineraries.map((itinerary) => Padding(
-              padding: const EdgeInsets.only(bottom: AppSpacing.md),
-              child: _DismissibleCard(
-                itemKey: itinerary.id,
-                onDismissed: () {
-                  setState(() {
-                    _savedItineraries.removeWhere((i) => i.id == itinerary.id);
-                  });
-                },
-                child: _SavedItineraryCard(itinerary: itinerary),
-              ),
-            )),
+        ..._savedItineraries.map((itinerary) {
+          final index = _savedItineraries.indexOf(itinerary);
+          return Padding(
+            padding: const EdgeInsets.only(bottom: AppSpacing.md),
+            child: _DismissibleCard(
+              itemKey: itinerary.id,
+              itemName: itinerary.title,
+              onDismissed: () {
+                setState(() {
+                  _savedItineraries.removeWhere((i) => i.id == itinerary.id);
+                });
+              },
+              onUndo: () {
+                setState(() {
+                  _savedItineraries.insert(index, itinerary);
+                });
+              },
+              child: _SavedItineraryCard(itinerary: itinerary),
+            ),
+          );
+        }),
       ],
     );
   }
@@ -476,17 +440,30 @@ class _SavedScreenState extends ConsumerState<SavedScreen>
         return ListView(
           padding: const EdgeInsets.symmetric(horizontal: AppSpacing.lg),
           children: [
-            ...cityGroups.map((entry) => Padding(
-                  padding: const EdgeInsets.only(bottom: AppSpacing.md),
-                  child: _DismissibleCard(
-                    itemKey: entry.key,
-                    onDismissed: () => _deleteLocationGroup(entry.value),
-                    child: _SavedLocationGroup(
-                      locationName: entry.key,
-                      places: entry.value,
-                    ),
+            ...cityGroups.map((entry) {
+              final entryIndex = cityGroups.indexOf(entry);
+              final placesBackup = List<SavedItem>.from(entry.value);
+              return Padding(
+                padding: const EdgeInsets.only(bottom: AppSpacing.md),
+                child: _DismissibleCard(
+                  itemKey: entry.key,
+                  itemName: entry.key,
+                  onDismissed: () => _deleteLocationGroup(entry.value),
+                  onUndo: () {
+                    // Re-add the places to state
+                    final notifier =
+                        ref.read(savedItemsNotifierProvider.notifier);
+                    for (final place in placesBackup) {
+                      notifier.addItemToState(place);
+                    }
+                  },
+                  child: _SavedLocationGroup(
+                    locationName: entry.key,
+                    places: entry.value,
                   ),
-                )),
+                ),
+              );
+            }),
             const SizedBox(height: AppSpacing.sm),
             Center(
               child: Text(
@@ -536,61 +513,71 @@ class _SavedScreenState extends ConsumerState<SavedScreen>
           ],
         ),
         const SizedBox(height: AppSpacing.md),
-        ..._savedLinks.map((link) => Padding(
-              padding: const EdgeInsets.only(bottom: AppSpacing.md),
-              child: _DismissibleCard(
-                itemKey: link.title,
-                onDismissed: () {
-                  setState(() {
-                    _savedLinks.removeWhere((l) => l.title == link.title);
-                  });
-                },
-                child: _SavedLinkCard(link: link),
-              ),
-            )),
+        ..._savedLinks.map((link) {
+          final index = _savedLinks.indexOf(link);
+          return Padding(
+            padding: const EdgeInsets.only(bottom: AppSpacing.md),
+            child: _DismissibleCard(
+              itemKey: link.title,
+              itemName: link.title,
+              onDismissed: () {
+                setState(() {
+                  _savedLinks.removeWhere((l) => l.title == link.title);
+                });
+              },
+              onUndo: () {
+                setState(() {
+                  _savedLinks.insert(index, link);
+                });
+              },
+              child: _SavedLinkCard(link: link),
+            ),
+          );
+        }),
       ],
     );
   }
 
   Widget _buildTabEmptyState(String title, String description) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: AppSpacing.xl),
-      child: Column(
-        children: [
-          const Spacer(flex: 3),
-          Container(
-            width: 80,
-            height: 80,
-            decoration: const BoxDecoration(
-              color: AppColors.surface,
-              shape: BoxShape.circle,
+    return Center(
+      child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: AppSpacing.xl),
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Container(
+              width: 80,
+              height: 80,
+              decoration: const BoxDecoration(
+                color: AppColors.surface,
+                shape: BoxShape.circle,
+              ),
+              child: const Icon(
+                LucideIcons.bookmark,
+                size: 32,
+                color: AppColors.textTertiary,
+              ),
             ),
-            child: const Icon(
-              LucideIcons.bookmark,
-              size: 32,
-              color: AppColors.textTertiary,
+            const SizedBox(height: 16),
+            Text(
+              title,
+              style: GoogleFonts.dmSans(
+                fontSize: 18,
+                fontWeight: FontWeight.w600,
+                color: AppColors.primary,
+              ),
             ),
-          ),
-          const SizedBox(height: 16),
-          Text(
-            title,
-            style: GoogleFonts.dmSans(
-              fontSize: 18,
-              fontWeight: FontWeight.w600,
-              color: AppColors.primary,
+            const SizedBox(height: 8),
+            Text(
+              description,
+              style: GoogleFonts.dmSans(
+                fontSize: 14,
+                color: AppColors.textSecondary,
+              ),
+              textAlign: TextAlign.center,
             ),
-          ),
-          const SizedBox(height: 8),
-          Text(
-            description,
-            style: GoogleFonts.dmSans(
-              fontSize: 14,
-              color: AppColors.textSecondary,
-            ),
-            textAlign: TextAlign.center,
-          ),
-          const Spacer(flex: 4),
-        ],
+          ],
+        ),
       ),
     );
   }
@@ -1088,12 +1075,16 @@ class _SavedLinkCard extends StatelessWidget {
 class _DismissibleCard extends StatelessWidget {
   const _DismissibleCard({
     required this.itemKey,
+    required this.itemName,
     required this.onDismissed,
+    required this.onUndo,
     required this.child,
   });
 
   final String itemKey;
+  final String itemName;
   final VoidCallback onDismissed;
+  final VoidCallback onUndo;
   final Widget child;
 
   @override
@@ -1101,42 +1092,22 @@ class _DismissibleCard extends StatelessWidget {
     return Dismissible(
       key: Key(itemKey),
       direction: DismissDirection.endToStart,
-      onDismissed: (_) => onDismissed(),
-      confirmDismiss: (_) async {
-        return await showDialog<bool>(
-          context: context,
-          builder: (ctx) => AlertDialog(
-            backgroundColor: AppColors.background,
-            title: Text(
-              'Delete',
-              style: GoogleFonts.dmSans(
-                fontWeight: FontWeight.w700,
-                color: AppColors.primary,
-              ),
-            ),
+      onDismissed: (_) {
+        onDismissed();
+        ScaffoldMessenger.of(context).clearSnackBars();
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
             content: Text(
-              'Are you sure you want to delete this?',
-              style: GoogleFonts.dmSans(color: AppColors.textSecondary),
+              '$itemName deleted',
+              style: GoogleFonts.dmSans(),
             ),
-            actions: [
-              TextButton(
-                onPressed: () => Navigator.pop(ctx, false),
-                child: Text(
-                  'Cancel',
-                  style: GoogleFonts.dmSans(color: AppColors.textSecondary),
-                ),
-              ),
-              TextButton(
-                onPressed: () => Navigator.pop(ctx, true),
-                child: Text(
-                  'Delete',
-                  style: GoogleFonts.dmSans(
-                    color: const Color(0xFFEF4444),
-                    fontWeight: FontWeight.w600,
-                  ),
-                ),
-              ),
-            ],
+            behavior: SnackBarBehavior.floating,
+            duration: const Duration(seconds: 3),
+            action: SnackBarAction(
+              label: 'Undo',
+              textColor: AppColors.accent,
+              onPressed: onUndo,
+            ),
           ),
         );
       },

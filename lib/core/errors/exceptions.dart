@@ -98,3 +98,23 @@ class AiGenerationException extends TrippifiedException {
   const AiGenerationException([super.message = 'AI generation failed'])
       : super(code: 'AI_GENERATION_ERROR');
 }
+
+/// Base exception for authentication errors
+class AppAuthException extends TrippifiedException {
+  const AppAuthException(super.message, {super.code = 'AUTH_ERROR'});
+}
+
+/// Thrown when OAuth provider authentication fails
+class OAuthException extends AppAuthException {
+  OAuthException(String provider, [String? details])
+      : super(
+          '$provider authentication failed${details != null ? ': $details' : ''}',
+          code: 'OAUTH_ERROR',
+        );
+}
+
+/// Thrown when user cancels authentication
+class AuthCancelledException extends AppAuthException {
+  const AuthCancelledException()
+      : super('Authentication cancelled', code: 'AUTH_CANCELLED');
+}

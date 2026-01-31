@@ -448,81 +448,8 @@ class _ThingsToDoTab extends StatelessWidget {
 
   static final _filters = ['All', 'Temples', 'Nature', 'Food'];
 
-  static final _mockPlaces = [
-    const Place(
-      id: '1',
-      name: 'Doi Suthep Temple',
-      location: 'Chiang Mai',
-      imageUrl:
-          'https://images.unsplash.com/photo-1714241158660-91ef1b9bd5c7?w=400&q=80',
-      rating: 4.8,
-      reviewCount: 12453,
-      description:
-          'Wat Phra That Doi Suthep is a sacred Buddhist temple on a mountain overlooking Chiang Mai. '
-          'The golden chedi houses a relic of Buddha and offers stunning views of the city below.',
-      openingHours: '6:00 AM - 6:00 PM (Last entry 5:30 PM)',
-      isOpen: true,
-      type: PlaceType.attraction,
-      tips: [
-        'Wear appropriate clothing (cover shoulders and knees)',
-        'Visit early morning to avoid crowds',
-      ],
-    ),
-    const Place(
-      id: '2',
-      name: 'Elephant Nature Park',
-      location: 'Chiang Mai',
-      imageUrl:
-          'https://images.unsplash.com/photo-1708885820142-f48f4c3fc1b1?w=400&q=80',
-      rating: 4.9,
-      reviewCount: 8234,
-      description:
-          'An ethical elephant sanctuary where you can observe and care for rescued elephants.',
-      openingHours: '8:00 AM - 5:00 PM',
-      isOpen: true,
-      type: PlaceType.attraction,
-      tips: [
-        'Book in advance as spots fill up quickly',
-        'Wear comfortable clothes you do not mind getting dirty',
-      ],
-    ),
-    const Place(
-      id: '3',
-      name: 'Khao Soi Khun Yai',
-      location: 'Chiang Mai',
-      imageUrl:
-          'https://images.unsplash.com/photo-1646850148817-c3a5e8a35fd9?w=400&q=80',
-      rating: 4.7,
-      reviewCount: 3456,
-      description:
-          'Famous local spot serving authentic Northern Thai curry noodles.',
-      openingHours: '10:00 AM - 4:00 PM',
-      isOpen: true,
-      type: PlaceType.restaurant,
-      tips: [
-        'Arrive before noon to avoid the lunch rush',
-        'Try the chicken khao soi - it is their specialty',
-      ],
-    ),
-    const Place(
-      id: '4',
-      name: 'Sunday Walking Street',
-      location: 'Chiang Mai',
-      imageUrl:
-          'https://images.unsplash.com/photo-1646850150750-daa2ee138999?w=400&q=80',
-      rating: 4.6,
-      reviewCount: 5678,
-      description:
-          'Vibrant night market with crafts, street food, and local entertainment.',
-      openingHours: 'Sundays 4:00 PM - 10:00 PM',
-      isOpen: false,
-      type: PlaceType.shopping,
-      tips: [
-        'Bring cash as most vendors do not accept cards',
-        'Start at Tha Pae Gate and walk down Ratchadamnoen Road',
-      ],
-    ),
-  ];
+  // Places loaded from API - empty until fetched
+  static final List<Place> _mockPlaces = [];
 
   String _getTagColor(PlaceType type) {
     switch (type) {
@@ -746,39 +673,8 @@ class _ItinerariesTab extends StatelessWidget {
   final String cityName;
   final ValueChanged<String> onItineraryTap;
 
-  static const _mockItineraries = [
-    _ItineraryPreviewData(
-      id: 'itin-1',
-      title: 'Temple Trail',
-      days: 3,
-      placeCount: 12,
-      city: 'Chiang Mai',
-      description:
-          'Ancient temples, incredible street food, and mountain views. '
-          'This is northern Thailand at its most magical.',
-      dayOverviews: [
-        _DayOverview(day: 1, title: 'Temple day', description: 'Doi Suthep, Old City temples'),
-        _DayOverview(day: 2, title: 'Old city & markets', description: 'Walking street, night bazaar, khao soi'),
-        _DayOverview(day: 3, title: 'Mountains & nature', description: 'Doi Inthanon, waterfalls, coffee farms'),
-      ],
-    ),
-    _ItineraryPreviewData(
-      id: 'itin-2',
-      title: 'Food & Culture',
-      days: 5,
-      placeCount: 18,
-      city: 'Chiang Mai',
-      description:
-          'Dive deep into Chiang Mai\'s culinary scene and rich cultural heritage.',
-      dayOverviews: [
-        _DayOverview(day: 1, title: 'Arrival & Old City', description: 'Check in, explore Tha Pae area'),
-        _DayOverview(day: 2, title: 'Cooking class day', description: 'Market tour, Thai cooking class'),
-        _DayOverview(day: 3, title: 'Temple hopping', description: 'Wat Chedi Luang, Wat Phra Singh'),
-        _DayOverview(day: 4, title: 'Night markets', description: 'Street food tour, night bazaar'),
-        _DayOverview(day: 5, title: 'Day trip', description: 'Doi Inthanon National Park'),
-      ],
-    ),
-  ];
+  // Itineraries data - populated from API
+  static const List<_ItineraryPreviewData> _mockItineraries = [];
 
   @override
   Widget build(BuildContext context) {

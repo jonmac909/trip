@@ -18,43 +18,21 @@ class ItineraryDetailScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // Mock data
+    // Itinerary data - would be passed via navigation or loaded from API
     const itinerary = _ItineraryData(
-      title: 'Tokyo Explorer',
-      description:
-          'The ultimate Tokyo itinerary covering Shibuya, Shinjuku, Harajuku, Asakusa and day trips to Mt. Fuji.',
-      creatorName: '@wanderlust.amy',
-      creatorMeta: 'Travel Creator \u00b7 12.4k followers',
-      creatorAvatarUrl:
-          'https://images.unsplash.com/photo-1715188160310-66dc447b78af?w=200&q=80',
-      heroImageUrl:
-          'https://images.unsplash.com/photo-1715202145156-ca09159c3183?w=800&q=80',
-      days: 7,
-      city: 'Tokyo',
-      placesCount: 12,
-      savesCount: '2.4k',
+      title: '',
+      description: '',
+      creatorName: '',
+      creatorMeta: '',
+      creatorAvatarUrl: '',
+      heroImageUrl: '',
+      days: 0,
+      city: '',
+      placesCount: 0,
+      savesCount: '',
     );
 
-    final days = [
-      _DayPreview(
-        number: 1,
-        title: 'Shibuya & Harajuku',
-        placesCount: 4,
-        isHighlighted: true,
-      ),
-      _DayPreview(
-        number: 2,
-        title: 'Shinjuku & Golden Gai',
-        placesCount: 3,
-        isHighlighted: false,
-      ),
-      _DayPreview(
-        number: 3,
-        title: 'Asakusa & Senso-ji',
-        placesCount: 3,
-        isHighlighted: false,
-      ),
-    ];
+    final List<_DayPreview> days = [];
 
     return Scaffold(
       backgroundColor: AppColors.background,

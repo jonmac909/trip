@@ -33,59 +33,8 @@ class _SavedCityDetailScreenState extends State<SavedCityDetailScreen> {
   bool _isSelectMode = false;
   final Set<String> _selectedPlaces = {};
 
-  // Mock data - would come from provider
-  final List<_SavedPlaceData> _places = [
-    const _SavedPlaceData(
-      id: '1',
-      name: 'Ichiran Ramen',
-      category: 'Restaurant',
-      area: 'Shibuya',
-      source: 'TikTok',
-      sourceIcon: LucideIcons.video,
-      imageUrl:
-          'https://images.unsplash.com/photo-1638628081165-b5afe1ecebf3?w=400',
-    ),
-    const _SavedPlaceData(
-      id: '2',
-      name: 'Senso-ji Temple',
-      category: 'Attraction',
-      area: 'Asakusa',
-      source: 'IG',
-      sourceIcon: LucideIcons.instagram,
-      imageUrl:
-          'https://images.unsplash.com/photo-1761141659472-4654f3b0a3fd?w=400',
-    ),
-    const _SavedPlaceData(
-      id: '3',
-      name: 'Shibuya Crossing',
-      category: 'Attraction',
-      area: 'Shibuya',
-      source: 'Explore',
-      sourceIcon: LucideIcons.compass,
-      imageUrl:
-          'https://images.unsplash.com/photo-1691459841469-87e136cbaa27?w=400',
-    ),
-    const _SavedPlaceData(
-      id: '4',
-      name: 'Tsukiji Outer Market',
-      category: 'Food Market',
-      area: 'Tsukiji',
-      source: 'TikTok',
-      sourceIcon: LucideIcons.video,
-      imageUrl:
-          'https://images.unsplash.com/photo-1759928236164-a7f6ca707b7b?w=400',
-    ),
-    const _SavedPlaceData(
-      id: '5',
-      name: 'Akihabara District',
-      category: 'Shopping',
-      area: 'Akihabara',
-      source: 'IG',
-      sourceIcon: LucideIcons.instagram,
-      imageUrl:
-          'https://images.unsplash.com/photo-1762356201958-d8ece711e4c3?w=400',
-    ),
-  ];
+  // Places data - populated from provider
+  final List<_SavedPlaceData> _places = [];
 
   final List<String> _filters = ['All', 'Food', 'Sights', 'Shopping'];
 

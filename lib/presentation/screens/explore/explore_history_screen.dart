@@ -11,45 +11,8 @@ import 'package:trippified/core/constants/app_spacing.dart';
 class ExploreHistoryScreen extends StatelessWidget {
   const ExploreHistoryScreen({super.key});
 
-  // Sample data matching the design JSON
-  static const _itineraries = [
-    _ItineraryGridData(
-      title: 'Ancient Rome',
-      subtitle: 'Italy \u00b7 7 days',
-      imageUrl:
-          'https://images.unsplash.com/photo-1717445123544-a4543034d33e?w=400&q=80',
-    ),
-    _ItineraryGridData(
-      title: 'Egyptian Wonders',
-      subtitle: 'Egypt \u00b7 10 days',
-      imageUrl:
-          'https://images.unsplash.com/photo-1761688150081-03d62cc49678?w=400&q=80',
-    ),
-    _ItineraryGridData(
-      title: 'Incan Trail',
-      subtitle: 'Peru \u00b7 12 days',
-      imageUrl:
-          'https://images.unsplash.com/photo-1615239684960-f443deb29a61?w=400&q=80',
-    ),
-    _ItineraryGridData(
-      title: 'Greek Odyssey',
-      subtitle: 'Greece \u00b7 8 days',
-      imageUrl:
-          'https://images.unsplash.com/photo-1733338684434-399686e8cde8?w=400&q=80',
-    ),
-    _ItineraryGridData(
-      title: 'Imperial China',
-      subtitle: 'China \u00b7 14 days',
-      imageUrl:
-          'https://images.unsplash.com/photo-1539987225288-7d998989461e?w=400&q=80',
-    ),
-    _ItineraryGridData(
-      title: 'Golden Triangle',
-      subtitle: 'India \u00b7 9 days',
-      imageUrl:
-          'https://images.unsplash.com/photo-1679395397579-2094cbc46731?w=400&q=80',
-    ),
-  ];
+  // Itineraries data - populated from API
+  static const List<_ItineraryGridData> _itineraries = [];
 
   @override
   Widget build(BuildContext context) {

@@ -7,7 +7,7 @@ import 'package:apple_maps_flutter/apple_maps_flutter.dart';
 import 'package:trippified/core/constants/app_colors.dart';
 import 'package:trippified/core/constants/app_spacing.dart';
 import 'package:trippified/core/errors/exceptions.dart';
-import 'package:trippified/core/services/gemini_service.dart';
+import 'package:trippified/core/services/claude_service.dart';
 import 'package:trippified/core/widgets/app_bottom_nav.dart';
 import 'package:trippified/presentation/navigation/app_router.dart';
 import 'package:trippified/presentation/widgets/day_card.dart';
@@ -87,25 +87,11 @@ class _DayBuilderScreenState extends State<DayBuilderScreen>
       _cityCoordinates[widget.cityName] ??
       const LatLng(35.6762, 139.6503);
 
-  // Mock flight data - would come from provider
-  final FlightTicketData _mockFlight = const FlightTicketData(
-    departureTime: '5:30 PM',
-    departureCode: 'MCO',
-    arrivalTime: '8:15 PM',
-    arrivalCode: 'NRT',
-    duration: '14h 20m',
-    flightNumber: 'JAL 123',
-  );
+  // Flight data - populated from user's bookings
+  FlightTicketData? _flight;
 
-  // Mock hotel data - would come from provider
-  final HotelTicketData _mockHotel = const HotelTicketData(
-    name: 'Park Hyatt Tokyo',
-    dates: 'Mar 15-20',
-    nights: 5,
-    location: 'Shinjuku',
-    imageUrl:
-        'https://images.unsplash.com/photo-1718851972754-6638b49b4775?w=400&q=80',
-  );
+  // Hotel data - populated from user's bookings
+  HotelTicketData? _hotel;
 
   @override
   void initState() {
@@ -263,12 +249,12 @@ class _DayBuilderScreenState extends State<DayBuilderScreen>
                           dayPlans: _dayPlans,
                           cityName: widget.cityName,
                           totalDays: widget.days,
-                          flight: _mockFlight,
-                          hotel: _mockHotel,
+                          flight: _flight,
+                          hotel: _hotel,
                         ),
                         _BookingsTab(
-                          flight: _mockFlight,
-                          hotel: _mockHotel,
+                          flight: _flight,
+                          hotel: _hotel,
                         ),
                       ],
                     ),
@@ -568,7 +554,7 @@ class _DayBuilderScreenState extends State<DayBuilderScreen>
     });
 
     try {
-      final generatedPlans = await GeminiService.instance.generateDayPlans(
+      final generatedPlans = await ClaudeService.instance.generateDayPlans(
         cityName: widget.cityName,
         totalDays: widget.days,
         emptyDayNumbers: emptyDayNumbers,
@@ -660,7 +646,7 @@ class _DayBuilderScreenState extends State<DayBuilderScreen>
         }
       }
 
-      final generatedPlans = await GeminiService.instance.generateDayPlans(
+      final generatedPlans = await ClaudeService.instance.generateDayPlans(
         cityName: widget.cityName,
         totalDays: widget.days,
         emptyDayNumbers: [_dayPlans[dayIndex].dayNumber],
@@ -746,7 +732,7 @@ class _DayBuilderScreenState extends State<DayBuilderScreen>
         }
       }
 
-      final generatedPlans = await GeminiService.instance.generateDayPlans(
+      final generatedPlans = await ClaudeService.instance.generateDayPlans(
         cityName: widget.cityName,
         totalDays: widget.days,
         emptyDayNumbers: [_dayPlans[dayIndex].dayNumber],

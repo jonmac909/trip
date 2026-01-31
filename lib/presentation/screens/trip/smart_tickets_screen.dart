@@ -31,71 +31,13 @@ class _SmartTicketsScreenState extends State<SmartTicketsScreen> {
   int _selectedDay = 0;
   int _bottomNavIndex = 0;
 
-  // Mock ticket data - would come from provider
-  late List<_TicketData> _tickets;
+  // Ticket data - populated from user's bookings
+  List<_TicketData> _tickets = [];
 
   @override
   void initState() {
     super.initState();
-    _tickets = _getMockTickets();
-  }
-
-  List<_TicketData> _getMockTickets() {
-    if (widget.cityName.toLowerCase() == 'hanoi') {
-      return [
-        _TicketData(
-          id: '1',
-          name: 'Ho Chi Minh Mausoleum',
-          details: 'Feb 22 \u00b7 8:00 AM \u00b7 2 tickets',
-          imageUrl:
-              'https://images.unsplash.com/photo-1509030450996-dd1a26dda07a?w=400&q=80',
-          hasTicket: true,
-        ),
-        _TicketData(
-          id: '2',
-          name: 'Ha Long Bay Cruise',
-          details: 'Feb 23 \u00b7 7:00 AM \u00b7 Day trip',
-          imageUrl:
-              'https://images.unsplash.com/photo-1528127269322-539801943592?w=400&q=80',
-          hasTicket: true,
-        ),
-        _TicketData(
-          id: '3',
-          name: 'Water Puppet Theatre',
-          details: 'Feb 24 \u00b7 8:00 PM \u00b7 2 seats',
-          imageUrl:
-              'https://images.unsplash.com/photo-1555921015-5532091f6026?w=400&q=80',
-          hasTicket: true,
-        ),
-      ];
-    }
-    // Tokyo default
-    return [
-      _TicketData(
-        id: '1',
-        name: 'teamLab Borderless',
-        details: 'Feb 11 \u00b7 10:00 AM \u00b7 2 tickets',
-        imageUrl:
-            'https://images.unsplash.com/photo-1705807671058-db6c317df87e?w=400&q=80',
-        hasTicket: true,
-      ),
-      _TicketData(
-        id: '2',
-        name: 'Sukiyabashi Jiro',
-        details: 'Feb 11 \u00b7 7:00 PM \u00b7 2 seats',
-        imageUrl:
-            'https://images.unsplash.com/photo-1543902896-59b85e2fb6ac?w=400&q=80',
-        hasTicket: true,
-      ),
-      _TicketData(
-        id: '3',
-        name: 'Shinkansen to Kyoto',
-        details: 'Feb 14 \u00b7 10:30 AM \u00b7 Nozomi 225',
-        iconData: LucideIcons.train,
-        iconColor: const Color(0xFF2196F3),
-        hasTicket: true,
-      ),
-    ];
+    // Tickets would be loaded from provider
   }
 
   @override

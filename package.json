@@ -2,5 +2,9 @@
   "dependencies": {
     "puppeteer": "^24.36.0",
     "ws": "^8.19.0"
+  },
+  "devDependencies": {
+    "apple-signin-auth": "^2.0.0",
+    "jsonwebtoken": "^9.0.3"
   }
 }

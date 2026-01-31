@@ -69,7 +69,7 @@ class SplashScreen extends StatelessWidget {
                     children: [
                       // Title
                       Text(
-                        'Unveil The\nTravel Wonders',
+                        'Unlock Your\nNext Journey',
                         textAlign: TextAlign.center,
                         style: GoogleFonts.dmSans(
                           fontSize: 32,

@@ -1,4 +1,7 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:lucide_icons/lucide_icons.dart';
@@ -8,6 +11,7 @@ import 'package:trippified/core/constants/app_colors.dart';
 import 'package:trippified/core/constants/app_spacing.dart';
 import 'package:trippified/core/widgets/app_bottom_nav.dart';
 import 'package:trippified/presentation/navigation/app_router.dart';
+import 'package:trippified/presentation/providers/trips_provider.dart';
 import 'package:trippified/presentation/screens/explore/explore_screen.dart';
 import 'package:trippified/presentation/screens/profile/profile_screen.dart';
 import 'package:trippified/presentation/screens/saved/saved_screen.dart';
@@ -44,78 +48,18 @@ class _HomeScreenState extends State<HomeScreen> {
 }
 
 /// Trips tab content with tabs
-class _TripsTab extends StatefulWidget {
+class _TripsTab extends ConsumerStatefulWidget {
   const _TripsTab();
 
   @override
-  State<_TripsTab> createState() => _TripsTabState();
+  ConsumerState<_TripsTab> createState() => _TripsTabState();
 }
 
-class _TripsTabState extends State<_TripsTab>
+class _TripsTabState extends ConsumerState<_TripsTab>
     with SingleTickerProviderStateMixin {
   late TabController _tabController;
 
-  // Mock data - replace with actual data from provider
-  final List<_TripData> _mockTrips = [
-    _TripData(
-      id: '1',
-      title: 'Japan Adventure',
-      imageUrl:
-          'https://images.unsplash.com/photo-1743515169286-7be1203c641a?w=400&q=80',
-      dates: 'Mar 15 - Mar 28',
-      daysUntil: 52,
-      cityNames: ['Tokyo', 'Kyoto', 'Osaka'],
-      status: TripStatus.upcoming,
-    ),
-    _TripData(
-      id: '2',
-      title: 'Europe Trip',
-      imageUrl:
-          'https://images.unsplash.com/photo-1756623586068-25f5e8fcfdfd?w=400&q=80',
-      dates: 'Jun 1 - Jun 21',
-      daysUntil: 98,
-      cityNames: ['Paris', 'Rome'],
-      status: TripStatus.upcoming,
-    ),
-  ];
-
-  final List<_WishlistPlace> _mockWishlist = [
-    _WishlistPlace(
-      id: '1',
-      name: 'Santorini, Greece',
-      imageUrl:
-          'https://images.unsplash.com/photo-1719607526486-96f27a995fcc?w=200&q=80',
-      addedAgo: '2 weeks ago',
-    ),
-    _WishlistPlace(
-      id: '2',
-      name: 'Kyoto, Japan',
-      imageUrl:
-          'https://images.unsplash.com/photo-1764271835340-125ed53e197d?w=200&q=80',
-      addedAgo: '1 month ago',
-    ),
-    _WishlistPlace(
-      id: '3',
-      name: 'Bali, Indonesia',
-      imageUrl:
-          'https://images.unsplash.com/photo-1735991088724-1a83f2739168?w=200&q=80',
-      addedAgo: '1 month ago',
-    ),
-    _WishlistPlace(
-      id: '4',
-      name: 'Amalfi Coast, Italy',
-      imageUrl:
-          'https://images.unsplash.com/photo-1551548703-d5a3d343a264?w=200&q=80',
-      addedAgo: '3 months ago',
-    ),
-    _WishlistPlace(
-      id: '5',
-      name: 'Marrakech, Morocco',
-      imageUrl:
-          'https://images.unsplash.com/photo-1716146755954-4f197a5b6031?w=200&q=80',
-      addedAgo: '3 months ago',
-    ),
-  ];
+  final List<_WishlistPlace> _wishlist = [];
 
   @override
   void initState() {
@@ -130,12 +74,15 @@ class _TripsTabState extends State<_TripsTab>
     super.dispose();
   }
 
-  List<_TripData> _getTripsForStatus(TripStatus status) {
-    return _mockTrips.where((t) => t.status == status).toList();
-  }
-
   @override
   Widget build(BuildContext context) {
+    // Watch the provider to rebuild when trips change
+    final trips = ref.watch(tripsProvider);
+    final upcomingTrips =
+        trips.where((t) => t.status == TripStatus.upcoming).toList();
+    final draftTrips =
+        trips.where((t) => t.status == TripStatus.draft).toList();
+    final pastTrips = trips.where((t) => t.status == TripStatus.past).toList();
     final showFab = _tabController.index != 3;
     return Scaffold(
       backgroundColor: AppColors.background,
@@ -197,10 +144,7 @@ class _TripsTabState extends State<_TripsTab>
                   fontWeight: FontWeight.w500,
                 ),
                 indicator: const UnderlineTabIndicator(
-                  borderSide: BorderSide(
-                    color: AppColors.primary,
-                    width: 2,
-                  ),
+                  borderSide: BorderSide(color: AppColors.primary, width: 2),
                 ),
                 indicatorSize: TabBarIndicatorSize.tab,
                 dividerColor: AppColors.border,
@@ -220,12 +164,14 @@ class _TripsTabState extends State<_TripsTab>
               child: TabBarView(
                 controller: _tabController,
                 children: [
-                  _UpcomingTripsList(
-                    trips: _getTripsForStatus(TripStatus.upcoming),
-                  ),
-                  _DraftsEmptyState(),
-                  _PastTripsEmptyState(),
-                  _WishlistTab(places: _mockWishlist),
+                  _UpcomingTripsList(trips: upcomingTrips),
+                  draftTrips.isEmpty
+                      ? _DraftsEmptyState()
+                      : _UpcomingTripsList(trips: draftTrips),
+                  pastTrips.isEmpty
+                      ? _PastTripsEmptyState()
+                      : _UpcomingTripsList(trips: pastTrips),
+                  _WishlistTab(places: _wishlist),
                 ],
               ),
             ),
@@ -237,13 +183,64 @@ class _TripsTabState extends State<_TripsTab>
 }
 
 /// Upcoming trips list with horizontal trip cards
-class _UpcomingTripsList extends StatelessWidget {
+class _UpcomingTripsList extends ConsumerStatefulWidget {
   const _UpcomingTripsList({required this.trips});
 
-  final List<_TripData> trips;
+  final List<SavedTrip> trips;
+
+  @override
+  ConsumerState<_UpcomingTripsList> createState() => _UpcomingTripsListState();
+}
+
+class _UpcomingTripsListState extends ConsumerState<_UpcomingTripsList> {
+  Timer? _snackBarTimer;
+
+  @override
+  void dispose() {
+    _snackBarTimer?.cancel();
+    super.dispose();
+  }
+
+  void _deleteTrip(SavedTrip trip, int index) {
+    final notifier = ref.read(tripsProvider.notifier);
+    notifier.removeTrip(trip.id);
+
+    // Cancel any existing timer
+    _snackBarTimer?.cancel();
+
+    // Clear any existing snackbars first
+    final messenger = ScaffoldMessenger.of(context);
+    messenger.clearSnackBars();
+
+    messenger.showSnackBar(
+      SnackBar(
+        content: Text('${trip.title} deleted'),
+        behavior: SnackBarBehavior.floating,
+        duration: const Duration(seconds: 10),
+        dismissDirection: DismissDirection.horizontal,
+        action: SnackBarAction(
+          label: 'Undo',
+          textColor: AppColors.accent,
+          onPressed: () {
+            _snackBarTimer?.cancel();
+            notifier.insertTrip(index, trip);
+          },
+        ),
+      ),
+    );
+
+    // Manually hide after 2 seconds
+    _snackBarTimer = Timer(const Duration(seconds: 2), () {
+      messenger.hideCurrentSnackBar();
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
+    // Watch the provider to rebuild when trips change
+    final allTrips = ref.watch(tripsProvider);
+    final trips = widget.trips;
+
     if (trips.isEmpty) {
       return _UpcomingEmptyState();
     }
@@ -252,9 +249,14 @@ class _UpcomingTripsList extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: AppSpacing.lg),
       itemCount: trips.length,
       itemBuilder: (context, index) {
+        final trip = trips[index];
         return Padding(
           padding: const EdgeInsets.only(bottom: AppSpacing.md),
-          child: _HorizontalTripCard(trip: trips[index]),
+          child: _SwipeToDeleteCard(
+            key: ValueKey(trip.id),
+            onDelete: () => _deleteTrip(trip, index),
+            child: _HorizontalTripCard(trip: trip),
+          ),
         );
       },
     );
@@ -265,7 +267,7 @@ class _UpcomingTripsList extends StatelessWidget {
 class _HorizontalTripCard extends StatelessWidget {
   const _HorizontalTripCard({required this.trip});
 
-  final _TripData trip;
+  final SavedTrip trip;
 
   @override
   Widget build(BuildContext context) {
@@ -297,9 +299,8 @@ class _HorizontalTripCard extends StatelessWidget {
                 child: CachedNetworkImage(
                   imageUrl: trip.imageUrl,
                   fit: BoxFit.cover,
-                  placeholder: (context, url) => Container(
-                    color: AppColors.shimmerBase,
-                  ),
+                  placeholder: (context, url) =>
+                      Container(color: AppColors.shimmerBase),
                   errorWidget: (context, url, error) => Container(
                     color: AppColors.shimmerBase,
                     child: const Icon(
@@ -313,7 +314,10 @@ class _HorizontalTripCard extends StatelessWidget {
             // Content on right
             Expanded(
               child: Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 10),
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 14,
+                  vertical: 10,
+                ),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -353,14 +357,14 @@ class _HorizontalTripCard extends StatelessWidget {
                     ),
                     const SizedBox(height: 4),
                     // Countdown badge
-                    if (trip.daysUntil != null)
+                    if (trip.daysUntil > 0)
                       Container(
                         padding: const EdgeInsets.symmetric(
                           horizontal: 10,
                           vertical: 4,
                         ),
                         decoration: BoxDecoration(
-                          color: trip.daysUntil! <= 60
+                          color: trip.daysUntil <= 60
                               ? AppColors.accent
                               : AppColors.surface,
                           borderRadius: BorderRadius.circular(11),
@@ -369,10 +373,10 @@ class _HorizontalTripCard extends StatelessWidget {
                           'In ${trip.daysUntil} days',
                           style: GoogleFonts.dmSans(
                             fontSize: 11,
-                            fontWeight: trip.daysUntil! <= 60
+                            fontWeight: trip.daysUntil <= 60
                                 ? FontWeight.w600
                                 : FontWeight.w500,
-                            color: trip.daysUntil! <= 60
+                            color: trip.daysUntil <= 60
                                 ? AppColors.primary
                                 : AppColors.textSecondary,
                           ),
@@ -399,8 +403,9 @@ class _HorizontalTripCard extends StatelessWidget {
                                 ),
                                 if (!isLast)
                                   Padding(
-                                    padding:
-                                        const EdgeInsets.symmetric(horizontal: 6),
+                                    padding: const EdgeInsets.symmetric(
+                                      horizontal: 6,
+                                    ),
                                     child: Text(
                                       '\u2192',
                                       style: GoogleFonts.dmSans(
@@ -654,10 +659,12 @@ class _WishlistTab extends StatelessWidget {
               ),
               const SizedBox(height: 12),
               // Wishlist items
-              ...places.map((place) => Padding(
-                    padding: const EdgeInsets.only(bottom: 12),
-                    child: _WishlistItem(place: place),
-                  )),
+              ...places.map(
+                (place) => Padding(
+                  padding: const EdgeInsets.only(bottom: 12),
+                  child: _WishlistItem(place: place),
+                ),
+              ),
             ],
           ),
         ),
@@ -666,9 +673,7 @@ class _WishlistTab extends StatelessWidget {
           padding: const EdgeInsets.all(AppSpacing.lg),
           decoration: const BoxDecoration(
             color: AppColors.background,
-            border: Border(
-              top: BorderSide(color: AppColors.border),
-            ),
+            border: Border(top: BorderSide(color: AppColors.border)),
           ),
           child: SafeArea(
             top: false,
@@ -728,98 +733,184 @@ class _WishlistItem extends StatelessWidget {
         context.push(AppRoutes.tripSetup);
       },
       child: Container(
-      height: 64,
-      decoration: BoxDecoration(
-        color: AppColors.surface,
-        borderRadius: BorderRadius.circular(16),
-      ),
-      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
-      child: Row(
-        children: [
-          // Place image
-          ClipRRect(
-            borderRadius: BorderRadius.circular(8),
-            child: SizedBox(
-              width: 40,
-              height: 40,
-              child: CachedNetworkImage(
-                imageUrl: place.imageUrl,
-                fit: BoxFit.cover,
-                placeholder: (context, url) => Container(
-                  color: AppColors.shimmerBase,
-                ),
-                errorWidget: (context, url, error) => Container(
-                  color: AppColors.shimmerBase,
+        height: 64,
+        decoration: BoxDecoration(
+          color: AppColors.surface,
+          borderRadius: BorderRadius.circular(16),
+        ),
+        padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+        child: Row(
+          children: [
+            // Place image
+            ClipRRect(
+              borderRadius: BorderRadius.circular(8),
+              child: SizedBox(
+                width: 40,
+                height: 40,
+                child: CachedNetworkImage(
+                  imageUrl: place.imageUrl,
+                  fit: BoxFit.cover,
+                  placeholder: (context, url) =>
+                      Container(color: AppColors.shimmerBase),
+                  errorWidget: (context, url, error) =>
+                      Container(color: AppColors.shimmerBase),
                 ),
               ),
             ),
-          ),
-          const SizedBox(width: 12),
-          // Place info
-          Expanded(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text(
-                  place.name,
-                  style: GoogleFonts.dmSans(
-                    fontSize: 15,
-                    fontWeight: FontWeight.w600,
-                    color: AppColors.primary,
+            const SizedBox(width: 12),
+            // Place info
+            Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    place.name,
+                    style: GoogleFonts.dmSans(
+                      fontSize: 15,
+                      fontWeight: FontWeight.w600,
+                      color: AppColors.primary,
+                    ),
                   ),
-                ),
-                const SizedBox(height: 2),
-                Text(
-                  'Added ${place.addedAgo}',
-                  style: GoogleFonts.dmSans(
-                    fontSize: 12,
-                    fontWeight: FontWeight.w400,
-                    color: AppColors.textTertiary,
+                  const SizedBox(height: 2),
+                  Text(
+                    'Added ${place.addedAgo}',
+                    style: GoogleFonts.dmSans(
+                      fontSize: 12,
+                      fontWeight: FontWeight.w400,
+                      color: AppColors.textTertiary,
+                    ),
                   ),
-                ),
-              ],
-            ),
-          ),
-          // Selection circle
-          Container(
-            width: 20,
-            height: 20,
-            decoration: BoxDecoration(
-              shape: BoxShape.circle,
-              border: Border.all(
-                color: AppColors.borderDark,
-                width: 1,
+                ],
               ),
             ),
-          ),
-        ],
-      ),
+            // Selection circle
+            Container(
+              width: 20,
+              height: 20,
+              decoration: BoxDecoration(
+                shape: BoxShape.circle,
+                border: Border.all(color: AppColors.borderDark, width: 1),
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
 }
 
-enum TripStatus { upcoming, draft, past, wishlist }
-
-class _TripData {
-  const _TripData({
-    required this.id,
-    required this.title,
-    required this.imageUrl,
-    required this.dates,
-    required this.status,
-    this.daysUntil,
-    this.cityNames = const [],
+/// Swipe to reveal delete button card
+class _SwipeToDeleteCard extends StatefulWidget {
+  const _SwipeToDeleteCard({
+    super.key,
+    required this.child,
+    required this.onDelete,
   });
 
-  final String id;
-  final String title;
-  final String imageUrl;
-  final String dates;
-  final int? daysUntil;
-  final List<String> cityNames;
-  final TripStatus status;
+  final Widget child;
+  final VoidCallback onDelete;
+
+  @override
+  State<_SwipeToDeleteCard> createState() => _SwipeToDeleteCardState();
+}
+
+class _SwipeToDeleteCardState extends State<_SwipeToDeleteCard>
+    with SingleTickerProviderStateMixin {
+  late AnimationController _controller;
+  late Animation<Offset> _slideAnimation;
+  bool _isOpen = false;
+
+  static const double _deleteButtonWidth = 80.0;
+
+  @override
+  void initState() {
+    super.initState();
+    _controller = AnimationController(
+      vsync: this,
+      duration: const Duration(milliseconds: 200),
+    );
+    _slideAnimation = Tween<Offset>(
+      begin: Offset.zero,
+      end: const Offset(-0.2, 0), // Slide 20% to reveal button
+    ).animate(CurvedAnimation(parent: _controller, curve: Curves.easeOut));
+  }
+
+  @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
+  }
+
+  void _handleDragUpdate(DragUpdateDetails details) {
+    if (details.primaryDelta == null) return;
+
+    // Dragging left (negative delta) opens, right (positive) closes
+    final delta = -details.primaryDelta! / context.size!.width;
+    _controller.value = (_controller.value + delta).clamp(0.0, 1.0);
+  }
+
+  void _handleDragEnd(DragEndDetails details) {
+    // If more than 30% open, snap open; otherwise snap closed
+    if (_controller.value > 0.3) {
+      _controller.forward();
+      _isOpen = true;
+    } else {
+      _controller.reverse();
+      _isOpen = false;
+    }
+  }
+
+  void _close() {
+    _controller.reverse();
+    _isOpen = false;
+  }
+
+  void _handleDelete() {
+    _close();
+    widget.onDelete();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onHorizontalDragUpdate: _handleDragUpdate,
+      onHorizontalDragEnd: _handleDragEnd,
+      onTap: _isOpen ? _close : null,
+      child: Stack(
+        children: [
+          // Delete button (behind the card)
+          Positioned.fill(
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                GestureDetector(
+                  onTap: _handleDelete,
+                  child: Container(
+                    width: _deleteButtonWidth,
+                    height: double.infinity,
+                    decoration: BoxDecoration(
+                      color: Colors.red.shade400,
+                      borderRadius: BorderRadius.circular(16),
+                    ),
+                    child: const Center(
+                      child: Icon(
+                        LucideIcons.trash2,
+                        color: Colors.white,
+                        size: 24,
+                      ),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
+          // The actual card that slides
+          SlideTransition(position: _slideAnimation, child: widget.child),
+        ],
+      ),
+    );
+  }
 }
 
 class _WishlistPlace {

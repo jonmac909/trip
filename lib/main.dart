@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import 'package:trippified/core/config/env_config.dart';
@@ -26,18 +27,12 @@ Future<void> main() async {
     ),
   );
 
+  // Load environment variables from .env file
+  await dotenv.load(fileName: '.env');
+
   // Initialize Supabase (if configured)
   if (EnvConfig.isConfigured) {
     await SupabaseService.instance.initialize();
-
-    // Auto sign-in anonymously if no user session exists
-    if (!SupabaseService.instance.isAuthenticated) {
-      try {
-        await SupabaseService.instance.client.auth.signInAnonymously();
-      } catch (e) {
-        debugPrint('Anonymous sign-in failed: $e');
-      }
-    }
   } else {
     debugPrint('Warning: Supabase not configured. Running in demo mode.');
     debugPrint('Missing: ${EnvConfig.missingConfigurations.join(', ')}');

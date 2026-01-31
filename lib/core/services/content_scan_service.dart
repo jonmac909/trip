@@ -1,6 +1,6 @@
 import 'dart:typed_data';
 
-import 'package:trippified/core/services/gemini_service.dart';
+import 'package:trippified/core/services/claude_service.dart';
 import 'package:trippified/core/services/social_media_metadata_service.dart';
 import 'package:trippified/domain/models/scanned_place.dart';
 
@@ -25,12 +25,12 @@ class ScanResult {
 /// Orchestrates content scanning from URLs or media uploads
 class ContentScanService {
   ContentScanService({
-    GeminiService? geminiService,
+    ClaudeService? claudeService,
     SocialMediaMetadataService? metadataService,
-  })  : _gemini = geminiService ?? GeminiService.instance,
+  })  : _claude = claudeService ?? ClaudeService.instance,
         _metadata = metadataService ?? SocialMediaMetadataService();
 
-  final GeminiService _gemini;
+  final ClaudeService _claude;
   final SocialMediaMetadataService _metadata;
 
   /// Scan a TikTok/Instagram URL for places.
@@ -44,12 +44,12 @@ class ContentScanService {
     // otherwise fall back to text-only analysis.
     final List<ScannedPlace> places;
     if (meta.thumbnailBytes != null) {
-      places = await _gemini.extractPlacesFromTextAndImage(
+      places = await _claude.extractPlacesFromTextAndImage(
         captionText: meta.captionText,
         imageBytes: meta.thumbnailBytes!,
       );
     } else {
-      places = await _gemini.extractPlacesFromText(meta.captionText);
+      places = await _claude.extractPlacesFromText(meta.captionText);
     }
 
     final sourceLabel = meta.authorHandle != null
@@ -66,7 +66,7 @@ class ContentScanService {
 
   /// Scan uploaded images (screenshots) for places
   Future<ScanResult> scanImages(List<Uint8List> imageBytesList) async {
-    final places = await _gemini.extractPlacesFromImages(imageBytesList);
+    final places = await _claude.extractPlacesFromImages(imageBytesList);
     final count = imageBytesList.length;
     return ScanResult(
       places: places,
@@ -76,12 +76,15 @@ class ContentScanService {
   }
 
   /// Scan uploaded video (screen recording) for places
+  ///
+  /// Note: Video scanning is not supported with Claude API.
+  /// Users should take screenshots instead.
   Future<ScanResult> scanVideo(Uint8List videoBytes) async {
-    final places = await _gemini.extractPlacesFromVideo(videoBytes);
-    return ScanResult(
-      places: places,
-      inputType: ScanInputType.video,
-      sourceLabel: 'Screen recording',
+    // Claude doesn't support direct video analysis
+    // Recommend users to take screenshots instead
+    throw UnsupportedError(
+      'Video scanning is not supported. '
+      'Please take screenshots of the video and upload those instead.',
     );
   }
 

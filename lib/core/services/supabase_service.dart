@@ -45,8 +45,14 @@ class SupabaseService {
   /// Get the current authenticated user
   User? get currentUser => _isInitialized ? client.auth.currentUser : null;
 
-  /// Check if user is authenticated
+  /// Check if user is authenticated (includes anonymous users)
   bool get isAuthenticated => currentUser != null;
+
+  /// Check if user is authenticated with a real account (not anonymous)
+  bool get isAuthenticatedWithAccount {
+    final user = currentUser;
+    return user != null && user.isAnonymous != true;
+  }
 
   /// Get the auth state stream
   Stream<AuthState> get authStateChanges =>
